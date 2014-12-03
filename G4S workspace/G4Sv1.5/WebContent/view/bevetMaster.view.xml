@@ -2,7 +2,7 @@
 	xmlns="sap.m" xmlns:core="sap.ui.core">
 	<Page showNavButton="true" navButtonPress="handleNavButtonPress"
 		title="Bevételezés">
-
+		<!-- items="{/Item}" -->
 		<List id="list" select="handleListSelect" items="{/Address?$filter=PicType eq 'D'}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
 			<ObjectListItem type="Active" press="handleListItemPress"
 				title="{From}"
@@ -11,11 +11,11 @@
 		 		<firstStatus>
 					<ObjectStatus
 						text="{
-							path: 'SzallitasStatus',
+							path: 'PickupStatus',
 							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'
 						}"
 						state="{
-							path: 'SzallitasStatus',
+							path: 'PickupStatus',
 							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState'
 						}"
 						  />
