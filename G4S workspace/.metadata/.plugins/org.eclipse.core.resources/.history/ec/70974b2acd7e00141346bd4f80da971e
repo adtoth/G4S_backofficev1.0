@@ -1,0 +1,426 @@
+{
+	"BusinessPartnerList": [
+		{
+			"BPId": "010",
+			"Role": "Ship-to-party",
+			"EmailAddress": "do.not.reply@sap.com",
+			"PhoneNumber": "0181123456-76",
+			"WebAddress": "http://www.sap.com",
+			"CompanyName": "SAP",
+			"LegalForm": "AG",
+			"Country": "Germany",
+			"City": "Walldorf",
+			"PostalCode": "69190",
+			"Street": "Dietmar-Hopp-Allee",
+			"Building": "15",
+			"ContactPerson": "Alexander Swartz",
+			"SalesOrders" : [ 
+				{
+				"SalesOrderID": "0500000009",
+				"Netto Amount": "751.24",
+				"Time Stamp": "2014.09.02. 9:00:00",
+				"Gross Amount": "954.07",
+				"Status": "N",
+				"CurrencyCode": "EUR",
+				"Items": [ 
+					{
+					"Position": "0000000010",
+					"QuantityUnit" : "EA",
+					"Price": "181.64",
+					"ProductName": "First Item Name",
+					"ProductID": "HT-1000",
+					"Quantity": "1",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					},
+					
+					{
+					"Position": "0000000020",
+					"QuantityUnit" : "EA",
+					"Price": "596.60",
+					"ProductName": "Second Item Name",
+					"ProductID": "HT-1002",
+					"Quantity": "2",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "USD"
+					}
+				
+				]	
+				},
+				{
+				"SalesOrderID": "0500000030",
+				"Netto Amount": "181.64",
+				"Time Stamp": "2014.04.28. 9:00:00",
+				"Gross Amount": "230.68",
+				"Status": "P",
+				"CurrencyCode": "USD",
+				"Items": [ 
+					{
+					"Position": "0000000030",
+					"QuantityUnit" : "EA",
+					"Price": "181.64",
+					"ProductName": "Third Item Name",
+					"ProductID": "HT-1003",
+					"Quantity": "1",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "USD"
+					}
+				
+				]
+				},
+				{
+				"SalesOrderID": "0500000039",
+				"Netto Amount": "2398.24",
+				"Time Stamp": "2014.04.28. 9:00:00",
+				"Gross Amount": "3045.76",
+				"CurrencyCode": "EUR",
+				"Status": "N",
+				"Items": [ 
+					{
+					"Position": "0000000040",
+					"QuantityUnit" : "EA",
+					"Price": "1801.64",
+					"ProductName": "Item Name",
+					"ProductID": "HT-1004",
+					"Quantity": "12",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					},
+					
+					{
+					"Position": "0000000020",
+					"QuantityUnit" : "EA",
+					"Price": "596.60",
+					"ProductName": "Second Item Name",
+					"ProductID": "HT-1005",
+					"Quantity": "20",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "USD"
+					}
+				
+				]
+				}
+			]
+		},
+		{
+			"BPId": "011",
+			"Role": "Sold-to-party",
+			"EmailAddress": "dagmar.schulze@beckerberlin.de",
+			"PhoneNumber": "3088530",
+			"WebAddress": "http://www.beckerberlin.de",
+			"CompanyName": "Becker Berlin",
+			"LegalForm": "GmbH",
+			"Country": "Germany",
+			"City": "Berlin",
+			"PostalCode": "13467",
+			"Street": "Calvinstrasse",
+			"Building": "36",
+			"ContactPerson": "Dagmar Schulze",
+			"SalesOrders": [ 
+				{
+				"SalesOrderID": "0500000010",
+				"Netto Amount": "7762.24",
+				"Time Stamp": "2014.04.28. 9:00:00",
+				"Gross Amount": "9858.04",
+				"Status": "P",
+				"Items": [ 
+					{
+					"Position": "0000000060",
+					"QuantityUnit" : "EA",
+					"Price": "1801.64",
+					"ProductName": "Item Name",
+					"ProductID": "HT-1007",
+					"Quantity": "12",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					},
+					
+					{
+					"Position": "0000000070",
+					"QuantityUnit" : "EA",
+					"Price": "5960.60",
+					"ProductName": "Second Item Name",
+					"ProductID": "HT-1008",
+					"Quantity": "20",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					}
+				
+				]
+				},
+				{
+				"SalesOrderID": "0500000018",
+				"Netto Amount": "732.40",
+				"Time Stamp": "2014.04.28. 9:00:00",
+				"Gross Amount": "871.55",
+				"Status": "N",
+				"Items": [ 
+					{
+					"Position": "0000000040",
+					"QuantityUnit" : "EA",
+					"Price": "1801.64",
+					"ProductName": "Item Name",
+					"ProductID": "HT-1010",
+					"Quantity": "12",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					},
+					
+					{
+					"Position": "0000000020",
+					"QuantityUnit" : "EA",
+					"Price": "596.60",
+					"ProductName": "Second Item Name",
+					"ProductID": "HT-1011",
+					"Quantity": "20",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "USD"
+					}
+				
+				]
+				}
+			]
+		},
+		
+		{
+			"BPId": "012",
+			"Role": "Sold-to-party",
+			"EmailAddress": "saskia.sommer@talpa-hannover.de",
+			"PhoneNumber": "511403266",
+			"WebAddress": "http://www.talpa-hannover.de",
+			"CompanyName": "Talpa",
+			"LegalForm": "GmbH",
+			"Country": "Germany",
+			"City": "Hannover",
+			"PostalCode": "30625",
+			"Street": "An der Breiten Wiese",
+			"Building": "422",
+			"ContactPerson": "Saskia Sommer",
+			"SalesOrders": [ 
+				{
+				"SalesOrderID": "0500000015",
+				"Netto Amount": "5024.30",
+				"Time Stamp": "2014.04.28. 9:00:00",
+				"Gross Amount": "3598.92",
+				"Status": "P",
+				"Items": [ 
+					{
+					"Position": "0000000040",
+					"QuantityUnit" : "EA",
+					"Price": "1801.64",
+					"ProductName": "Item Name",
+					"ProductID": "HT-1012",
+					"Quantity": "12",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					},
+					
+					{
+					"Position": "0000000020",
+					"QuantityUnit" : "EA",
+					"Price": "596.60",
+					"ProductName": "Second Item Name",
+					"ProductID": "HT-1013",
+					"Quantity": "220",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "USD"
+					}
+				
+				]
+				},
+				{
+				"SalesOrderID": "0500000016",
+				"Netto Amount": "7320.40",
+				"Time Stamp": "2014.04.28. 9:00:00",
+				"Gross Amount": "8710.55",
+				"Status": "N",
+				"Items": [ 
+					{
+					"Position": "0000000040",
+					"QuantityUnit" : "EA",
+					"Price": "1801.64",
+					"ProductName": "Item Name",
+					"ProductID": "HT-1014",
+					"Quantity": "12",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					},
+					
+					{
+					"Position": "0000000020",
+					"QuantityUnit" : "EA",
+					"Price": "596.60",
+					"ProductName": "Second Item Name",
+					"ProductID": "HT-1015",
+					"Quantity": "220",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "USD"
+					}
+				
+				]
+				}
+			]
+		},
+		
+		{
+			"BPId": "013",
+			"Role": "Sold-to-party",
+			"EmailAddress": "bob.buyer@panorama-studios.biz",
+			"PhoneNumber": "2244668800",
+			"WebAddress": "http://www.panorama-studios.biz",
+			"CompanyName": "Panorama Studios",
+			"LegalForm": "Inc.",
+			"Country": "USA",
+			"City": "Hollywood, California",
+			"PostalCode": "91602",
+			"Street": "Morning Drive",
+			"Building": "178",
+			"ContactPerson": "Bob Buyer",
+			"SalesOrders": [ 
+				{
+				"SalesOrderID": "0500000017",
+				"Netto Amount": "5024.30",
+				"Time Stamp": "2014.04.28. 9:00:00",
+				"Gross Amount": "3598.92",
+				"Status": "P",
+				"Items": [ 
+					{
+					"Position": "0000000040",
+					"QuantityUnit" : "EA",
+					"Price": "1801.64",
+					"ProductName": "Item Name",
+					"ProductID": "HT-1012",
+					"Quantity": "12",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					},
+					
+					{
+					"Position": "0000000020",
+					"QuantityUnit" : "EA",
+					"Price": "596.60",
+					"ProductName": "Second Item Name",
+					"ProductID": "HT-1013",
+					"Quantity": "220",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "USD"
+					}
+				
+				]
+				},
+				{
+				"SalesOrderID": "0500000018",
+				"Netto Amount": "7320.40",
+				"Time Stamp": "2014.04.28. 9:00:00",
+				"Gross Amount": "8710.55",
+				"Status": "N",
+				"Items": [ 
+					{
+					"Position": "0000000040",
+					"QuantityUnit" : "EA",
+					"Price": "1801.64",
+					"ProductName": "Item Name",
+					"ProductID": "HT-1014",
+					"Quantity": "12",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					},
+					
+					{
+					"Position": "0000000020",
+					"QuantityUnit" : "EA",
+					"Price": "596.60",
+					"ProductName": "Second Item Name",
+					"ProductID": "HT-1015",
+					"Quantity": "220",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "USD"
+					}
+				
+				]
+				}
+			]
+		},
+		
+		{
+			"BPId": "014",
+			"Role": "Sold-to-party",
+			"EmailAddress": "bart.koenig@tecum-ag.de",
+			"PhoneNumber": "2511415",
+			"WebAddress": "http://www.tecum-ag.de",
+			"CompanyName": "TECUM",
+			"LegalForm": "AG",
+			"Country": "Germany",
+			"City": "Muenster",
+			"PostalCode": "91602",
+			"Street": "Albersloher Weg",
+			"Building": "24",
+			"ContactPerson": "Bart Koenig",
+			"SalesOrders": [ 
+				{
+				"SalesOrderID": "0500000019",
+				"Netto Amount": "5024.30",
+				"Time Stamp": "2014.04.28. 9:00:00",
+				"Gross Amount": "3598.92",
+				"Status": "P",
+				"Items": [ 
+					{
+					"Position": "0000000040",
+					"QuantityUnit" : "EA",
+					"Price": "1801.64",
+					"ProductName": "Item Name",
+					"ProductID": "HT-1012",
+					"Quantity": "12",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					},
+					
+					{
+					"Position": "0000000020",
+					"QuantityUnit" : "EA",
+					"Price": "596.60",
+					"ProductName": "Second Item Name",
+					"ProductID": "HT-1013",
+					"Quantity": "220",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "USD"
+					}
+				
+				]
+				},
+				{
+				"SalesOrderID": "0500000020",
+				"Netto Amount": "7320.40",
+				"Time Stamp": "2014.04.28. 9:00:00",
+				"Gross Amount": "8710.55",
+				"Status": "N",
+				"Items": [ 
+					{
+					"Position": "0000000040",
+					"QuantityUnit" : "EA",
+					"Price": "1801.64",
+					"ProductName": "Item Name",
+					"ProductID": "HT-1014",
+					"Quantity": "12",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "EUR"
+					},
+					
+					{
+					"Position": "0000000020",
+					"QuantityUnit" : "EA",
+					"Price": "596.60",
+					"ProductName": "Second Item Name",
+					"ProductID": "HT-1015",
+					"Quantity": "220",
+					"DeliveryDate": "2014-10-05T07:00:00.0000000",
+					"CurrencyCode": "USD"
+					}
+				
+				]
+				}
+			]
+		}
+			
+	]
+}

@@ -5,7 +5,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.utanvet", {
 	
 	onInit: function(){ // binding model synchronisation
         this.getView().addDelegate({ onBeforeShow: function(evt) { 
-	                alert("onHow");
+	                //alert("onHow");
         }});
 },
 	
@@ -13,13 +13,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.utanvet", {
         // totál utánvét összeg számítás
      	var total = 0;
      	var myView = this.getView();
-    	sap.ui.getCore().getModel().read("/Item", null, {
-		}, true, function(response) {
-			for(var i = 0; i < 5000; i++){
-				total += sap.ui.getCore().getModel().getProperty("/Item(" + response.results[i].Id + ")/Price");	
-				myView.byId("total_id").setNumber(total);
-			}		
-		});
+    	
+				myView.byId("total_id").setNumber("5980");
+		
     	
 	},
 

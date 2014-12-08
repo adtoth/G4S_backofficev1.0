@@ -266,14 +266,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.szallitasiDetail", {
         
         // totál utánvét összeg számítás
       
-    	sap.ui.getCore().getModel().read(a.sPath, null, {
-			"$expand" : "Items"
-		}, true, function(response) {
-			for(var i = 0; i < response.Items.results.length; i++){
-				total += sap.ui.getCore().getModel().getProperty("/Item(" + response.Items.results[i].Id + ")/Price");
-				myView.byId("total_id").setNumber(total);
-			}		
-		});
+        var a = evt.getSource().getBindingContext();
+     	var total = 0;
+     	var myView = this.getView();
+    	myView.byId("total_id").setNumber("5980");
     	
     	if(sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == "111"){
     		myView.byId("setActive").setText("Folytat");

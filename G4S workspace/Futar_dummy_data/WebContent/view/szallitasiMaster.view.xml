@@ -2,7 +2,7 @@
 	xmlns="sap.m" xmlns:core="sap.ui.core">
 	<Page showNavButton="true" navButtonPress="handleNavButtonPress"
 		title="Szállítási Lista">
-		<List id="list" select="handleListSelect" items="{/Address?$orderby=DelStatus desc}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
+		<List id="list" select="handleListSelect" items="{/Address}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
 			<ObjectListItem type="Active" press="handleListItemPress"
 			
 				title="{From}" icon="sap-icon://toaster-{IconPic}" number="{path: 'PicType',
@@ -10,9 +10,9 @@
 				
 				<attributes>
 					<ObjectAttribute text="Feladó: {From}" />
-					<ObjectAttribute text="{FPostalCode}, {FCity}, {FPostalCode}, {FStreet}" />
+					<ObjectAttribute text="{FPostalCode}, {FCity}, {FStreet}" />
 					<ObjectAttribute text="Címzett: {To}" />
-					<ObjectAttribute text="{TPostalCode}, {TCity}, {TPostalCode}, {TStreet}" />
+					<ObjectAttribute text="{TPostalCode}, {TCity}, {TStreet}" />
 				</attributes>
 				
 				<firstStatus>

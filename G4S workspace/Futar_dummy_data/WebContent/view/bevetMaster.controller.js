@@ -53,92 +53,53 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 		oBinding.sort(sorters);
 	},
 
-	scan : function(evt) {
-		var a = evt.getSource().getBindingContext();
+	scan: function (evt) {
+		var foundItems = 0;
         var view = this.getView();
-        var closedItems = 0;
         window.globalVariable = view;
         window.globalThis = this;
         window.globalFoundItems = 0;
-        asd = this.getView();        
-		window.scanner = cordova.require("cordova/plugin/BarcodeScanner");
-		var found = 0;
-		var closedItems = 0;
+        asd = this.getView();
+        //var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+        window.scanner = cordova.require("cordova/plugin/BarcodeScanner");
+       // while(foundItems != 5){
         scanner.scan(this.loopScan, function(fail) {
             alert("encoding failed: " + fail);
         });
-        
-	},
-		loopScan: function(result){
+        //}
+    
+    },
+	 loopScan: function (result) {
 			var foundItems = 0;
 			var allItems = 0;
-			var closedItems = 0;
-			globalVariable.getModel().read("/Item", null, {
-			}, true, function(response) {	
-				for(var i = 0; i < response.results.length; i++){
-					allItems = response.results.length;
-					if(response.results[i].PickupStatus == 'A'){
-						closedItems++;
-					}
-					if(response.results[i].ProductId === result.text){
-						globalFoundItems++;
-						if(response.results[i].PickupStatus != 'A'){
-							globalVariable.getModel().setProperty("/Item(" + response.results[i].Id + ")/PickupStatus", 'A');
-							globalVariable.getModel().submitChanges();
-							globalVariable.getModel().updateBindings(true);
-							globalVariable.getModel().forceNoCache(true);
-						sap.m.MessageToast.show("Csomag felvéve");
-						}
-						else if(response.results[i].PickupStatus == 'A'){
-							sap.m.MessageToast.show("Ez a csomag már fel van véve!");
-						}
-					}
-					
-				}
+			//var view = this.getView();
+			for(var i = 0; i < 3; i++){
+				if(globalVariable.getModel().getProperty("/Item/" + i + "/ProductId") === result.text){
+					globalVariable.getModel().setProperty("/Item/" + i + "/PickupStatus", 'A');
+					foundItems++;
+					}         		
+		    }        	
+			if (foundItems == 0){ 
+				sap.m.MessageToast.show("Not Confirmed");
+			
+			}
+			
+			else if (foundItems != 0){ 
+				sap.m.MessageToast.show("Confirmed");
 				
-				if(globalFoundItems != allItems && result.text != ""){
-					//var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-					scanner.scan(globalThis.loopScan, function(fail){ alert(fail);});
+			}
+			
+			for(var a = 0; a < 3; a++){
+				if(globalVariable.getModel().getProperty("/Item/" + a + "/PickupStatus") === 'A'){
+					globalFoundItems++;
 				}
-				
-					
-			});
-
-
-
-	},
+			}
+			if(globalFoundItems != 3 & result.text != ""){
+				//var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+				scanner.scan(globalThis.loopScan, function(fail){ alert(fail);});
+			}
+		},
 	
-	scan_debug : function(evt) {
-			sap.ui.getCore().getModel().read("/Item", null, {
-			}, true, function(response) {	
-				for(var i = 0; i < response.results.length; i++){
-					if(response.results[i].PickupStatus == 'A'){
-						closedItems++;
-					}
-					if(response.results[i].ProductId === result.text){
-						found++;
-						if(response.Items.results[i].PickupStatus != 'A'){
-						sap.ui.getCore().getModel().setProperty("/Item(" + response.results[i].Id + ")/PickupStatus", 'A');
-						sap.ui.getCore().getModel().submitChanges();
-						sap.ui.getCore().getModel().updateBindings(true);
-						sap.ui.getCore().getModel().forceNoCache(true);
-						sap.m.MessageToast.show("Csomag felvéve");
-						}
-						else if(response.results[i].PickupStatus == 'A'){
-							sap.m.MessageToast.show("Ez a csomag már fel van véve!");
-						}
-					}
-					
-				}
-				
-				if(found != 0) {
-					sap.m.MessageToast.show("Nincs ilyen azonosítójú csomag");
-				}
-					
-					
-			});
-
-	},
 	
 	handleGroup : function(evt) {
 

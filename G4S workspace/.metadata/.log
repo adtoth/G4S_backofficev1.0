@@ -11184,3 +11184,24 @@ Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/adtoth
 	at org.eclipse.jgit.transport.Transport.push(Transport.java:1173)
 	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:156)
 	... 4 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-08 12:27:22.168
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-08 12:27:22.187
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2014-12-08 12:27:22.298
+!MESSAGE Started Server for URL: http://localhost:50002/Futar_dummy_data/index.html
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-08 12:50:12.895
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2014-12-08 12:50:12.912
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2014-12-08 12:50:12.981
+!MESSAGE Started Server for URL: http://localhost:56813/G4Sv1.5/index.html
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2014-12-08 12:52:42.509
+!MESSAGE Stopped Server

@@ -49,7 +49,7 @@
 					</VBox>
 				</IconTabFilter>
 				<IconTabFilter icon="sap-icon://database" text="Csomag">
-					<Table headerText="Tételek" items="{Items}">
+					<Table headerText="Tételek" items="{Item}">
 			<columns>
 				<Column>
 					<header>
@@ -86,7 +86,7 @@
 
 				</IconTabFilter>
 				<IconTabFilter icon="sap-icon://payment-approval" text="Utánvét">
-					<Table headerText="Tételek" items="{Items}">
+					<Table headerText="Tételek" items="{Item}">
 						<columns>
 							<Column>
 								<header>

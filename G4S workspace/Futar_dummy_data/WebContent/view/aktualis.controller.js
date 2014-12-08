@@ -91,7 +91,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "10");
 					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -100,7 +100,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "1");
 					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -109,7 +109,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "2");
 					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -118,7 +118,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "3");
 					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -127,7 +127,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "4");
 					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -136,7 +136,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "5");
 					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -145,7 +145,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "6");
 					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -154,7 +154,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "7");
 					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -163,7 +163,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "8");					
 					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -172,7 +172,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "9");
 					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -186,7 +186,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					}
 					else sap.ui.getCore().getModel().setProperty(a.sPath + "/COD_Collected", 0);
 					
-					sap.ui.getCore().getModel().submitChanges();
+					//sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
@@ -227,14 +227,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
         var a = evt.getSource().getBindingContext();
      	var total = 0;
      	var myView = this.getView();
-    	sap.ui.getCore().getModel().read(a.sPath, null, {
-			"$expand" : "Items"
-		}, true, function(response) {
-			for(var i = 0; i < response.Items.results.length; i++){
-				total += sap.ui.getCore().getModel().getProperty("/Item(" + response.Items.results[i].Id + ")/Price");
-				myView.byId("total_id").setNumber(total);
-			}		
-		});
+    	myView.byId("total_id").setNumber("5980");
+		
     
     },
     

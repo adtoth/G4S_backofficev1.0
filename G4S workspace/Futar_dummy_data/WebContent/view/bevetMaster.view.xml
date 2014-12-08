@@ -3,7 +3,7 @@
 	<Page showNavButton="true" navButtonPress="handleNavButtonPress"
 		title="Bevételezés">
 		<!-- items="{/Item}" -->
-		<List id="list" select="handleListSelect" items="{/Item?$filter=PickupStatus eq 'M'}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
+		<List id="list" select="handleListSelect" items="{/Item}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
 			<ObjectListItem type="Active" press="handleListItemPress"
 				title="{From}"
 				icon="sap-icon://shipping-status">

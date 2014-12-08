@@ -6,8 +6,7 @@
 			expanded="true">
 			<items>
 				<IconTabFilter icon="sap-icon://home" text="Cím">
-					<form:SimpleForm
-						
+					<form:SimpleForm						
 						minWidth="400" >
 						<core:Title text="Feladó" />
       					<Label text="Név"/>
@@ -17,8 +16,8 @@
      					<Label text="Utca, házszám" />
      					<Text text="{FStreet}"/>									
 						</form:SimpleForm>
-						<form:SimpleForm
 						
+						<form:SimpleForm
 						minWidth="400" >
 						<core:Title text="Címzett" />
       					<Label text="Név"/>

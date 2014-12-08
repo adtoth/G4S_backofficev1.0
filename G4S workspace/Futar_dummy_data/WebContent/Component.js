@@ -25,11 +25,11 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 //		// Using OData model to connect against a real service
 //		var url = "/proxy/http/<server>:<port>/sap/opu/odata/sap/ZGWSAMPLE_SRV/";
 		var url = "http://office.netlife.hu:8181/futarfioriodataprovider/courierdata.svc/";
-		var oModel = new sap.ui.model.odata.ODataModel(url, true);
+
 		//oView.setModel(oModel);
 		
 		// Using a local model for offline development
-		//var oModel = new sap.ui.model.json.JSONModel("model/mock.json");
+		var oModel = new sap.ui.model.json.JSONModel("model/mock.json");
 		oView.setModel(oModel);
 		sap.ui.getCore().setModel(oModel);
 		// set device model

@@ -1,0 +1,117 @@
+{
+    "Address": [
+        {
+            "Comment": "",
+            "From": "Chuck Norris",
+            "FStreet": "Chuck street",
+            "COD_Collected": "0",
+            "FCity": "New York",
+            "IconPic": "down",
+            "To": "Jason Statham",
+            "TPostalCode": "1232",
+            "DelStatus": "111",
+            "SzallitasStatus": "C",
+            "FPostalCode": "22334",
+            "TStreet": "To street",
+            "DeliveryDate": "/Date(1415836800000)/",
+            "Id": "2",
+            "Signature": "",
+            "PicType": "D",
+            "TCity": "Budapest",
+            "Item": [
+                {
+                    "Quantity": "1",
+                    "COD": "1",
+                    "PickupStatus": "A",
+                    "ProductName": "Csomag",
+                    "Price": "5980",
+                    "ProductId": "204657801011239",
+                    "Id": "1"
+                },
+				
+				 {
+                    "Quantity": "1",
+                    "COD": "0",
+                    "PickupStatus": "A",
+                    "ProductName": "Csomag",
+                    "Price": "-",
+                    "ProductId": "204657845792220",
+                    "Id": "2"
+                }
+            ]
+        },
+		
+		        {
+            "Comment": "",
+            "From": "Don Joe",
+            "FStreet": "Joe's street",
+            "COD_Collected": "0",
+            "FCity": "New York",
+            "IconPic": "down",
+            "To": "Sebastian Ogier",
+            "TPostalCode": "1232",
+            "DelStatus": "111",
+            "SzallitasStatus": "C",
+            "FPostalCode": "22334",
+            "TStreet": "To street",
+            "DeliveryDate": "/Date(1415836800000)/",
+            "Id": "2",
+            "Signature": "",
+            "PicType": "D",
+            "TCity": "Budapest",
+            "Item": [
+                {
+                    "Quantity": "1",
+                    "COD": "1",
+                    "PickupStatus": "A",
+                    "ProductName": "Csomag",
+                    "Price": "5980",
+                    "ProductId": "204657801011239",
+                    "Id": "1"
+                },
+				
+				 {
+                    "Quantity": "1",
+                    "COD": "0",
+                    "PickupStatus": "M",
+                    "ProductName": "Csomag",
+                    "Price": "-",
+                    "ProductId": "204657845792220",
+                    "Id": "2"
+                }
+            ]
+        }
+    ],
+	
+	"Item": [
+			 {
+                    "Quantity": "1",
+                    "COD": "1",
+                    "PickupStatus": "M",
+                    "ProductName": "Csomag 1",
+                    "Price": "5980",
+                    "ProductId": "22334455",
+                    "Id": "1"
+                },
+				
+				 {
+                    "Quantity": "1",
+                    "COD": "0",
+                    "PickupStatus": "M",
+                    "ProductName": "Csomag 2",
+                    "Price": "",
+                    "ProductId": "11229988",
+                    "Id": "2"
+                },
+				
+				 {
+                    "Quantity": "1",
+                    "COD": "0",
+                    "PickupStatus": "M",
+                    "ProductName": "Csomag 3",
+                    "Price": "12980",
+                    "ProductId": "66338822",
+                    "Id": "2"
+                }
+	]
+}
