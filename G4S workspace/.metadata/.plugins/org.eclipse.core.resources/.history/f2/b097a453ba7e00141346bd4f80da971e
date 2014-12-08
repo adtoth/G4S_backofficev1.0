@@ -1,0 +1,58 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.bevetMaster"
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page showNavButton="true" navButtonPress="handleNavButtonPress"
+		title="Bevételezés">
+		<!-- items="{/Item}" -->
+		<List id="list" select="handleListSelect" items="{/Items}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
+			<ObjectListItem type="Active" press="handleListItemPress"
+				title="{From}"
+				icon="sap-icon://customer">
+				
+		 		<firstStatus>
+					<ObjectStatus
+						text="{
+							path: 'PickupStatus',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'
+						}"
+						state="{
+							path: 'PickupStatus',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState'
+						}"
+						  />
+
+				</firstStatus> 
+				<attributes>
+					<ObjectAttribute text="Feladó: {From}, {FPostalCode}, {FCity}, {FStreet}" />
+					<ObjectAttribute text="Címzett: {To}, {TPostalCode}, {TCity}, {TStreet}"/>
+	
+				</attributes>
+
+			</ObjectListItem>
+		</List>
+		
+<!-- 		<List id="listItems" select="" visible="false" items="{/Item}">
+			<ObjectListItem type="Active" press="handleListItemPress"
+				title="{From}"
+				icon="sap-icon://customer">
+
+			</ObjectListItem>
+		</List> -->
+		<footer>
+			<Bar>
+				<contentRight>
+					<Select id="groupSelect" name="Csoportosít" change="handleGroup" icon="sap-icon://group-2"
+						type="Default" selectedKey="None" autoAdjustWidth="true">
+						<core:Item key="none" text="Nincs rendezés" />
+						<core:Item key="SzallitasStatus" text="Státus szerint" />
+					</Select>
+				</contentRight>
+<!-- 				<contentRight>
+					<Button type="Emphasized" text="Scan" press="scan"
+					 width="150px" icon="sap-icon://camera" />
+				</contentRight> -->
+				
+				
+			</Bar>
+		</footer>
+	</Page>
+</core:View>
