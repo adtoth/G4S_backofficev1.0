@@ -1,4 +1,4 @@
-<core:View controllerName="sap.ui.demo.myFiori.view.szallitasiMaster"
+<core:View controllerName="sap.ui.demo.myFiori.view.felvetelMaster"
 	xmlns="sap.m" xmlns:core="sap.ui.core">
 	<Page showNavButton="true" navButtonPress="handleNavButtonPress"
 		title="Szállítási Lista">

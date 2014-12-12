@@ -14,15 +14,16 @@
         press="handleBevetelezesPress"
         />
     	<StandardTile
-        icon="sap-icon://cargo-train"
-        title="Szállítási Lista"
-        press="handleSzallitasiPress"
+        icon="sap-icon://toaster-up"
+        title="Felvétel"
+        press="handleFelvetelPress"
         />
-         <!-- <StandardTile 
-         icon="sap-icon://shipping-status" 
-         title="Aktuális szállítás" 
-        press="handleAktualisPress" 
-         />   -->
+          <StandardTile 
+         icon="sap-icon://toaster-down" 
+         title="Leadás" 
+         number="21"
+        press="handleLeadasPress" 
+            />
         <StandardTile
         icon="sap-icon://payment-approval"
         title="Utánvét"

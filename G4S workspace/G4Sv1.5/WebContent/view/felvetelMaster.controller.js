@@ -1,7 +1,7 @@
 jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Setter");
-sap.ui.controller("sap.ui.demo.myFiori.view.szallitasiMaster", {
+sap.ui.controller("sap.ui.demo.myFiori.view.felvetelMaster", {
 	
 
 	handleListItemPress : function(evt) {
