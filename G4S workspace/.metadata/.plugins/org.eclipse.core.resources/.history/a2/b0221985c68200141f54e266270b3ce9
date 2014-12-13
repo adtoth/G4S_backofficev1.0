@@ -1,0 +1,102 @@
+﻿jQuery.sap.require("sap.m.MessageBox");
+jQuery.sap.require("sap.m.MessageToast");
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+jQuery.sap.require("jSignature");
+sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
+	
+	onInit: function(){ // binding model synchronisation
+		window.globalThis = this;
+        this.getView().addDelegate({ onBeforeShow: function(evt) { 
+    		
+        }});
+	},
+
+	handleNavButtonPress : function(evt) {
+		this.nav.back("szallitasiMaster");
+	},
+	
+	onSelect: function(evt){
+		if(this.getView().byId("grpA02").getSelected() === true){
+			this.getView().byId("grpB").setVisible(true);
+			this.getView().byId("otherText").setVisible(false);
+		}
+		
+		if(this.getView().byId("grpA01").getSelected() === true){
+			this.getView().byId("grpB").setVisible(false);
+		}
+		
+	},
+	
+	onSelectOther: function(evt){
+		if(this.getView().byId("grpB10").getSelected() === true){
+			this.getView().byId("otherText").setVisible(true);
+		}
+		else {
+			this.getView().byId("otherText").setVisible(false);
+		}
+	},
+	
+	activate: function(evt){
+		var a = evt.getSource().getBindingContext();
+		var context = evt.getSource().getBindingContext();
+		var bundle = this.getView().getModel("i18n").getResourceBundle();
+		var myself = this;
+		var isActive = 0;
+		var amIActive = false;
+		if(sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == "999"){
+			amIActive = true;
+		}
+		for(i = 0; i < 1000; i++){
+			if(sap.ui.getCore().getModel().getProperty("/Address(" + i + ")/DelStatus") == "999"){
+				isActive++;
+			}
+		}
+		if(isActive == 0 && amIActive == false){
+		if(sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == '111'){
+		sap.m.MessageBox.confirm(bundle.getText("ActivateDialogMsg"), function(
+				oAction) {			
+			if (sap.m.MessageBox.Action.OK === oAction){
+				sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", '999');
+				sap.ui.getCore().getModel().submitChanges();
+				sap.ui.getCore().getModel().updateBindings(true);
+				sap.ui.getCore().getModel().forceNoCache(true);
+				myself.nav.to("aktualis", context);
+			}
+		},
+		   
+		   bundle.getText("ActivateDialogTitle")
+		);
+	}
+		else {
+			sap.m.MessageToast.show("Szállítás lezárva, nem aktiválható!");
+		}
+		}
+		else if (amIActive == false){
+			sap.m.MessageToast.show("Van már aktív szállítás!");
+		}
+		
+		if(amIActive == true){
+			myself.nav.to("aktualis", context);
+		}
+		
+	},
+	
+	signee: function(evt) {
+		
+    	
+    	
+    },
+    
+    clear: function(){
+    	 $("#signature").jSignature("reset");
+    	 
+    },
+    
+    sync: function(evt){
+ 
+
+    },
+    
+	
+	
+});

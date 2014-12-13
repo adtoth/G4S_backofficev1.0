@@ -22,7 +22,8 @@ sap.ui.demo.myFiori.util.Formatter = {
 		"8"	: "Error",
 		"9"	: "Error",
 		"10": "Error",
-		"999" : "Success" // akítv
+		"999" : "Success", // akítv
+		"555" : "Warning" // felfüggesztve
 		
 	},
 	_CODStateMap :{

@@ -1,0 +1,51 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.felvetelMaster"
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page showNavButton="true" navButtonPress="handleNavButtonPress"
+		title="Szállítási Lista">
+		<List id="list" select="handleListSelect" items="{/Address?$filter=PicType eq 'D'}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
+			<ObjectListItem type="Active" press="handleListItemPress"
+			
+				title="{From}" icon="sap-icon://toaster-{IconPic}" number="{path: 'PicType',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'}">
+				
+				<attributes>
+					<!-- <ObjectAttribute text="Feladó: " />
+					<ObjectAttribute text="{FPostalCode}, {FCity}, {FPostalCode}, {FStreet}" /> -->
+					<ObjectAttribute text="Szállítási cím: " />
+					<ObjectAttribute text="{TPostalCode}, {TCity}, {TPostalCode}, {TStreet}" />
+					<ObjectAttribute text="Utánvét I/N TODO" />
+					<ObjectAttribute text="Telefon: {phone} TODO szerveren"/>
+				</attributes>
+				
+				<firstStatus>
+					<ObjectStatus
+						text="{
+							path: 'DelStatus',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'
+						}"
+						state="{
+							path: 'DelStatus',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState'
+						}"
+					
+						/>
+
+				</firstStatus>
+
+			</ObjectListItem>
+		</List>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Select id="groupSelect" name="Csoportosít" change="handleGroup" icon="sap-icon://group-2"
+						type="Default" selectedKey="None" autoAdjustWidth="true">
+						<core:Item key="None" text="Nincs csoportosítás" />
+						<core:Item key="Iranyito" text="Irányítószám" />
+						<core:Item key="Cimzett" text="Címzett neve szerint" />
+						<core:Item key="Utca" text="Címzett utcanév szerint" />
+					</Select>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

@@ -31,10 +31,14 @@
 						<VBox >
 						<RadioButton groupName="GroupA" id="grpA01" select="onSelect"  text="Sikeres"
 							 />
-							 <CheckBox text="Utánvét összeg átvéve" selected="false" id="uv01" />	
+							<!--  <CheckBox text="Utánvét összeg átvéve" selected="false" id="uv01" />	 -->
 						<RadioButton groupName="GroupA" id="grpA02" select="onSelect" text="Sikertelen" />
 					</VBox>
 					<VBox visible="false" id="grpB">
+						<Input id="newZIP" type="Text" fieldWidht="50%" placeholder="Új irányítószám"  />
+						<Input id="newCity" type="Text" fieldWidht="50%" placeholder="Új Város"  />
+						<Input id="newStreet" type="Text" fieldWidth="50%" placeholder="Új utca\házszám" />
+						<DateTimeInput id="newDate" placeholder="Dátum" />
 						<RadioButton groupName="GroupB" id="grpB01" select="onSelectOther" text="Címzett nem található"/>
 						<RadioButton groupName="GroupB" id="grpB02" select="onSelectOther" text="Címzett nem elérhető" />
 						<RadioButton groupName="GroupB" id="grpB03" select="onSelectOther" text="Már megvásárolta" />
@@ -44,9 +48,9 @@
 						<RadioButton groupName="GroupB" id="grpB07" select="onSelectOther" text="Hibás szerződés adatok" />
 						<RadioButton groupName="GroupB" id="grpB08" select="onSelectOther" text="Nem tudja igazolni magát" />
 						<RadioButton groupName="GroupB" id="grpB09" select="onSelectOther" text="Nem beazonosítható" />
-						<RadioButton groupName="GroupB" id="grpB10" select="onSelectOther" text="Egyéb" />
-    					<TextArea placeholder="Egyéb szöveges ok" id ="otherText" visible = "false"  rows="8"  />					
+						<RadioButton groupName="GroupB" id="grpB10" select="onSelectOther" text="Egyéb" />					
 					</VBox>
+					<TextArea placeholder="Egyéb szöveges ok" id ="otherText" visible = "true"  rows="8" width="100%"  />
 				</IconTabFilter>
 				<IconTabFilter icon="sap-icon://database" text="Csomag">
 					<Table headerText="Tételek" items="{Items}">
@@ -130,8 +134,12 @@
 					<Button type="Emphasized" text="Lezár" id="cls" press="close" width="150px"
 						icon="sap-icon://sys-cancel" />
 					<Button type="Emphasized" text="Töröl" id="clr" visible="false" press="clear" width="150px"
-						icon="sap-icon://sys-cancel" />
+						icon="sap-icon://sys-cancel" />					
 				</contentRight>
+				<contentLeft>
+				<Button type="Emphasized" text="Felfüggeszt" id="susp" visible="true" press="suspend" width="150px"
+						icon="sap-icon://sys-cancel" />
+				</contentLeft>
 			</Bar>
 		</footer>
 	</Page>

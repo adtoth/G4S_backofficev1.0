@@ -7,7 +7,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelMaster", {
 	handleListItemPress : function(evt) {
 		var context = evt.getSource().getBindingContext();
 		sap.ui.demo.myFiori.util.Setter.changeText(context);
-		this.nav.to("szallitasiDetail", context);
+		this.nav.to("felvetelDetail", context);
 	},
 
 	handleNavButtonPress : function(evt) {
@@ -16,7 +16,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelMaster", {
 
 	handleListSelect : function(evt) {
 		var context = evt.getParameter("listItem").getBindingContext();
-		this.nav.to("szallitasiDetail", context);
+		this.nav.to("felvetelDetail", context);
 	},
 
 	handleGroup : function(evt) {

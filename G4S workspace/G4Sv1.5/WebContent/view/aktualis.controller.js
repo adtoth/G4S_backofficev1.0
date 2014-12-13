@@ -7,7 +7,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 	
 	
 	handleNavButtonPress : function(evt) {
-		this.nav.back("szallitasiMaster");
+		this.nav.back("Master");
 	},
 	
 	
@@ -19,6 +19,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 		
 		if(this.getView().byId("grpA01").getSelected() === true){
 			this.getView().byId("grpB").setVisible(false);
+			this.getView().byId("otherText").setVisible(true);
 		}
 		
 	},
@@ -89,7 +90,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				if(myView.byId("grpB10").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Comment", myView.byId("otherText").getValue());
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "10");
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -98,7 +98,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				}
 				else if (myView.byId("grpB01").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "1");
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -107,7 +106,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				}
 				else if (myView.byId("grpB02").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "2");
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -116,7 +114,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				}
 				else if (myView.byId("grpB03").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "3");
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -125,7 +122,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				}
 				else if (myView.byId("grpB04").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "4");
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -134,7 +130,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				}
 				else if (myView.byId("grpB05").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "5");
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -143,7 +138,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				}
 				else if (myView.byId("grpB06").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "6");
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -152,7 +146,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				}
 				else if (myView.byId("grpB07").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "7");
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -161,7 +154,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				}
 				else if (myView.byId("grpB08").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "8");					
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -170,7 +162,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				}
 				else if (myView.byId("grpB09").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "9");
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -179,12 +170,12 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				}
 				else if (myView.byId("grpA01").getSelected() === true){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "222");
-					//sap.ui.getCore().getModel().setProperty(a.sPath + "/Active", null);
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					if(myView.byId("uv01").getSelected() == true ){
+					sap.ui.getCore().getModel().setProperty(a.sPath + "/Comment", myView.byId("otherText").getValue());
+					/*if(myView.byId("uv01").getSelected() == true ){
 						sap.ui.getCore().getModel().setProperty(a.sPath + "/COD_Collected", 1);
 					}
-					else sap.ui.getCore().getModel().setProperty(a.sPath + "/COD_Collected", 0);
+					else sap.ui.getCore().getModel().setProperty(a.sPath + "/COD_Collected", 0);*/
 					
 					sap.ui.getCore().getModel().submitChanges();
 					sap.ui.getCore().getModel().updateBindings(true);
@@ -195,7 +186,23 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				else {
 					sap.m.MessageToast.show("Válassz státuszt!");
 				}
-
+				if(myView.byId("newZIP").getValue() != '' && myView.byId("newCity").getValue() != '' && myView.byId("newStreet").getValue() != ''){
+					sap.ui.getCore().getModel().setProperty(a.sPath + "/TPostalCode", myView.byId("newZIP").getValue());
+					sap.ui.getCore().getModel().setProperty(a.sPath + "/TCity", myView.byId("newCity").getValue());
+					sap.ui.getCore().getModel().setProperty(a.sPath + "/TStreet", myView.byId("newStreet").getValue());
+					sap.ui.getCore().getModel().submitChanges();
+					sap.ui.getCore().getModel().updateBindings(true);
+					sap.ui.getCore().getModel().refresh(true);
+				}
+				else if((myView.byId("newZIP").getValue() != '') && (myView.byId("newCity").getValue() == '' || myView.byId("newStreet").getValue() == '')){
+					sap.m.MessageToast.show("Hiányzó címadat!");
+				}
+				else if((myView.byId("newCity").getValue() != '') && (myView.byId("newZIP").getValue() == '' || myView.byId("newStreet").getValue() == '')){
+					sap.m.MessageToast.show("Hiányzó címadat!");
+				}
+				else if((myView.byId("newStreet").getValue() != '') && (myView.byId("newCity").getValue() == '' || myView.byId("newStreet").getValue() == '')){
+					sap.m.MessageToast.show("Hiányzó címadat!");
+				}
 			}
 		},
 		   
@@ -203,13 +210,24 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 			);
 		}
 		 },
-		
-		
-
 	
-	activate: function(evt){
-		var context = evt.getSource().getBindingContext();
-		this.nav.to("aktualis", context);
+	suspend: function(evt){
+		var a = evt.getSource().getBindingContext();
+		var myView = this.getView();
+		var bundle = this.getView().getModel("i18n").getResourceBundle();
+		sap.m.MessageBox.confirm(bundle.getText("SuspendDialogMsg"), function(
+				oAction) {			
+			if (sap.m.MessageBox.Action.OK === oAction){
+	
+				sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "555");
+				sap.ui.getCore().getModel().submitChanges();
+				sap.ui.getCore().getModel().updateBindings(true);
+				sap.ui.getCore().getModel().refresh(true);
+			}
+		},
+		   
+		   bundle.getText("CloseDialogTitle")
+			);
 	},
 	
 	signee: function(evt) {

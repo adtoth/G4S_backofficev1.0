@@ -6,14 +6,14 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		this.nav.to("bevetMaster", context);
 	},
 	
-	handleSzallitasiPress : function (evt) {
+	handleFelvetelPress : function (evt) {
 		var context = evt.getSource().getBindingContext();
-		this.nav.to("szallitasiMaster", context);
+		this.nav.to("felvetelMaster", context);
 	},
 	
-	handleAktualisPress : function (evt) {
+	handleLeadasPress : function (evt) {
 		var context = evt.getSource().getBindingContext();
-		this.nav.to("aktualis", context);
+		this.nav.to("leadasMaster", context);
 	},
 	
 	handleUtanvetPress : function (evt) {
@@ -21,5 +21,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 		this.nav.to("utanvet", context);
 	},
 	
+	onInit: function(){
+		this.getView().byId("leadTile").setNumber("42");
+	}
 
 });

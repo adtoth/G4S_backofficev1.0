@@ -18,10 +18,11 @@
         title="Felvétel"
         press="handleFelvetelPress"
         />
-          <StandardTile 
+          <StandardTile
+          id="leadTile" 
          icon="sap-icon://toaster-down" 
          title="Leadás" 
-         number="21"
+         number="{}"
         press="handleLeadasPress" 
             />
         <StandardTile
@@ -29,7 +30,19 @@
         title="Utánvét"
         press="handleUtanvetPress"
         /> 
-            
+        
+        <List id="list" select="handleListSelect" visible="false" items="{/Address?$filter=PicType eq 'D' and DelStatus eq '111' or DelStatus eq '999'}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
+			<ObjectListItem type="Active" press="handleListItemPress"
+			
+				title="{From}" icon="sap-icon://toaster-{IconPic}">
+				
+				<attributes>
+
+				</attributes>
+				
+
+			</ObjectListItem>
+		</List>
   
 		<footer>
 			<Bar>

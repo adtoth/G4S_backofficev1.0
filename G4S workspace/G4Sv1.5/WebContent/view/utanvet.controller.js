@@ -7,7 +7,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.utanvet", {
         this.getView().addDelegate({ onBeforeShow: function(evt) { 
 	                alert("onHow");
         }});
-},
+	},
 	
 	onBeforeRendering: function(){
         // totál utánvét összeg számítás
