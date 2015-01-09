@@ -13,6 +13,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetDetail", {
 
 	scan : function(evt) {
 		var a = evt.getSource().getBindingContext();
+		var path = a.getPath("/Items");
+		var oBindings = this.getModel().bindList(path);
+		var mySize = oBindings.getLength();
 		var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 		var found = 0;
 		scanner.scan(function(result) {
@@ -28,6 +31,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetDetail", {
 						sap.ui.getCore().getModel().updateBindings(true);
 						sap.ui.getCore().getModel().forceNoCache(true);
 						sap.m.MessageToast.show("Csomag felvéve");
+						for(var b = 0; b < mySize; i++){
+							
+						}
 						}
 						else if(response.Items.results[i].PickupStatus == 'A'){
 							sap.m.MessageToast.show("Ez a csomag már fel van véve!");

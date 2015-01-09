@@ -4,27 +4,27 @@ sap.ui.demo.myFiori.util.Grouper = {
 
 	bundle : null, // somebody has to set this
 
-	PicType : function (oContext) {
-		var status = oContext.getProperty("PicType");
-		var text = sap.ui.demo.myFiori.util.Grouper.bundle.getText("StatusText" + status, "?");
+	TPostalCode : function (oContext) {
+		var status = oContext.getProperty("TPostalCode");
+		var text = sap.ui.demo.myFiori.util.Grouper.bundle.getText(status);
 		return {
 			key: status,
 			text: text
 		};
 	},
 	
-	DelStatus : function (oContext) {
-		var status = oContext.getProperty("DelStatus");
-		var text = sap.ui.demo.myFiori.util.Grouper.bundle.getText("StatusText" + status, "?");
+	To : function (oContext) {
+		var status = oContext.getProperty("To");
+		var text = sap.ui.demo.myFiori.util.Grouper.bundle.getText(status);
 		return {
 			key: status,
 			text: text
 		};
 	},
 	
-	SzallitasStatus : function (oContext) {
-		var status = oContext.getProperty("SzallitasStatus");
-		var text = sap.ui.demo.myFiori.util.Grouper.bundle.getText("StatusText" + status, "?");
+	TStreet : function (oContext) {
+		var status = oContext.getProperty("TStreet");
+		var text = sap.ui.demo.myFiori.util.Grouper.bundle.getText(status);
 		return {
 			key: status,
 			text: text

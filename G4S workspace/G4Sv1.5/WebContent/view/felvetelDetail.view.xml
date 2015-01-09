@@ -8,7 +8,7 @@
 				<IconTabBar select="signee"  class="iconTabBarPaddingTop" id="idIconTabBarMulti"
 			expanded="true">
 			<items>
-				<IconTabFilter icon="sap-icon://home" text="Cím">
+				<IconTabFilter icon="sap-icon://home" text="Cím" key="addr">
 					<form:SimpleForm						
 						minWidth="400" id="form1" title="Feladó">
       					<Label text="Név"/>
@@ -117,7 +117,8 @@
 						</ColumnListItem>
 						
 					</Table>
-					<ObjectHeader id="total_id"  title="Totál: "  number="" />
+					<ObjectListItem  id="total_id"  title="Totál: "  number="" />
+					
 				</IconTabFilter>
 			</items>
 		</IconTabBar>
@@ -126,9 +127,7 @@
 		<footer>
 			<Bar>
 				<contentRight>
-				<Button type="Emphasized" text="Sync" press="sync"
-						width="150px" icon="sap-icon://synchronize" />
-					<Button type="Emphasized" text="Lezár" id="cls" visible="false" press="close" width="150px"
+				 <Button type="Emphasized" text="Lezár" id="cls" visible="false" press="close" width="150px"
 						icon="sap-icon://sys-cancel" />
 					<!-- <Button type="Emphasized" text="Töröl" id="clr" visible="false" press="clear" width="150px"
 						icon="sap-icon://sys-cancel" /> -->

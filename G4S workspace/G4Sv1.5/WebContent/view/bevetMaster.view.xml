@@ -3,7 +3,7 @@
 	<Page showNavButton="true" navButtonPress="handleNavButtonPress"
 		title="Bevételezés">
 		<!-- items="{/Item}" -->
-		<List id="list" select="handleListSelect" items="{/Item?$filter=PickupStatus eq 'M'}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
+		<List id="list" select="handleListSelect" items="{/Item?$filter=PickupStatus eq 'M'}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel, vagy üres a lista">
 			<ObjectListItem type="Active" press="handleListItemPress"
 				title="{From}"
 				icon="sap-icon://shipping-status">
@@ -19,8 +19,15 @@
 							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState'
 						}"
 						  />
-
-				</firstStatus> 
+				</firstStatus>
+				 <secondStatus>
+					<ObjectStatus
+						text="{
+							path: 'PicType',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'
+						}"
+												  />
+				</secondStatus>
 				<attributes>
 					<ObjectAttribute text="Csomagnév: {ProductName}" />
 					<ObjectAttribute text="Csomag ID: {ProductId}"/>
@@ -30,13 +37,13 @@
 			</ObjectListItem>
 		</List>
 		
-<!-- 		<List id="listItems" select="" visible="false" items="{/Item}">
+ 		<List id="listItems" visible="false" items="{/Address}">
 			<ObjectListItem type="Active" press="handleListItemPress"
 				title="{From}"
 				icon="sap-icon://customer">
 
 			</ObjectListItem>
-		</List> -->
+		</List>
 		<footer>
 			<Bar>
 			<!-- 	<contentRight>

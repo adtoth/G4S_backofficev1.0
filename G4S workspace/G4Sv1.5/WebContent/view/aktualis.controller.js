@@ -3,8 +3,33 @@ jQuery.sap.require("sap.m.MessageToast");
 jQuery.sap.require("jSignature");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
-
 	
+	onBeforeRendering: function(){ // binding model synchronisation
+		window.globalAktualis = this;
+		
+        this.getView().addDelegate({ onAfterShow: function(evt) {
+        	var a = globalAktualis.getView().getBindingContext();
+        	//globalAktualis.clear();
+        	globalAktualis.getView().byId("idIconTabBarMulti").setSelectedKey("addr");
+        	globalAktualis.getView().byId("idIconTabBarMulti").setExpanded(true);
+		     var myView = globalAktualis.getView();   	
+		     var model = sap.ui.getCore().getModel();
+		     window.signeeCounter = 0;
+		     myView.byId("takeOverName").setValue("");
+		     myView.byId("grpA01").setSelected(false);
+		     myView.byId("grpA02").setSelected(false);
+		     myView.byId("otherText").setValue("");
+		     myView.byId("newZIP").setValue("");
+		     myView.byId("newCity").setValue("");
+		     myView.byId("newDate").setValue("");		     
+		     
+        }});
+       
+	},	
+	
+	onInit: function(){
+		 $("#signature").jSignature();
+	},
 	
 	handleNavButtonPress : function(evt) {
 		this.nav.back("Master");
@@ -32,49 +57,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 			this.getView().byId("otherText").setVisible(false);
 		}
 	},
-//	scan : function scannerLoop(evt) {
-//
-//		var a = evt.getSource().getBindingContext();
-//		var oData = oModel.getProperty(a.sPath);
-//		var bundle = this.getView().getModel("i18n").getResourceBundle();
-//		var foundItems = 0;
-//		console.log('scanning');
-
-		//var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-
-//		scanner.scan(function(result) {
-//
-//			//		            alert("We got a barcode\n" + 
-//			//		            "Result: " + result.text + "\n" + 
-//			//		            "Format: " + result.format + "\n" + 
-//			//		            "Cancelled: " + result.cancelled);
-//			var data = oModel.getProperty(a.sPath + "/Items");
-//			for ( var i = 0; i < data.length; i++) {
-//				if (oModel.getProperty(a.sPath + "/Items" + "/" + i
-//						+ "/ProductID") === result.text) {
-//					//alert(result.text);
-//					sap.m.MessageToast.show("Confirmed");
-//					oModel.setProperty(a.sPath + "/Items" + "/" + i
-//							+ "/Pick up status", 'K');
-//					foundItems++;
-//				}
-//
-//				//else sap.m.MessageToast.show("Not Confirmed");	
-//			}
-//			if (foundItems != data.length)
-//				scannerLoop();
-//
-//			/*
-//			if (args.format == "QR_CODE") {
-//			    window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
-//			}
-//			 */
-//
-//		}, function(error) {
-//			console.log("Scanning failed: ", error);
-//		});
-
-	//},
 	
 	close : function(evt) {
 		var a = evt.getSource().getBindingContext();
@@ -169,8 +151,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.m.MessageToast.show("Lezárva");
 				}
 				else if (myView.byId("grpA01").getSelected() === true){
+					if(myView.byId("takeOverName").getValue().length > 4){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "222");
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
+					sap.ui.getCore().getModel().setProperty(a.sPath + "/Recipient", myView.byId("takeOverName").getValue());
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Comment", myView.byId("otherText").getValue());
 					/*if(myView.byId("uv01").getSelected() == true ){
 						sap.ui.getCore().getModel().setProperty(a.sPath + "/COD_Collected", 1);
@@ -181,6 +165,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.ui.getCore().getModel().updateBindings(true);
 					sap.ui.getCore().getModel().refresh(true);
 					sap.m.MessageToast.show("Lezárva");
+					}
+					else sap.m.MessageToast.show("Túl rövid átvevő név!");
 				}
 				
 				else {
@@ -209,7 +195,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 		   bundle.getText("CloseDialogTitle")
 			);
 		}
-		 },
+	},
 	
 	suspend: function(evt){
 		var a = evt.getSource().getBindingContext();
@@ -223,6 +209,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				sap.ui.getCore().getModel().submitChanges();
 				sap.ui.getCore().getModel().updateBindings(true);
 				sap.ui.getCore().getModel().refresh(true);
+				//this.nav.to("Master");
 			}
 		},
 		   
@@ -231,7 +218,16 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 	},
 	
 	signee: function(evt) {
-        $("#signature").jSignature();
+		if(signeeCounter === 0){
+			$("#signature").jSignature();
+			$("#signature").jSignature("reset");
+			signeeCounter++;
+		}
+		
+		 var a = evt.getSource().getBindingContext();
+	     var total = 0;
+	     var myView = this.getView();
+	    	     
         if(this.getView().byId("idIconTabBarMulti").getSelectedKey() == "sig"){
         	this.getView().byId("cls").setVisible(false);
         	this.getView().byId("clr").setVisible(true);
@@ -242,10 +238,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
         }
         
         // totál utánvét összeg számítás
-        var a = evt.getSource().getBindingContext();
-     	var total = 0;
-     	var myView = this.getView();
-    	sap.ui.getCore().getModel().read(a.sPath, null, {
+        sap.ui.getCore().getModel().read(a.sPath, null, {
 			"$expand" : "Items"
 		}, true, function(response) {
 			for(var i = 0; i < response.Items.results.length; i++){
@@ -253,12 +246,83 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 				myView.byId("total_id").setNumber(total);
 			}		
 		});
+   	
     
     },
     
     clear: function(){
     	 $("#signature").jSignature("reset");
     },
+    
+    scan : function(evt) {
+		var a = evt.getSource().getBindingContext();
+        window.globalVariable = this.getView();
+        window.globalBevetMaster = this;
+        window.globalFoundItems = 0;    
+		window.scanner = cordova.require("cordova/plugin/BarcodeScanner");
+        scanner.scan(this.loopScan, function(fail) {
+            alert("encoding failed: " + fail);
+        });
+        
+	},
+		loopScan: function(result){
+			var foundItems = 0;
+			var allItems = 0;
+			var closedItems = 0;
+			
+			globalVariable.getModel().read("/Item", null, {
+			}, true, function(response) {	
+				for(var i = 0; i < response.results.length; i++){
+					allItems = response.results.length;
+					if(response.results[i].PickupStatus == 'A'){
+						closedItems++;
+					}
+					if(response.results[i].ProductId === result.text){
+						globalFoundItems++;
+						if(response.results[i].PickupStatus != 'A'){
+							globalVariable.getModel().setProperty("/Item(" + response.results[i].Id + ")/PickupStatus", 'A');
+							globalVariable.getModel().submitChanges();
+							globalVariable.getModel().updateBindings(true);
+							globalVariable.getModel().forceNoCache(true);
+						sap.m.MessageToast.show("Csomag felvéve");
+						
+						for(var k = 0; k < 100; k++){
+							
+							globalVariable.getModel().read("/Address(" + k + ")/" + "Items", null, {
+									}, true, function(response) {
+										var itemCount = 0;
+										for(var j = 0; j < response.results.length; j++){
+											if(response.results[j].PickupStatus == 'A'){
+												itemCount++;
+											}
+											if(itemCount == response.results.length){
+												globalVariable.getModel().setProperty("/Address(" + k + ")/SzallitasStatus", 'R');
+												globalVariable.getModel().submitChanges();
+												globalVariable.getModel().updateBindings(true);
+											}
+										}
+										
+									});
+						}
+						
+						}
+						else if(response.results[i].PickupStatus == 'A'){
+							sap.m.MessageToast.show("Ez a csomag már fel van véve!");
+						}
+					}
+					
+				}
+				
+				
+				if(globalFoundItems != allItems && result.text != ""){
+					//var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+					scanner.scan(globalBevetMaster.loopScan, function(fail){ alert(fail);});
+				}
+				
+					
+			});
+			
+		},
 	
 	
 });

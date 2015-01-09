@@ -1,9 +1,16 @@
 jQuery.sap.declare("sap.ui.demo.myFiori.Component");
-
 sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 
-	createContent : function() {
 
+	
+	createContent : function() {
+		/*window.globalpw = 0;
+		sap.ca.ui.dialog.confirmation.open({
+            question : 'You have selected "Reject", Submit?',
+            noteMandatory : true,//default value: false; if adding note is mandatory, the Conform button won't be accepted before the user adds the note.
+            title : "Submit Decision", 
+            confirmButtonLabel : "Submit"
+        }, globalpw = this.sNote);*/
 		// create root view
 		var oView = sap.ui.view({
 			id : "app",
@@ -21,6 +28,7 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 		});
 		oView.setModel(i18nModel, "i18n");
 		
+
 		
 //		// Using OData model to connect against a real service
 //		var url = "/proxy/http/<server>:<port>/sap/opu/odata/sap/ZGWSAMPLE_SRV/";
@@ -43,5 +51,17 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 
 		// done
 		return oView;
-	}
+	},
+	
+	 fnClose:function(oResult){
+		
+	        if (oResult) {
+	            jQuery.sap.log.info("ConfirmDialog - isConfirmed: " + oResult.isConfirmed);
+	            if (oResult.sNote) {
+	                jQuery.sap.log.info("ConfirmDialog - note: " + oResult.sNote);
+	            }
+	        }
+	        globalpw = oResult.sNote;
+	        alert(oResult.sNote);
+	    }
 });

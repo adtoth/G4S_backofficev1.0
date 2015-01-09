@@ -6,12 +6,14 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 	
 	onBeforeRendering: function(){ // binding model synchronisation
 		//this.onBeforeShow();
-		window.globalThis = this;
+		window.globalfelvetelDetail = this;
 		 this.getView().addDelegate({onAfterShow: function(evt) {
-			 
-			 var a = globalThis.getView().getBindingContext();
+			 globalfelvetelDetail.getView().byId("idIconTabBarMulti").setSelectedKey("addr");
+			 globalfelvetelDetail.getView().byId("idIconTabBarMulti").setExpanded(true);
+			 windows.signeeCounter = 0;
+			 var a = globalfelvetelDetail.getView().getBindingContext();
 		     var total = 0;
-		     var myView = globalThis.getView();   	
+		     var myView = globalfelvetelDetail.getView();
 		     var model = sap.ui.getCore().getModel();
 		     //folytat/aktivál gombok beállítása 
 	   	if(sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == "111"){
@@ -21,6 +23,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 			else if (sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == "999"){
 				myView.byId("setContinue").setVisible(true);
 				myView.byId("setActive").setVisible(false);
+			}
+			else if (sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == "555"){
+				myView.byId("setActive").setVisible(false);
+	   			myView.byId("setContinue").setVisible(true);
 			}
 			else{ 
 				myView.byId("setActive").setVisible(false);
@@ -281,8 +287,16 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 			}
 		}
 		if(isActive == 0 && amIActive == false){
-		if(sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == '111'){
-		sap.m.MessageBox.confirm(bundle.getText("ActivateDialogMsg"), function(
+		if(sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == '111' || sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == '555'){
+			if(sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == '555'){ //ha fel van függesztve akkor továbbemgyünk
+				sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", '999');
+				sap.ui.getCore().getModel().submitChanges();
+				sap.ui.getCore().getModel().updateBindings(true);
+				sap.ui.getCore().getModel().forceNoCache(true);
+				myself.nav.to("aktualis", context);
+			}
+			else{
+		sap.m.MessageBox.confirm(bundle.getText("ActivateDialogMsg"), function( // ha nincs, akkor megkérdezzük, h aktiváljuk-e
 				oAction) {			
 			if (sap.m.MessageBox.Action.OK === oAction){
 				sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", '999');
@@ -295,6 +309,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 		   
 		   bundle.getText("ActivateDialogTitle")
 		);
+			}
 	}
 		else {
 			sap.m.MessageToast.show("Szállítás lezárva, nem aktiválható!");
@@ -311,16 +326,17 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 	},
 	
 	signee: function(evt) {
+		if(signeeCounter === 0){
+			$("#signature").jSignature();
+			$("#signature").jSignature("reset");
+			signeeCounter++;
+		}
 		 var a = evt.getSource().getBindingContext();
 	     var total = 0;
 	     var myView = this.getView();
 	     
        $("#signature").jSignature();
        $("#signature").jSignature("reset");
-       var sigdata = sap.ui.getCore().getModel().getProperty(a.sPath + "/Signature");
-       if(sigdata != null){
-       $("#signature").jSignature("importData", sigdata);
-       }
        if(this.getView().byId("idIconTabBarMulti").getSelectedKey() == "sig"){
        	this.getView().byId("cls").setVisible(false);
        	
@@ -355,7 +371,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
    	 
    },
    
-   sync: function(evt){
+  /* sync: function(evt){
 		var a = this.getView().getBindingContext();
 		var myView = this.getView();
 		var model = sap.ui.getCore().getModel();
@@ -566,7 +582,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 			this.getView().byId("setActive").setText("Aktivál");
 		}
 
-   },
+   },*/
     
 	
 	

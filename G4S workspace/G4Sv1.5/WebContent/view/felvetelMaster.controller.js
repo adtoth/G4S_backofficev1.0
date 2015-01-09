@@ -1,12 +1,16 @@
 jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
-jQuery.sap.require("sap.ui.demo.myFiori.util.Setter");
 sap.ui.controller("sap.ui.demo.myFiori.view.felvetelMaster", {
-	
-
+	 
+	onBeforeRendering: function(){ // binding model synchronisation
+			
+	        this.getView().addDelegate({ onAfterShow: function(evt) {
+	        	 sap.ui.getCore().getModel().refresh(true);			     
+	        }});
+		},
+	 
 	handleListItemPress : function(evt) {
 		var context = evt.getSource().getBindingContext();
-		sap.ui.demo.myFiori.util.Setter.changeText(context);
 		this.nav.to("felvetelDetail", context);
 	},
 
@@ -25,7 +29,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelMaster", {
 		var sorters = [];
 		var item = evt.getParameter("selectedItem");
 		var key = (item) ? item.getKey() : null;
-		if ("PicType" === key || "DelStatus" === key) {
+		if ("TPostalCode" === key || "To" === key || "TStreet" === key) {
 			sap.ui.demo.myFiori.util.Grouper.bundle = this.getView().getModel("i18n").getResourceBundle();
 			var grouper = sap.ui.demo.myFiori.util.Grouper[key];
 			sorters.push(new sap.ui.model.Sorter(key, false, grouper));

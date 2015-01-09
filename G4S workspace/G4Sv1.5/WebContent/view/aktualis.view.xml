@@ -5,7 +5,7 @@
 				<IconTabBar select="signee" class="iconTabBarPaddingTop" id="idIconTabBarMulti"
 			expanded="true">
 			<items>
-				<IconTabFilter icon="sap-icon://home" text="Cím">
+				<IconTabFilter icon="sap-icon://home" text="Cím" key="addr">
 					<form:SimpleForm
 						
 						minWidth="400" >
@@ -38,7 +38,7 @@
 						<Input id="newZIP" type="Text" fieldWidht="50%" placeholder="Új irányítószám"  />
 						<Input id="newCity" type="Text" fieldWidht="50%" placeholder="Új Város"  />
 						<Input id="newStreet" type="Text" fieldWidth="50%" placeholder="Új utca\házszám" />
-						<DateTimeInput id="newDate" placeholder="Dátum" />
+						<DateTimeInput id="newDate" visible="false" placeholder="Dátum" />
 						<RadioButton groupName="GroupB" id="grpB01" select="onSelectOther" text="Címzett nem található"/>
 						<RadioButton groupName="GroupB" id="grpB02" select="onSelectOther" text="Címzett nem elérhető" />
 						<RadioButton groupName="GroupB" id="grpB03" select="onSelectOther" text="Már megvásárolta" />
@@ -86,8 +86,12 @@
 			 <core:HTML content='&lt;div style=&quot;width: 600px; height: 200px; -ms-touch-action: none;&quot; id=&quot;signature&quot;&gt;&lt;/div&gt;'>
 		      </core:HTML>
 		</l:content>
+		<VBox visible="true">
+						<Input id="takeOverName" type="Text" fieldWidht="50%" placeholder="Átvevő neve"  />
+						
+		</VBox>
 	</l:VerticalLayout>
-
+	
 				</IconTabFilter>
 				<IconTabFilter icon="sap-icon://payment-approval" text="Utánvét">
 					<Table headerText="Tételek" items="{Items}">
@@ -122,7 +126,7 @@
 						</ColumnListItem>
 						
 					</Table>
-					<ObjectHeader id="total_id"  title="Totál: "  number="" />
+					<ObjectListItem  id="total_id"  title="Totál: "  number="" />
 				</IconTabFilter>
 			</items>
 		</IconTabBar>

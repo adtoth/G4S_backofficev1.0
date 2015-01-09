@@ -55,15 +55,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 
 	scan : function(evt) {
 		var a = evt.getSource().getBindingContext();
-        var view = this.getView();
-        var closedItems = 0;
-        window.globalVariable = view;
-        window.globalThis = this;
-        window.globalFoundItems = 0;
-        asd = this.getView();        
+        window.globalVariable = this.getView();
+        window.globalBevetMaster = this;
+        window.globalFoundItems = 0;    
 		window.scanner = cordova.require("cordova/plugin/BarcodeScanner");
-		var found = 0;
-		var closedItems = 0;
         scanner.scan(this.loopScan, function(fail) {
             alert("encoding failed: " + fail);
         });
@@ -73,6 +68,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 			var foundItems = 0;
 			var allItems = 0;
 			var closedItems = 0;
+			
 			globalVariable.getModel().read("/Item", null, {
 			}, true, function(response) {	
 				for(var i = 0; i < response.results.length; i++){
@@ -88,6 +84,53 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 							globalVariable.getModel().updateBindings(true);
 							globalVariable.getModel().forceNoCache(true);
 						sap.m.MessageToast.show("Csomag felvéve");
+						
+						/*for(var k = 0; k < 100; k++){
+							
+							globalVariable.getModel().read("/Address(" + k + ")/" + "Items", null, {
+									}, true, function(response) {
+										var itemCount = 0;
+										for(var j = 0; j < response.results.length; j++){
+											if(response.results[j].PickupStatus == 'A'){
+												itemCount++;
+											}
+											if(itemCount == response.results.length){
+												globalVariable.getModel().setProperty("/Address(" + k + ")/SzallitasStatus", 'R');
+												globalVariable.getModel().submitChanges();
+												globalVariable.getModel().updateBindings(true);
+											}
+										}
+										
+									});
+						}*/
+						
+						sap.ui.getCore().getModel().read("/Address", null, {
+						}, true, function(response) {
+							lengthOfAddresses = response.results.length;
+							for(var i = 1; i <= lengthOfAddresses; i++){
+								sap.ui.getCore().getModel().read("/Address(" + i + ")" , null, {
+									"$expand" : "Items"
+								}, true, function(response) {
+									var itemCount = 0;
+									for(var z = 0; z < response.Items.results.length; z++){
+										if(response.Items.results[z].PickupStatus === 'A'){
+											itemCount++;
+										}
+										if(itemCount == response.Items.results.length){
+											var b = response.Id;
+											var m = sap.ui.getCore().getModel();
+											//sap.ui.getCore().getModel().update("/Address(" + response.Id + ")/SzallitasStatus", 'R'); 
+											var asd = sap.ui.getCore().getModel().getProperty("/Address(" + response.Id + ")/SzallitasStatus");
+											sap.ui.getCore().getModel().setProperty("/Address(" + response.Id + ")/SzallitasStatus", 'R');
+											sap.ui.getCore().getModel().submitChanges();
+											sap.ui.getCore().getModel().updateBindings(true);
+										}
+									}
+								});
+									}
+							
+						});
+						
 						}
 						else if(response.results[i].PickupStatus == 'A'){
 							sap.m.MessageToast.show("Ez a csomag már fel van véve!");
@@ -96,9 +139,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 					
 				}
 				
+				
 				if(globalFoundItems != allItems && result.text != ""){
 					//var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-					scanner.scan(globalThis.loopScan, function(fail){ alert(fail);});
+					scanner.scan(globalBevetMaster.loopScan, function(fail){ alert(fail);});
 				}
 				
 					

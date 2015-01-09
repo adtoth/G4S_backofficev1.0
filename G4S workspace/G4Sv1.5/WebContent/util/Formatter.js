@@ -30,10 +30,16 @@ sap.ui.demo.myFiori.util.Formatter = {
 		'0' : 'Success',
 		'1' : 'Warning'
 	},
+	
 
 	statusText :  function (value) {
 		var bundle = this.getModel("i18n").getResourceBundle();
 		return bundle.getText("StatusText" + value, "?");
+	},
+	
+	HasCODText :  function (value) {
+		var bundle = this.getModel("i18n").getResourceBundle();
+		return bundle.getText("HasCOD" + value, "?");
 	},
 	
 	CODText :  function (value) {
