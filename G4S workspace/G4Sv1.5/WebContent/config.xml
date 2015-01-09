@@ -19,7 +19,9 @@
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
     <preference name="webviewbounce"    value="false" />
-	
+	<feature name="Geolocation">
+		<param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+	</feature>
 	<icon src="icon.png" />
   
 	<access origin="*" subdomains="true"/>

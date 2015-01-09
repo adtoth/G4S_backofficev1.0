@@ -24,7 +24,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.utanvet", {
 	close: function(){
 		sap.ui.getCore().getModel().read("/Courier", null, {
 		}, true, function(response) {
-			sap.m.MessageBox.confirm(bundle.getText("UtanvetDialogMsg"), function( // ha nincs, akkor megkérdezzük, h aktiváljuk-e
+			sap.m.MessageBox.confirm(bundle.getText("UtanvetDialogMsg"), function(
 					oAction) {			
 				if (sap.m.MessageBox.Action.OK === oAction){
 					var summa = globalUtanvetView.byId("sum").getValue();

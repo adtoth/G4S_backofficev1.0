@@ -13,8 +13,8 @@
 					<ObjectAttribute text="{FPostalCode}, {FCity}, {FPostalCode}, {FStreet}" /> -->
 					<ObjectAttribute text="Szállítási cím: " />
 					<ObjectAttribute text="{TPostalCode}, {TCity}, {TPostalCode}, {TStreet}" />
-					<ObjectAttribute text="Utánvét I/N TODO" />
-					<ObjectAttribute text="Telefon: {phone} TODO szerveren"/>
+					<ObjectAttribute text="{path: 'HasCOD', formatter: 'sap.ui.demo.myFiori.util.Formatter.HasCODText'}" />
+					<ObjectAttribute text="Telefon: {Phone}"/>
 				</attributes>
 				
 				<firstStatus>

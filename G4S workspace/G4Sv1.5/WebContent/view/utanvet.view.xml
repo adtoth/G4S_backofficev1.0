@@ -10,10 +10,10 @@
 				</attributes>
 
 		</ObjectHeader>
-	<VBox visible="true" id="grpB">
+<!-- 	<VBox visible="true" id="grpB">
 						<Input id="sum" type="Text" fieldWidht="50%" placeholder="Összeg"  />
 									
-					</VBox>
+					</VBox> -->
 	<List id="listItems" select="" visible="false" items="{/Item}">
 			<ObjectListItem type="Active" press="handleListItemPress"
 				title="{From}"
@@ -22,13 +22,13 @@
 			</ObjectListItem>
 		</List> 
 		
-		<footer>
+<!-- 		<footer>
 			<Bar>
 			<contentRight>
 			 <Button type="Emphasized" text="Validál" id="cls" visible="true" press="close" width="150px"
 						icon="sap-icon://accept" />
 				</contentRight>
 			</Bar>
-		</footer>
+		</footer> -->
 	</Page>
 </core:View>

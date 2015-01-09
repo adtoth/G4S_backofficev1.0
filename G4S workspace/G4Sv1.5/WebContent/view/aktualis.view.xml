@@ -1,5 +1,5 @@
 ﻿<core:View controllerName="sap.ui.demo.myFiori.view.aktualis"
-	xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
 	<Page title="Aktuális szállítás" class="sapUiFioriObjectPage"
 		showNavButton="true" navButtonPress="handleNavButtonPress">
 				<IconTabBar select="signee" class="iconTabBarPaddingTop" id="idIconTabBarMulti"
@@ -26,7 +26,9 @@
      					<Label text="Irányítószám, Város"/>
      					<Text text="{TPostalCode}, {TCity}" />
      					<Label text="Utca, házszám" />
-     					<Text text="{TStreet}"/>									
+     					<Text text="{TStreet}"/>	
+     					<Label text="Telefonszám" />
+     					<m:Link text="{Phone}" href="tel:{Phone}" press="handlePhonePress" id="phoneLink"/>									
 						</form:SimpleForm>
 						<VBox >
 						<RadioButton groupName="GroupA" id="grpA01" select="onSelect"  text="Sikeres"

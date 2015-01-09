@@ -173,6 +173,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					sap.m.MessageToast.show("Válassz státuszt!");
 				}
 				if(myView.byId("newZIP").getValue() != '' && myView.byId("newCity").getValue() != '' && myView.byId("newStreet").getValue() != ''){
+					
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/TPostalCode", myView.byId("newZIP").getValue());
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/TCity", myView.byId("newCity").getValue());
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/TStreet", myView.byId("newStreet").getValue());
@@ -323,6 +324,11 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 			});
 			
 		},
+		
+		  handlePhonePress: function(){
+			   var b = this.getView().byId("phoneLink").getHref();
+			   window.open(this.getView().byId("phoneLink").getHref(), "_blank");
+			},
 	
 	
 });
