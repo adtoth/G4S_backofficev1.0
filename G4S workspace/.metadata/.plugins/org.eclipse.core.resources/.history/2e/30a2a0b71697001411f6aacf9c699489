@@ -1,0 +1,33 @@
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
+sap.ui.controller("sap.ui.demo.myFiori.view.depoMaster", {
+	
+	onBeforeRendering: function(){
+		window.globalDepo = this;
+		this.getView().addDelegate({ onAfterShow: function(evt) {
+			sap.ui.getCore().getModel().updateBindings(true);
+			sap.ui.getCore().getModel().forceNoCache(true);
+        	// $("#signature").jSignature();				
+			globalDepo.getView().getModel().read("/Item", null, {
+			}, true, function(response) {	
+				for(var i = 0; i < response.results.length; i++){
+						if(response.results[i].PickupStatus == 'M'){
+							bevet++;
+						}
+					
+				}
+				globalMaster.getView().byId("bevetTile").setNumber(bevet);
+				
+			});
+			
+        }});
+	
+	},
+	
+	handleNavButtonPress : function(evt) {
+		this.nav.back("Master");
+	},
+
+
+
+});

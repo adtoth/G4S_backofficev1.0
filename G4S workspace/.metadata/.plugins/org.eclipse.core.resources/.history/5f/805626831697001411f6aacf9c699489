@@ -1,0 +1,25 @@
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
+sap.ui.controller("sap.ui.demo.myFiori.view.depoMaster", {
+	
+	onBeforeRendering: function(){
+		window.globalDepo = this;
+		this.getView().addDelegate({ onAfterShow: function(evt) {
+			globalDepo.getView().getModel().read("/Item", null, {
+			}, true, function(response) {	
+						alert(response.results[5].PickupStatus);					
+				
+				
+			});
+			
+        }});
+	
+	},
+	
+	handleNavButtonPress : function(evt) {
+		this.nav.back("Master");
+	},
+
+
+
+});

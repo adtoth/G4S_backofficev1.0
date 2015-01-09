@@ -1,0 +1,24 @@
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
+sap.ui.controller("sap.ui.demo.myFiori.view.depoMaster", {
+	
+	handleNavButtonPress : function(evt) {
+		this.nav.back("Master");
+	},
+
+	onBeforeRendering: function(){ // binding model synchronisation
+		window.globalDepoView = this.getView(); 
+        this.getView().addDelegate({ onAfterShow: function(evt) {
+        	var a = globalDepoView.getView().getBindingContext();
+        	sap.ui.getCore().getModel().read(a.sPath, null, {
+    			"$expand" : "Items"
+    		}, true, function(response) {
+    			
+    				alert(sap.ui.getCore().getModel().getProperty("/Item(" + response.Items.results[0]));
+    			
+    					
+    		});
+        }});
+	},
+
+});

@@ -1,0 +1,42 @@
+﻿jQuery.sap.require("sap.m.MessageBox");
+jQuery.sap.require("sap.m.MessageToast");
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+sap.ui.controller("sap.ui.demo.myFiori.view.utanvet", {
+	
+	onBeforeRendering: function(){ // binding model synchronisation
+		window.globalUtanvetView = this.getView(); 
+        this.getView().addDelegate({ onBeforeShow: function(evt) { 
+        	var total = 0;
+        	sap.ui.getCore().getModel().read("/Item", null, {
+    		}, true, function(response) {
+    			for(var i = 0; i < 5000; i++){
+    				total += sap.ui.getCore().getModel().getProperty("/Item(" + response.results[i].Id + ")/Price");	
+    				globalUtanvetView.byId("total_id").setNumber(total);
+    			}		
+    		});
+        }});
+	},
+	
+	onBeforeRendering: function(){
+        // totál utánvét összeg számítás
+     /*	*/
+    	
+	},
+
+	handleNavButtonPress : function(evt) {
+		this.nav.back("Master");
+	},
+
+	close: function(){
+		sap.ui.getCore().getModel().read("/Courier", null, {
+		}, true, function(response) {
+			for(var i = 0; i < 5000; i++){
+				total += sap.ui.getCore().getModel().getProperty("/Courier(" + "48" + ")/Price");	
+				globalUtanvetView.byId("total_id").setNumber(total);
+			}		
+		});
+	},
+	
+	
+
+});

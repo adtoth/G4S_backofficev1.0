@@ -7,7 +7,7 @@ cordova plugin add PATH (PATH is a location of barcodeScanner plugin)
 cordova build
 
 
-set ANDROID_HOME=C:\adt\adt\sdk
+set ANDROID_HOME=E:\adt\adt\sdk
 set PATH=%PATH%;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools
 
 Not a stupid question. I had the same issue, as I had never built (or re-built) a library project before.

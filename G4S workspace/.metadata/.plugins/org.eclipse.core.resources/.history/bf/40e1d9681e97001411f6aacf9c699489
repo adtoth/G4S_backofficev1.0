@@ -1,0 +1,63 @@
+<core:View controllerName="sap.ui.demo.myFiori.view.depoMaster"
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page showNavButton="true" navButtonPress="handleNavButtonPress"
+		title="Bevételezés">
+		<!-- items="{/Item}" -->
+		<List id="list" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel, vagy üres a lista">
+			<!-- <ObjectListItem type="Active" 
+				title=""
+				icon="sap-icon://shipping-status">
+				
+		 		<firstStatus>
+					<ObjectStatus
+						text="{
+							path: 'PickupStatus',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'
+						}"
+						state="{
+							path: 'PickupStatus',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState'
+						}"
+						  />
+				</firstStatus>
+				 <secondStatus>
+					<ObjectStatus
+						text="{
+							path: 'PicType',
+							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'
+						}"
+												  />
+				</secondStatus>
+				<attributes>
+					<ObjectAttribute text="Csomagnév: {ProductName}" />
+					<ObjectAttribute text="Csomag ID: {ProductId}"/>
+	
+				</attributes>
+
+			</ObjectListItem> -->
+		</List>
+		
+<!-- 		<List id="listItems" select="" visible="false" items="{/Item}">
+			<ObjectListItem type="Active" press="handleListItemPress"
+				title="{From}"
+				icon="sap-icon://customer">
+
+			</ObjectListItem>
+		</List> -->
+		<footer>
+			<Bar>
+			<!-- 	<contentRight>
+					<Select id="groupSelect" name="Csoportosít" change="handleGroup" icon="sap-icon://group-2"
+						type="Default" selectedKey="None" autoAdjustWidth="true">
+						<core:Item key="none" text="Nincs rendezés" />
+						<core:Item key="SzallitasStatus" text="Státus szerint" />
+					</Select>
+				</contentRight> -->
+				<contentRight>
+				</contentRight> 
+				
+				
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

@@ -1,0 +1,64 @@
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
+sap.ui.controller("sap.ui.demo.myFiori.view.depoMaster", {
+	
+	onBeforeRendering: function(){
+		window.globalMaster = this;
+		this.getView().addDelegate({ onAfterShow: function(evt) {
+			sap.ui.getCore().getModel().updateBindings(true);
+			sap.ui.getCore().getModel().forceNoCache(true);
+        	// $("#signature").jSignature();
+			var leadas = 0;
+			var lezartLeadas = 0;
+			var lezartFelvetel = 0;
+			var felvetel = 0;
+			var bevet = 0;
+			var aktualis = 0;
+			globalMaster.getView().getModel().read("/Address", null, {
+			}, true, function(response) {	
+				for(var i = 0; i < response.results.length; i++){
+						if(response.results[i].PicType == 'D' && (response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
+							leadas++;
+						}
+						if(response.results[i].PicType == 'D' && !(response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
+							lezartLeadas++;
+						}
+						if(response.results[i].PicType == 'U' && (response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
+							felvetel++;
+						}
+						if(response.results[i].PicType == 'U' && !(response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
+							lezartFelvetel++;
+						}
+						if(response.results[i].DelStatus == '999' ){
+							aktualis++;
+						}
+				}
+				globalMaster.getView().byId("leadTile").setNumber(leadas);
+				globalMaster.getView().byId("leadLezartTile").setNumber(lezartLeadas);
+				globalMaster.getView().byId("felvetTile").setNumber(felvetel);
+				globalMaster.getView().byId("felvetLezartTile").setNumber(lezartFelvetel);
+				globalMaster.getView().byId("aktualisTile").setNumber(aktualis);
+			});			
+			globalMaster.getView().getModel().read("/Item", null, {
+			}, true, function(response) {	
+				for(var i = 0; i < response.results.length; i++){
+						if(response.results[i].PickupStatus == 'M'){
+							bevet++;
+						}
+					
+				}
+				globalMaster.getView().byId("bevetTile").setNumber(bevet);
+				
+			});
+			
+        }});
+	
+	},
+	
+	handleNavButtonPress : function(evt) {
+		this.nav.back("Master");
+	},
+
+
+
+});

@@ -1,0 +1,41 @@
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
+
+	handleBevetelezesPress : function (evt) {
+		var context = evt.getSource().getBindingContext();
+		this.nav.to("bevetMaster", context);
+	},
+	
+	handleFelvetelPress : function (evt) {
+		var context = evt.getSource().getBindingContext();
+		this.nav.to("felvetelMaster", context);
+	},
+	
+	handleLeadasPress : function (evt) {
+		var context = evt.getSource().getBindingContext();
+		this.nav.to("leadasMaster", context);
+	},
+	
+	handleUtanvetPress : function (evt) {
+		var context = evt.getSource().getBindingContext();
+		this.nav.to("utanvet", context);
+	},
+	
+	handleLezartFelvetelPress: function(evt){
+		var context = evt.getSource().getBindingContext();
+		this.nav.to("lezartFelvetelMaster", context);
+	},
+	
+	handleLezartLeadasPress: function(evt){
+		var context = evt.getSource().getBindingContext();
+		this.nav.to("lezartLeadasMaster", context);
+	},
+	
+	onAfterRendering: function(){
+		 var sPath = this.getBindingContext().getPath() + '/Address';
+	     var oBindings = this.getModel().bindList(sPath);
+	     return oBindings.getLength();
+		this.getView().byId("leadTile").setNumber("42");
+	}
+
+});
