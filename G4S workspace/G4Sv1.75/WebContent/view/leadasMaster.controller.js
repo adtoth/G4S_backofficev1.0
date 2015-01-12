@@ -2,6 +2,10 @@ jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
 sap.ui.controller("sap.ui.demo.myFiori.view.leadasMaster", {
 	 
+	onInit:function(){
+		this.getView().setModel(sap.ui.getCore().getModel());
+	},
+	
 	onBeforeRendering: function(){ // binding model synchronisation
 			window.leadasMaster = this;
 	        this.getView().addDelegate({ onAfterRendering: function(evt) {

@@ -1,0 +1,103 @@
+jQuery.sap.declare("sap.ui.demo.myFiori.Component");
+sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
+
+	createContent : function() {
+		/*window.globalpw = 0;
+		sap.ca.ui.dialog.confirmation.open({
+            question : 'You have selected "Reject", Submit?',
+            noteMandatory : true,//default value: false; if adding note is mandatory, the Conform button won't be accepted before the user adds the note.
+            title : "Submit Decision", 
+            confirmButtonLabel : "Submit"
+        }, globalpw = this.sNote);*/
+		// create root view
+		var oView = sap.ui.view({
+			id : "app",
+			viewName : "sap.ui.demo.myFiori.view.App",
+			type : "JS",
+			viewData : { component : this }
+		});
+		  var headers ={};
+	       headers.Authorization = "Access-Control-Allow-Origin: *";
+	       headers.setHeader = "X-Requested-With: JSONHttpRequest";
+	       headers.setHeader = "Content-type: application/x-www-form-urlencoded";
+		// set i18n model
+		var i18nModel = new sap.ui.model.resource.ResourceModel({
+			bundleUrl : "i18n/messageBundle.properties"
+		});
+		oView.setModel(i18nModel, "i18n");
+		
+		var butUI5Save = new sap.m.Button({text:"Save",press: function(oEvent) {UI5LogonSave(oEvent);}});
+		var butUI5Cancel = new sap.m.Button({text:"Cancel",press: function(oEvent) { oLogonDialog.close(); }});
+
+		oLogonDialog = new sap.m.Dialog({title:"SAP Authentication",type:sap.m.DialogType.Message,leftButton:butUI5Save,rightButton:butUI5Cancel}); 
+		var lblUserName = new sap.m.Label({text:"Username"});
+		oLogonDialog.addContent(lblUserName); 
+		inUserName = new sap.m.Input({});
+		oLogonDialog.addContent(inUserName); 
+		var lblPassword = new sap.m.Label({text:"Password"});
+		oLogonDialog.addContent(lblPassword); 
+		inPassword = new sap.m.Input({type:sap.m.InputType.Password});
+		oLogonDialog.addContent(inPassword); 
+
+		
+
+		
+//		// Using OData model to connect against a real service
+//		var url = "/proxy/http/<server>:<port>/sap/opu/odata/sap/ZGWSAMPLE_SRV/";
+		//var url = "http://office.netlife.hu:8181/futarfioriodataprovider/courierdata.svc/";
+		var url = "http://sapes1.sapdevcenter.com/sap/opu/odata/sap/ZCD204_EPM_DEMO_SRV/";
+		oLogonDialog.open();
+
+		var oModel = new sap.ui.model.odata.ODataModel(url, true);
+		//oView.setModel(oModel);
+		
+		// Using a local model for offline development
+		//var oModel = new sap.ui.model.json.JSONModel("model/mock.json");
+		oView.setModel(oModel);
+		sap.ui.getCore().setModel(oModel);
+		// set device model
+		var deviceModel = new sap.ui.model.json.JSONModel({
+			isPhone : jQuery.device.is.phone,
+			listMode : (jQuery.device.is.phone) ? "None" : "SingleSelectMaster",
+			listItemType : (jQuery.device.is.phone) ? "Active" : "Inactive"
+		});
+		deviceModel.setDefaultBindingMode("OneWay");
+		oView.setModel(deviceModel, "device");
+
+		// done
+		return oView;
+	},
+	
+	UI5LogonSave: function () {
+		UI5LogonPutLS();
+		UI5LogonGetLS();
+		oLogonDialog.close();
+		},
+		
+		UI5LogonPutLS: function () {
+
+			// Build Auth String
+			var tok  = inUserName.getValue() + ':' + inPassword.getValue();
+			var hash = Base64.encode(tok);
+			var auth = "Basic " + hash;
+
+			// Save to Local Storage
+			$.sap.require("jquery.sap.storage");
+			var UI5Storage =  $.sap.storage(jQuery.sap.storage.Type.session);
+			UI5Storage.remove("Auth");
+			UI5Storage.put("Auth",auth);
+			},
+
+			UI5LogonGetLS: function () {
+			$.sap.require("jquery.sap.storage");
+			var UI5Storage = $.sap.storage(jQuery.sap.storage.Type.session);
+			var auth = UI5Storage.get("Auth");
+
+			$.ajaxSetup({
+			   headers: {"Authorization": auth}
+			});
+
+			},
+	
+
+});

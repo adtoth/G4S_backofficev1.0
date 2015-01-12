@@ -18,16 +18,16 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			globalMaster.getView().getModel().read("/Address", null, {
 			}, true, function(response) {	
 				for(var i = 0; i < response.results.length; i++){
-						if(response.results[i].PicType == 'D' && (response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
+						if(response.results[i].PicType == 'D' && response.results[i].Today == '1' && (response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
 							leadas++;
 						}
-						if(response.results[i].PicType == 'D' && !(response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
+						if(response.results[i].PicType == 'D' && response.results[i].Today == '1' && !(response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
 							lezartLeadas++;
 						}
-						if(response.results[i].PicType == 'U' && (response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
+						if(response.results[i].PicType == 'U' && response.results[i].Today == '1' && (response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
 							felvetel++;
 						}
-						if(response.results[i].PicType == 'U' && !(response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
+						if(response.results[i].PicType == 'U' && response.results[i].Today == '1' && !(response.results[i].DelStatus == '999' || response.results[i].DelStatus == '555' || response.results[i].DelStatus == '111')){
 							lezartFelvetel++;
 						}
 						if(response.results[i].DelStatus == '999' ){
@@ -43,7 +43,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 			globalMaster.getView().getModel().read("/Item", null, {
 			}, true, function(response) {	
 				for(var i = 0; i < response.results.length; i++){
-						if(response.results[i].PickupStatus == 'M'){
+						if(response.results[i].PickupStatus == 'M' && response.results[i].Today == '1'){
 							bevet++;
 						}
 					
@@ -58,7 +58,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.Master", {
 						sap.ui.getCore().getModel().read("/Address(" + i + ")" , null, {
 							"$expand" : "Items"
 						}, true, function(response) {
-							if(response.DelStatus != "222"){
+							if(response.DelStatus != "222" && response.Today == '1'){
 								for(var i = 0; i < response.Items.results.length; i++){
 									depo++;
 									globalMaster.getView().byId("depoTile").setNumber(depo);

@@ -1,0 +1,16 @@
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+sap.ui.controller("sap.ui.demo.myFiori.view.login", {
+	
+	onInit: function(){
+		var UI5Storage =  $.sap.storage(jQuery.sap.storage.Type.session);
+		UI5Storage.get("Auth");
+		if()
+	},
+	
+	actLogin: function(evt){
+		window.usr = this.getView().byId("inpLogin").getValue();
+		window.pw = this.getView().byId("inpPWD").getValue();
+		this.nav.to("Master");
+	}
+
+});

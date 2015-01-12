@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "netlife.g4s.v1.5"
         version   = "1.5.0">
-    <name>G4S Futár</name>
+    <name>G4S Futár PG</name>
 
     <description>
         G4S futár alkalmazás. v1.5

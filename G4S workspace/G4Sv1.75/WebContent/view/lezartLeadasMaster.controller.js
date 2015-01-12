@@ -2,6 +2,9 @@ jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
 sap.ui.controller("sap.ui.demo.myFiori.view.lezartLeadasMaster", {
 	
+	onInit:function(){
+		this.getView().setModel(sap.ui.getCore().getModel());
+	},
 
 	handleListItemPress : function(evt) {
 		var context = evt.getSource().getBindingContext();

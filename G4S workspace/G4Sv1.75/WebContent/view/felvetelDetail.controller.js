@@ -4,6 +4,10 @@ jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 jQuery.sap.require("jSignature");
 sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 	
+	onInit:function(){
+		this.getView().setModel(sap.ui.getCore().getModel());
+	},
+	
 	onBeforeRendering: function(){ // binding model synchronisation
 		//this.onBeforeShow();
 		window.globalfelvetelDetail = this;

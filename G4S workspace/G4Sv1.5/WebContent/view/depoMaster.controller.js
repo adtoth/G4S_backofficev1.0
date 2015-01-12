@@ -18,7 +18,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.depoMaster", {
 						sap.ui.getCore().getModel().read("/Address(" + i + ")" , null, {
 							"$expand" : "Items"
 						}, true, function(response) {
-							if(response.DelStatus != "222"){
+							if(response.DelStatus != "222" && response.Today == 1){
 								for(var j = 0; j < response.Items.results.length; j++){
 									globalDepo.byId("list").addItem(new sap.m.ObjectListItem({icon: "sap-icon://shipping-status", number: response.Items.results[j].ProductId}));
 								}		

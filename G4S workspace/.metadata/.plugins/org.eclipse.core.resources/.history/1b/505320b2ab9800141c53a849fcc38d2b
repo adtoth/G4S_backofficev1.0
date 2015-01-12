@@ -1,0 +1,11 @@
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+sap.ui.controller("sap.ui.demo.myFiori.view.login", {
+	
+	onInit: function(){
+		var url = "http://office.netlife.hu:8181/futarfioriodataprovider/courierdata.svc/";
+		var oModel = new sap.ui.model.odata.ODataModel(url, true);
+		document.oView.setModel(oModel);
+		sap.ui.getCore().setModel(oModel);
+	}
+
+});

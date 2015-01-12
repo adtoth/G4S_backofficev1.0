@@ -1,7 +1,11 @@
 jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
 sap.ui.controller("sap.ui.demo.myFiori.view.felvetelMaster", {
-	 
+	
+	onInit:function(){
+		this.getView().setModel(sap.ui.getCore().getModel());
+	},
+	
 	onBeforeRendering: function(){ // binding model synchronisation
 			
 	        this.getView().addDelegate({ onAfterShow: function(evt) {

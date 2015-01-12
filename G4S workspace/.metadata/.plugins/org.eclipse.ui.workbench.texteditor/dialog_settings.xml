@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="newCity" key="selection"/>
+		<item value="UI5LogonPutLS" key="selection"/>
 		<list key="findhistory">
-			<item value="newCity"/>
-			<item value="newDate"/>
-			<item value="depo"/>
-			<item value="bevet"/>
-			<item value="handleAktualisPress"/>
-			<item value="999"/>
-			<item value="suspend"/>
-			<item value="contex"/>
+			<item value="UI5LogonSave"/>
+			<item value="UI5LogonPutLS"/>
+			<item value="but"/>
+			<item value="open"/>
+			<item value="oLog"/>
+			<item value="oLogonDialog"/>
+			<item value="new"/>
+			<item value="folytat"/>
 		</list>
 		<list key="replacehistory">
 			<item value="depo"/>

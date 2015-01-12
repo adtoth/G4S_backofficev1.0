@@ -13,13 +13,13 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		this.app = new sap.m.App();
 
 		// load the master page
-		var master = sap.ui.xmlview("Master", "sap.ui.demo.myFiori.view.Master");
+		var master = sap.ui.xmlview("login", "sap.ui.demo.myFiori.view.login");
 		master.getController().nav = this.getController();
 		this.app.addPage(master, true);
 		
 		// load the empty page
-		var empty = sap.ui.xmlview("Empty", "sap.ui.demo.myFiori.view.Empty");
-		this.app.addPage(empty, false);
+		//var empty = sap.ui.xmlview("Empty", "sap.ui.demo.myFiori.view.Empty");
+		//this.app.addPage(empty, false);
 		
 		return this.app;
 	}

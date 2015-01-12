@@ -1,9 +1,9 @@
 jQuery.sap.declare("sap.ui.demo.myFiori.Component");
 sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 
-
-	
 	createContent : function() {
+		window.usr;
+		window.pw;
 		/*window.globalpw = 0;
 		sap.ca.ui.dialog.confirmation.open({
             question : 'You have selected "Reject", Submit?',
@@ -12,7 +12,7 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
             confirmButtonLabel : "Submit"
         }, globalpw = this.sNote);*/
 		// create root view
-		var oView = sap.ui.view({
+		oView = sap.ui.view({
 			id : "app",
 			viewName : "sap.ui.demo.myFiori.view.App",
 			type : "JS",
@@ -28,18 +28,23 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 		});
 		oView.setModel(i18nModel, "i18n");
 		
+		
+
+		
 
 		
 //		// Using OData model to connect against a real service
 //		var url = "/proxy/http/<server>:<port>/sap/opu/odata/sap/ZGWSAMPLE_SRV/";
-		var url = "http://office.netlife.hu:8181/futarfioriodataprovider/courierdata.svc/";
-		var oModel = new sap.ui.model.odata.ODataModel(url, true);
+		//var url = "http://office.netlife.hu:8181/futarfioriodataprovider/courierdata.svc/";
+		//window.url = "http://sapes1.sapdevcenter.com/sap/opu/odata/sap/ZCD204_EPM_DEMO_SRV/";
+		
+
+		
 		//oView.setModel(oModel);
 		
 		// Using a local model for offline development
 		//var oModel = new sap.ui.model.json.JSONModel("model/mock.json");
-		oView.setModel(oModel);
-		sap.ui.getCore().setModel(oModel);
+		
 		// set device model
 		var deviceModel = new sap.ui.model.json.JSONModel({
 			isPhone : jQuery.device.is.phone,
@@ -53,15 +58,7 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 		return oView;
 	},
 	
-	 fnClose:function(oResult){
-		
-	        if (oResult) {
-	            jQuery.sap.log.info("ConfirmDialog - isConfirmed: " + oResult.isConfirmed);
-	            if (oResult.sNote) {
-	                jQuery.sap.log.info("ConfirmDialog - note: " + oResult.sNote);
-	            }
-	        }
-	        globalpw = oResult.sNote;
-	        alert(oResult.sNote);
-	    }
+
+	
+
 });

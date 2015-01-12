@@ -2,7 +2,7 @@
 	xmlns="sap.m" xmlns:core="sap.ui.core">
 	<Page showNavButton="true" navButtonPress="handleNavButtonPress"
 		title="Felvét lista">
-		<List id="list" select="handleListSelect" items="{/Address?$filter=PicType eq 'U' and (DelStatus eq '111' or DelStatus eq '999' or DelStatus eq '555')}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
+		<List id="list" select="handleListSelect" items="{/Address?$filter=PicType eq 'U' and Today eq '1' and (DelStatus eq '111' or DelStatus eq '999' or DelStatus eq '555')}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
 			<ObjectListItem type="Active" press="handleListItemPress"
 			
 				title="{To}" icon="sap-icon://toaster-{IconPic}" number="{path: 'PicType',

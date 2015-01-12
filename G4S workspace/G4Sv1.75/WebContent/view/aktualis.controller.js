@@ -4,7 +4,12 @@ jQuery.sap.require("jSignature");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 	
+	onInit:function(){
+		this.getView().setModel(sap.ui.getCore().getModel());
+	},
+	
 	onBeforeRendering: function(){ // binding model synchronisation
+		this.getView().setModel(sap.ui.getCore().getModel());
 		window.globalAktualis = this;
 		
         this.getView().addDelegate({ onAfterShow: function(evt) {

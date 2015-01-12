@@ -1,0 +1,19 @@
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+sap.ui.controller("sap.ui.demo.myFiori.view.login", {
+	
+	onInit: function(){
+		$.sap.require("jquery.sap.storage");
+		var UI5Storage =  $.sap.storage(jQuery.sap.storage.Type.session);
+		var a = UI5Storage.get("Auth");
+		if(UI5Storage.get("Auth") != null){
+			this.nav.to("Master");
+		}
+	},
+	
+	actLogin: function(evt){
+		window.usr = this.getView().byId("inpLogin").getValue();
+		window.pw = this.getView().byId("inpPWD").getValue();
+		this.nav.to("Master");
+	}
+
+});
