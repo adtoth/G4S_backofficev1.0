@@ -53,7 +53,7 @@
  * Basic Calendar.
  * This calendar ist used for DatePickers
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -456,7 +456,7 @@ sap.ui.unified.CalendarDayType.toString = function() { return ""; };
  * @class
  * A legend for the Calendar Control. Displays special dates colors with their corresponding description. The aggregation specialDates can be set herefor.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -623,7 +623,7 @@ sap.ui.unified.CalendarLegend.prototype.setColumnWidth = function(sColumnWidth) 
  * @class
  * Item to be displayed in a CalendarLegend.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -709,7 +709,7 @@ sap.ui.unified.CalendarLegendItem.prototype.setText = function(sText) { return n
  * @class
  * Switches between two control areas and animates it via CSS transitions
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -996,7 +996,7 @@ sap.ui.unified.ContentSwitcherAnimation.toString = function() { return ""; };
  * @class
  * A text view which displays currency values and aligns them at the separator
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.21.1
@@ -1175,7 +1175,7 @@ sap.ui.unified.Currency.prototype.setValue = function(fValue) { return new sap.u
  * @class
  * Date range for use in DatePicker
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -1287,7 +1287,7 @@ sap.ui.unified.DateRange.prototype.setStartDate = function(oStartDate) { return 
  * @class
  * Date range with calendar day type information. Used to visualize special days in the Calendar.
  * @extends sap.ui.unified.DateRange
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.24.0
@@ -1401,7 +1401,7 @@ sap.ui.unified.DateTypeRange.prototype.setType = function(oType) { return new sa
  * @class
  * The framework generates an input field and a button with text "Browse ...". The API supports features such as on change uploads (the upload starts immediately after a file has been selected), file uploads with explicit calls, adjustable control sizes, text display after uploads, or tooltips containing complete file paths.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2682,7 +2682,7 @@ sap.ui.unified.FileUploader.prototype.upload = function() { return null; };
  * @class
  * Represents a parameter for the FileUploader which is rendered as a hidden inputfield.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2797,7 +2797,7 @@ sap.ui.unified.FileUploaderParameter.prototype.setValue = function(sValue) { ret
  * @class
  * A container for menu items. When the space in the browser is not large enough to display all defined items, a scroll bar is provided.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3128,7 +3128,7 @@ sap.ui.unified.Menu.prototype.setMaxVisibleItems = function(iMaxVisibleItems) { 
  * @class
  * Smallest unit in the menu hierarchy. An item can be a direct part of a menu bar, of a menu, or of a sub menu.
  * @extends sap.ui.unified.MenuItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3251,7 +3251,7 @@ sap.ui.unified.MenuItem.prototype.setText = function(sText) { return new sap.ui.
  * @class
  * Provides the standard properties for menu items.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3518,7 +3518,7 @@ sap.ui.unified.MenuItemBase.prototype.setVisible = function(bVisible) { return n
  * Menu item which contains an text field. This menu item is e.g. helpful for filters.
  * The aggregation 'submenu' (inherited from parent class) is not supported for this type of menu item.
  * @extends sap.ui.unified.MenuItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3723,7 +3723,7 @@ sap.ui.unified.MenuTextFieldItem.prototype.setValueState = function(oValueState)
  * for this purpose. Do not use this control within applications which run inside the Fiori Lauchpad and
  * do not use it for other scenarios than the root control usecase.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.15.1
@@ -4518,7 +4518,7 @@ sap.ui.unified.Shell.prototype.setUser = function(oUser) { return new sap.ui.uni
  * @class
  * Header Action item of the Shell.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.15.1
@@ -4795,7 +4795,7 @@ sap.ui.unified.ShellHeadItem.prototype.setVisible = function(bVisible) { return 
  * @class
  * User Header Action Item of the Shell.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -4961,7 +4961,7 @@ sap.ui.unified.ShellHeadUserItem.prototype.setUsername = function(sUsername) { r
  * @class
  * ShellOverlay to be opened in front of a sap.ui.unified.Shell
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.3
@@ -5228,7 +5228,7 @@ sap.ui.unified.ShellOverlay.prototype.setShell = function(vShell) { return new s
  * @class
  * Provides a main content and a secondary content area
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.15.0

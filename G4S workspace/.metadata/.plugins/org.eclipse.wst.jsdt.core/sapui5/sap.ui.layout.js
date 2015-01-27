@@ -57,7 +57,7 @@
  * Holder for form control to be rendered in a specific form layout.
  * A Form supports VariantLayoutData for it's content to allow a simple switching of Layouts.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -343,7 +343,7 @@ sap.ui.layout.form.Form.prototype.setWidth = function(sWidth) { return new sap.u
  * Used to group form elements.
  * Can contain other form elements or containers.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -595,7 +595,7 @@ sap.ui.layout.form.FormContainer.prototype.setVisible = function(bVisible) { ret
  * @class
  * A form element is a combination of one label and different controls associated to this label.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -800,7 +800,7 @@ sap.ui.layout.form.FormElement.prototype.setVisible = function(bVisible) { retur
  * Base layout for Forms.
  * Other Layouts must inherit from this one.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -865,7 +865,7 @@ sap.ui.layout.form.FormLayout.extend = function(sClassName,oClassInfo,FNMetaImpl
  * Grid layout specific properties for FormContainers.
  * The width and height properties of the elements are ignored since the witdh and heights are defined by the grid cells.
  * @extends sap.ui.core.LayoutData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -959,7 +959,7 @@ sap.ui.layout.form.GridContainerData.prototype.setHalfGrid = function(bHalfGrid)
  * The grid specific layout data for FormElement fields.
  * The width property of the elements is ignored since the width is defined by grid cells.
  * @extends sap.ui.core.LayoutData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -1076,7 +1076,7 @@ sap.ui.layout.form.GridElementData.prototype.setVCells = function(iVCells) { ret
  * </p><p>
  * To adjust the content inside the GridLayout GridContainerData and GridElementData could be used.
  * @extends sap.ui.layout.form.FormLayout
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -1177,7 +1177,7 @@ sap.ui.layout.form.GridLayout.prototype.setSingleColumn = function(bSingleColumn
  * On the FormContainers, Labels and Fields GridData can be used to change the default rendering. On FormElements GridDada are not supported.
  * If own GridData are used this may be much more complex than the default. So in some cases the calculation for the other content may nor bring the expected result. In this case GridData should be used at all content to disable the default behaviour.
  * @extends sap.ui.layout.form.FormLayout
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -1503,7 +1503,7 @@ sap.ui.layout.form.ResponsiveGridLayout.prototype.setLabelSpanS = function(iLabe
  * @class
  * Renders a form with responsive layout. Internally the ResponsiveFlowLayout is used.
  * @extends sap.ui.layout.form.FormLayout
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -1579,7 +1579,7 @@ sap.ui.layout.form.ResponsiveLayout.extend = function(sClassName,oClassInfo,FNMe
  * @class
  * Use the SimpleForm to create a form based on title, label and fields that are stacked in the content aggregation. Add Title to start a new FormContainer(Group). Add Label to start a new row in the container. Add Input/Display controls as needed. Use LayoutData to influence the layout for special cases in the Input/Display controls.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -2176,7 +2176,7 @@ sap.ui.layout.form.SimpleFormLayout.toString = function() { return ""; };
  * @class
  * The Grid control is a layout which positions its child controls in a 12 column flow layout. Its children can be specified to take on a variable amount of columns depending on available screen size. With this control it is possible to achieve flexible layouts and line-breaks for large-, medium- and small-sized screens, such as desktop, tablet, and mobile. The Grid control's width can be percentage- or pixel-based and the spacing between its columns can be set to various pre-defined values.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.15.0
@@ -2515,7 +2515,7 @@ sap.ui.layout.Grid.prototype.setWidth = function(sWidth) { return new sap.ui.lay
  * @class
  * Grid layout data
  * @extends sap.ui.core.LayoutData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.15.0
@@ -3248,7 +3248,7 @@ sap.ui.layout.GridPosition.toString = function() { return ""; };
  * @class
  * A layout that provides support for horizontal alignment of controls
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -3439,7 +3439,7 @@ sap.ui.layout.HorizontalLayout.prototype.setVisible = function(bVisible) { retur
  * @class
  * This is a layout where several controls can be added. These controls are blown up to fit a whole line. If the window resizes the controls are moved between the lines and resized again.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -3607,7 +3607,7 @@ sap.ui.layout.ResponsiveFlowLayout.prototype.setResponsive = function(bResponsiv
  * @class
  * This is a LayoutData Element that can be added to a control if this control is used within a ResponsiveFlowLayout
  * @extends sap.ui.core.LayoutData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -3800,7 +3800,7 @@ sap.ui.layout.ResponsiveFlowLayoutData.prototype.setWeight = function(iWeight) {
  * </p><p>
  * The splitter bars used for resizing the contents by the user can be set to different widths (or heights in vertical mode) and the splitter will automatically resize the other contents accordingly. In case the splitter bar is resized after the splitter has rendered, a manual resize has to be triggered by invoking triggerResize() on the Splitter.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -4170,7 +4170,7 @@ sap.ui.layout.Splitter.prototype.triggerResize = function(forceDirectly) { retur
  * (The CSS value "auto" is used internally to recalculate the size of the content
  * dynamically and is not directly set as style property.)
  * @extends sap.ui.core.LayoutData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -4307,7 +4307,7 @@ sap.ui.layout.SplitterLayoutData.prototype.setSize = function(sSize) { return ne
  * @class
  * In this layout the elements are ordered one below the other
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0

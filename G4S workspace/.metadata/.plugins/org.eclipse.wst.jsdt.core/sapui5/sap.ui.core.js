@@ -1364,7 +1364,7 @@ jQuery.sap.startsWithIgnoreCase = function(sString,sStartString) { return null; 
  *     oStorage the type specifying the storage to use or an object implementing the browser's Storage API.
  * @param {string} [sIdPrefix] Prefix used for the Ids. If not set a default prefix is used.    
  * @returns {jQuery.sap.storage.Storage}
- * @version 1.24.3
+ * @version 1.24.4
  * @since 0.11.0
  * @type Function
  * @public
@@ -2414,7 +2414,7 @@ jQuery.sap.util.ResourceBundle.getText = function(sKey,aArgs) { return ""; };
  * @param {string} sSuffix the suffix part of the version number
  * @return {jQuery.sap.Version} the version object as determined from the parameters
  * @class Represents a version consisting of major, minor, patch version and suffix, e.g. '1.2.7-SNAPSHOT'.
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.15.0
@@ -3089,7 +3089,7 @@ sap.ui.xmlview = function(sId,vView) { return new sap.ui.core.mvc.XMLView(); };
  * @class Base class for application classes
  * @extends sap.ui.core.Component
  * @abstract
- * @version 1.24.3
+ * @version 1.24.4
  * @experimental Since 1.11.1. The Application class is still under construction, so some implementation details can be changed in future.
  * @deprecated Since 1.15.1. The Component class is enhanced to take care about the Application code.
  */
@@ -3176,7 +3176,7 @@ sap.ui.app.Application.prototype.setConfig = function(vConfig) { return null; };
  * @class Class to mock a server
  * @extends sap.ui.base.ManagedObject
  * @abstract
- * @version 1.24.3
+ * @version 1.24.4
  * @public
  * @experimental Since 1.13.0. The mock server is still under construction, so some implementation details can be changed in future.
  * @deprecated Since 1.15.1. The mock server code has been moved to sap.ui.core.util - see {@link sap.ui.core.util.MockServer}
@@ -3197,7 +3197,7 @@ sap.ui.app.MockServer = function(sId,mSettings,oScope) {};
  * @class An Event object consisting of an id, a source and a map of parameters
  * @extends sap.ui.base.Object
  * @implements sap.ui.base.Poolable
- * @version 1.24.3
+ * @version 1.24.4
  * @public
  */
 sap.ui.base.Event = function(sId,oSource,mParameters) {};
@@ -3264,7 +3264,7 @@ sap.ui.base.Event.prototype.preventDefault = function() { return null; };
  * and detach events, and are notified, when events are fired
  * @abstract
  * @extends sap.ui.base.Object
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * 
@@ -3380,7 +3380,7 @@ sap.ui.base.EventProvider.prototype.toString = function() { return ""; };
  * Constructs an instance of sap.ui.base.Interface which restricts access to methods marked as public.
  * @class A class that creates an Interface for an existing class. If a class returns the interface in its constructor,
  *        only the defined functions will be visible, no internals of the class can be accessed.
- * @version 1.24.3
+ * @version 1.24.4
  * @param {sap.ui.base.Object}
  *            oObject the instance that needs an interface created
  * @param {string[]}
@@ -3432,7 +3432,7 @@ sap.ui.base.Interface = function(oObject,aMethods) {};
  * @param {object} [oScope] scope object for resolving string based type and formatter references in bindings
  * @class Base Class for managed objects.
  * @extends sap.ui.base.EventProvider
- * @version 1.24.3
+ * @version 1.24.4
  * @public
  * @experimental Since 1.11.2. ManagedObject as such is public and usable. Only the support for the optional parameter 
  * oScope in the constructor is still experimental and might change in future versions. Applications should not rely on it.
@@ -4173,7 +4173,7 @@ sap.ui.base.ManagedObject.prototype.validateProperty = function(sPropertyName,oV
  * @param {string} sClassName fully qualified name of the class that is described by this metadata object
  * @param {object} oClassInfo info to construct the class and its metadata from
  * @class Metadata for a class.
- * @version 1.24.3
+ * @version 1.24.4
  * @since 0.8.6
  * @public
  * 
@@ -4245,7 +4245,7 @@ sap.ui.base.Metadata.prototype.isInstanceOf = function(sInterface) { return fals
  * Constructor for a sap.ui.base.Object.
  * @class Base class for all SAPUI5 Objects
  * @abstract
- * @version 1.24.3
+ * @version 1.24.4
  * @public
  * 
  */
@@ -4376,7 +4376,7 @@ sap.ui.base.Object.prototype.getInterface = function() { return new sap.ui.base.
  *   var oEvent = this.oEventPool.borrowObject(iEventId, mParameters);
  * </pre>
  * @extends sap.ui.base.Object
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  */
@@ -4631,7 +4631,7 @@ sap.ui.core.BusyIndicator.show = function(iDelay) { return null; };
  * @class Base Class for Component.
  * @extends sap.ui.base.ManagedObject
  * @abstract
- * @version 1.24.3
+ * @version 1.24.4
  * @since 1.9.2
  */
 sap.ui.core.Component = function(sId,mSettings) {};
@@ -4795,7 +4795,7 @@ sap.ui.core.Component.prototype.onWindowUnload = function() { return null; };
  * @class
  * Component Container
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5477,7 +5477,7 @@ sap.ui.core.Configuration.FormatSettings.prototype.setTimePattern = function(sSt
  * @class Base Class for Controls.
  * @extends sap.ui.core.Element
  * @abstract
- * @version 1.24.3
+ * @version 1.24.4
  * 
  */
 sap.ui.core.Control = function(sId,mSettings) {};
@@ -5814,7 +5814,7 @@ sap.ui.core.Control.prototype.toggleStyleClass = function(sStyleClass,bAdd) { re
  * It registers the Browser Eventing.
  * @extends sap.ui.base.EventProvider
  * @final
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  */
@@ -6753,7 +6753,7 @@ sap.ui.core.Core.prototype.unregisterPlugin = function(oPlugin) { return null; }
  * @class
  * Contains a single key/value pair of custom data attached to an Element. See method data().
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -6863,7 +6863,7 @@ sap.ui.core.CustomData.prototype.setWriteToDom = function(bWriteToDom) { return 
 /**
  * 
  * @class Static class for enabling declarative UI support.  
- * @version 1.24.3
+ * @version 1.24.4
  * @since 1.7.0
  * @public
  * 
@@ -6960,7 +6960,7 @@ sap.ui.core.DeclarativeSupport.prototype.compile = function(oElement,oView,isRec
  * @param {Element} oDomRef the DOM element that is focused if the item navigation is started
  * @param {Element[]} aItemDomRefs Array of DOM elements representing the items for the navigation
  * @param {boolean} [bNotInTabChain=false] Whether the selected element should be in the tab chain or not
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  */
@@ -7128,7 +7128,7 @@ sap.ui.core.delegate.ItemNavigation.prototype.setTableMode = function(bTableMode
  * @param {boolean} [oConfig.iscroll=false] If set, then iScroll (http://cubiq.org/iscroll-4) is used
  * @param {boolean} [oConfig.preventDefault=false] If set, the default of touchmove is prevented
  * @param {boolean} [oConfig.nonTouchScrolling=false] If true, the delegate will also be active to allow touch like scrolling with the mouse on non-touch platforms; if set to "scrollbar", there will be normal scrolling with scrollbars and no touch-like scrolling where the content is dragged
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @protected
  */
@@ -7187,7 +7187,7 @@ sap.ui.core.Design.toString = function() { return ""; };
  * @param {object} [mSettings] optional map/JSON-object with initial property values, aggregated objects etc. for the new element
  * @class Base Class for Elements.
  * @extends sap.ui.base.ManagedObject
- * @version 1.24.3
+ * @version 1.24.4
  * @public
  * 
  */
@@ -7919,7 +7919,7 @@ sap.ui.core.Element.prototype.unbindElement = function(sModelName) { return new 
  * <code>
  * sap.ui.core.EnabledPropagator.call(sap.ui.commons.Button.prototype);
  * </code>
- * @version 1.24.3
+ * @version 1.24.4
  * @param {boolean} [bDefault=true] the value that should be used as default value for the enhancement of the control.
  * @param {boolean} [bLegacy=false] whether the introduced property should use the old name 'Enabled' 
  * @public
@@ -7934,7 +7934,7 @@ sap.ui.core.EnabledPropagator = function(bDefault,bLegacy) {};
  * Creates an instance of EventBus.
  * @class Provides eventing facilities, so subscribe, unsubscribe and publish events.
  * @extends sap.ui.base.Object
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.8.0
@@ -8205,7 +8205,7 @@ sap.ui.core.format.NumberFormat.prototype.parse = function(sValue) { return 0.0;
  * - 100%-declarative definition of Views
  * @class Fragment
  * @extends sap.ui.base.ManagedObject
- * @version 1.24.3
+ * @version 1.24.4
  * @public
  * 
  */
@@ -8257,7 +8257,7 @@ sap.ui.core.Fragment.prototype.registerType = function(sType,oFragmentImpl) { re
  * @param {string} sId id for the history
  * @param {object} [mSettings] optional map/JSON-object with additional settings
  * @extends sap.ui.base.Object
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @protected
  */
@@ -8313,7 +8313,7 @@ sap.ui.core.HorizontalAlign.toString = function() { return ""; };
  * </p><p>
  * For further hints about usage restrictions for this control, see also the documentation of the 'content' property.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8562,7 +8562,7 @@ sap.ui.core.HTML.prototype.setSanitizeContent = function(bSanitizeContent) { ret
  * </p><p>
  * A set of built in Icons is available and they can be fetched by calling sap.ui.core.IconPool.getIconURI and set this value to the src property on the Icon.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.11.1
@@ -9059,7 +9059,7 @@ sap.ui.core.ImeMode.toString = function() { return ""; };
  *            trigger is >0 triggering starts/runs and if the interval is
  *            set to <=0 triggering stops.
  * @extends sap.ui.base.Object
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.11.0
@@ -9164,7 +9164,7 @@ sap.ui.core.IntervalTrigger.prototype.setInterval = function(iInterval) { return
  * @class
  * A control base type.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9325,7 +9325,7 @@ sap.ui.core.Item.prototype.setTextDirection = function(oTextDirection) { return 
  * @class
  * A layout data base type.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9390,7 +9390,7 @@ sap.ui.core.LayoutData.extend = function(sClassName,oClassInfo,FNMetaImpl) { ret
  * An item that is used in lists or list-similar controls such as DropdownBox, for example.
  * The element foresees the usage of additional texts displayed in a second column.
  * @extends sap.ui.core.Item
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9505,7 +9505,7 @@ sap.ui.core.ListItem.prototype.setIcon = function(sIcon) { return new sap.ui.cor
  * accordingly to the ListBox control (see the init-function of the
  * ListBox).
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.11.0
@@ -9591,7 +9591,7 @@ sap.ui.core.LocalBusyIndicator.prototype.setWidth = function(sWidth) { return ne
  * @class Locale represents a locale setting, consisting of a language, script, region, variants, extensions and private use section
  * @param {string} sLocaleId the locale identifier, in format en-US or en_US.
  * @extends sap.ui.base.Object
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * 
@@ -9725,7 +9725,7 @@ sap.ui.core.Locale.prototype.getVariantSubtags = function() { return new Array()
  * @class Data provides access to locale-specific data, like date formats, number formats, currencies, etc.
  * @param {sap.ui.core.Locale} oLocale the locale
  * @extends sap.ui.base.Object
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * 
@@ -10003,7 +10003,7 @@ sap.ui.core.LocaleData.prototype.getWeekendStart = function() { return 0; };
  * </p><p>
  * Its default level is none.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10315,7 +10315,7 @@ sap.ui.core.mvc.Controller.prototype.getView = function() { return new sap.ui.co
  * @class
  * A view defined/constructed by declarative HTML.
  * @extends sap.ui.core.mvc.View
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.2
@@ -10378,7 +10378,7 @@ sap.ui.core.mvc.HTMLView.extend = function(sClassName,oClassInfo,FNMetaImpl) { r
  * @class
  * A View defined using JSON.
  * @extends sap.ui.core.mvc.View
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10440,7 +10440,7 @@ sap.ui.core.mvc.JSONView.extend = function(sClassName,oClassInfo,FNMetaImpl) { r
  * @class
  * A View defined/constructed by JavaScript code.
  * @extends sap.ui.core.mvc.View
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10530,7 +10530,7 @@ sap.ui.core.mvc.JSView.prototype.getAutoPrefixId = function() { return false; };
  * @class
  * A view defined in a template.
  * @extends sap.ui.core.mvc.View
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -10598,7 +10598,7 @@ sap.ui.core.mvc.TemplateView.extend = function(sClassName,oClassInfo,FNMetaImpl)
  * @class
  * View
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11122,7 +11122,7 @@ sap.ui.core.mvc.ViewType.toString = function() { return ""; };
  * @class
  * A View defined using (P)XML and HTML markup.
  * @extends sap.ui.core.mvc.View
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11580,7 +11580,7 @@ sap.ui.core.Renderer.extend = function(oParentClass) { return new Object(); };
  * @see sap.ui.core.Core
  * @see sap.ui.getCore()
  * @extends sap.ui.base.Object
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  */
@@ -12492,7 +12492,7 @@ sap.ui.core.routing.Router.prototype.stop = function() { return new sap.ui.core.
  * The ScrollBar control can be used for virtual scrolling of a certain area.
  * This means: to simulate a very large scrollable area when technically the area is small and the control takes care of displaying the respective part only. E.g. a Table control can take care of only rendering the currently visible rows and use this ScrollBar control to make the user think he actually scrolls through a long list.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12796,7 +12796,7 @@ sap.ui.core.Scrolling.toString = function() { return ""; };
  * @class
  * A SearchProvider which uses the OpenSearch protocol (either JSON or XML).
  * @extends sap.ui.core.search.SearchProvider
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12907,7 +12907,7 @@ sap.ui.core.search.OpenSearchProvider.prototype.setSuggestUrl = function(sSugges
  * @class
  * Abstract base class for all SearchProviders which can be e.g. attached to a SearchField. Do not create instances of this class, but use a concrete sub class instead.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13006,7 +13006,7 @@ sap.ui.core.search.SearchProvider.prototype.suggest = function(sValue,fCallback)
  * An item that provides a visual separation. It borrows all its methods from the classes sap.ui.core.Item, sap.ui.core.Element,
  * sap.ui.base.EventProvider, and sap.ui.base.Object.
  * @extends sap.ui.core.Item
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13120,7 +13120,7 @@ sap.ui.core.theming.Parameters.reset = function() { return null; };
  * @class
  * Represents a title element that can be used for aggregation with other controls
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16.0
@@ -13292,7 +13292,7 @@ sap.ui.core.TitleLevel.toString = function() { return ""; };
  * @class
  * Represents a DOM attribute of a DOM element.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.15. 
@@ -13404,7 +13404,7 @@ sap.ui.core.tmpl.DOMAttribute.prototype.setValue = function(sValue) { return new
  * @class
  * Represents a DOM element. It allows to use databinding for the properties and nested DOM attributes.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.15. 
@@ -13681,7 +13681,7 @@ sap.ui.core.tmpl.DOMElement.prototype.setText = function(sText) { return new sap
  * @class The class for Handlebars Templates.
  * @extends sap.ui.base.ManagedObject
  * @abstract
- * @version 1.24.3
+ * @version 1.24.4
  * @experimental Since 1.15.0. The Template concept is still under construction, so some implementation details can be changed in future.
  */
 sap.ui.core.tmpl.HandlebarsTemplate = function(sId,mSettings) {};
@@ -13706,7 +13706,7 @@ sap.ui.core.tmpl.HandlebarsTemplate = function(sId,mSettings) {};
  * @class Base Class for Template.
  * @extends sap.ui.base.ManagedObject
  * @abstract
- * @version 1.24.3
+ * @version 1.24.4
  * @experimental Since 1.15.0. The Template concept is still under construction, so some implementation details can be changed in future.
  */
 sap.ui.core.tmpl.Template = function(sId,mSettings) {};
@@ -13848,7 +13848,7 @@ sap.ui.core.tmpl.Template.prototype.setContent = function(sContent) { return new
  * @class
  * This is the base class for all template controls. Template controls are declared based on templates.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.15. 
@@ -14146,7 +14146,7 @@ sap.ui.core.tmpl.TemplateControl.prototype.setTemplateRenderer = function(fnRend
  * @class
  * Abstract class that can be extended in order to implement any extended tooltip. For example, RichTooltip Control is based on it. It provides the opening/closing behavior and the main "text" property.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14466,7 +14466,7 @@ sap.ui.core.TooltipBase.prototype.setText = function(sText) { return new sap.ui.
  * @class Base Class for UI Component.
  * @extends sap.ui.core.Component
  * @abstract
- * @version 1.24.3
+ * @version 1.24.4
  * @since 1.9.2
  */
 sap.ui.core.UIComponent = function(sId,mSettings) {};
@@ -14652,7 +14652,7 @@ sap.ui.core.UIComponent.prototype.setContainer = function(oContainer) { return n
  * @class
  * Export provides the possibility to generate a list of data in a specific format / type, e.g. CSV to use it in other programs / applications.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @since 1.22.0
  * @constructor
  * @public
@@ -14980,7 +14980,7 @@ sap.ui.core.util.Export.prototype.unbindRows = function() { return new sap.ui.co
  * @class
  * Contains content that can be used to export data. Used in {@link sap.ui.core.util.ExportColumn ExportColumn} / {@link sap.ui.core.util.Export Export}.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @since 1.22.0
  * @constructor
  * @public
@@ -15066,7 +15066,7 @@ sap.ui.core.util.ExportCell.prototype.setContent = function(sContent) { return n
  * @class
  * Can have a name and a cell template.
  * @extends sap.ui.base.ManagedObject
- * @version 1.24.3
+ * @version 1.24.4
  * @since 1.22.0
  * @constructor
  * @public
@@ -15181,7 +15181,7 @@ sap.ui.core.util.ExportColumn.prototype.setTemplate = function(oTemplate) { retu
  * @class
  * Internally used in {@link sap.ui.core.util.Export Export}.
  * @extends sap.ui.base.ManagedObject
- * @version 1.24.3
+ * @version 1.24.4
  * @since 1.22.0
  * @constructor
  * @public
@@ -15323,7 +15323,7 @@ sap.ui.core.util.ExportRow.prototype.removeCell = function(vCell) { return new s
  * @class
  * Base export type. Subclasses can be used for {@link sap.ui.core.util.Export Export}.
  * @extends sap.ui.base.ManagedObject
- * @version 1.24.3
+ * @version 1.24.4
  * @since 1.22.0
  * @constructor
  * @public
@@ -15524,7 +15524,7 @@ sap.ui.core.util.ExportType.prototype.setMimeType = function(sMimeType) { return
  * To prevent those issues use the data-import functionality which enables the possibility to explicitly set the separator char that should be used.<br>
  * This way the content will be displayed correctly.
  * @extends sap.ui.core.util.ExportType
- * @version 1.24.3
+ * @version 1.24.4
  * @since 1.22.0
  * @constructor
  * @public
@@ -15627,7 +15627,7 @@ sap.ui.core.util.File.save = function(sData,sFileName,sFileExtension,sMimeType,s
  * @class Class to mock a server
  * @extends sap.ui.base.ManagedObject
  * @abstract
- * @version 1.24.3
+ * @version 1.24.4
  * @public
  * 
  */
@@ -15775,7 +15775,7 @@ sap.ui.core.util.MockServer.prototype.stop = function() { return null; };
  * @abstract
  * @class Abstract serializer delegate class.
  * @extends sap.ui.base.EventProvider
- * @version 1.24.3
+ * @version 1.24.4
  * @experimental Since 1.15.1. The abstract serializer delegate is still under construction, so some implementation details can be changed in future.
  */
 sap.ui.core.util.serializer.delegate.Delegate = function() {};
@@ -15790,7 +15790,7 @@ sap.ui.core.util.serializer.delegate.Delegate = function() {};
  * @public
  * @class HTML serializer delegate class.
  * @extends sap.ui.core.util.serializer.delegate.Delegate
- * @version 1.24.3
+ * @version 1.24.4
  * @experimental Since 1.15.1. The HTML serializer delegate is still under construction, so some implementation details can be changed in future.
  */
 sap.ui.core.util.serializer.delegate.HTML = function(fnGetControlId,fnGetEventHandlerName) {};
@@ -15807,7 +15807,7 @@ sap.ui.core.util.serializer.delegate.HTML = function(fnGetControlId,fnGetEventHa
  * @public
  * @class XML serializer delegate class.
  * @extends sap.ui.core.util.serializer.delegate.Delegate
- * @version 1.24.3
+ * @version 1.24.4
  * @experimental Since 1.15.1. The XML serializer delegate is still under construction, so some implementation details can be changed in future.
  */
 sap.ui.core.util.serializer.delegate.XML = function(sDefaultXmlNamespace,fnGetControlId,fnGetEventHandlerName,fnMemorizePackage) {};
@@ -15824,7 +15824,7 @@ sap.ui.core.util.serializer.delegate.XML = function(sDefaultXmlNamespace,fnGetCo
  * @public
  * @class HTMLViewSerializer class.
  * @extends sap.ui.base.EventProvider
- * @version 1.24.3
+ * @version 1.24.4
  * @experimental Since 1.15.1. The HTMLViewSerializer is still under construction, so some implementation details can be changed in future.
  */
 sap.ui.core.util.serializer.HTMLViewSerializer = function(oView,oWindow,fnGetControlId,fnGetEventHandlerName) {};
@@ -15841,7 +15841,7 @@ sap.ui.core.util.serializer.HTMLViewSerializer = function(oView,oWindow,fnGetCon
  * @public
  * @class Serializer class.
  * @extends sap.ui.base.EventProvider
- * @version 1.24.3
+ * @version 1.24.4
  * @experimental Since 1.15.1. The Serializer is still under construction, so some implementation details can be changed in future.
  */
 sap.ui.core.util.serializer.Serializer = function(oRootControl,serializeDelegate,bSkipRoot,fnSkipAggregations) {};
@@ -15857,7 +15857,7 @@ sap.ui.core.util.serializer.Serializer = function(oRootControl,serializeDelegate
  * @public
  * @class ViewSerializer class.
  * @extends sap.ui.base.EventProvider
- * @version 1.24.3
+ * @version 1.24.4
  * @experimental Since 1.15.1. The ViewSerializer is still under construction, so some implementation details can be changed in future.
  */
 sap.ui.core.util.serializer.ViewSerializer = function(oRootControl,oWindow,sDefaultXmlNamespace) {};
@@ -15875,7 +15875,7 @@ sap.ui.core.util.serializer.ViewSerializer = function(oRootControl,oWindow,sDefa
  * @public
  * @class XMLViewSerializer class.
  * @extends sap.ui.base.EventProvider
- * @version 1.24.3
+ * @version 1.24.4
  * @experimental Since 1.15.1. The XMLViewSerializer is still under construction, so some implementation details can be changed in future.
  */
 sap.ui.core.util.serializer.XMLViewSerializer = function(oView,oWindow,sDefaultXmlNamespace,fnGetControlId,fnGetEventHandlerName) {};
@@ -15925,7 +15925,7 @@ sap.ui.core.ValueState.toString = function() { return ""; };
  * @class
  * Allows to add multiple LayoutData to one control in case that a easy switch of layouts (e.g. in a Form) is needed.
  * @extends sap.ui.core.LayoutData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.2
@@ -16056,7 +16056,7 @@ sap.ui.core.Wrapping.toString = function() { return ""; };
  * @public
  * @class WebSocket class implementing the pcp-protocol
  * @extends sap.ui.core.ws.WebSocket
- * @version 1.24.3
+ * @version 1.24.4
  * 
  */
 sap.ui.core.ws.SapPcpWebSocket = function(sUrl,aProtocols) {};
@@ -16132,7 +16132,7 @@ sap.ui.core.ws.SapPcpWebSocket.SUPPORTED_PROTOCOLS.toString = function() { retur
  * @public
  * @class Basic WebSocket class
  * @extends sap.ui.base.EventProvider
- * @version 1.24.3
+ * @version 1.24.4
  * 
  */
 sap.ui.core.ws.WebSocket = function(sUrl,aProtocols) {};
@@ -19000,7 +19000,7 @@ sap.ui.model.ClientContextBinding.extend = function(sClassName,oClassInfo,FNMeta
  * @class Model implementation for Client models
  * @abstract
  * @extends sap.ui.model.Model
- * @version 1.24.3
+ * @version 1.24.4
  * @param {object} oData URL where to load the data from
  * @constructor
  * @public
@@ -19347,7 +19347,7 @@ sap.ui.model.FilterType.toString = function() { return ""; };
  * @class
  * Model implementation for JSON format
  * @extends sap.ui.model.Model
- * @version 1.24.3
+ * @version 1.24.4
  * @param {object} oData either the URL where to load the JSON from or a JS object
  * @constructor
  * @public
@@ -19605,7 +19605,7 @@ sap.ui.model.ListBinding.prototype.sort = function(aSorters) { return new sap.ui
  * This is an abstract base class for model objects.
  * @abstract
  * @extends sap.ui.base.EventProvider
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * 
@@ -20124,7 +20124,7 @@ sap.ui.model.odata.Filter.prototype.convert = function() { return new sap.ui.mod
  * @param {object} mParams
  * @class Implementation to access oData Annotations
  * @version
- * 1.24.3
+ * 1.24.4
  * @constructor
  * @public
  * @extends sap.ui.base.Object
@@ -20195,7 +20195,7 @@ sap.ui.model.odata.ODataContextBinding.extend = function(sClassName,oClassInfo,F
  * @param {boolean} mParams.password
  * @class
  * Implementation to access oData metadata
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @extends sap.ui.base.EventProvider
@@ -20235,6 +20235,14 @@ sap.ui.model.odata.ODataMetadata.extend = function(sClassName,oClassInfo,FNMetaI
  */
 sap.ui.model.odata.ODataMetadata.prototype.getUseBatch; = function() { return null; };
 
+/**
+ * 
+ * refreshes the metadata creating a new request to the server  
+ * @public
+ * 
+ */
+sap.ui.model.odata.ODataMetadata.prototype.refresh = function() { return null; };
+
 
 // ---- sap.ui.model.odata.ODataModel --------------------------------------------------------------------------
 
@@ -20263,7 +20271,7 @@ sap.ui.model.odata.ODataMetadata.prototype.getUseBatch; = function() { return nu
  * Model implementation for oData format
  * Binding to V4 metadata annotations is experimental!
  * @extends sap.ui.model.Model
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * 
@@ -20657,6 +20665,15 @@ sap.ui.model.odata.ODataModel.prototype.getProperty = function(sPath,oContext,bI
 
 /**
  * 
+ * Returns the current security token. If the token has not been requested from the server it will be requested first.
+ * @returns {string} the CSRF security token
+ * @public
+ * 
+ */
+sap.ui.model.odata.ODataModel.prototype.getSecurityToken = function() { return ""; };
+
+/**
+ * 
  * Return the annotation object. Please note that when using the model with bLoadMetadataAsync = true then this function might return undefined because the
  * metadata has not been loaded yet.
  * In this case attach to the <code>annotationsLoaded</code> event to get notified when the annotations are available and then call this function.
@@ -20735,6 +20752,14 @@ sap.ui.model.odata.ODataModel.prototype.read = function(sPath,mParameters) { ret
  * 
  */
 sap.ui.model.odata.ODataModel.prototype.refresh = function(bForceUpdate,bRemoveData) { return null; };
+
+/**
+ * 
+ * refreshes the metadata for model, e.g. in case the first request for metadata has failed 
+ * @public
+ * 
+ */
+sap.ui.model.odata.ODataModel.prototype.refreshMetadata = function() { return null; };
 
 /**
  * 
@@ -21087,7 +21112,7 @@ sap.ui.model.PropertyBinding.prototype.setValue = function(oValue) { return null
  * Constructor for a new ResourceModel.
  * @class Model implementation for resource bundles
  * @extends sap.ui.model.Model
- * @version 1.24.3
+ * @version 1.24.4
  * @param {object} oData parameters used to initialize the ResourceModel; at least either bundleUrl or bundleName must be set on this object; if both are set, bundleName wins
  * @param {string} [oData.bundleUrl] the URL to the base .properties file of a bundle (.properties file without any locale information, e.g. "mybundle.properties")
  * @param {string} [oData.bundleName] the UI5 module name of the .properties file; this name will be resolved to a path like the paths of normal UI5 modules and ".properties" will then be appended (e.g. a name like "myBundle" can be given)
@@ -21160,7 +21185,7 @@ sap.ui.model.resource.ResourceModel.prototype.getResourceBundle = function() { r
  * Constructs an instance of a sap.ui.model.SelectionModel.
  * @class sap.ui.model.SelectionModel
  * @extends sap.ui.base.Object
- * @version 1.24.3
+ * @version 1.24.4
  * @param {int} iSelectionMode <code>sap.ui.model.SelectionModel.SINGLE_SELECTION</code> or <code>sap.ui.model.SelectionModel.MULTI_SELECTION</code>
  * @constructor
  * @public
@@ -21403,7 +21428,7 @@ sap.ui.model.SelectionModel.prototype.sliceSelectionInterval = function(iFromInd
  * This is an abstract base class for simple types.
  * @abstract
  * @extends sap.ui.model.Type
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @param {object} [oFormatOptions] options as provided by concrete subclasses
  * @param {object} [oConstraints] constraints as supported by concrete subclasses
@@ -21602,7 +21627,7 @@ sap.ui.model.TreeBinding.prototype.hasChildren = function(oContext) { return fal
  * This is an abstract base class for type objects.
  * @abstract
  * @extends sap.ui.base.Object
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * 
@@ -21646,7 +21671,7 @@ sap.ui.model.Type.prototype.getName = function() { return null; };
  * @class
  * This class represents boolean simple types.
  * @extends sap.ui.model.SimpleType
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @param {object} [oFormatOptions] formatting options. Boolean doesn't support any specific format options
@@ -21680,7 +21705,7 @@ sap.ui.model.type.Boolean.extend = function(sClassName,oClassInfo,FNMetaImpl) { 
  * @class
  * This class represents date simple types.
  * @extends sap.ui.model.SimpleType
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @param {object} [oFormatOptions] options used to create a DateFormat for formatting / parsing. Supports the same options as {@link sap.ui.core.format.DateFormat.getDateInstance DateFormat.getDateInstance}
@@ -21728,7 +21753,7 @@ sap.ui.model.type.Date.prototype.getOutputPattern = function() { return null; };
  * @class
  * This class represents datetime simple types.
  * @extends sap.ui.model.type.Date
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @param {object} [oFormatOptions] options used to create a DateFormat for formatting / parsing to/from external values and 
@@ -21765,7 +21790,7 @@ sap.ui.model.type.DateTime.extend = function(sClassName,oClassInfo,FNMetaImpl) {
  * @class
  * This class represents float simple types.
  * @extends sap.ui.model.SimpleType
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @param {object} [oFormatOptions] formatting options. Supports the same options as {@link sap.ui.core.format.NumberFormat.getFloatInstance NumberFormat.getFloatInstance}
@@ -21801,7 +21826,7 @@ sap.ui.model.type.Float.extend = function(sClassName,oClassInfo,FNMetaImpl) { re
  * @class
  * This class represents integer simple types.
  * @extends sap.ui.model.SimpleType
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @param {object} [oFormatOptions] formatting options. Supports the same options as {@link sap.ui.core.format.NumberFormat.getIntegerInstance NumberFormat.getIntegerInstance}
@@ -21837,7 +21862,7 @@ sap.ui.model.type.Integer.extend = function(sClassName,oClassInfo,FNMetaImpl) { 
  * @class
  * This class represents string simple types.
  * @extends sap.ui.model.SimpleType
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @param {object} [oFormatOptions] formatting options. String doesn't support any formatting options
@@ -21879,7 +21904,7 @@ sap.ui.model.type.String.extend = function(sClassName,oClassInfo,FNMetaImpl) { r
  * @class
  * This class represents time simple types.
  * @extends sap.ui.model.type.Date
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @param {object} [oFormatOptions] options used to create a DateFormat for formatting / parsing to/from external values and 
@@ -21919,7 +21944,7 @@ sap.ui.model.type.Time.extend = function(sClassName,oClassInfo,FNMetaImpl) { ret
  * @class
  * Model implementation for XML format
  * @extends sap.ui.model.Model
- * @version 1.24.3
+ * @version 1.24.4
  * @param {object} oData either the URL where to load the XML from or a XML
  * @constructor
  * @public

@@ -2,10 +2,17 @@ jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
 sap.ui.controller("sap.ui.demo.myFiori.view.lezartFelvetelMaster", {
 	
-
+	onBeforeRendering: function(){
+        this.getView().addDelegate({ onAfterRendering: function(evt) {
+        	 sap.ui.getCore().getModel().refresh(true);
+        	 sap.ui.getCore().getModel().updateBindings(true);
+ 			 sap.ui.getCore().getModel().forceNoCache(true);
+ 			
+        }});
+	},
+	
 	handleListItemPress : function(evt) {
 		var context = evt.getSource().getBindingContext();
-		//sap.ui.demo.myFiori.util.Setter.changeText(context);
 		this.nav.to("lezartFelvetelDetail", context);
 	},
 

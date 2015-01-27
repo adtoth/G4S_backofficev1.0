@@ -75,7 +75,7 @@
 			</ColumnListItem>
 		</Table>
 				</IconTabFilter>
-				<IconTabFilter icon="sap-icon://signature" key="sig" text="Aláírás">
+				<!-- <IconTabFilter icon="sap-icon://signature" key="sig" text="Aláírás">
 					
 		<l:VerticalLayout
 		    class="marginVerticalContent"
@@ -86,7 +86,7 @@
 		    </l:content>
 		  </l:VerticalLayout>
 
-				</IconTabFilter>
+				</IconTabFilter> -->
 				<IconTabFilter icon="sap-icon://payment-approval" text="Utánvét">
 					<Table headerText="Tételek" items="{Items}">
 						<columns>
@@ -111,12 +111,12 @@
 						<ColumnListItem>
 							<cells>
 								<ObjectIdentifier title="{ProductId}" />
-																<ObjectNumber
-									number="{path: 'COD', formatter:'sap.ui.demo.myFiori.util.Formatter.CODText' }"
-									state="{path: 'COD', formatter:'sap.ui.demo.myFiori.util.Formatter.CODState' }"/>
+									<ObjectNumber
+										number="{path: 'COD', formatter:'sap.ui.demo.myFiori.util.Formatter.CODText' }"
+										state="{path: 'COD', formatter:'sap.ui.demo.myFiori.util.Formatter.CODState' }"/>
 							</cells>
-								<ObjectIdentifier title="{Price}" />
-
+							
+							<ObjectIdentifier title="{Price}" />
 						</ColumnListItem>
 						
 					</Table>

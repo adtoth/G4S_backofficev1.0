@@ -62,7 +62,7 @@
  * Enables users to add pictures into a form. Contains PictureItem controls that describe the media.
  * It is designed to be used simultaneously with the PictureViewer control
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -726,7 +726,7 @@ sap.ca.ui.AddPicture.prototype.unbindPictures = function() { return new sap.ca.u
  * @class
  * The display list item consists of a label and a value.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -884,7 +884,7 @@ sap.ca.ui.charts.BarListItem.prototype.setValue = function(sValue) { return new 
  * </p><p>
  * Bubble chart.
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
@@ -1637,7 +1637,7 @@ sap.ca.ui.charts.BubbleChart.prototype.setYAxisTitle = function(sYAxisTitle) { r
  * - Minimum bar / dot / blip ... size
  * - Integration with ChartToolbar and ChartPopover
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
@@ -2846,7 +2846,7 @@ sap.ca.ui.charts.ChartSemanticColor.toString = function() { return ""; };
  * - personalization icon
  * - showLegend toggle
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
@@ -3531,7 +3531,7 @@ sap.ca.ui.charts.ChartType.toString = function() { return ""; };
  * @class
  * The cluster list item consists of a title and items.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3645,7 +3645,7 @@ sap.ca.ui.charts.ClusterListItem.prototype.setTitle = function(sTitle) { return 
  * @class
  * Allows you to create a chart using vertical bars and lines to represent the data
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
@@ -3821,7 +3821,7 @@ sap.ca.ui.charts.CombinedChart.prototype.setSecondAxis = function(oSecondAxis) {
  * @class
  * Allows you to create a chart using horizontal bars to represent the data
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
@@ -4078,7 +4078,7 @@ sap.ca.ui.charts.HorizontalBarChart.prototype.setVerticalArea = function(oVertic
  * @class
  * Line Chart for the Fiori Project
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @since 1.0.0
@@ -4616,7 +4616,7 @@ sap.ca.ui.charts.LineChart.prototype.setVertical = function(oVertical) { return 
  * Stacked Horizontal Bar Chart wrapper around the viz StackedBarChart / MultipleStackedBarChart.
  * To be used in conjunction with the chart toolbar.
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
@@ -4874,7 +4874,7 @@ sap.ca.ui.charts.StackedHorizontalBarChart.prototype.setType = function(sType) {
  * Stacked Vertical Column Chart wrapper around the viz StackedColumnChart / MultipleStackedColumnChart.
  * To be used in conjunction with the chart toolbar.
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
@@ -5140,7 +5140,7 @@ sap.ca.ui.charts.StackedVerticalColumnChart.prototype.setType = function(sType) 
  * @class
  * Allows you to create a chart using vertical bars to represent the data
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
@@ -5495,7 +5495,7 @@ sap.ca.ui.charts.VerticalBarChart.prototype.setVerticalBarChart = function(oVert
  * </p><p>
  * When opening the dialog in "select" mode, if a customer has been persisted in a previous session, it will be retrieved and the dialog won't open at all.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5870,7 +5870,7 @@ sap.ca.ui.CustomerContext.prototype.setShowSalesArea = function(bShowSalesArea) 
  * @class
  * Extends the ObjectListItem to display a line in the customer context control.
  * @extends sap.m.CustomListItem
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -6079,7 +6079,7 @@ sap.ca.ui.CustomerControlListItem.prototype.setShowSalesArea = function(bShowSal
  * Allows end users to interact with dates.
  * Entries can directly be written in, or selected from a calendar pad.
  * @extends sap.m.InputBase
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.22. 
@@ -6233,13 +6233,11 @@ sap.ca.ui.dialog.confirmation.open = function(oSettings,fnClose) { return null; 
  * Extends the FeedListItem to hide text when it is longer than maxLines. When text is hidden a See more
  * link is displayed, clicking on the link displays the entire text.
  * @extends sap.m.FeedListItem
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
- * This control will be available in sap.m in 1.24.
- * When 1.24 will be available you will be asked to use sap.m.FeedListItem instead!
- * This control will not be supported anymore from 1.24.
+ * This control has been made available in sap.m. Please use sap.m.FeedListItem instead! This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.ExpansibleFeedListItem = function(sId,mSettings) {};
@@ -6353,7 +6351,7 @@ sap.ca.ui.ExpansibleFeedListItem.prototype.setMaxLines = function(iMaxLines) { r
  * @class
  * Allows you to display a list of uploaded files. You can also upload a new one, rename or delete them
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
@@ -7307,7 +7305,7 @@ sap.ca.ui.FileUpload.prototype.setXsrfToken = function(sXsrfToken) { return new 
  * @class
  * A Tile container for the Overview tile with growing capabilities
  * @extends sap.m.ScrollContainer
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7444,7 +7442,7 @@ sap.ca.ui.GrowingTileContainer.prototype.setGrowingThreshold = function(iGrowing
  * @class
  * Select an item in a dialog from a hierarchical list
  * @extends sap.m.Dialog
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24.1. 
@@ -7689,7 +7687,7 @@ sap.ca.ui.HierarchicalSelectDialog.prototype.removeItem = function(vItem) { retu
  * Kind of item required by the sap.ca.ui.HierarchicalSelectDialog control.
  * An item is actually one page of the Dialog
  * @extends sap.ui.core.Item
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7827,7 +7825,7 @@ sap.ca.ui.HierarchicalSelectDialogItem.prototype.setTitle = function(sTitle) { r
  * @class
  * Display the Hierarchy of an item. Useful to indicates where an object stand in a chain of hierarchical data. The emphasized item shows the one item to display. Optional item can be hidden using the hideOptionalLevels property. Hidden items will stay accessible with an expand button.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8019,7 +8017,7 @@ sap.ca.ui.Hierarchy.prototype.unbindItems = function() { return new sap.ca.ui.Hi
  * @class
  * Item that represent a line of the Hierarchy control. The emphasized property should apply to the item that we want to represent in his hierarchy. Optionals item will be hidden if the option is true on the Hierarchy control.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8305,7 +8303,7 @@ sap.ca.ui.HierarchyItem.prototype.setTitle = function(sTitle) { return new sap.c
  * </p><p>
  * This control is used to switch between readonly and edit modes. A typical use case would be to change the value of a Label.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.22. 
@@ -9124,7 +9122,7 @@ sap.ca.ui.model.type.Time.extend = function(sClassName,oClassInfo,FNMetaImpl) { 
  * the FeedListItem or the ExpansibleFeedListItem). The developer is also responsible to implement the code to send
  * the notes to the backend system, by responding to the addNote event.
  * @extends sap.m.List
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.22. 
@@ -9328,7 +9326,7 @@ sap.ca.ui.Notes.prototype.setTextMaxLength = function(iTextMaxLength) { return n
  * The OverflowContainer allows the content of a control to be partially displayed before being fully expanded.
  * It will cut its content to a fixed height that can be defined. It is fully suitable within an IconTabBar.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.24.1. 
@@ -9535,7 +9533,7 @@ sap.ca.ui.OverflowContainer.prototype.setOverflowHeight = function(sOverflowHeig
  * @class
  * Display aTile that presents an overview of a customer
  * @extends sap.m.Tile
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9939,7 +9937,7 @@ sap.ca.ui.OverviewTile.prototype.setWidth = function(sWidth) { return new sap.ca
  * @class
  * A picture / photo Item for AddPicture and PictureViewer Controls
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10197,7 +10195,7 @@ sap.ca.ui.PictureItem.prototype.setWidth = function(sWidth) { return new sap.ca.
  * @class
  * Tile control embedding an image and allowing custom sizing
  * @extends sap.m.CustomTile
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10388,7 +10386,7 @@ sap.ca.ui.PictureTile.prototype.setWidth = function(sWidth) { return new sap.ca.
  * @class
  * Picture viewer control relying on the TileContainer control
  * @extends sap.m.TileContainer
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @deprecated Since version 1.22. 
@@ -10680,7 +10678,7 @@ sap.ca.ui.PictureViewer.prototype.setTileScaling = function(fTileScale) { return
  * @class
  * Picture viewer control relying on the TileContainer control
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10836,7 +10834,7 @@ sap.ca.ui.utils.busydialog.requireBusyDialog = function(oSettings) { return null
  * @class
  * Based on a ScrollContainer, it allows you to pinch and zoom on mobile devices
  * @extends sap.m.ScrollContainer
- * @version 1.24.3
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel

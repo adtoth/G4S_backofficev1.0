@@ -1,0 +1,175 @@
+﻿<core:View controllerName="sap.ui.demo.myFiori.view.utanvet"
+	xmlns="sap.m" xmlns:form="sap.ui.layout.form"  xmlns:core="sap.ui.core">
+	<Page title="Utánvét" class="sapUiFioriObjectPage"
+		showNavButton="true" navButtonPress="handleNavButtonPress">
+<!-- 		<ObjectHeader id="total_id"  title="Totál: "  number="" unit="Huf">
+				<attributes>
+					<ObjectAttribute id="yesterday" text="Bankszámlaszám:  1234-456678-899ö{Bankszamla}" />
+					<ObjectAttribute text="Azonosító: 0011222230102014{Azonosito}"/>
+				</attributes>
+
+		</ObjectHeader> -->
+<ObjectHeader
+        id="oh1"
+        responsive="true"
+        binding="{/ProductCollection/0}"
+        intro="{Description}"
+        title="{Name}"
+        number="{Price}"
+        numberUnit="{CurrencyCode}"
+        showMarkers="true"
+        markFlagged="true"
+        markFavorite="true"
+        numberState="Success"
+        backgroundDesign="Translucent">
+        <attributes>
+            <ObjectAttribute
+                title="Manufacturer"
+                text="{SupplierName}"/>
+        </attributes>
+        <statuses>
+            <ObjectStatus
+                title="Approval"
+                text="Pending"
+                state="Warning"/>
+        </statuses>
+        <headerContainer>
+                           <suite:HeaderContainer xmlns="sap.suite.ui.commons" xmlns:m="sap.m" scrollStep="200" scrollTime="500">  
+                                 <suite:items>  
+                                        <suite:HeaderCell height="auto">  
+                                               <suite:north>  
+                                                     <suite:HeaderCellItem height="90%">  
+                                                            <suite:content>  
+                                                                   <suite:ComparisonChart size="S" scale="M">  
+                                                                    <suite:data>  
+                                                                          <suite:ComparisonData       title="Americas" value="234" color="Good"/>  
+                                                                          <suite:ComparisonData       title="EMEA" value="97" color="Error"/>  
+                                                                          <suite:ComparisonData       title="APAC" value="197" color="Critical"/>  
+                                                                    </suite:data>  
+                                                             </suite:ComparisonChart>  
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:north>  
+                                               <suite:south>  
+                                                     <suite:HeaderCellItem height="10%">  
+                                                            <suite:content>  
+                                                                   <m:Label text="EUR, Compare across regions" />  
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:south>  
+                                        </suite:HeaderCell>  
+                                        <suite:HeaderCell height="auto">  
+                                               <suite:north>  
+                                                     <suite:HeaderCellItem height="90%">  
+                                                            <suite:content>  
+                                                                   <suite:NumericContent size="S" scale="M" value="1.96" valueColor="Error" indicator="Up"/>  
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:north>  
+                                               <suite:south>  
+                                                     <suite:HeaderCellItem height="10%">  
+                                                            <suite:content>  
+                                                                   <m:Label text="EUR, Current Quarter" />  
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:south>  
+                                        </suite:HeaderCell>  
+                                        <suite:HeaderCell height="auto">  
+                                               <suite:north>  
+                                                     <suite:HeaderCellItem height="90%">  
+                                                            <suite:content>  
+                                                                   <suite:BulletChart size="S" scale="M" targetValue="75" targetValueLabel="75c" minValue="0" maxValue="150">  
+                                                                          <suite:actual>  
+                                                                                 <suite:BulletChartData value="125" color="Error"/>  
+                                                                          </suite:actual>  
+                                                                          <suite:thresholds>  
+                                                                                  <suite:BulletChartData value="35" color="Critical"/>  
+                                                                                 <suite:BulletChartData value="115" color="Error"/>  
+                                                                          </suite:thresholds>  
+                                                                   </suite:BulletChart>   
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:north>  
+                                               <suite:south>  
+                                                     <suite:HeaderCellItem height="10%">  
+                                                            <suite:content>  
+                                                                   <m:Label text="EUR, Current and Target" />  
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:south>  
+                                        </suite:HeaderCell>  
+                                        <suite:HeaderCell height="auto">  
+                                               <suite:north>  
+                                                     <suite:HeaderCellItem height="90%">  
+                                                            <suite:content>  
+                                                                   <suite:NumericContent size="S" value="3" icon="sap-icon://travel-expense" />  
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:north>  
+                                               <suite:south>  
+                                                     <suite:HeaderCellItem height="10%">  
+                                                            <suite:content>  
+                                                                   <m:Label text="Leave Requests" />  
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:south>  
+                                        </suite:HeaderCell>  
+                                        <suite:HeaderCell height="auto">  
+                                               <suite:north>  
+                                                     <suite:HeaderCellItem height="90%">  
+                                                            <suite:content>  
+                                                                   <suite:NumericContent size="S" value="9" icon="sap-icon://locked" />   
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:north>  
+                                               <suite:south>  
+                                                     <suite:HeaderCellItem height="10%">  
+                                                            <suite:content>  
+                                                                   <m:Label text="Hours since last Activity" />  
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:south>  
+                                        </suite:HeaderCell>  
+                                        <suite:HeaderCell height="auto">  
+                                               <suite:north>  
+                                                     <suite:HeaderCellItem height="90%">  
+                                                            <suite:content>  
+                                                                   <suite:NumericContent size="S" scale="M" value="1.25" valueColor="Good" indicator="Up"/>  
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:north>  
+                                               <suite:south>  
+                                                     <suite:HeaderCellItem height="10%">  
+                                                            <suite:content>  
+                                                                   <m:Label text="EUR, Current Quarter" />  
+                                                            </suite:content>  
+                                                     </suite:HeaderCellItem>  
+                                               </suite:south>  
+                                        </suite:HeaderCell>  
+                                 </suite:items>
+                           </suite:HeaderContainer>
+        </headerContainer>
+    </ObjectHeader>
+
+<!-- 		<ObjectHeader id="yesterday"  title="Totál előző nap: "  number="" unit="Huf"> -->
+
+<!-- 		</ObjectHeader> -->
+		
+	<List id="listItems" select="" visible="false" items="{/Item}">
+			<ObjectListItem type="Active" press="handleListItemPress"
+				title="{From}"
+				icon="sap-icon://customer">
+
+			</ObjectListItem>
+		</List> 
+		
+<!-- 		<footer>
+			<Bar>
+			<contentRight>
+			 <Button type="Emphasized" text="Validál" id="cls" visible="true" press="close" width="150px"
+						icon="sap-icon://accept" />
+				</contentRight>
+			</Bar>
+		</footer> -->
+	</Page>
+</core:View>

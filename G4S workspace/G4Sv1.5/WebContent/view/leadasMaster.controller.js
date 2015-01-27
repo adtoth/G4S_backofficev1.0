@@ -2,14 +2,12 @@ jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
 sap.ui.controller("sap.ui.demo.myFiori.view.leadasMaster", {
 	 
-	onBeforeRendering: function(){ // binding model synchronisation
-			window.leadasMaster = this;
+	onBeforeRendering: function(){
 	        this.getView().addDelegate({ onAfterRendering: function(evt) {
 	        	 sap.ui.getCore().getModel().refresh(true);
 	        	 sap.ui.getCore().getModel().updateBindings(true);
 	 			 sap.ui.getCore().getModel().forceNoCache(true);
 	 			
-	 			 
 	        }});
 		},
 	 
@@ -43,22 +41,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.leadasMaster", {
 		var list = this.getView().byId("list");
 		var oBinding = list.getBinding("items");
 		oBinding.sort(sorters);
-	},
-	
-	handleSearch : function (evt) {
-		
-		// create model filter
-		var filters = [];
-		var query = evt.getParameter("query");
-		if (query && query.length > 0) {
-			var filter = new sap.ui.model.Filter("BPId", sap.ui.model.FilterOperator.Contains, query);
-			filters.push(filter);
-		}
-		
-		// update list binding
-		var list = this.getView().byId("list");
-		var binding = list.getBinding("items");
-		binding.filter(filters);
 	},
 
 });

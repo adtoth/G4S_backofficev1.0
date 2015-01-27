@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="UI5LogonPutLS" key="selection"/>
+		<item value="folytat" key="selection"/>
 		<list key="findhistory">
-			<item value="UI5LogonSave"/>
-			<item value="UI5LogonPutLS"/>
-			<item value="but"/>
-			<item value="open"/>
-			<item value="oLog"/>
-			<item value="oLogonDialog"/>
-			<item value="new"/>
+			<item value="címadat"/>
 			<item value="folytat"/>
+			<item value="Folytat"/>
+			<item value="navigator"/>
+			<item value="lengthOfAddresses"/>
+			<item value="depo"/>
+			<item value="suspend"/>
+			<item value="paramurl"/>
 		</list>
 		<list key="replacehistory">
 			<item value="depo"/>

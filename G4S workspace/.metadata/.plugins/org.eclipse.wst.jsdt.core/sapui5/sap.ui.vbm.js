@@ -53,7 +53,7 @@
  * @class
  * The AnalyticMap control.
  * @extends sap.ui.vbm.VBI
- * @version 1.24.1
+ * @version 1.24.2
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -329,7 +329,7 @@ sap.ui.vbm.AnalyticMap.prototype.zoomToRegions = function(aCodes) { return null;
  * @class
  * Simple map with standard UI5 interface
  * @extends sap.ui.vbm.VBI
- * @version 1.24.1
+ * @version 1.24.2
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -477,7 +477,7 @@ sap.ui.vbm.GeoMap.prototype.removeVo = function(vVo) { return new sap.ui.core.El
  * @class
  * Region properties.
  * @extends sap.ui.core.Element
- * @version 1.24.1
+ * @version 1.24.2
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -710,7 +710,7 @@ sap.ui.vbm.Region.prototype.setColor = function(sColor) { return new sap.ui.vbm.
  * @class
  * Aggregation element for the Spot container
  * @extends sap.ui.core.Element
- * @version 1.24.1
+ * @version 1.24.2
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -797,7 +797,7 @@ sap.ui.vbm.Spot.prototype.setPosition = function(sPosition) { return new sap.ui.
  * @class
  * Spots aggregation container
  * @extends sap.ui.core.Element
- * @version 1.24.1
+ * @version 1.24.2
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -947,7 +947,7 @@ sap.ui.vbm.Spots.prototype.removeSpot = function(vSpot) { return new sap.ui.vbm.
  * @class
  * The VBI control.
  * @extends sap.ui.core.Control
- * @version 1.24.1
+ * @version 1.24.2
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel

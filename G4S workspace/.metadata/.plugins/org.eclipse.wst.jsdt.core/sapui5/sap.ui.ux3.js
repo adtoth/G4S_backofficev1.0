@@ -66,7 +66,7 @@ sap.ui.ux3.toString = function() { return ""; };
  * </p><p>
  * When using this control, please be aware that it fulfills rather specific requirements: it has been designed for and is used within composite controls QuickView and ThingInspector.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -483,7 +483,7 @@ sap.ui.ux3.ActionBarSocialActions.toString = function() { return ""; };
  * @class
  * Collection
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.0
@@ -837,7 +837,7 @@ sap.ui.ux3.Collection.prototype.setTitle = function(sTitle) { return null; };
  * @class
  * CollectionInspector
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.0
@@ -1320,7 +1320,7 @@ sap.ui.ux3.CollectionInspector.prototype.setSidebarVisible = function(bSidebarVi
  * @class
  * DataSet
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1988,7 +1988,7 @@ sap.ui.ux3.DataSet.prototype.unbindItems = function() { return new sap.ui.ux3.Da
  * @class
  * DataSet Item
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2216,7 +2216,7 @@ sap.ui.ux3.DataSetItem.prototype.setTitle = function(sTitle) { return new sap.ui
  * DataSetSimpleView provides a simple view example for DataSet usage.
  * @extends sap.ui.core.Control
  * @implements sap.ui.ux3.DataSetView
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2624,7 +2624,7 @@ sap.ui.ux3.DataSetSimpleView.prototype.updateView = function(aDiff) { return nul
  * A comprehensive UI design approach with graphical and functional elements for searching data, exploring data, and acting on the data
  * ("Explore and Act (Exact) Pattern").
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.2. 
@@ -2969,7 +2969,7 @@ sap.ui.ux3.Exact.prototype.setSettingsMenu = function(oSettingsMenu) { return ne
  * Consists of two sections: A tool bar and a content area where arbitrary controls can be added.
  * The ExactArea is intended to be used for the Exact design approach but alternatively also in a stand alone version.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.6. 
@@ -3253,7 +3253,7 @@ sap.ui.ux3.ExactArea.prototype.setVisible = function(bVisible) { return new sap.
  * @class
  * An element for defining attributes and sub-attributes used within the Exact pattern.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3714,7 +3714,7 @@ sap.ui.ux3.ExactAttribute.prototype.setWidth = function(iWidth) { return new sap
  * in the form of structured data sets with a high or low interdependency level. From lists - which can be nested according to the defined attributes - the user can choose
  * entries and thereby trigger the display of further information, depending on the chosen entry/entries (multiple selection supported).
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4317,7 +4317,7 @@ sap.ui.ux3.ExactOrder.toString = function() { return ""; };
  * @class
  * FacetFilter Control.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4510,7 +4510,7 @@ sap.ui.ux3.FacetFilter.prototype.setVisibleItemCountMode = function(oVisibleItem
  * @class
  * List to be used with the FacetFilter control. The control is not intended to be used stand alone.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4849,7 +4849,7 @@ sap.ui.ux3.FacetFilterList.prototype.setTitle = function(sTitle) { return new sa
  * @class
  * A container control representing a full feed page, including feeder and updates.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.2. 
@@ -5647,7 +5647,7 @@ sap.ui.ux3.Feed.prototype.unbindToolsMenuItems = function() { return new sap.ui.
  * The control provides a set of properties for text, sender information, time stamp,
  * comments, and functions such as flagging the entry to be favorite, shared, or flagged.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.2. 
@@ -6841,7 +6841,7 @@ sap.ui.ux3.FeedChunk.prototype.unbindComments = function() { return new sap.ui.u
  * This feed control flavor represents a lean common feed, or a comment feed, with a text commit function.
  * The control can be used stand alone or in a multiple way, and generally would be integrated directly into a UIArea.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.2. 
@@ -7078,7 +7078,7 @@ sap.ui.ux3.FollowActionState.toString = function() { return ""; };
  * that a large number of items are defined for the bar, this is made transparent to the user by showing symbols for scrolling options (forwards and backwards)
  * to see the next or previous items.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7418,7 +7418,7 @@ sap.ui.ux3.NavigationBar.prototype.setVisible = function(bVisible) { return new 
  * @class
  * Is the item to be used within the NavigationBar
  * @extends sap.ui.core.Item
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7616,7 +7616,7 @@ sap.ui.ux3.NavigationItem.prototype.setVisible = function(bVisible) { return new
  * A NotificationBar is a "toolbar" that can be added to a page to show messages and notifications from the application.
  * Its position, height and width is inherited from the element that the notification bar is added to.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.7.0
@@ -7981,7 +7981,7 @@ sap.ui.ux3.NotificationBarStatus.toString = function() { return ""; };
  * @class
  * This element can be docked to a notification bar to show notification items
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8245,7 +8245,7 @@ sap.ui.ux3.Notifier.prototype.setTitle = function(sTitle) { return new sap.ui.ux
  * Overlay Control
  * @extends sap.ui.core.Control
  * @implements sap.ui.core.PopupInterface
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8565,7 +8565,7 @@ sap.ui.ux3.Overlay.prototype.setOpenButtonVisible = function(bOpenButtonVisible)
  * @class
  * Is to be embedded into the Overlay control as content container
  * @extends sap.ui.ux3.Overlay
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8712,7 +8712,7 @@ sap.ui.ux3.OverlayContainer.prototype.removeContent = function(vContent) { retur
  * @class
  * Dialog implementation based on the Overlay. If used in a Shell it leaves the Tool-Palette, Pane-Bar and Header-Items accessible.
  * @extends sap.ui.ux3.Overlay
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8924,7 +8924,7 @@ sap.ui.ux3.OverlayDialog.prototype.setWidth = function(sWidth) { return null; };
  * QuickView is a small popup with a short overview of a Thing.
  * QuickView is shown when a user holds the mouse pointer over a related screen element.
  * @extends sap.ui.commons.CalloutBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9753,7 +9753,7 @@ sap.ui.ux3.QuickView.prototype.setWidth = function(sWidth) { return new sap.ui.u
  * The Ux3 GoldReflection Shell, which is an application frame with navigation capabilities.
  * It is supposed to be added to a direct child of the BODY tag of a page and there should be no other parts of the page consuming space outside the Shell.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11247,7 +11247,7 @@ sap.ui.ux3.ShellHeaderType.toString = function() { return ""; };
  * @class
  * Thing Action for Swatch, QuickView, Thinginspector
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11424,7 +11424,7 @@ sap.ui.ux3.ThingAction.prototype.setText = function(sText) { return new sap.ui.u
  * @class
  * Thing Group Area
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11717,7 +11717,7 @@ sap.ui.ux3.ThingGroup.prototype.setTitle = function(sTitle) { return new sap.ui.
  * @class
  * Thing Inspector
  * @extends sap.ui.ux3.Overlay
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12649,7 +12649,7 @@ sap.ui.ux3.ThingInspector.prototype.setUpdateActionEnabled = function(bUpdateAct
  * ThingViewer: Same as ThingInspector but decoupled from the Overlay and the ActionBar.
  * The control can be added to a Parent container that has a defined width. The ThingViewer fill the whole container. If the parent container has no width defined the control will not work properly.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -13267,7 +13267,7 @@ sap.ui.ux3.ThingViewerHeaderType.toString = function() { return ""; };
  * example form-like.
  * @extends sap.ui.core.Control
  * @implements sap.ui.core.PopupInterface
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel

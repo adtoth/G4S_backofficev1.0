@@ -98,7 +98,7 @@ sap.m.isDate = function(value) { return false; };
  * @class
  * ActionListItem should be used to fire actions when tapped.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -185,7 +185,7 @@ sap.m.ActionListItem.prototype.setText = function(sText) { return new sap.m.Acti
  * @class
  * The ActionSelect control provides a list of predefined items that allows end users to choose options and additionally trigger some actions.
  * @extends sap.m.Select
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -303,7 +303,7 @@ sap.m.ActionSelect.prototype.removeButton = function(vButton) { return ""; };
  * @class
  * ActionSheet is a special kind of control which contains one or more sap.m.Button(s) and the ActionSheet will be closed when one of the buttons is tapped. It looks similar as a sap.m.Dialog in iPhone and Android while as a sap.m.Popover in iPad.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -916,7 +916,7 @@ sap.m.ActionSheet.prototype.setTitle = function(sTitle) { return new sap.m.Actio
  * App is the root element of a UI5 mobile application. It inherits from NavContainer and thus provides its navigation capabilities.
  * It also adds certain header tags to the HTML page which are considered useful for mobile apps.
  * @extends sap.m.NavContainer
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1242,7 +1242,7 @@ sap.m.BackgroundHelper.renderBackgroundImageTag = function(rm,oControl,sCssClass
  * A bar that may be used as a header of a page. It has the capability to center a content like a title, while having few controls on the left and right side.
  * @extends sap.ui.core.Control
  * @implements sap.m.IBar
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1701,7 +1701,7 @@ sap.m.BarDesign.toString = function() { return ""; };
  * @class
  * Busy Dialog is used to indicate that the system is busy with some task and the user has to wait. During this time the UI is blocked.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2066,7 +2066,7 @@ sap.m.BusyDialog.prototype.setTitle = function(sTitle) { return new sap.m.BusyDi
  * @class
  * Control to indicate that the system is busy with some task and the user has to wait. When no image or gif is provided, the control renders the platforms native indicator using css.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2384,7 +2384,7 @@ sap.m.BusyIndicator.prototype.setVisible = function(bVisible) { return new sap.m
  * @class
  * Enables users to trigger actions. For the button UI, you can define some text or an icon, or both.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2797,7 +2797,7 @@ sap.m.ButtonType.toString = function() { return ""; };
  * </p><p>
  * Note: when displa Internet Explorer 9, page changes are not animated.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3338,7 +3338,7 @@ sap.m.Carousel.prototype.setWidth = function(oWidth) { return null; };
  * @class
  * CheckBox control
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3685,7 +3685,7 @@ sap.m.CheckBox.prototype.setWidth = function(sWidth) { return new sap.m.CheckBox
  * @class
  * The column allows to define column specific properties that will be applied when rendering the List.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -4252,7 +4252,7 @@ sap.m.Column.prototype.setWidth = function(sWidth) { return new sap.m.Column(); 
  * ColumnListItem can be used to create columns for Table control.
  * Note: This control should not be used without Column definition in parent control.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -4483,7 +4483,7 @@ sap.m.ColumnListItem.prototype.unbindCells = function() { return new sap.m.Colum
  * @class
  * The ComboBox control provides a list box with items and a text field allowing the user to either type a value directly into the control or choose from the list of existing items.
  * @extends sap.m.ComboBoxBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.22
@@ -4733,7 +4733,7 @@ sap.m.ComboBox.prototype.synchronizeSelection = function() { return null; };
  * @class
  * An abstract class for ComboBoxes.
  * @extends sap.m.InputBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -5051,7 +5051,7 @@ sap.m.ComboBoxBase.prototype.unbindItems = function() { return new sap.m.ComboBo
  * This control with a content aggregation can be used to customize standard list items that we don't provide. List mode and ListItem type are applied to CustomListItems as well.
  * Note: Even the content aggregation allows any control, complex responsive layout controls (e.g. Table, Form) should not be aggregated as content.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5219,7 +5219,7 @@ sap.m.CustomListItem.prototype.unbindContent = function() { return new sap.m.Cus
  * Use the Custom Tile to show a application specific content in the tile.
  * The tile width is 8.5em and height is 10em
  * @extends sap.m.Tile
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -5318,7 +5318,7 @@ sap.m.CustomTile.prototype.setContent = function(oContent) { return new sap.m.Cu
  * This is an date input control with a calendar DatePicker.
  * It internal uses the sap.ui.unified.Calendar. So the sap.ui.unified library should be loaded from applications using this control. (Otherwise it will be loaded by opening the DatePicker.)
  * @extends sap.m.InputBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -5471,7 +5471,7 @@ sap.m.DatePicker.prototype.setWidth = function(sWidth) { return new sap.m.DatePi
  * @class
  * This is a date range selection control. It internal uses the sap.ui.unified.Calendar. So the sap.ui.unified library should be loaded from applications using this control.
  * @extends sap.m.DatePicker
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5759,7 +5759,7 @@ sap.m.DateRangeSelection.prototype.setValueFormat = function() { return null; };
  * Allows end users to interact with date and/or time and select from a date and/or time pad.
  * Note: Since 1.22, this control should not be used as a date picker(type property "Date"), instead please use dedicated sap.m.DatePicker control.
  * @extends sap.m.InputBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -6056,7 +6056,7 @@ sap.m.DateTimeInputType.toString = function() { return ""; };
  * The Dialog control is used to interrupt the current processing of an application to prompt the user for information or a response.
  * @extends sap.ui.core.Control
  * @implements sap.ui.core.PopupInterface
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7057,7 +7057,7 @@ sap.m.DialogType.toString = function() { return ""; };
  * @class
  * The display list item consists of a label and a value.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7172,7 +7172,7 @@ sap.m.DisplayListItem.prototype.setValue = function(sValue) { return new sap.m.D
  * @class
  * FacetFilter is used to provide filtering functionality with multiple parameters.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7560,7 +7560,7 @@ sap.m.FacetFilter.prototype.setVisible = function(bVisible) { return new sap.m.F
  * @class
  * Represents a value for the FacetFilterList control.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7709,7 +7709,7 @@ sap.m.FacetFilterItem.prototype.setText = function(sText) { return new sap.m.Fac
  * @class
  * FacetFilterList represents a list of values for the FacetFilter control.
  * @extends sap.m.List
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8185,7 +8185,7 @@ sap.m.FacetFilterType.toString = function() { return ""; };
  * @class
  * The Feed Input allows the user to enter text for a new feed entry and then post it.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.22
@@ -8518,7 +8518,7 @@ sap.m.FeedInput.prototype.setVisible = function(bVisible) { return new sap.m.Fee
  * The control provides a set of properties for text, sender information, time stamp.
  * Beginning with release 1.23 the new feature expand / collapse was introduced, which uses the property maxCharacters.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -8989,7 +8989,7 @@ sap.m.FlexAlignSelf.toString = function() { return ""; };
  * Browser support:
  * This control is not supported in Internet Explorer 9!
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9363,7 +9363,7 @@ sap.m.FlexDirection.toString = function() { return ""; };
  * @class
  * Holds layout data for a FlexBox
  * @extends sap.ui.core.LayoutData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9572,7 +9572,7 @@ sap.m.FlexRendertype.toString = function() { return ""; };
  * The properties "type", "unread", "selected" and "counter" are currently ignored.
  * Tap events will not be fired.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -9726,7 +9726,7 @@ sap.m.GrowingEnablement = function(oControl) {};
  * @class
  * sap.m.GrowingList control is the container for all list items and inherits from sap.m.List control. Everything like the selection, deletion, unread states and inset style are also maintained here. In addition the control provides a loading mechanism to request data from the model and append the list items to the list. The request is started manually by tapping on the trigger at the end of the list.
  * @extends sap.m.List
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.16. 
@@ -9873,7 +9873,7 @@ sap.m.GrowingList.prototype.setTriggerText = function(sTriggerText) { return new
  * Browser support:
  * This control is not supported in Internet Explorer 9!
  * @extends sap.m.FlexBox
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9969,7 +9969,7 @@ sap.m.IBarInPageEnabler = function() {};
  * A tab bar with large icons
  * @extends sap.ui.core.Control
  * @implements sap.m.ObjectHeaderContainer
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10482,7 +10482,7 @@ sap.m.IconTabBar.prototype.setVisible = function(bVisible) { return new sap.m.Ic
  * The filter item class
  * @extends sap.ui.core.Item
  * @implements sap.m.IconTab
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10813,7 +10813,7 @@ sap.m.IconTabFilterDesign.toString = function() { return ""; };
  * @class
  * This control display a number of iconTabFilters and Separators. If the available horizontal space is exceeded, it will allow for scrolling horziontally to show all items.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11091,7 +11091,7 @@ sap.m.IconTabHeader.prototype.setVisible = function(bVisible) { return new sap.m
  * A tab separator item class
  * @extends sap.ui.core.Element
  * @implements sap.m.IconTab
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11214,7 +11214,7 @@ sap.m.IconTabSeparator.prototype.setIconDensityAware = function(bIconDensityAwar
  * </p><p>
  * There are various size setting options available, and the images can be combined with actions.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11645,7 +11645,7 @@ sap.m.ImageHelper.getImageControl = function(sImgId,oImageControl,oParent,mPrope
  * @class
  * Enables users to input data.
  * @extends sap.m.InputBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12707,7 +12707,7 @@ sap.m.Input.prototype.unbindSuggestionRows = function() { return new sap.m.Input
  * @class
  * Base control for Input fields.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12.0
@@ -13102,7 +13102,7 @@ sap.m.InputBase.prototype.unbindValue = function() { return new sap.m.InputBase(
  * @class
  * List item should be used for a label and an input field.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13500,7 +13500,7 @@ sap.m.InstanceManager.removePopoverInstance = function(oPopover) { return null; 
  * Label control is used in a UI5 mobile application to provide label text for other controls. Design such as bold, and text alignment can be specified.
  * @extends sap.ui.core.Control
  * @implements sap.ui.core.Label
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13764,7 +13764,7 @@ sap.m.LabelDesign.toString = function() { return ""; };
  * @class
  * A hyperlink control which can be used to trigger actions or to navigate to other applications or web pages.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -14107,7 +14107,7 @@ sap.m.Link.prototype.setWrapping = function(bWrapping) { return new sap.m.Link()
  * The List control provides a container for all types of list items.
  * For mobile devices, the recommended limit of list items is 100 to assure proper performance. To improve initial rendering of large lists, use the "growing" feature. Please refer to the SAPUI5 Developer Guide for more information..
  * @extends sap.m.ListBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14320,7 +14320,7 @@ sap.m.List.prototype.setBackgroundDesign = function(oBackgroundDesign) { return 
  * </p><p>
  * Note: The ListBase including all contained items is completely re-rendered when the data of a bound model is changed. Due to the limited hardware resources of mobile devices this can lead to longer delays for lists with many items. As such the usage of a list is not recommended for these use cases.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -15835,7 +15835,7 @@ sap.m.ListHeaderDesign.toString = function() { return ""; };
  * @class
  * ListItemBase contains the core features of all specific list items.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -16448,7 +16448,7 @@ sap.m.MessageToast.show = function(sMessage,mOptions) { return null; };
  * @class
  * The MultiComboBox control provides a list box with items and a text field allowing the user to either type a value directly into the control or choose from the list of existing items.
  * @extends sap.m.ComboBoxBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -16800,7 +16800,7 @@ sap.m.MultiComboBox.prototype.setSelectedKeys = function(aSelectedKeys) { return
  * @class
  * MultiInput provides functionality to add / remove / enter tokens
  * @extends sap.m.Input
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -17047,7 +17047,7 @@ sap.m.MultiInput.prototype.setTokens = function(aTokens) { return null; };
  * </p><p>
  * All children of this control will receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -17763,7 +17763,7 @@ sap.m.NavContainerChild.BeforeShow = function() { return null; };
  * @class
  * ObjectAttribute displays a text field that can be normal or active. Object attribute fires a press event when the user selects active text.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -18006,7 +18006,7 @@ sap.m.ObjectAttribute.prototype.setVisible = function(bVisible) { return new sap
  * @class
  * ObjectHeader is a display control that enables the user to easily identify a specific object. The object header title is the key identifier of the object and additional text and icons can be used to further distinguish it from other objects.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -19038,7 +19038,7 @@ sap.m.ObjectHeader.prototype.setVisible = function(bVisible) { return new sap.m.
  * @class
  * ObjectIdentifier is a display control that enables the user to easily identify a specific object. The object identifier title is the key identifier of the object and additional text and icons can be used to further distinguish it from other objects.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -19267,7 +19267,7 @@ sap.m.ObjectIdentifier.prototype.setVisible = function(bVisible) { return new sa
  * @class
  * ObjectListItem is a display control that provides summary information about an object as an item in a list. The object list item title is the key identifier of the object. Additional text and icons can be used to further distinguish it from other objects. Attributes and statuses can be used to provide additional meaning about the object to the user.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -19748,7 +19748,7 @@ sap.m.ObjectListItem.prototype.setTitle = function(sTitle) { return new sap.m.Ob
  * @class
  * ObjectNumber displays number and number unit properties for an object. The number can be displayed using semantic colors to provide addition meaning about the object to the user.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -19961,7 +19961,7 @@ sap.m.ObjectNumber.prototype.setVisible = function(bVisible) { return new sap.m.
  * @class
  * Status information that may be either text with a value state, or an icon.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -20177,7 +20177,7 @@ sap.m.ObjectStatus.prototype.setVisible = function(bVisible) { return new sap.m.
  * @class
  * A page is a basic container for a mobile application screen. Usually one page is displayed at a time (in landscape mode or on tablets depending on the layout two pages might be displayed side-by-side).
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -20876,7 +20876,7 @@ sap.m.PageBackgroundDesign.toString = function() { return ""; };
  * @class
  * The Panel control is a container for controls with a solid background and a header text.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -21324,7 +21324,7 @@ sap.m.PopinDisplay.toString = function() { return ""; };
  * Popover is to present information temporarily but in a way that does not take over the entire screen. The popover content is layered on top of your existing content and it remains visible until the user taps outside of the popover when modal is set to false or you explicitly dismiss it when modal is set to true. The switching between modal and non-modal can also be done when the popover is already opened.
  * @extends sap.ui.core.Control
  * @implements sap.ui.core.PopupInterface
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -22317,7 +22317,7 @@ sap.m.PopupHelper.calcPercentageSize = function(sPercentage,fBaseSize) { return 
  * Shows the progress of a process in a graphical way. To indicate the progress, the inside of the ProgressIndicator is filled with a color.
  * Additionally, a user defined string can be displayed on the ProgressIndicator.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.13.1
@@ -22578,7 +22578,7 @@ sap.m.ProgressIndicator.prototype.setWidth = function(sWidth) { return new sap.m
  * On touch devices it gets hidden by default and when the user pulls down the page far enough, it gets visible and triggers the "refresh" event.
  * In non-touch browsers where scrollbars are used for scrolling, it is always visible and triggers the "refresh" event when clicked.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.2
@@ -22835,7 +22835,7 @@ sap.m.PullToRefresh.prototype.setVisible = function(bVisible) { return new sap.m
  * Generally, you would create at least two radio button controls which should have the same GroupName;
  * by this, you provide a limited choice for the user. Triggers an Event when User makes a change.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -23179,7 +23179,7 @@ sap.m.RadioButton.prototype.setWidth = function(sWidth) { return new sap.m.Radio
  * Is used to rate content. The amount of rating symbols can be specified, as well as the URIs to the
  * image icons which shall be used as rating symbols. When the user performs a rating, an event is fired.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.14
@@ -23614,7 +23614,7 @@ sap.m.RatingIndicatorVisualMode.toString = function() { return ""; };
  * @class
  * This control acts responsively to the type of device. It acts as a sap.m.Popover on desktop and tablet while acts as a sap.m.Dialog with stretch set to true on phone.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.15.1
@@ -24554,7 +24554,7 @@ sap.m.ScreenSize.toString = function() { return ""; };
  * </p><p>
  * Note that it is not recommended to have nested scrolling areas that scroll into the same direction (e.g. a ScrollContainer that scrolls vertically inside a Page control with scrolling enabled). This is currently not considered a valid use-case of a good UI and the behavior will feel wrong.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -24855,7 +24855,7 @@ sap.m.ScrollContainer.prototype.setWidth = function(sWidth) { return new sap.m.S
  * @class
  * Enables users to input a search string.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -25345,7 +25345,7 @@ sap.m.SearchField.prototype.unbindValue = function() { return new sap.m.SearchFi
  * @class
  * A SegmentedButton Control is a horizontal control made of multiple buttons which can display a title or an image. It automatically resizes the buttons to fit proportionally within the control. When no width is set, the control uses the available width.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -25671,7 +25671,7 @@ sap.m.SegmentedButton.prototype.setWidth = function(sWidth) { return new sap.m.S
  * @class
  * The select control provides a menu of predefined items that allows users to select an item.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -26274,7 +26274,7 @@ sap.m.Select.prototype.unbindItems = function() { return new sap.m.Select(); };
  * </p><p>
  * NOTE: The growing functionality of the list does not support Two Way Binding, so if you use this control with a JSON model make sure the binding mode is set to "OneWay" and that you update the selection model manually with the items passed in the "confirm" event.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -26895,7 +26895,7 @@ sap.m.SelectType.toString = function() { return ""; };
  * The Shell control can be used as root element of applications, it can contain an App or SplitApp control.
  * The Shell provides some overarching functionality for the overall application and takes care of visual adaptation, like a frame around the App, on desktop browser platforms.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -27321,7 +27321,7 @@ sap.m.Shell.prototype.setTitle = function(sTitle) { return new sap.m.Shell(); };
  * @class
  * A slider is a user interface control that enables the user to adjust values in a specified numerical range.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -27750,7 +27750,7 @@ sap.m.Slider.prototype.stepUp = function(iStep) { return new sap.m.Slider(); };
  * @class
  * SplitApp is another root element of a UI5 mobile application besides App control. It maintains two NavContainers if runs in tablet and one NavContainer in phone. The display of master NavContainer depends on the portrait/landscape of the device and the mode of SplitApp.
  * @extends sap.m.SplitContainer
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -27949,7 +27949,7 @@ sap.m.SplitAppMode.toString = function() { return ""; };
  * </p><p>
  * This control must be rendered as a full screen control in order to make the show/hide master area work properly.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -29384,7 +29384,7 @@ sap.m.SplitContainer.prototype.toMaster = function(sPageId,sTransitionName,oData
  * @class
  * The StandardListItem is a list item providing image, titel and description.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -29675,7 +29675,7 @@ sap.m.StandardListItem.prototype.setTitle = function(sTitle) { return new sap.m.
  * @class
  * The StandardTile
  * @extends sap.m.Tile
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -29958,7 +29958,7 @@ sap.m.SwipeDirection.toString = function() { return ""; };
  * @class
  * A switch is a user interface control on mobile devices that is used for change between binary states. The user can also drag the button handle or tap to change the state.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -30262,7 +30262,7 @@ sap.m.SwitchType.toString = function() { return ""; };
  * The Table control provides a set of sophisticated and convenience functions for responsive table design.
  * For mobile devices, the recommended limit of table rows is 100(based on 4 columns) to assure proper performance. To improve initial rendering on large tables, use the "growing" feature. Please refer to the SAPUI5 Developer Guide for more information
  * @extends sap.m.ListBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -30464,7 +30464,7 @@ sap.m.Table.prototype.setShowOverlay = function(bShowOverlay) { return new sap.m
  * @public
  * @class Table Personalization Controller
  * @extends sap.ui.base.ManagedObject
- * @version 1.24.3
+ * @version 1.24.4
  * 
  */
 sap.m.TablePersoController = function(sId,mSettings) {};
@@ -30604,7 +30604,7 @@ sap.m.TablePersoController.prototype.setShowSelectAll = function(bShowSelectAll)
  * @public
  * @class Table Personalization Dialog
  * @extends sap.ui.base.ManagedObject
- * @version 1.24.3
+ * @version 1.24.4
  * 
  */
 sap.m.TablePersoDialog = function(sId,mSettings) {};
@@ -30671,7 +30671,7 @@ sap.m.TablePersoDialog.prototype.setShowSelectAll = function(bShowSelectAll) { r
  * @class Table Personalization Provider
  * @extends sap.ui.base.ManagedObject
  * @abstract
- * @version 1.24.3
+ * @version 1.24.4
  * 
  */
 sap.m.TablePersoProvider = function() {};
@@ -30794,7 +30794,7 @@ sap.m.TablePersoProvider.prototype.setPersData = function(oBundle) { return null
  * A TableSelectDialog provides you a easier way to create a dialog that contains a list with grouping and search functionality.
  * The Table used in a SelectDialog is a Table with Columns. After selecting an item, the dialog will be closed and a callback function will return the item being selected.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -31508,7 +31508,7 @@ sap.m.TableSelectDialog.prototype.unbindItems = function() { return new sap.m.Ta
  * @class
  * The Text control is used to display some continuous text.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -31888,7 +31888,7 @@ sap.m.Text.prototype.unbindText = function() { return new sap.m.Text(); };
  * @class
  * Enable users to input multi-line text.
  * @extends sap.m.InputBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.0
@@ -32138,7 +32138,7 @@ sap.m.TextArea.prototype.setWrapping = function(oWrapping) { return new sap.m.Te
  * your content HTML in the _renderContent method of the specialized
  * tile.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -32286,7 +32286,7 @@ sap.m.Tile.prototype.setRemovable = function(bRemovable) { return new sap.m.Tile
  * @class
  * A container that arranges same-size tiles nicely on carousel pages
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -32751,7 +32751,7 @@ sap.m.TileContainer.prototype.setWidth = function(sWidth) { return new sap.m.Til
  * @class
  * The ToggleButton Control is a Button that can be toggled between pressed and normal state
  * @extends sap.m.Button
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -32841,7 +32841,7 @@ sap.m.ToggleButton.prototype.setPressed = function(bPressed) { return new sap.m.
  * @class
  * renders a token containing text and an optional delete icon
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -33178,7 +33178,7 @@ sap.m.Token.prototype.setVisible = function(bVisible) { return new sap.m.Token()
  * @class
  * Tokenizer displays multiple tokens
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -33561,7 +33561,7 @@ sap.m.Tokenizer.prototype.setWidth = function(sWidth) { return new sap.m.Tokeniz
  * Note: By default, when Toolbar overflows, it provides shrinking for text controls(e.g. Text, Label) and the controls that have percentual width.(e.g. Input, Slider). This behaviour can be overwritten by providing sap.m.ToolbarLayoutData for toolbar items.
  * @extends sap.ui.core.Control
  * @implements sap.ui.core.Toolbar,sap.m.IBar
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -33965,7 +33965,7 @@ sap.m.ToolbarDesign.toString = function() { return ""; };
  * @class
  * Holds layout data for the toolbar items.
  * @extends sap.ui.core.LayoutData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.20
@@ -34100,7 +34100,7 @@ sap.m.ToolbarLayoutData.prototype.setShrinkable = function(bShrinkable) { return
  * This control can be used to add horizontal space between toolbar items.
  * Note: ToolbarLayoutData should not be used with this control.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -34338,7 +34338,7 @@ sap.m.URLHelper.triggerTel = function(sTel) { return null; };
  * Browser support:
  * This control is not supported in Internet Explorer 9!
  * @extends sap.m.FlexBox
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -34402,7 +34402,7 @@ sap.m.VBox.extend = function(sClassName,oClassInfo,FNMetaImpl) { return function
  * @class
  * ViewSettingsCustomItem is used for modelling custom filters in the ViewSettingsDialog.
  * @extends sap.m.ViewSettingsItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -34528,7 +34528,7 @@ sap.m.ViewSettingsCustomItem.prototype.setFilterCount = function(iFilterCount) {
  * @class
  * ViewSettingsDialog provides functionality to easily select the options for sorting, grouping, and filtering data. It is a composite control, consisting of a modal popover and several internal lists. There are three different tabs (Sort, Group, Filter) in the dialog that can be activated by filling the respecive associations. If only one assication is filled, the other tabs are automatically hidden. The selected options can be used to create sorters and filters for the table.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -35416,7 +35416,7 @@ sap.m.ViewSettingsDialog.prototype.unbindSortItems = function() { return new sap
  * @class
  * A ViewSettingsFilterItem is used for modelling filter behaviour in the ViewSettingsDialog.
  * @extends sap.m.ViewSettingsItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -35584,7 +35584,7 @@ sap.m.ViewSettingsFilterItem.prototype.setMultiSelect = function(bMultiSelect) {
  * @class
  * ViewSettingsItem is used for modelling filter behaviour in the ViewSettingsDialog.
  * @extends sap.ui.core.Item
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.16
@@ -35668,12 +35668,12 @@ sap.m.getScrollDelegate = null;
 
 /**
  * 
- * Suggestion helper for sap.m.Input fields: Creates a multi column suggest list for a sap.m.Input field based on a ValueList 
+ * Suggestion helper for sap.m.Input fields: Creates a multi column suggest list for a sap.m.Input field based on a ValueList
  * annotation. The ValueList annotation will be resolved via the binding information of the Input field.
  * </p><p>
- * If the annotation describes multiple input parameter the suggest provider will resolve all of these relative to the 
+ * If the annotation describes multiple input parameter the suggest provider will resolve all of these relative to the
  * context of the Input filed and use them for the suggestion query. The suggest provider will write all values that are
- * described as output parameters back to the model (relative to the context of the Input field). This can only be done if 
+ * described as output parameters back to the model (relative to the context of the Input field). This can only be done if
  * the model runs in "TwoWay" binding mode. Both features can be switched of via the bResolveInput/bResolveOutput parameter
  * of the suggest function:
  * @param {event} oEvent

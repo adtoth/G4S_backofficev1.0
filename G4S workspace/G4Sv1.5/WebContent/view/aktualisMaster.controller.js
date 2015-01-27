@@ -4,7 +4,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualisMaster", {
 	 
 	onBeforeRendering: function(){ // binding model synchronisation
 			
-	        this.getView().addDelegate({ onAfterShow: function(evt) {
+	        this.getView().addDelegate({ onBeforeShow: function(evt) {
 	        	 sap.ui.getCore().getModel().refresh(true);
 	        	 sap.ui.getCore().getModel().updateBindings(true);
 	 			 sap.ui.getCore().getModel().forceNoCache(true);	        	 

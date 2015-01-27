@@ -2,23 +2,23 @@ jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
 jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
 sap.ui.controller("sap.ui.demo.myFiori.view.depoMaster", {
 	
-	onBeforeRendering: function(){
+	onInit: function(){
 		window.globalDepo = this;
-		this.getView().addDelegate({ onAfterShow: function(evt) {
+		this.getView().addDelegate({ onBeforeShow: function(evt) {
 			sap.ui.getCore().getModel().updateBindings(true);
 			sap.ui.getCore().getModel().forceNoCache(true)
-        	// $("#signature").jSignature();
 				var lengthOfAddresses = 0;
 				var total = 0;
 				globalDepo.byId("list").removeAllItems();
-				sap.ui.getCore().getModel().read("/Address", null, {
-				}, true, function(response) {
+				var paramurl = "$filter=Today eq '1'";
+				sap.ui.getCore().getModel().read("/Address", null, paramurl, true, function(response) {
 					lengthOfAddresses = response.results.length;
-					for(var i = 1; i <= lengthOfAddresses; i++){
-						sap.ui.getCore().getModel().read("/Address(" + i + ")" , null, {
+					//startOfIndex = response.results[0].Id;
+					for(var i = 0; i <  lengthOfAddresses ; i++){
+						sap.ui.getCore().getModel().read("/Address(" + response.results[i].Id + ")" , null, {
 							"$expand" : "Items"
 						}, true, function(response) {
-							if(response.DelStatus != "222" && response.Today == 1){
+							if(response.DelStatus != "222"){
 								for(var j = 0; j < response.Items.results.length; j++){
 									globalDepo.byId("list").addItem(new sap.m.ObjectListItem({icon: "sap-icon://shipping-status", number: response.Items.results[j].ProductId}));
 								}		

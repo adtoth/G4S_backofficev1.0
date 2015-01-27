@@ -326,24 +326,24 @@ sap.ui.controller("sap.ui.demo.myFiori.view.leadasDetail", {
 	},
 	
 	signee: function(evt) {
-		if(signeeCounter === 0){ // ha most jöttünk ide, töröljük az előző aláírást, egyébként megtartjuk, counter az onBeforeRenderingben
-			$("#signature").jSignature();
-			$("#signature").jSignature("reset");
-			signeeCounter++;
-		}
+//		if(signeeCounter === 0){ // ha most jöttünk ide, töröljük az előző aláírást, egyébként megtartjuk, counter az onBeforeRenderingben
+//			$("#signature").jSignature();
+//			$("#signature").jSignature("reset");
+//			signeeCounter++;
+//		}
 		 var a = evt.getSource().getBindingContext();
 	     var total = 0;
 	     var myView = this.getView();
 	     
-       $("#signature").jSignature();
-       $("#signature").jSignature("reset");
-       if(this.getView().byId("idIconTabBarMulti").getSelectedKey() == "sig"){
-       	this.getView().byId("cls").setVisible(false);
-       	
-       }
-       else{
-       	this.getView().byId("cls").setVisible(true);
-       }
+       //$("#signature").jSignature();
+       //$("#signature").jSignature("reset");
+//       if(this.getView().byId("idIconTabBarMulti").getSelectedKey() == "sig"){
+//       	this.getView().byId("cls").setVisible(false);
+//       	
+//       }
+//       else{
+//       	this.getView().byId("cls").setVisible(true);
+//       }
        
        // totál utánvét összeg számítás
      

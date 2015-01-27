@@ -55,7 +55,7 @@
  * @class
  * This column addes additional properties to the tabl ecolumn which are needed for the analytical binding and table
  * @extends sap.ui.table.Column
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.21. 
@@ -239,7 +239,7 @@ sap.ui.table.AnalyticalColumn.prototype.setSummed = function(bSummed) { return n
  * @class
  * A column menu which is used by the analytical column
  * @extends sap.ui.table.ColumnMenu
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.21. 
@@ -307,7 +307,7 @@ sap.ui.table.AnalyticalColumnMenu.extend = function(sClassName,oClassInfo,FNMeta
  * @class
  * Table which handles analytical OData backends
  * @extends sap.ui.table.Table
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @experimental Since version 1.21. 
@@ -504,7 +504,7 @@ sap.ui.table.AnalyticalTable.prototype.setSumOnTop = function(bSumOnTop) { retur
  * @class
  * The column allows to define column specific properties that will be applied when rendering the table.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1268,7 +1268,7 @@ sap.ui.table.Column.prototype.toggleSort = function() { return new sap.ui.table.
  * @class
  * The column menu provides all common actions that can be performed on a column.
  * @extends sap.ui.unified.Menu
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1334,7 +1334,7 @@ sap.ui.table.ColumnMenu.extend = function(sClassName,oClassInfo,FNMetaImpl) { re
  * @class
  * The DataTable control provides a set of sophisticated and comfort functions for table design. For example, you can make settings for the number of visible rows and a number for the displayed rows in the case the user expands the table. The first visible row can be explicitly set. For the selection of columns and rows, a Multi, a Single, a None, and an All mode are available. Setting the Editable property to true lets the user make changes on the table cell entries.
  * @extends sap.ui.table.TreeTable
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.5.1. 
@@ -1541,7 +1541,7 @@ sap.ui.table.NavigationMode.toString = function() { return ""; };
  * @class
  * The row.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1754,7 +1754,7 @@ sap.ui.table.SortOrder.toString = function() { return ""; };
  * @class
  * The Table control provides a set of sophisticated and comfort functions for table design. For example, you can make settings for the number of visible rows. The first visible row can be explicitly set. For the selection of rows, a Multi, a Single, and a None mode are available.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3891,7 +3891,7 @@ sap.ui.table.Table.prototype.unbindRows = function() { return new sap.ui.table.T
  * @class
  * The TablePersoController can be used to connect a table with a persistence service.
  * @extends sap.ui.base.ManagedObject
- * @version 1.24.3
+ * @version 1.24.4
  * @since 1.21.1
  * @constructor
  * @public
@@ -4078,7 +4078,7 @@ sap.ui.table.TablePersoController.prototype.setTable = function(vTable) { return
  * @class
  * The TreeTable Control.
  * @extends sap.ui.table.Table
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel

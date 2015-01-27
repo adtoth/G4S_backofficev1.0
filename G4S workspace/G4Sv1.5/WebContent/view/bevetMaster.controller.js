@@ -68,9 +68,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 			var foundItems = 0;
 			var allItems = 0;
 			var closedItems = 0;
+			var paramurl = "$filter=Today eq '1'";
 			
-			globalVariable.getModel().read("/Item", null, {
-			}, true, function(response) {	
+			globalVariable.getModel().read("/Item", null, paramurl, true, function(response) {	
 				for(var i = 0; i < response.results.length; i++){
 					allItems = response.results.length;
 					if(response.results[i].PickupStatus == 'A'){
@@ -103,12 +103,13 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 										
 									});
 						}*/
-						
-						sap.ui.getCore().getModel().read("/Address", null, {
-						}, true, function(response) {
+						//var startOfIndex = 0;
+						var lengthOfAddresses = 0;
+						sap.ui.getCore().getModel().read("/Address", null, paramurl, true, function(response) {
 							lengthOfAddresses = response.results.length;
-							for(var i = 1; i <= lengthOfAddresses; i++){
-								sap.ui.getCore().getModel().read("/Address(" + i + ")" , null, {
+							//startOfIndex = response.results[0].Id;
+							for(var i = 0; i <  lengthOfAddresses ; i++){
+								sap.ui.getCore().getModel().read("/Address(" + response.results[i].Id + ")" , null, {
 									"$expand" : "Items"
 								}, true, function(response) {
 									var itemCount = 0;
@@ -149,38 +150,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 			});
 
 
-
-	},
-	
-	scan_debug : function(evt) {
-			sap.ui.getCore().getModel().read("/Item", null, {
-			}, true, function(response) {	
-				for(var i = 0; i < response.results.length; i++){
-					if(response.results[i].PickupStatus == 'A'){
-						closedItems++;
-					}
-					if(response.results[i].ProductId === result.text){
-						found++;
-						if(response.Items.results[i].PickupStatus != 'A'){
-						sap.ui.getCore().getModel().setProperty("/Item(" + response.results[i].Id + ")/PickupStatus", 'A');
-						sap.ui.getCore().getModel().submitChanges();
-						sap.ui.getCore().getModel().updateBindings(true);
-						sap.ui.getCore().getModel().forceNoCache(true);
-						sap.m.MessageToast.show("Csomag felvéve");
-						}
-						else if(response.results[i].PickupStatus == 'A'){
-							sap.m.MessageToast.show("Ez a csomag már fel van véve!");
-						}
-					}
-					
-				}
-				
-				if(found != 0) {
-					sap.m.MessageToast.show("Nincs ilyen azonosítójú csomag");
-				}
-					
-					
-			});
 
 	},
 	

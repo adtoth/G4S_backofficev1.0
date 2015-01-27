@@ -6,30 +6,30 @@
 			<ActionListItem text="Aktuális szállítás" press="handleAktualisPress"/> <ActionListItem 
 			text="Utánvét" press="handleListItemPress"/> </List> -->
 
-		<StandardTile icon="sap-icon://database" id="bevetTile" number="" title="Bevételezés"
+		<StandardTile icon="sap-icon://database" id="bevetTile" number="0" title="Bevételezés"
 			press="handleBevetelezesPress" />
 			
 		<StandardTile id="aktualisTile" icon="sap-icon://sys-enter-2"
-			title="Aktuális szállítás" number="" press="handleAktualisPress" />
+			title="Aktuális szállítás" number="0" press="handleAktualisPress" />
 		
 			
 		<StandardTile id="leadTile" icon="sap-icon://toaster-down"
-			title="Leadás" number="" press="handleLeadasPress" />
+			title="Leadás" number="0" press="handleLeadasPress" />
 			
 		<StandardTile id="leadLezartTile" icon="sap-icon://locked"
-			title="Lezárt Leadások" number="" press="handleLezartLeadasPress" />
+			title="Lezárt Leadások" number="0" press="handleLezartLeadasPress" />
 			
 		<StandardTile id="felvetTile" icon="sap-icon://toaster-up" title="Felvét"
-			press="handleFelvetelPress" />
+			press="handleFelvetelPress" number="0" />
 			
 		<StandardTile id="felvetLezartTile" icon="sap-icon://locked"
-			title="Lezárt Felvételek" number="" press="handleLezartFelvetelPress" />
+			title="Lezárt Felvétek" number="0" press="handleLezartFelvetelPress" />
 			
 		<StandardTile icon="sap-icon://payment-approval" title="Utánvét"
 			press="handleUtanvetPress" />
 			
 		<StandardTile icon="sap-icon://home" title="Depo"
-			press="handleDepoPress" id="depoTile" />
+			press="handleDepoPress" number="0" id="depoTile" />
 			
 		<!-- <m:Link text="Start Call" href="tel:+36303361265" press="handlePhonePress" id="phoneLink"/>	 -->
 	</Page>

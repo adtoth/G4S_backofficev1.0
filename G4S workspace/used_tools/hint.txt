@@ -2,6 +2,8 @@ http://scn.sap.com/community/developer-center/front-end/blog/2014/03/14/integrat
 
 Scan képernyo mérete: CameraManager.java
 
+cordova create E:\Netlife\G4S Futár projekt\Futar_nobrand com.netlife.futarapp futarapp
+
 cordova create E:\programs\barcodeScanner com.enterprisemobility.barcodeScanner barcodeScanner
 cordova plugin add PATH (PATH is a location of barcodeScanner plugin)
 cordova build

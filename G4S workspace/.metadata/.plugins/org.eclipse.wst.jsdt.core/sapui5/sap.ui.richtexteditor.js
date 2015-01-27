@@ -69,7 +69,7 @@
  * @class
  * The RichTextEditor-Control is used to enter formatted text.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @disclaimer Since version 1.6.0. 

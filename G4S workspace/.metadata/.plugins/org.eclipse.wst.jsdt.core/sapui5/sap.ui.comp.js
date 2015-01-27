@@ -68,7 +68,7 @@
  * The basic area fields are populated via the aggregation 'filterItems'. It also contains buttons like 'Reset' and 'Search'.
  * Advanced Area is populated via the aggregation 'filterGroupItems'. The advanced area is placed inside an expandable Pane.
  * @extends sap.ui.layout.Grid
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -759,7 +759,7 @@ sap.ui.comp.filterbar.FilterBar.prototype.setSearchEnabled = function(bValue) { 
  * @class
  * representation for a filter field in the advanced area.
  * @extends sap.ui.comp.filterbar.FilterItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -894,7 +894,7 @@ sap.ui.comp.filterbar.FilterGroupItem.prototype.setVisibleInAdvancedArea = funct
  * @class
  * FilterItem represents a selection filed in the basic area of the FilterBar control
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1450,7 +1450,7 @@ sap.ui.comp.smartfilterbar.AdditionalConfigurationHelper.prototype.getGroupConfi
  * @class
  * A ControlConfiguration can be used to add additional configuration for filter fields in the SmartFilterBar, in order to overwrite the default settings from the OData metadata. For instance it is possible to change the label, index or control type of a filter field.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2152,7 +2152,7 @@ sap.ui.comp.smartfilterbar.FilterProvider.prototype.setFilterDataAsString = func
  * @class
  * A GroupConfiguration can be used to add additional configurations for groups in the SmartFilterBar. A group in the SmartFilterBar is a group of filter fields in the advanced search.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2352,7 +2352,7 @@ sap.ui.comp.smartfilterbar.GroupConfiguration.prototype.setLabel = function(oLab
  * @class
  * A Select Option can be used to specify default filter values for a control configuration of the SmartFilterBar.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2516,7 +2516,7 @@ sap.ui.comp.smartfilterbar.SelectOption.prototype.setSign = function(sSign) { re
  * @class
  * The SmartFilterBar uses the OData metadata of an entity type in order to create a FilterBar. It is automatically determined which fields will be used for the filter bar, if the fields support TypeAhead etc. Using control configurations and group configurations it is possible to configure the filter bar and adapt it according to your needs.
  * @extends sap.ui.comp.filterbar.FilterBar
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3058,7 +3058,7 @@ sap.ui.comp.valuehelpdialog.ItemsCollection.prototype.removeAll = function() { r
  * @class
  * The ValueHelpDialog Control can be used to implement an F4 value help for a multi-input field.
  * @extends sap.m.Dialog
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3635,7 +3635,7 @@ sap.ui.comp.valuehelpdialog.ValueHelpService = function(mParams) {};
  * @class
  * Edittable Variant List item for the Management Popup
  * @extends sap.m.InputListItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3726,7 +3726,7 @@ sap.ui.comp.variants.EditableVariantItem.prototype.setKey = function(sKey) { ret
  * @class
  * The variant management control can be used to manage variants, such as filter bar variants or table variants.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel

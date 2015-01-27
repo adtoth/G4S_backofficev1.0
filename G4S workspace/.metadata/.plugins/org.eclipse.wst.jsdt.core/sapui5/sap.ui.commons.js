@@ -52,7 +52,7 @@
  * @class
  * Contains N sections which act as containers for any library controls
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -434,7 +434,7 @@ sap.ui.commons.Accordion.prototype.setWidth = function(sWidth) { return new sap.
  * @class
  * Represents a panel which is a container for other controls. The container does not have any layout function.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -735,7 +735,7 @@ sap.ui.commons.AccordionSection.prototype.setTitle = function(sTitle) { return n
  * @class
  * The application header control stands on the top of any application page. It consists basically of 4 areas. Logo area/Function area provided by application/Search area/Logout area
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -978,7 +978,7 @@ sap.ui.commons.ApplicationHeader.prototype.setUserName = function(sUserName) { r
  * @class
  * Used for defining areas in an image map. At runtime, the user can trigger an action, or start a URL, from the single image areas.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1140,7 +1140,7 @@ sap.ui.commons.Area.prototype.setShape = function(sShape) { return new sap.ui.co
  * Textfield with list based text completion.
  * @extends sap.ui.commons.ComboBox
  * @implements sap.ui.commons.ToolbarItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.10.0
@@ -1365,7 +1365,7 @@ sap.ui.commons.AutoComplete.prototype.setSelectedKey = function() { return null;
  * Enables users to trigger actions such as save or print. For the button UI, you can define some text or an icon, or both.
  * @extends sap.ui.core.Control
  * @implements sap.ui.commons.ToolbarItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1895,7 +1895,7 @@ sap.ui.commons.ButtonStyle.toString = function() { return ""; };
  * @class
  * Callout is a small popup with some useful information and links that is shown when a mouse is hovered over a specific view element.
  * @extends sap.ui.commons.CalloutBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2041,7 +2041,7 @@ sap.ui.commons.Callout.prototype.removeContent = function(vContent) { return new
  * @class
  * CalloutBase is a building block for Callout. Do not use it directly. Use the Callout control instead
  * @extends sap.ui.core.TooltipBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2378,7 +2378,7 @@ sap.ui.commons.CalloutBase.prototype.setPosition = function(myPosition,atPositio
  * @class
  * Carousel holds multiple controls and displays them vertical or horizontal next to each other. You can define how many content items should be displayed at once or let the carousel determine that for you. Navigation is done through buttons or keys.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.8.0
@@ -2794,7 +2794,7 @@ sap.ui.commons.Carousel.prototype.unbindContent = function() { return new sap.ui
  * </p><p>
  * Provides a box which can be flagged, the box has a label. A check box can either stand alone, or in a group with other check boxes. As an option, the boxes can initially be set to status 'Not Editable'.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3242,7 +3242,7 @@ sap.ui.commons.CheckBox.prototype.unbindChecked = function() { return new sap.ui
  * @class
  * This control gives the user the opportunity to choose a color. The color can be defined using HEX-, RGB- or HSV-values or a CSS colorname.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3476,7 +3476,7 @@ sap.ui.commons.ColorPicker.prototype.getColorString = function() { return ""; };
  * The control provides a field that allows end users to either enter some text, or to choose an entry out of a list of pre-defined items. The choosable items can be provided in the form of complete list boxes, single listbox items, or text strings defined for the current application.
  * @extends sap.ui.commons.TextField
  * @implements sap.ui.commons.ToolbarItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3863,7 +3863,7 @@ sap.ui.commons.ComboBox.prototype.unbindItems = function() { return new sap.ui.c
  * If the value is provided via data binding, using a Date.type the formatter of the Date.type is used.
  * Since version 1.22 the unified.Calendar is used inside the datePicker. So applications using the DatePicker should load the unified library. Otherwise it will be loaded the first time a DatePicker is opened.
  * @extends sap.ui.commons.TextField
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4009,7 +4009,7 @@ sap.ui.commons.DatePicker.prototype.setYyyymmdd = function(sYyyymmdd) { return n
  * An interactive window appearing on request displaying information to the user. The API supports features such as popups with fixed sizes, popups with unlimited width, scrolling bars for large windows, and control nesting (for example, a drop-down list can be included in the window).
  * @extends sap.ui.core.Control
  * @implements sap.ui.core.PopupInterface
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4840,7 +4840,7 @@ sap.ui.commons.Dialog.prototype.setWidth = function(sWidth) { return new sap.ui.
  * The control provides a field that allows end users to an entry out of a list of pre-defined items. The choosable items can be provided in the form of complete list boxes or single list items.
  * Binding (see DataBinding) is also supported for list items.
  * @extends sap.ui.commons.ComboBox
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5238,7 +5238,7 @@ sap.ui.commons.enums.Orientation.toString = function() { return ""; };
  * @class
  * The framework generates an input field and a button with text "Browse ...". The API supports features such as on change uploads (the upload starts immediately after a file has been selected), file uploads with explicit calls, adjustable control sizes, text display after uploads, or tooltips containing complete file paths.
  * @extends sap.ui.unified.FileUploader
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.21.0. 
@@ -5302,7 +5302,7 @@ sap.ui.commons.FileUploader.extend = function(sClassName,oClassInfo,FNMetaImpl) 
  * @class
  * Represents a parameter for the FileUploader which is rendered as a hidden inputfield.
  * @extends sap.ui.unified.FileUploaderParameter
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.21.0. 
@@ -5371,7 +5371,7 @@ sap.ui.commons.FileUploaderParameter.extend = function(sClassName,oClassInfo,FNM
  * Holder for form control to be rendered in a specific form layout.
  * A Form supports VariantLayoutData for it's conent to allow a simple switching of Layouts.
  * @extends sap.ui.layout.form.Form
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -5463,7 +5463,7 @@ sap.ui.commons.form.Form.prototype.setVisible = function(bVisible) { return new 
  * Used to group form elements.
  * Can contain other form elements or containers.
  * @extends sap.ui.layout.form.FormContainer
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -5554,7 +5554,7 @@ sap.ui.commons.form.FormContainer.prototype.setVisible = function(bVisible) { re
  * @class
  * A form element is a combination of one label and different controls associated to this label.
  * @extends sap.ui.layout.form.FormElement
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -5646,7 +5646,7 @@ sap.ui.commons.form.FormElement.prototype.setVisible = function(bVisible) { retu
  * Base layout for Forms.
  * Other Layouts must inherit from this one.
  * @extends sap.ui.layout.form.FormLayout
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -5712,7 +5712,7 @@ sap.ui.commons.form.FormLayout.extend = function(sClassName,oClassInfo,FNMetaImp
  * Grid layout specific properties for FormContainers.
  * The width and height properties of the elements are ignored since the witdh and heights are defined by the grid cells.
  * @extends sap.ui.layout.form.GridContainerData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -5778,7 +5778,7 @@ sap.ui.commons.form.GridContainerData.extend = function(sClassName,oClassInfo,FN
  * The grid specific layout data for FormElement fields.
  * The width property of the elements is ignored since the width is defined by grid cells.
  * @extends sap.ui.layout.form.GridElementData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -5845,7 +5845,7 @@ sap.ui.commons.form.GridElementData.extend = function(sClassName,oClassInfo,FNMe
  * </p><p>
  * To adjust the content inside the GridLayout GridContainerData and GridElementData could be used.
  * @extends sap.ui.layout.form.GridLayout
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -5910,7 +5910,7 @@ sap.ui.commons.form.GridLayout.extend = function(sClassName,oClassInfo,FNMetaImp
  * @class
  * Renders a form with responsive layout. Internally the ResponsiveFlowLayout is used.
  * @extends sap.ui.layout.form.ResponsiveLayout
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.10.0
@@ -5975,7 +5975,7 @@ sap.ui.commons.form.ResponsiveLayout.extend = function(sClassName,oClassInfo,FNM
  * @class
  * Use the SimpleForm to create a form based on title, label and fields that are stacked in the content aggregation. Add Title to start a new FormContainer(Group). Add Label to start a new row in the container. Add Input/Display controls as needed. Use LayoutData to influence the layout for special cases in the Input/Display controls.
  * @extends sap.ui.layout.form.SimpleForm
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.12
@@ -6066,7 +6066,7 @@ sap.ui.commons.form.SimpleForm.prototype.setLayout = function(oLayout) { return 
  * @class
  * Allows to use a limited set of HTML tags for display
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.0
@@ -6297,7 +6297,7 @@ sap.ui.commons.FormattedTextView.prototype.setVisible = function(bVisible) { ret
  * @class
  * Divides the screen in visual areas.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -6471,7 +6471,7 @@ sap.ui.commons.HorizontalDividerType.toString = function() { return ""; };
  * There are various size setting options available, and the images can be combined with actions.
  * @extends sap.ui.core.Control
  * @implements sap.ui.commons.ToolbarItem,sap.ui.commons.FormattedTextViewControl
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -6758,7 +6758,7 @@ sap.ui.commons.Image.prototype.setWidth = function(sWidth) { return new sap.ui.c
  * @class
  * Combination of image areas where at runtime these areas are starting points for hyperlinks or actions
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -6997,7 +6997,7 @@ sap.ui.commons.ImageMap.prototype.setName = function(sName) { return new sap.ui.
  * @class
  * The InPlaceEdit is a functionality to have text in display mode that can be changed in place.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.8.0
@@ -7348,7 +7348,7 @@ sap.ui.commons.InPlaceEdit.prototype.setValueState = function(oValueState) { ret
  * Is used for labeling other controls. The API provides formatting options, for example for bold display or alignment. A label can have an icon.
  * @extends sap.ui.core.Control
  * @implements sap.ui.commons.ToolbarItem,sap.ui.core.Label
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7698,7 +7698,7 @@ sap.ui.commons.LabelDesign.toString = function() { return ""; };
  * </p><p>
  * The Absolute Layout positions its child controls absolutely
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8068,7 +8068,7 @@ sap.ui.commons.layout.BackgroundDesign.toString = function() { return ""; };
  * Based upon the border layout as it comes with the Java standard. Using this layout, you are able to divide your available UI space into five areas whose sizes can be defined. These areas are: Top: Header; Bottom: Footer; Begin: Left/right-hand side panel; Center: Content area
  * in the middle; End: Right/left-hand side panel.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8510,7 +8510,7 @@ sap.ui.commons.layout.BorderLayout.prototype.setWidth = function(sWidth) { retur
  * @class
  * The BorderLayoutArea represents one area of a BorderLayout
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8812,7 +8812,7 @@ sap.ui.commons.layout.HAlign.toString = function() { return ""; };
  * @class
  * A layout that provides support for horizontal alignment of controls
  * @extends sap.ui.layout.HorizontalLayout
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8896,7 +8896,7 @@ sap.ui.commons.layout.HorizontalLayout.extend = function(sClassName,oClassInfo,F
  * matrix layout if you need to align controls horizontally across rows.
  * </p>
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9213,7 +9213,7 @@ sap.ui.commons.layout.MatrixLayout.prototype.setWidths = function(aWidths) { ret
  * </p><p>
  * Non-control element used as part of a matrix layout's inner structure.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9606,7 +9606,7 @@ sap.ui.commons.layout.MatrixLayoutCell.prototype.setVAlign = function(oVAlign) {
  * </p><p>
  * Non-control element used as part of a matrix layout's inner structure.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9849,7 +9849,7 @@ sap.ui.commons.layout.Padding.toString = function() { return ""; };
  * @class
  * Is used to specify the position of a control in the AbsoluteLayout
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10102,7 +10102,7 @@ sap.ui.commons.layout.PositionContainer.prototype.updatePosition = function(oPos
  * @class
  * This is a layout where several controls can be added. These controls are blown up to fit a whole line. If the window resizes the controls are moved between the lines and resized again.
  * @extends sap.ui.layout.ResponsiveFlowLayout
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -10167,7 +10167,7 @@ sap.ui.commons.layout.ResponsiveFlowLayout.extend = function(sClassName,oClassIn
  * @class
  * This is a LayoutData Element that can be added to a control if this control is used within a ResponsiveFlowLayout
  * @extends sap.ui.layout.ResponsiveFlowLayoutData
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.9.1
@@ -10268,7 +10268,7 @@ sap.ui.commons.layout.VAlign.toString = function() { return ""; };
  * @class
  * In this layout the elemnts are orderd one below the other
  * @extends sap.ui.layout.VerticalLayout
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.16.0. 
@@ -10341,7 +10341,7 @@ sap.ui.commons.layout.VerticalLayout.extend = function(sClassName,oClassInfo,FNM
  * Another usage scenario is triggering an action, for example to open a popup window. In both cases, the link is a hypertext link.
  * @extends sap.ui.core.Control
  * @implements sap.ui.commons.ToolbarItem,sap.ui.commons.FormattedTextViewControl
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10735,7 +10735,7 @@ sap.ui.commons.Link.prototype.setWidth = function(sWidth) { return new sap.ui.co
  * fixing the number of visible items, choosing one item to be the item that is marked by default when the list box is shown, or a scroll bar for large list boxes
  * are available.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11511,7 +11511,7 @@ sap.ui.commons.ListBox.prototype.setWidth = function(sWidth) { return new sap.ui
  * @class
  * A container for menu items. When the space in the browser is not large enough to display all defined items, a scroll bar is provided.
  * @extends sap.ui.unified.Menu
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.21.0. 
@@ -11579,7 +11579,7 @@ sap.ui.commons.Menu.extend = function(sClassName,oClassInfo,FNMetaImpl) { return
  * for example long menu item texts, automated scrolling for menu items when the browser space is not large enough to display all items, defining images for single
  * or all items in a menu, automated layouting of items with or w/o image, and active/non-active items.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11829,7 +11829,7 @@ sap.ui.commons.MenuBarDesign.toString = function() { return ""; };
  * Common button control that opens a menu when clicked by the user. The control provides an API for configuring the docking position
  * of the menu.
  * @extends sap.ui.commons.Button
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12046,7 +12046,7 @@ sap.ui.commons.MenuButton.prototype.setMenu = function(oMenu) { return new sap.u
  * @class
  * Smallest unit in the menu hierarchy. An item can be a direct part of a menu bar, of a menu, or of a sub menu.
  * @extends sap.ui.unified.MenuItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.21.0. 
@@ -12124,7 +12124,7 @@ sap.ui.commons.MenuItemBase = function() {};
  * Menu item which contains an text field. This menu item is e.g. helpful for filters.
  * The aggregation 'submenu' (inherited from parent class) is not supported for this type of menu item.
  * @extends sap.ui.unified.MenuTextFieldItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.21.0. 
@@ -12188,7 +12188,7 @@ sap.ui.commons.MenuTextFieldItem.extend = function(sClassName,oClassInfo,FNMetaI
  * @class
  * Creates the "Message"s to be supplied to the "MessageBar" Control.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.4.0. 
@@ -12363,7 +12363,7 @@ sap.ui.commons.Message.prototype.setType = function(oType) { return new sap.ui.c
  * Creates an instance of a "MessageBar" Control, for displaying "Message"s.
  * There is no imposed limit on the number of "MessageBar"s that can be created, but using only 1 makes sense, specially if accessing it (via Ctl-m) becomes a necessity.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.4.0. 
@@ -12672,7 +12672,7 @@ sap.ui.commons.MessageBox.Icon.toString = function() { return ""; };
  * @class
  * Instantiated by the "MessageBar" Control if the user ever requests to generate the corresponding "MessageList".
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.4.0. 
@@ -12808,7 +12808,7 @@ sap.ui.commons.MessageList.prototype.setVisible = function(bVisible) { return ne
  * @class
  * Responsible for displaying the new incoming messages, one at the time, on top of the MessageBar.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.4.0. 
@@ -12972,7 +12972,7 @@ sap.ui.commons.MessageType.toString = function() { return ""; };
  * @class
  * Provides navigation between pages within a list of numbered pages.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13171,7 +13171,7 @@ sap.ui.commons.PaginatorEvent.toString = function() { return ""; };
  * @class
  * Represents a container with scroll functionality, the control can be used for text and controls. The Panel does not layout the embedded controls.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13704,7 +13704,7 @@ sap.ui.commons.Panel.prototype.setWidth = function(sWidth) { return new sap.ui.c
  * @class
  * A text field with masked characters which borrows its properties and methods from TextField.
  * @extends sap.ui.commons.TextField
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13770,7 +13770,7 @@ sap.ui.commons.PasswordField.extend = function(sClassName,oClassInfo,FNMetaImpl)
  * Shows the progress of a process in a graphical way. The indicator can be displayed with or without numerical values.
  * The filling can be displayed in color only, or additionally with the percentage rate. The indicator status can be interactive.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14009,7 +14009,7 @@ sap.ui.commons.ProgressIndicator.prototype.setWidth = function(sWidth) { return 
  * by this, you provide a limited choice for the user. Radio buttons can trigger events.
  * Available value states are "Error", "None", "Success", "Warning".
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14452,7 +14452,7 @@ sap.ui.commons.RadioButton.prototype.setWidth = function(sWidth) { return new sa
  * @class
  * a group of RadioButtons to hande as one UI element.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14945,7 +14945,7 @@ sap.ui.commons.RadioButtonGroup.prototype.unbindItems = function() { return new 
  * The interactive control is displayed either as a horizontal or a vertical line with two pointers and units of measurement.
  * Users can move the pointers along the line to change a range with graphical support.
  * @extends sap.ui.commons.Slider
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.8.0
@@ -15041,7 +15041,7 @@ sap.ui.commons.RangeSlider.prototype.setValue2 = function(fValue2) { return new 
  * Is used to let the user do some rating on a certain topic. The amount of rating symbols can be specified, as well as the URIs to the
  * image icons which shall be used as rating symbols. When the user performs a rating, an event is fired.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -15485,7 +15485,7 @@ sap.ui.commons.RatingIndicatorVisualMode.toString = function() { return ""; };
  * @class
  * Is used to provide a container, which can show different content depending on its current width. It fires an event, whenever a new range is reached. In addition the content of the new range is automatically shown, if it is set.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -15757,7 +15757,7 @@ sap.ui.commons.ResponsiveContainer.prototype.setWidth = function(sWidth) { retur
  * @class
  * Defines a range for the ResponsiveContainer
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -15917,7 +15917,7 @@ sap.ui.commons.ResponsiveContainerRange.prototype.setWidth = function(sWidth) { 
  * </p><p>
  * Is used to provide tool tips that can have long text, image and title. This tool tip extends the TooltipBase.
  * @extends sap.ui.core.TooltipBase
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -16076,7 +16076,7 @@ sap.ui.commons.RichTooltip.prototype.setTitle = function(sTitle) { return new sa
  * @class
  * Is used to display step-by-step work flows of a clearly defined work process
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -16467,7 +16467,7 @@ sap.ui.commons.RoadMap.prototype.setWidth = function(sWidth) { return new sap.ui
  * @class
  * Step used within a RoadMap Control.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -16738,7 +16738,7 @@ sap.ui.commons.RoadMapStep.prototype.setVisible = function(bVisible) { return ne
  * @class
  * This control displays items in a stacked list format, allowing the user to page in order to see more items or to use the offered filtering and sorting capabilities in order to manipulate the displayed data.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -17632,7 +17632,7 @@ sap.ui.commons.RowRepeaterDesign.toString = function() { return ""; };
  * @class
  * This element is used by the RowRepeater and allows to define a filter in this context along with the related data such as a text and an icon.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -17769,7 +17769,7 @@ sap.ui.commons.RowRepeaterFilter.prototype.setText = function(sText) { return ne
  * @class
  * This element is used by the RowRepeater and allows to define a sorter in this context along with the related data such as a text and an icon.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -17922,7 +17922,7 @@ sap.ui.commons.RowRepeaterSorter.prototype.setText = function(sText) { return ne
  * Allows the user to type search queries and to trigger the search. Optionally, suggestions can be added.
  * @extends sap.ui.core.Control
  * @implements sap.ui.commons.ToolbarItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -18647,7 +18647,7 @@ sap.ui.commons.SearchField.prototype.suggest = function(sSSuggestValue,aASuggest
  * @class
  * A SearchProvider which can be attached to a Search Field.
  * @extends sap.ui.core.search.OpenSearchProvider
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.6.0. 
@@ -18713,7 +18713,7 @@ sap.ui.commons.SearchProvider.extend = function(sClassName,oClassInfo,FNMetaImpl
  * The SegmentedButton provides a group of multiple buttons. Only one button can be active. The behaviour is more ore less like a radio button group.
  * @extends sap.ui.core.Control
  * @implements sap.ui.commons.ToolbarItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -19006,7 +19006,7 @@ sap.ui.commons.SegmentedButton.prototype.setVisible = function(bVisible) { retur
  * The interactive control is displayed as a horizontal line with a pointer and units of measurement.
  * Users can move the pointer along the line to change values with graphical support.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -19587,7 +19587,7 @@ sap.ui.commons.Slider.prototype.setWidth = function(sWidth) { return new sap.ui.
  * @class
  * Allows to split the screen into two areas. Make sure that the container for the splitter has an absolute height or set an absolute height for the splitter using the height property. Otherwise the height of the splitter is calculated by the height of its contents.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -20033,7 +20033,7 @@ sap.ui.commons.Splitter.prototype.setWidth = function(sWidth) { return new sap.u
  * @class
  * A single page in a TabStrip control.
  * @extends sap.ui.commons.Panel
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -20198,7 +20198,7 @@ sap.ui.commons.Tab.prototype.setVerticalScrolling = function(oVerticalScrolling)
  * </p><p>
  * A container for tab controls which contain the content and generally other controls. The user switches between the tabs then to display the content.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -20568,7 +20568,7 @@ sap.ui.commons.TabStrip.prototype.setWidth = function(sWidth) { return new sap.u
  * @class
  * Control to enter or display multible row text.
  * @extends sap.ui.commons.TextField
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -20825,7 +20825,7 @@ sap.ui.commons.TextArea.prototype.setWrapping = function(oWrapping) { return new
  * Control is used to enter text.
  * @extends sap.ui.core.Control
  * @implements sap.ui.commons.ToolbarItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -21607,7 +21607,7 @@ sap.ui.commons.TextField.prototype.unbindValue = function() { return new sap.ui.
  * Is used to display some continous text. The control can inherit the text direction from its parent control.
  * @extends sap.ui.core.Control
  * @implements sap.ui.commons.ToolbarItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -22038,7 +22038,7 @@ sap.ui.commons.TextViewDesign.toString = function() { return ""; };
  * @class
  * Represents a title element that can be used for aggregation with other controls
  * @extends sap.ui.core.Title
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @deprecated Since version 1.16.0. 
@@ -22131,7 +22131,7 @@ sap.ui.commons.Title.prototype.setLevel = function(oLevel) { return new sap.ui.c
  * @class
  * The ToggleButton Control is a Button that can be toggled between pressed and normal state
  * @extends sap.ui.commons.Button
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -22221,7 +22221,7 @@ sap.ui.commons.ToggleButton.prototype.setPressed = function(bPressed) { return n
  * sap.ui.commons.ToolbarItem interface can be used as item: Button, ComboBox, TextField.
  * @extends sap.ui.core.Control
  * @implements sap.ui.core.Toolbar
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -22553,7 +22553,7 @@ sap.ui.commons.ToolbarDesign.toString = function() { return ""; };
  * A small vertical line that is generally added to the tool bar between the items to visually separate them.
  * @extends sap.ui.core.Element
  * @implements sap.ui.commons.ToolbarItem
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -22675,7 +22675,7 @@ sap.ui.commons.ToolbarSeparatorDesign.toString = function() { return ""; };
  * @class
  * Simple tree to display item in a hierarchical way
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -23199,7 +23199,7 @@ sap.ui.commons.Tree.prototype.unbindNodes = function() { return new sap.ui.commo
  * @class
  * Tree node element
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -23711,7 +23711,7 @@ sap.ui.commons.TreeSelectionMode.toString = function() { return ""; };
  * TriStateCheckBox to reflect mixed state for checkboxes. The control can display three states, namely checked, unchecked and mixed. However, mixed state cannot be directly reached by user interaction on the particular control.
  * It can be only set by the control's public toggle function, to make a behaviour possible which is e.g. required in checkbox trees.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -24049,7 +24049,7 @@ sap.ui.commons.TriStateCheckBoxState.toString = function() { return ""; };
  * @class
  * A TextField with an attached icon which triggeres an event.
  * @extends sap.ui.commons.TextField
- * @version 1.24.3
+ * @version 1.24.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel

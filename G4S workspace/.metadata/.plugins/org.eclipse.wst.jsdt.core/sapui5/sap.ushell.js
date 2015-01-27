@@ -139,7 +139,7 @@ sap.ushell.enable = function() { return null; };
  * @class
  * Tile control embedding an image and allowing custom sizing
  * @extends sap.m.CustomTile
- * @version 1.24.4
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -330,7 +330,7 @@ sap.ushell.components.factsheet.controls.PictureTile.prototype.setWidth = functi
  * @class
  * Picture viewer control relying on the TileContainer control
  * @extends sap.m.TileContainer
- * @version 1.24.4
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -615,7 +615,7 @@ sap.ushell.components.factsheet.controls.PictureViewer.prototype.setTileScaling 
  * @class
  * Picture viewer control relying on the TileContainer control
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3559,7 +3559,7 @@ sap.ushell.System = function(oData) {};
  * @class
  * Displays a loading dialog with an indicator that an app is loading
  * @extends sap.m.BusyDialog
- * @version 1.24.4
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3647,7 +3647,7 @@ sap.ushell.ui.launchpad.LoadingDialog.prototype.setIconUri = function(sIconUri) 
  * @class
  * Add your documentation for the newui/launchpad/SearchResultAppItem
  * @extends sap.m.Button
- * @version 1.24.4
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3759,7 +3759,7 @@ sap.ushell.ui.launchpad.SearchResultAppItem.prototype.setTargetUrl = function(sT
  * @class
  * A list containing all app search results
  * @extends sap.m.Table
- * @version 1.24.4
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3935,7 +3935,7 @@ sap.ushell.ui.launchpad.SearchResultApps.prototype.setShowGrowingTrigger = funct
  * @class
  * Add your documentation for the newui/launchpad/SearchSuggestionList
  * @extends sap.m.List
- * @version 1.24.4
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4134,7 +4134,7 @@ sap.ushell.ui.launchpad.SearchSuggestionList.prototype.setDisableKeyboardNavigat
  * @class
  * Add your documentation for the newui/launchpad/SearchSuggestionListItem
  * @extends sap.m.ListItemBase
- * @version 1.24.4
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4539,7 +4539,7 @@ sap.ushell.ui.launchpad.SearchSuggestionListItem.prototype.setText = function(sT
  * @class
  * The tile state control that displays loading indicator, while tile view is loading and failed status in case tile view is not available.
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.24.5
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel

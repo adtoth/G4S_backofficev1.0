@@ -68,7 +68,7 @@
  * @class
  * This control shows a bullet chart.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @experimental Since version 1.19. 
@@ -683,7 +683,7 @@ sap.suite.ui.commons.BulletChart.prototype.setWidth = function(sWidth) { return 
  * @class
  * Thresholds data holder.
  * @extends sap.ui.core.Element
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -801,7 +801,7 @@ sap.suite.ui.commons.BulletChartMode.toString = function() { return ""; };
  * @class
  * This control allows you to display business card information including an image, first title (either URL link or text), second title, and multiple text lines.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1054,7 +1054,7 @@ sap.suite.ui.commons.BusinessCard.prototype.setWidth = function(sWidth) { return
  * - personalization icon
  * - showLegend toggle
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @experimental Since version 1.23. 
@@ -1563,7 +1563,7 @@ sap.suite.ui.commons.ChartContainer.prototype.setTitle = function(sTitle) { retu
  * @class
  * Content Aggregation for ChartContainer.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @experimental Since version 1.23. 
@@ -1709,7 +1709,7 @@ sap.suite.ui.commons.ChartContainerContent.prototype.setTitle = function(sTitle)
  * @class
  * This control is the implementation of the InfoTile to show a comparison or bullet chart.
  * @extends sap.suite.ui.commons.InfoTile
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @experimental Since version 1.19. 
@@ -1800,7 +1800,7 @@ sap.suite.ui.commons.ChartTile.prototype.setUnit = function(sUnit) { return new 
  * @class
  * Column data holder.
  * @extends sap.ui.core.Element
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1935,7 +1935,7 @@ sap.suite.ui.commons.ColumnData.prototype.setValue = function(fValue) { return n
  * @class
  * This control shows a column chart.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2211,7 +2211,7 @@ sap.suite.ui.commons.CommonBackground.toString = function() { return ""; };
  * @class
  * This control shows a comparison chart.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2508,7 +2508,7 @@ sap.suite.ui.commons.ComparisonChart.prototype.setWidth = function(sWidth) { ret
  * @class
  * Comparison tile value holder.
  * @extends sap.ui.core.Element
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @experimental Since version 1.19. 
@@ -2669,7 +2669,7 @@ sap.suite.ui.commons.ComparisonData.prototype.setValue = function(fValue) { retu
  * @class
  * This control extends the sap.ui.ux3.NavigationItem control. This control can display the quantity of items on a corresponding content area. It also provides a rich tooltip that can appear and disappear after a certain delay.
  * @extends sap.ui.ux3.NavigationItem
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2754,7 +2754,7 @@ sap.suite.ui.commons.CountingNavigationItem.prototype.setQuantity = function(sQu
  * @class
  * The DateRangeScroller provides a method to scroll through a series of time periods, each of which is represented by a starting date and an ending date, known as the date range. The user may scroll to the previous or next date range. Several predefined ranges are supported such as day, week, work week, month, and year.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3060,7 +3060,7 @@ sap.suite.ui.commons.DateRangeScroller.prototype.setDateRangeYear = function(dIn
  * @class
  * The Date Range Slider provides the user with a Range Slider control that is optimized for use with Dates.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3570,7 +3570,7 @@ sap.suite.ui.commons.DateRangeSlider.prototype.setWidth = function(tWidth) { ret
  * @class
  * The Date Range Slider provides the user with a Range Slider control that is optimized for use with Dates.
  * @extends sap.ui.commons.RangeSlider
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3818,7 +3818,7 @@ sap.suite.ui.commons.DeviationIndicator.toString = function() { return ""; };
  * @class
  * The control that displays multiple GenericTile controls as changing slides.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4013,7 +4013,7 @@ sap.suite.ui.commons.DynamicContainer.prototype.setTransitionTime = function(iTr
  * @class
  * This control is used in UnifiedThingInspector to display the preview of the facet content.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4383,7 +4383,7 @@ sap.suite.ui.commons.FacetOverviewHeight.toString = function() { return ""; };
  * @class
  * This element represents a news feed item.
  * @extends sap.ui.core.Element
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4565,7 +4565,7 @@ sap.suite.ui.commons.FeedItem.prototype.setTitle = function(sTitle) { return new
  * @class
  * This control displays feed item header information.
  * @extends sap.m.ListItemBase
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4765,7 +4765,7 @@ sap.suite.ui.commons.FeedItemHeader.prototype.setTitle = function(sTitle) { retu
  * @class
  * This control displays news feeds.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5074,7 +5074,7 @@ sap.suite.ui.commons.FrameType.toString = function() { return ""; };
  * @class
  * The tile control that displays the title, description, and customizable main area.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5495,7 +5495,7 @@ sap.suite.ui.commons.GenericTile.prototype.setSubheader = function(sSubheader) {
  * @class
  * This control contains 4 cells (West, North, East, South). It can display one or more controls in different layouts. Each aggregation must contain only one instance of HeaderCellItem.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5731,7 +5731,7 @@ sap.suite.ui.commons.HeaderCell.prototype.setWest = function(oWest) { return new
  * @class
  * Object that contains instance of control and infomation about height. It should be used inside sap.suite.ui.commons.HeaderCell
  * @extends sap.ui.core.Element
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5847,7 +5847,7 @@ sap.suite.ui.commons.HeaderCellItem.prototype.setHeight = function(sHeight) { re
  * Container that provides horizontal layout. Provides horizontal scroll on tablet and phone. On desktop provides scroll left and scroll right buttons. This control supports keyboard navigation. You can use left and right arrow keys to navigate through the inner contents. The Home key puts focus on the first control and the End key puts focus on the last control. Use Enter or Space to choose the control.
  * @extends sap.ui.core.Control
  * @implements sap.m.ObjectHeaderContainer
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -6040,7 +6040,7 @@ sap.suite.ui.commons.HeaderContainer.prototype.setScrollTime = function(iScrollT
  * @class
  * The tile control that displays the title, description, footer, and customizable main area.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @experimental Since version 1.19. 
@@ -6327,7 +6327,7 @@ sap.suite.ui.commons.InfoTileValueColor.toString = function() { return ""; };
  * @class
  * This control displays the jam content text, subheader, and numeric value in a tile.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -6590,7 +6590,7 @@ sap.suite.ui.commons.JamContent.prototype.setValueColor = function(oValueColor) 
  * @class
  * This control is used in UnifiedThingInspector to display object-related KPIs in a factsheet.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -6796,7 +6796,7 @@ sap.suite.ui.commons.KpiTile.prototype.setValueUnit = function(sValueUnit) { ret
  * @class
  * This control launches a URL.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @experimental Since version 1.14. 
@@ -6977,7 +6977,7 @@ sap.suite.ui.commons.LaunchTile.prototype.setTitle = function(sTitle) { return n
  * @class
  * This control contains one or more sap.m.Button controls or sap.ui.commons.Link controls. The LinkActionSheet control is closed if the user chooses one of the buttons or links. It looks similar to sap.m.Dialog in iPhone and Android, and to sap.m.Popover in iPad.
  * @extends sap.m.ActionSheet
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7202,7 +7202,7 @@ sap.suite.ui.commons.LoadState.toString = function() { return ""; };
  * @class
  * This control displays the history of values as a line mini chart or an area mini chart.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @experimental Since version 1.19. 
@@ -7827,7 +7827,7 @@ sap.suite.ui.commons.MicroAreaChart.prototype.setWidth = function(sWidth) { retu
  * @class
  * The configuration of the graphic element on the chart.
  * @extends sap.ui.core.Element
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8017,7 +8017,7 @@ sap.suite.ui.commons.MicroAreaChartItem.prototype.unbindPoints = function() { re
  * @class
  * This element contains data for a label in MicroAreaChart control.
  * @extends sap.ui.core.Element
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8129,7 +8129,7 @@ sap.suite.ui.commons.MicroAreaChartLabel.prototype.setLabel = function(sLabel) {
  * @class
  * This control contains data for the point.
  * @extends sap.ui.core.Element
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8260,7 +8260,7 @@ sap.suite.ui.commons.MicroAreaChartPoint.prototype.setY = function(fY) { return 
  * @class
  * This control is used in a tile or any other place to display numeric values and an icon.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8530,7 +8530,7 @@ sap.suite.ui.commons.MonitoringContent.prototype.setValue = function(sValue) { r
  * @class
  * This control is the implementation of the InfoTile to show a numeric value and an icon.
  * @extends sap.suite.ui.commons.InfoTile
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @experimental Since version 1.19. 
@@ -8666,7 +8666,7 @@ sap.suite.ui.commons.MonitoringTile.prototype.setValue = function(sValue) { retu
  * @class
  * This control displays the news content text and subheader in a tile.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8864,7 +8864,7 @@ sap.suite.ui.commons.NewsContent.prototype.setSubheader = function(sSubheader) {
  * @class
  * This control allows you to create and store your notes for further reference.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9595,7 +9595,7 @@ sap.suite.ui.commons.NoteTaker.prototype.uploadAttachment = function() { return 
  * @class
  * This control allows you to store Note Taker card header and body text.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10164,7 +10164,7 @@ sap.suite.ui.commons.NoteTakerCard.prototype.setViewAllTrigger = function(iViewA
  * @class
  * This control allows you to enter a quick note and N note cards.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10718,7 +10718,7 @@ sap.suite.ui.commons.NoteTakerFeeder.prototype.setTitle = function(sTitle) { ret
  * @class
  * NumericContent to be used in tile or in other place where need to show numeric values with sematic colors and deviations.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11128,7 +11128,7 @@ sap.suite.ui.commons.NumericContent.prototype.setValueColor = function(oValueCol
  * @class
  * This control is the implementation of the InfoTile to show a numeric value.
  * @extends sap.suite.ui.commons.InfoTile
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @experimental Since version 1.19. 
@@ -11311,7 +11311,7 @@ sap.suite.ui.commons.NumericTile.prototype.setValueColor = function(oValueColor)
  * @class
  * Shows picture in fullscreen.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11456,7 +11456,7 @@ sap.suite.ui.commons.PictureZoomIn.prototype.setImageSrc = function(sImageSrc) {
  * @class
  * Process Flow is a complex control that enables you to display documents or other items in their flow.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12030,7 +12030,7 @@ sap.suite.ui.commons.ProcessFlow.prototype.updateModel = function() { return nul
  * @class
  * This control is used internally to connect process flow node A with process flow node B in respect to the style(s) chosen by the end-user
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12166,7 +12166,7 @@ sap.suite.ui.commons.ProcessFlowDisplayState.toString = function() { return ""; 
  * @class
  * This control gives you an overview of documents/items used in the process flow. The process flow is represented by the doughnut chart sections which are colored according to the documents’ status(es). This control can be used in two different ways. If you use it standalone, an event is fired and can be caught in to display the node map. If you use it with the node/document, it gives you an overview of the documents/items used in the process flow that is represented by the doughnut chart sections.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12504,7 +12504,7 @@ sap.suite.ui.commons.ProcessFlowLaneState.toString = function() { return ""; };
  * @class
  * This control enables you to see documents (or other items) in respect to their statuses – positive, negative, neutral, planned. In addition to the node title (which can be optionally a hyperlink) also two other text fields are provided and can be filled. The process flow nodes consider all styles depending on the status they are in. The user can update or change the content of the node. The content of the node can be also filtered according to updated data and specific parameters set. This means that also the node’s style is affected.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12984,7 +12984,7 @@ sap.suite.ui.commons.ProcessFlowZoomLevel.toString = function() { return ""; };
  * @class
  * A configuration control defining how the content of the sap.suite.ui.commons.ViewRepeater control is displayed and what data is bound.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13358,7 +13358,7 @@ sap.suite.ui.commons.SelectionState.toString = function() { return ""; };
  * The default-action button control represents a simple push button. It is used for initiating actions, such as save or print. It can contain some text, an icon, or both; the order of the two can be configured. The action initiated by this button is considered to be the default action for the control, and it must be one of the selections defined in the Menu Button menu.
  * The Menu Button control is a button that opens a menu upon user's click. MenuButton is a composition of the Menu control and the Button control and thus inheriting all features. When a menu item is selected by the user, MenuButton throws an event called itemSelected. The event transfers the itemId of the selected item. As an alternative, the button press event can be used which has a similar behavior.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13621,7 +13621,7 @@ sap.suite.ui.commons.SplitButton.prototype.setVisible = function(bVisible) { ret
  * @class
  * This control contains a collection of the sap.ui.ux3.ThingViewer controls or descendants of sap.ui.ux3.ThingViewer. It allows you to navigate through them as well as delete them from the collection.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13897,7 +13897,7 @@ sap.suite.ui.commons.ThingGroupDesign.toString = function() { return ""; };
  * @class
  * This control extends the sap.ui.ux3.ThingInspector control. It displays the sap.suite.ui.commons.ThreePanelThingViewer control in the sap.ui.ux3.Overlay control.
  * @extends sap.ui.ux3.ThingInspector
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14115,7 +14115,7 @@ sap.suite.ui.commons.ThreePanelThingInspector.prototype.setSidebarWidth = functi
  * @class
  * This control extends the sap.ui.ux3.ThingViewer control. The first panel can display a thing icon, a title, the Action Menu button, up to two rows of text descriptions (the first is wrapped, the second is truncated), vertical navigation bar (sap.suite.ui.commons.VerticalNavigationBar), and an image aka key visual. The second panel displays the header area as a vertical panel containing ThingGroup objects. The third panel is a main content area designed to display ThingGroup objects.
  * @extends sap.ui.ux3.ThingViewer
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14339,7 +14339,7 @@ sap.suite.ui.commons.ThreePanelThingViewer.prototype.setSidebarWidth = function(
  * @class
  * This control serves a universal container for different types of content and footer.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14540,7 +14540,7 @@ sap.suite.ui.commons.TileContent.prototype.setUnit = function(sUnit) { return ne
  * @class
  * Timeline Control for sFin.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -15187,7 +15187,7 @@ sap.suite.ui.commons.TimelineAxisOrientation.toString = function() { return ""; 
  * @class
  * Provides Filter List Item for Timeline Control
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -15302,7 +15302,7 @@ sap.suite.ui.commons.TimelineFilterListItem.prototype.setText = function(sText) 
  * @class
  * TimelineItem
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -15622,7 +15622,7 @@ sap.suite.ui.commons.TimelineItemPosition.toString = function() { return ""; };
  * @class
  * This control is used in UnifiedThingInspector to display the facet header information.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -15803,7 +15803,7 @@ sap.suite.ui.commons.UnifiedThingGroup.prototype.setTitle = function(sTitle) { r
  * @class
  * This control provides an ability to display a thing (for example, object factsheet) on the desktop, tablet, and phone devices in a Fiori style.
  * @extends sap.ui.core.Control
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -17219,7 +17219,7 @@ sap.suite.ui.commons.ValueStatus.toString = function() { return ""; };
  * @class
  * This control extends the sap.ui.ux3.NavigationBar and allows you to display navigation items vertically. The navigation list can contain sap.ui.ux3.NavigationItem or sap.suite.ui.commons.CountingNavigationItem controls.
  * @extends sap.ui.ux3.NavigationBar
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -17293,7 +17293,7 @@ sap.suite.ui.commons.VerticalNavigationBar.extend = function(sClassName,oClassIn
  * @class
  * This control extends the sap.ui.commons.RowRepeater control providing an ability to change data representation by switching between a number of views. The data can be displayed not only in rows but also in tiles that are adjusted to fill the entire horizontal space in a row.
  * @extends sap.ui.commons.RowRepeater
- * @version 1.24.2
+ * @version 1.24.3
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel

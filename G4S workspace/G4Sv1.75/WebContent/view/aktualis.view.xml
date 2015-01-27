@@ -138,11 +138,11 @@
 			<Bar>
 				<contentRight>
 					<Button type="Emphasized" text="Lezár" id="cls" press="close" width="150px"
-						icon="sap-icon://sys-cancel" />
-					<Button type="Emphasized" text="Töröl" id="clr" visible="false" press="clear" width="150px"
-						icon="sap-icon://sys-cancel" />					
+						icon="sap-icon://sys-cancel" />									
 				</contentRight>
 				<contentLeft>
+				<Button type="Emphasized" text="Töröl" id="clr" visible="false" press="clear" width="150px"
+						icon="sap-icon://sys-cancel" />	
 				<Button type="Emphasized" text="Felfüggeszt" id="susp" visible="true" press="suspend" width="150px"
 						icon="sap-icon://sys-cancel" />
 				</contentLeft>

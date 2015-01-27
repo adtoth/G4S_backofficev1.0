@@ -4,8 +4,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelMaster", {
 	 
 	onBeforeRendering: function(){ // binding model synchronisation
 			
-	        this.getView().addDelegate({ onAfterShow: function(evt) {
-	        	 sap.ui.getCore().getModel().refresh(true);			     
+	        this.getView().addDelegate({ onAfterRendering: function(evt) {
+	        	 sap.ui.getCore().getModel().refresh(true);
+	        	 sap.ui.getCore().getModel().updateBindings(true);
+	 			 sap.ui.getCore().getModel().forceNoCache(true);
 	        }});
 		},
 	 
@@ -41,20 +43,5 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelMaster", {
 		oBinding.sort(sorters);
 	},
 	
-	handleSearch : function (evt) {
-		
-		// create model filter
-		var filters = [];
-		var query = evt.getParameter("query");
-		if (query && query.length > 0) {
-			var filter = new sap.ui.model.Filter("BPId", sap.ui.model.FilterOperator.Contains, query);
-			filters.push(filter);
-		}
-		
-		// update list binding
-		var list = this.getView().byId("list");
-		var binding = list.getBinding("items");
-		binding.filter(filters);
-	},
 
 });

@@ -6,14 +6,14 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 	
 	onBeforeRendering: function(){ // binding model synchronisation
 		//this.onBeforeShow();
-		window.globalfelvetelDetail = this;
+		window.globalleadasDetail = this;
 		 this.getView().addDelegate({onAfterShow: function(evt) {
-			 globalfelvetelDetail.getView().byId("idIconTabBarMulti").setSelectedKey("addr");
-			 globalfelvetelDetail.getView().byId("idIconTabBarMulti").setExpanded(true);
-			 windows.signeeCounter = 0;
-			 var a = globalfelvetelDetail.getView().getBindingContext();
+			 globalleadasDetail.getView().byId("idIconTabBarMulti").setSelectedKey("addr");
+			 globalleadasDetail.getView().byId("idIconTabBarMulti").setExpanded(true);
+			 var a = globalleadasDetail.getView().getBindingContext();
+			 window.signeeCounter = 0;
 		     var total = 0;
-		     var myView = globalfelvetelDetail.getView();
+		     var myView = globalleadasDetail.getView();
 		     var model = sap.ui.getCore().getModel();
 		     //folytat/aktivál gombok beállítása 
 	   	if(sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == "111"){
@@ -231,10 +231,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 			myView.byId("otherText").setVisible(false);
 			myView.byId("grpA01").setSelected(false);
 			myView.byId("grpA02").setSelected(false);
-/*				if(model.getProperty(a.sPath + "/DelStatus") == '999'){
-					myView.byId("setActive").setText("Folytat");
-				}
-			myView.byId("setActive").setText("Aktivál");*/
+//				if(model.getProperty(a.sPath + "/DelStatus") == '999'){
+//					myView.byId("setActive").setText("Folytat");
+//				}
+//			myView.byId("setActive").setText("Aktivál");
 		}
 	   	
 		 }});
@@ -242,9 +242,6 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 	
 	
 
-	onBeforeShow: function(evt) { 
-		alert("onHow");
-	},
 	
 	handleNavButtonPress : function(evt) {
 		this.nav.back("felvetelMaster");
@@ -326,24 +323,18 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 	},
 	
 	signee: function(evt) {
-		if(signeeCounter === 0){
-			$("#signature").jSignature();
-			$("#signature").jSignature("reset");
-			signeeCounter++;
-		}
+//		if(signeeCounter === 0){ // ha most jöttünk ide, töröljük az előző aláírást, egyébként megtartjuk, counter az onBeforeRenderingben
+//			//$("#signature").jSignature();
+//			$("#signature").jSignature("reset");
+//			signeeCounter++;
+//		}
 		 var a = evt.getSource().getBindingContext();
 	     var total = 0;
 	     var myView = this.getView();
 	     
-       $("#signature").jSignature();
-       $("#signature").jSignature("reset");
-       if(this.getView().byId("idIconTabBarMulti").getSelectedKey() == "sig"){
-       	this.getView().byId("cls").setVisible(false);
-       	
-       }
-       else{
-       	this.getView().byId("cls").setVisible(true);
-       }
+      // $("#signature").jSignature();
+       //$("#signature").jSignature("reset");
+
        
        // totál utánvét összeg számítás
      
@@ -356,7 +347,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
 			}		
 		});
    	
-  /* 	if(sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == "111"){
+/*   	if(sap.ui.getCore().getModel().getProperty(a.sPath + "/DelStatus") == "111"){
    		myView.byId("setActive").setText("Folytat");
 		}
 		else{
@@ -372,7 +363,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.felvetelDetail", {
    },
    
    handlePhonePress: function(){
-		window.open(this.getView().byId("phoneLink").getHref(), "_blank");
+	   var b = this.getView().byId("phoneLink").getHref();
+	   window.open(this.getView().byId("phoneLink").getHref(), "_blank");
 	},
     
 	

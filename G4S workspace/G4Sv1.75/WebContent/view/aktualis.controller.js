@@ -235,12 +235,14 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 	     var myView = this.getView();
 	    	     
         if(this.getView().byId("idIconTabBarMulti").getSelectedKey() == "sig"){
-        	this.getView().byId("cls").setVisible(false);
+        	this.getView().byId("cls").setVisible(true);
         	this.getView().byId("clr").setVisible(true);
+        	this.getView().byId("susp").setVisible(false);
         }
         else{
         	this.getView().byId("cls").setVisible(true);
         	this.getView().byId("clr").setVisible(false);
+        	this.getView().byId("susp").setVisible(true);
         }
         
         // totál utánvét összeg számítás
