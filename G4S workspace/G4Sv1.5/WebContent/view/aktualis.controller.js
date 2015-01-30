@@ -1,8 +1,8 @@
 ﻿jQuery.sap.require("sap.m.MessageBox");
 jQuery.sap.require("sap.m.MessageToast");
 jQuery.sap.require("jSignature");
-jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
-sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
+jQuery.sap.require("sap.ui.netlife.G4S.util.Formatter");
+sap.ui.controller("sap.ui.netlife.G4S.view.aktualis", {
 	
 	onInit: function(){
 		 $("#signature").jSignature();
@@ -21,7 +21,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 		     myView.byId("clr").setVisible(false);
 		     myView.byId("cls").setVisible(true);
 		     myView.byId("susp").setVisible(true);
-		     myView.byId("takeOverName").setValue("");
+		     myView.byId("recipient").setValue(sap.ui.getCore().getModel().getProperty(a.sPath + "/To"));
 		     myView.byId("grpA01").setSelected(false);
 		     myView.byId("grpA02").setSelected(false);
 		     myView.byId("grpB01").setSelected(false);
@@ -203,10 +203,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.aktualis", {
 					else globalAktualis.nav.to("felvetelMaster");
 				}
 				else if (myView.byId("grpA01").getSelected() === true){
-					if(myView.byId("takeOverName").getValue().length > 4){
+					if(myView.byId("recipient").getValue().length > 4){
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/DelStatus", "222");
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Signature", $("#signature").jSignature("getData"));
-					sap.ui.getCore().getModel().setProperty(a.sPath + "/Recipient", myView.byId("takeOverName").getValue());
+					sap.ui.getCore().getModel().setProperty(a.sPath + "/Recipient", myView.byId("recipient").getValue());
 					sap.ui.getCore().getModel().setProperty(a.sPath + "/Comment", myView.byId("otherText").getValue());
 					/*if(myView.byId("uv01").getSelected() == true ){
 						sap.ui.getCore().getModel().setProperty(a.sPath + "/COD_Collected", 1);

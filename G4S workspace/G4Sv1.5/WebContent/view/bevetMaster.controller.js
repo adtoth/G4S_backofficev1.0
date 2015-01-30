@@ -1,6 +1,6 @@
-jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
-jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
-sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
+jQuery.sap.require("sap.ui.netlife.G4S.util.Formatter");
+jQuery.sap.require("sap.ui.netlife.G4S.util.Grouper");
+sap.ui.controller("sap.ui.netlife.G4S.view.bevetMaster", {
 	
 
 	/*handleListItemPress : function(evt) {
@@ -41,9 +41,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 		var item = evt.getParameter("selectedItem");
 		var key = (item) ? item.getKey() : null;
 		if ("LifecycleStatus" === key) {
-			sap.ui.demo.myFiori.util.Grouper.bundle = this.getView().getModel(
+			sap.ui.netlife.G4S.util.Grouper.bundle = this.getView().getModel(
 					"i18n").getResourceBundle();
-			var grouper = sap.ui.demo.myFiori.util.Grouper[key];
+			var grouper = sap.ui.netlife.G4S.util.Grouper[key];
 			sorters.push(new sap.ui.model.Sorter(key, true, grouper));
 		}
 
@@ -136,6 +136,9 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 						else if(response.results[i].PickupStatus == 'A'){
 							sap.m.MessageToast.show("Ez a csomag már fel van véve!");
 						}
+						else{
+							sap.m.MessageToast.show("Nincs ilyen csomag");
+						}
 					}
 					
 				}
@@ -160,8 +163,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.bevetMaster", {
 		var item = evt.getParameter("selectedItem");
 		var key = (item) ? item.getKey() : null;
 		if ("SzallitasStatus" === key) {
-			sap.ui.demo.myFiori.util.Grouper.bundle = this.getView().getModel("i18n").getResourceBundle();
-			var grouper = sap.ui.demo.myFiori.util.Grouper[key];
+			sap.ui.netlife.G4S.util.Grouper.bundle = this.getView().getModel("i18n").getResourceBundle();
+			var grouper = sap.ui.netlife.G4S.util.Grouper[key];
 			sorters.push(new sap.ui.model.Sorter(key, false, grouper));
 		}
 

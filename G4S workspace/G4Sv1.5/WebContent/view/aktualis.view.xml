@@ -1,4 +1,4 @@
-﻿<core:View controllerName="sap.ui.demo.myFiori.view.aktualis"
+﻿<core:View controllerName="sap.ui.netlife.G4S.view.aktualis"
 	xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
 	<Page title="Aktuális szállítás" class="sapUiFioriObjectPage"
 		showNavButton="true" navButtonPress="handleNavButtonPress">
@@ -17,11 +17,13 @@
      					<Label text="Utca, házszám" />
      					<Text text="{FStreet}"/>									
 						</form:SimpleForm>
-						<form:SimpleForm
 						
+						<form:SimpleForm
 						minWidth="400" >
 						<core:Title text="Címzett" />
-      					<Label text="Név"/>
+						<Label text="Cég"/>
+     					<Text text="{Company}" />
+      					<Label text="Átvevő"/>
      					<Text text="{To}" />
      					<Label text="Irányítószám, Város"/>
      					<Text text="{TPostalCode}, {TCity}" />
@@ -73,24 +75,21 @@
 				<cells>
 					<ObjectIdentifier title="{ProductId}" />
 					<ObjectNumber
-						number="{path: 'PickupStatus', formatter:'sap.ui.demo.myFiori.util.Formatter.statusText' }"
-						state="{path: 'PickupStatus', formatter:'sap.ui.demo.myFiori.util.Formatter.statusState' }" />
+						number="{path: 'PickupStatus', formatter:'sap.ui.netlife.G4S.util.Formatter.statusText' }"
+						state="{path: 'PickupStatus', formatter:'sap.ui.netlife.G4S.util.Formatter.statusState' }" />
 				</cells>
 			</ColumnListItem>
 		</Table>
 				</IconTabFilter>
 				<IconTabFilter icon="sap-icon://signature" key="sig" text="Aláírás">
 					
-<l:VerticalLayout
-		class="marginVerticalContent"
-		width="90%">
+	<l:VerticalLayout class="marginVerticalContent"		width="90%">
 		<l:content>
 			 <core:HTML content='&lt;div style=&quot;width: 600px; height: 200px; -ms-touch-action: none;&quot; id=&quot;signature&quot;&gt;&lt;/div&gt;'>
 		      </core:HTML>
 		</l:content>
 		<VBox visible="true">
-						<Input id="takeOverName" type="Text" fieldWidht="50%" placeholder="Átvevő neve"  />
-						
+			<Input id="recipient" type="Text" fieldWidht="50%" placeholder="Átvevő neve"  /> 	
 		</VBox>
 	</l:VerticalLayout>
 	
@@ -120,8 +119,8 @@
 							<cells>
 								<ObjectIdentifier title="{ProductId}" />
 																<ObjectNumber
-									number="{path: 'COD', formatter:'sap.ui.demo.myFiori.util.Formatter.CODText' }"
-									state="{path: 'COD', formatter:'sap.ui.demo.myFiori.util.Formatter.CODState' }"/>
+									number="{path: 'COD', formatter:'sap.ui.netlife.G4S.util.Formatter.CODText' }"
+									state="{path: 'COD', formatter:'sap.ui.netlife.G4S.util.Formatter.CODState' }"/>
 							</cells>
 								<ObjectIdentifier title="{Price}" />
 

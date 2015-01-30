@@ -1,5 +1,5 @@
-jQuery.sap.declare("sap.ui.demo.myFiori.Component");
-sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
+jQuery.sap.declare("sap.ui.netlife.G4S.Component");
+sap.ui.core.UIComponent.extend("sap.ui.netlife.G4S.Component", {
 
 
 	
@@ -14,7 +14,7 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 		// create root view
 		var oView = sap.ui.view({
 			id : "app",
-			viewName : "sap.ui.demo.myFiori.view.App",
+			viewName : "sap.ui.netlife.G4S.view.App",
 			type : "JS",
 			viewData : { component : this }
 		});

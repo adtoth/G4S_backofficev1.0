@@ -1,6 +1,6 @@
-jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
-jQuery.sap.require("sap.ui.demo.myFiori.util.Grouper");
-sap.ui.controller("sap.ui.demo.myFiori.view.lezartLeadasMaster", {
+jQuery.sap.require("sap.ui.netlife.G4S.util.Formatter");
+jQuery.sap.require("sap.ui.netlife.G4S.util.Grouper");
+sap.ui.controller("sap.ui.netlife.G4S.view.lezartLeadasMaster", {
 	
 
 	onBeforeRendering: function(){
@@ -21,10 +21,10 @@ sap.ui.controller("sap.ui.demo.myFiori.view.lezartLeadasMaster", {
 		this.nav.back("Master");
 	},
 
-	handleListSelect : function(evt) {
+	/*handleListSelect : function(evt) {
 		var context = evt.getParameter("listItem").getBindingContext();
 		this.nav.to("lezartLeadasDetail", context);
-	},
+	},*/
 
 	handleGroup : function(evt) {
 
@@ -33,8 +33,8 @@ sap.ui.controller("sap.ui.demo.myFiori.view.lezartLeadasMaster", {
 		var item = evt.getParameter("selectedItem");
 		var key = (item) ? item.getKey() : null;
 		if ("TPostalCode" === key || "To" === key || "TStreet" === key) {
-			sap.ui.demo.myFiori.util.Grouper.bundle = this.getView().getModel("i18n").getResourceBundle();
-			var grouper = sap.ui.demo.myFiori.util.Grouper[key];
+			sap.ui.netlife.G4S.util.Grouper.bundle = this.getView().getModel("i18n").getResourceBundle();
+			var grouper = sap.ui.netlife.G4S.util.Grouper[key];
 			sorters.push(new sap.ui.model.Sorter(key, false, grouper));
 		}
 

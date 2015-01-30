@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="folytat" key="selection"/>
+		<item value="navigator" key="selection"/>
 		<list key="findhistory">
-			<item value="címadat"/>
-			<item value="folytat"/>
-			<item value="Folytat"/>
 			<item value="navigator"/>
-			<item value="lengthOfAddresses"/>
-			<item value="depo"/>
-			<item value="suspend"/>
-			<item value="paramurl"/>
+			<item value="select"/>
+			<item value="Signature"/>
+			<item value="signature"/>
+			<item value="sign"/>
+			<item value="cls"/>
+			<item value="signee"/>
+			<item value="newStreet"/>
 		</list>
 		<list key="replacehistory">
 			<item value="depo"/>

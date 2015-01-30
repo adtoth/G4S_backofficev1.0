@@ -1,8 +1,8 @@
 ﻿jQuery.sap.require("sap.m.MessageBox");
 jQuery.sap.require("sap.m.MessageToast");
 jQuery.sap.require("sap.ui.core.format.NumberFormat");
-jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
-sap.ui.controller("sap.ui.demo.myFiori.view.utanvet", {
+jQuery.sap.require("sap.ui.netlife.G4S.util.Formatter");
+sap.ui.controller("sap.ui.netlife.G4S.view.utanvet", {
 	
 	onBeforeRendering: function(){ // binding model synchronisation
 		window.globalUtanvetView = this.getView(); 
@@ -24,28 +24,34 @@ sap.ui.controller("sap.ui.demo.myFiori.view.utanvet", {
         	}
 			
         	var yyyy = $yesterday.getFullYear();
-        	var paramurl = "$filter=Today eq '1'";
+        	var todayFilter = "$filter=Today eq '1' and DelStatus eq '222'"; // a mai sikeres csomagokat összegezzük
         	var lengthOfAddresses = 0;
-        	//var startOfIndex = 0;
-        	sap.ui.getCore().getModel().read("/Item", null, paramurl, true, function(response) {
-    			for(var i = 0; i < response.results.length; i++){
-    				total += response.results[i].Price;
-    				//globalUtanvetView.byId("total_id").setNumber(total);
-    				globalUtanvetView.byId("total_id").setNumber(oNumberFormat.format(total));
-    			}		
-    		});
-        	var yesterdayFilter = "$filter=DeliveryDate eq datetime'" + yyyy + "-" + mm + "-" + dd + "T00:00:00'";
-        	sap.ui.getCore().getModel().read("/Address", null, yesterdayFilter, true, function(response) {
+        	
+        	sap.ui.getCore().getModel().read("/Address", null, todayFilter, true, function(response) {
         		lengthOfAddresses = response.results.length;
-				//startOfIndex = response.results[0].Id;
 				for(var i = 0; i < lengthOfAddresses ; i++){
 					sap.ui.getCore().getModel().read("/Address(" + response.results[i].Id + ")" , null, {
 						"$expand" : "Items"
 					}, true, function(response) {
+							for(var j = 0; j < response.Items.results.length; j++){
+								total += response.Items.results[j].Price;
+								globalUtanvetView.byId("total_id").setNumber(oNumberFormat.format(total));
+							}	
 						
+					});
+						}	
+    		});
+        	
+        	
+        	var yesterdayFilter = "$filter=DeliveryDate eq datetime'" + yyyy + "-" + mm + "-" + dd + "T00:00:00' and DelStatus eq '222'"; //a tegnapi sikeres csomagokat összegezzük
+        	sap.ui.getCore().getModel().read("/Address", null, yesterdayFilter, true, function(response) {
+        		lengthOfAddresses = response.results.length;
+				for(var i = 0; i < lengthOfAddresses ; i++){
+					sap.ui.getCore().getModel().read("/Address(" + response.results[i].Id + ")" , null, {
+						"$expand" : "Items"
+					}, true, function(response) {
 							for(var j = 0; j < response.Items.results.length; j++){
 								yesterdayTotal += response.Items.results[j].Price;
-								//ayTotal = new sap.ui.model.format.AmountFormat.FormatAmountShortWithCurrency(yesterdayTotal, HUF, preserve);
 								globalUtanvetView.byId("yesterday").setNumber(oNumberFormat.format(yesterdayTotal));
 							}	
 						

@@ -1,0 +1,66 @@
+﻿jQuery.sap.require("sap.m.MessageBox");
+jQuery.sap.require("sap.m.MessageToast");
+jQuery.sap.require("sap.ui.core.format.NumberFormat");
+jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+sap.ui.controller("sap.ui.demo.myFiori.view.utanvet", {
+	
+	onBeforeRendering: function(){ // binding model synchronisation
+		window.globalUtanvetView = this.getView(); 
+        this.getView().addDelegate({ onAfterShow: function(evt) { 
+        	var total = 0;
+        	var yesterdayTotal = 0;
+        	//var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({pattern : "yyyy-MM-dd" });   
+        	$today = new Date();
+        	$yesterday = new Date($today);
+        	$yesterday.setDate($today.getDate() - 1);
+			//yesterdayTotal = new sap.ca.ui.model.format.AmountFormat.FormatAmountShortWithCurrency(yesterdayTotal, HUF, preserve);
+			var oNumberFormat = sap.ui.core.format.NumberFormat.getIntegerInstance({maxFractionDigits: 1, minFractionDigits: 0, groupingEnabled: true, groupingSeparator: " ",
+				  decimalSeparator: "."});
+        	var dd = $yesterday.getDate();
+        	var mm = $yesterday.getMonth()+1; //January is 0!
+        	
+        	if(mm < 10){
+        		mm = '0' + mm;
+        	}
+			
+        	var yyyy = $yesterday.getFullYear();
+        	var paramurl = "$filter=Today eq '1' and DelStatus eq '222'";
+        	var lengthOfAddresses = 0;
+        	//var startOfIndex = 0;
+        	sap.ui.getCore().getModel().read("/Item", null, paramurl, true, function(response) {
+    			for(var i = 0; i < response.results.length; i++){
+    				total += response.results[i].Price;
+    				//globalUtanvetView.byId("total_id").setNumber(total);
+    				globalUtanvetView.byId("total_id").setNumber(oNumberFormat.format(total));
+    			}		
+    		});
+        	var yesterdayFilter = "$filter=DeliveryDate eq datetime'" + yyyy + "-" + mm + "-" + dd + "T00:00:00'";
+        	sap.ui.getCore().getModel().read("/Address", null, yesterdayFilter, true, function(response) {
+        		lengthOfAddresses = response.results.length;
+				//startOfIndex = response.results[0].Id;
+				for(var i = 0; i < lengthOfAddresses ; i++){
+					sap.ui.getCore().getModel().read("/Address(" + response.results[i].Id + ")" , null, {
+						"$expand" : "Items"
+					}, true, function(response) {
+						
+							for(var j = 0; j < response.Items.results.length; j++){
+								yesterdayTotal += response.Items.results[j].Price;
+								//ayTotal = new sap.ui.model.format.AmountFormat.FormatAmountShortWithCurrency(yesterdayTotal, HUF, preserve);
+								globalUtanvetView.byId("yesterday").setNumber(oNumberFormat.format(yesterdayTotal));
+							}	
+						
+					});
+						}	
+    		});
+        	
+        }});
+	},
+	
+	
+
+	handleNavButtonPress : function(evt) {
+		this.nav.back("Master");
+	},	
+	
+
+});

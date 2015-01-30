@@ -1,8 +1,8 @@
 ﻿jQuery.sap.require("sap.m.MessageBox");
 jQuery.sap.require("sap.m.MessageToast");
-jQuery.sap.require("sap.ui.demo.myFiori.util.Formatter");
+jQuery.sap.require("sap.ui.netlife.G4S.util.Formatter");
 jQuery.sap.require("jSignature");
-sap.ui.controller("sap.ui.demo.myFiori.view.leadasDetail", {
+sap.ui.controller("sap.ui.netlife.G4S.view.leadasDetail", {
 	
 	onBeforeRendering: function(){ // binding model synchronisation
 		//this.onBeforeShow();

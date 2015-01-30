@@ -1,4 +1,4 @@
-﻿<core:View controllerName="sap.ui.demo.myFiori.view.felvetelDetail"
+﻿<core:View controllerName="sap.ui.netlife.G4S.view.felvetelDetail"
 	xmlns="sap.m"
 	xmlns:m="sap.m"
 	xmlns:form="sap.ui.layout.form"
@@ -21,16 +21,19 @@
 					</form:SimpleForm>
 						
 					<form:SimpleForm
-						minWidth="400" id="form2" title="Címzett">
-      					<Label text="Név"/>
+						minWidth="400" >
+						<core:Title text="Címzett" />
+						<Label text="Cég"/>
+     					<Text text="{Company}" />
+      					<Label text="Átvevő"/>
      					<Text text="{To}" />
      					<Label text="Irányítószám, Város"/>
      					<Text text="{TPostalCode}, {TCity}" />
      					<Label text="Utca, házszám" />
-     					<Text text="{TStreet}"/>
+     					<Text text="{TStreet}"/>	
      					<Label text="Telefonszám" />
-     					<m:Link text="{Phone}" href="tel:{Phone}" press="handlePhonePress" id="phoneLink"/>								
-					</form:SimpleForm>
+     					<m:Link text="{Phone}" href="tel:{Phone}" press="handlePhonePress" id="phoneLink"/>									
+						</form:SimpleForm>
 						<VBox >
 						<RadioButton groupName="GroupA" enabled="false" id="grpA01" select="onSelect"  text="Sikeres" />
 <!-- 							 <CheckBox text="Utánvét összeg átvéve" enabled="false" selected="false" id="uv01" />	 -->
@@ -69,8 +72,8 @@
 				<cells>
 					<ObjectIdentifier title="{ProductId}" />
 					<ObjectNumber
-						number="{path: 'PickupStatus', formatter:'sap.ui.demo.myFiori.util.Formatter.statusText' }"
-						state="{path: 'PickupStatus', formatter:'sap.ui.demo.myFiori.util.Formatter.statusState' }" />
+						number="{path: 'PickupStatus', formatter:'sap.ui.netlife.G4S.util.Formatter.statusText' }"
+						state="{path: 'PickupStatus', formatter:'sap.ui.netlife.G4S.util.Formatter.statusState' }" />
 				</cells>
 			</ColumnListItem>
 		</Table>
@@ -114,8 +117,8 @@
 							<cells>
 								<ObjectIdentifier title="{ProductId}" />
 																<ObjectNumber
-									number="{path: 'COD', formatter:'sap.ui.demo.myFiori.util.Formatter.CODText' }"
-									state="{path: 'COD', formatter:'sap.ui.demo.myFiori.util.Formatter.CODState' }"/>
+									number="{path: 'COD', formatter:'sap.ui.netlife.G4S.util.Formatter.CODText' }"
+									state="{path: 'COD', formatter:'sap.ui.netlife.G4S.util.Formatter.CODState' }"/>
 							</cells>
 								<ObjectIdentifier title="{Price}" />
 
@@ -140,8 +143,7 @@
 				
 				<contentLeft>
 					<Button type="Emphasized" text="Aktivál" id="setActive" press="activate" width="150px"
-						icon="sap-icon://target-group" />
-						
+						icon="sap-icon://target-group" />						
 					<Button type="Emphasized" text="Folytat" id="setContinue" press="activate" width="150px"
 						icon="sap-icon://target-group" />
 

@@ -1,4 +1,4 @@
-﻿<core:View controllerName="sap.ui.demo.myFiori.view.utanvet"
+﻿<core:View controllerName="sap.ui.netlife.G4S.view.utanvet"
 	xmlns="sap.m" xmlns:form="sap.ui.layout.form"    xmlns:l="sap.ui.layout"  xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
 	<Page title="Utánvét" class="sapUiFioriObjectPage"
 		showNavButton="true" navButtonPress="handleNavButtonPress">

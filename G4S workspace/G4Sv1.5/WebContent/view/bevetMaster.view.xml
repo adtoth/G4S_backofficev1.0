@@ -1,4 +1,4 @@
-<core:View controllerName="sap.ui.demo.myFiori.view.bevetMaster"
+<core:View controllerName="sap.ui.netlife.G4S.view.bevetMaster"
 	xmlns="sap.m" xmlns:core="sap.ui.core">
 	<Page showNavButton="true" navButtonPress="handleNavButtonPress"
 		title="Bevételezés">
@@ -12,11 +12,11 @@
 					<ObjectStatus
 						text="{
 							path: 'PickupStatus',
-							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'
+							formatter: 'sap.ui.netlife.G4S.util.Formatter.statusText'
 						}"
 						state="{
 							path: 'PickupStatus',
-							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusState'
+							formatter: 'sap.ui.netlife.G4S.util.Formatter.statusState'
 						}"
 						  />
 				</firstStatus>
@@ -24,7 +24,7 @@
 					<ObjectStatus
 						text="{
 							path: 'PicType',
-							formatter: 'sap.ui.demo.myFiori.util.Formatter.statusText'
+							formatter: 'sap.ui.netlife.G4S.util.Formatter.statusText'
 						}"
 												  />
 				</secondStatus>

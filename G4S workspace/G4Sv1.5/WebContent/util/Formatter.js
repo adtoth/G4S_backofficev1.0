@@ -1,8 +1,8 @@
-jQuery.sap.declare("sap.ui.demo.myFiori.util.Formatter");
+jQuery.sap.declare("sap.ui.netlife.G4S.util.Formatter");
 
 jQuery.sap.require("sap.ui.core.format.DateFormat");
 
-sap.ui.demo.myFiori.util.Formatter = {
+sap.ui.netlife.G4S.util.Formatter = {
 	
 	_statusStateMap : {
 		"1" : "Warning",
@@ -38,8 +38,22 @@ sap.ui.demo.myFiori.util.Formatter = {
 	},
 	
 	HasCODText :  function (value) {
+		var a = this.getBindingContext();
+		var COD = 0;
+		//var model = this.getView().getModel();
+		sap.ui.getCore().getModel().read(a.sPath , null, {
+			"$expand" : "Items"
+		}, false, function(response) {
+				for(var j = 0; j < response.Items.results.length; j++){
+					COD += response.Items.results[j].Price;
+				}	
+			
+		});
 		var bundle = this.getModel("i18n").getResourceBundle();
-		return bundle.getText("HasCOD" + value, "?");
+		if(COD === 0){
+			COD = "Nincs"
+		}
+		return "Utánvét: " + COD;
 	},
 	
 	CODText :  function (value) {
@@ -48,12 +62,12 @@ sap.ui.demo.myFiori.util.Formatter = {
 	},
 	
 	statusState :  function (value) {
-		var map = sap.ui.demo.myFiori.util.Formatter._statusStateMap;
+		var map = sap.ui.netlife.G4S.util.Formatter._statusStateMap;
 		return (value && map[value]) ? map[value] : "None";
 	},
 	
 	CODState :  function (value) {
-		var map = sap.ui.demo.myFiori.util.Formatter._CODStateMap;
+		var map = sap.ui.netlife.G4S.util.Formatter._CODStateMap;
 		return (value && map[value]) ? map[value] : "None";
 	},
 	
