@@ -32,7 +32,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.utanvet", {
 				for(var i = 0; i < lengthOfAddresses ; i++){
 					sap.ui.getCore().getModel().read("/Address(" + response.results[i].Id + ")" , null, {
 						"$expand" : "Items"
-					}, true, function(response) {
+					}, false, function(response) {
 							for(var j = 0; j < response.Items.results.length; j++){
 								total += response.Items.results[j].Price;
 								globalUtanvetView.byId("total_id").setNumber(oNumberFormat.format(total));
@@ -49,7 +49,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.utanvet", {
 				for(var i = 0; i < lengthOfAddresses ; i++){
 					sap.ui.getCore().getModel().read("/Address(" + response.results[i].Id + ")" , null, {
 						"$expand" : "Items"
-					}, true, function(response) {
+					}, false, function(response) {
 							for(var j = 0; j < response.Items.results.length; j++){
 								yesterdayTotal += response.Items.results[j].Price;
 								globalUtanvetView.byId("yesterday").setNumber(oNumberFormat.format(yesterdayTotal));

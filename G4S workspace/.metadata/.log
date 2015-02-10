@@ -4510,3 +4510,4676 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-01-30 14:50:31.350
 !MESSAGE Stopped Server
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-01-30 15:20:40.005
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-01-30 15:20:40.015
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2015-01-30 15:20:40.087
+!MESSAGE Started Server for URL: http://localhost:59949/G4Sv1.5/index.html
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-01-30 15:46:30.386
+!MESSAGE Stopped Server
+!SESSION 2015-02-03 14:59:07.512 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-03 14:59:15.785
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:16.950
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:16.954
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-03 15:00:28.429
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-03 15:00:28.442
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dávid'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:37.937
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:37.945
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:38.088
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:38.093
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:38.212
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.104
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.137
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.144
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.157
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_goldreflection
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.215
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.221
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.287
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.293
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.433
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.439
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.636
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:40.642
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.176
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.185
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.208
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.214
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.273
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.278
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.310
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.316
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.481
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.487
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.581
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.598
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.774
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.783
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.832
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:41.839
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.035
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.041
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.132
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.149
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.535
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.539
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.633
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.637
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.685
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ushell.ushell-lib-testresources
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.730
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.735
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.749
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.753
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.847
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.852
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.867
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.871
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.912
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:42.917
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.007
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.011
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.063
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.073
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.100
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.105
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.151
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.156
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.183
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.189
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.258
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.264
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.284
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.291
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.302
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_platinum
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.314
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_bluecrystal
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.345
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.361
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.388
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.398
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.686
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.692
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.800
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.806
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.885
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.890
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.912
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:43.917
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:44.106
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:44.114
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:44.168
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:44.175
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:44.207
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-03 15:00:44.214
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-03 15:05:01.109
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-03 15:05:01.120
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2015-02-03 15:05:01.626
+!MESSAGE Started Server for URL: http://localhost:63325/G4Sv1.5/index.html
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-02-03 15:06:56.643
+!MESSAGE Stopped Server
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-03 15:07:08.652
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-03 15:07:08.660
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2015-02-03 15:07:08.716
+!MESSAGE Started Server for URL: http://localhost:63771/Demo_1.5/index.html
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-02-03 15:17:35.585
+!MESSAGE Stopped Server
+!SESSION 2015-02-06 11:26:54.946 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-06 11:27:02.930
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:27:53.325
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:27:53.325
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-06 11:27:54.169
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-06 11:27:54.184
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2015-02-06 11:27:54.778
+!MESSAGE Started Server for URL: http://localhost:49204/Demo_1.5/index.html
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-06 11:28:04.294
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-06 11:28:04.294
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dávid'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.456
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.456
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.488
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.488
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.597
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.597
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.613
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.613
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.628
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_goldreflection
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.753
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.753
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.769
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.784
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.894
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:22.909
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.128
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.128
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.488
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.488
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.503
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.503
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.581
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.597
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.613
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.613
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.988
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:23.988
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.019
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.019
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.128
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.128
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.144
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.144
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.488
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.488
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.534
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.534
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.659
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.659
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.738
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.738
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.784
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ushell.ushell-lib-testresources
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.910
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.910
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.925
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:24.925
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.066
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.066
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.081
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.081
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.535
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.535
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.566
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.566
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.644
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.644
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.659
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.675
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.878
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.894
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.972
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:25.972
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.066
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.066
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.081
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.081
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.097
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_platinum
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.097
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_bluecrystal
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.113
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.113
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.128
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.128
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.238
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.238
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.284
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.284
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.331
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.331
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.347
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.363
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.472
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.472
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.519
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.519
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.534
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 11:28:26.550
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-02-06 11:28:31.171
+!MESSAGE Stopped Server
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-06 11:28:51.171
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-06 11:28:51.171
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2015-02-06 11:28:51.218
+!MESSAGE Started Server for URL: http://localhost:49213/G4Sv1.75/index.html
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-02-06 11:56:35.203
+!MESSAGE Stopped Server
+!SESSION 2015-02-06 12:01:26.659 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-06 12:01:56.426
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:25.146
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:25.150
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-06 12:03:43.198
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-06 12:03:43.204
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dávid'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:52.811
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:52.817
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:52.847
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:52.852
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:52.963
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:52.969
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:52.991
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:52.997
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:53.006
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_goldreflection
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:53.179
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:53.184
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:53.209
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:53.213
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:53.410
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:53.416
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:53.638
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:53.644
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.077
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.083
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.104
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.110
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.163
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.173
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.208
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.213
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.306
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.311
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.365
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.411
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.587
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.592
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.633
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.638
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.861
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.867
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.914
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:54.919
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.042
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.047
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.115
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.120
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.164
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ushell.ushell-lib-testresources
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.312
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.317
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.331
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.336
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.396
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.401
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.418
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.424
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.638
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.644
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.785
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.790
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.843
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.849
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.874
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.880
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.931
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.936
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.958
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:55.963
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.028
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.032
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.046
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.050
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.058
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_platinum
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.067
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_bluecrystal
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.092
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.098
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.117
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.123
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.488
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.492
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.580
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.584
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.643
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.648
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.665
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.670
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.828
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.831
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.870
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.874
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.903
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-06 12:03:56.909
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+!SESSION 2015-02-09 10:42:00.256 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-02-09 10:42:11.082
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-09 10:42:14.386
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:08.670
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:08.674
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-09 10:43:21.045
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-09 10:43:21.051
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dávid'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.542
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.550
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.622
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.628
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.720
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.726
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.746
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.752
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.763
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_goldreflection
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.841
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.847
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.900
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:30.906
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.125
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.131
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.283
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.288
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.598
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.603
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.623
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.627
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.666
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.671
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.694
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.699
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.811
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.838
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.893
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.900
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.990
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:31.996
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.032
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.036
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.148
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.154
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.216
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.222
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.389
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.394
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.482
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.488
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.556
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ushell.ushell-lib-testresources
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.623
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.628
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.645
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.651
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.691
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.696
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.716
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.722
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.807
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.813
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.867
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.872
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.926
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.931
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.958
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:32.964
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.015
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.020
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.047
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.053
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.092
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.097
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.113
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.117
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.123
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_platinum
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.130
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_bluecrystal
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.147
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.150
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.160
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.164
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.307
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.311
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.399
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.404
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.474
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.479
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.498
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.503
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.608
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.613
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.667
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.671
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.697
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-09 10:43:33.703
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+!SESSION 2015-02-10 16:12:10.307 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-10 16:12:22.159
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-10 16:13:00.823
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-10 16:13:00.901
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dávid'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:25.953
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:25.982
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:25.986
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:25.990
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:25.995
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:26.000
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:26.547
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:26.555
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:26.607
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:26.626
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:26.987
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:26.992
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.009
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.018
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.027
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_goldreflection
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.153
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.157
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.181
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.185
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.536
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.540
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.691
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:27.696
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.145
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.171
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.194
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.200
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.289
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.297
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.333
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.340
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.556
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.561
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.742
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.748
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.917
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.923
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.957
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:28.963
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.078
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.081
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.156
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.164
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.382
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.388
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.463
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.468
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.530
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ushell.ushell-lib-testresources
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.638
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.644
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.663
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.668
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:29.728
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.089
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.124
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.129
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.262
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.266
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.332
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.336
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.416
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.420
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.472
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.476
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.610
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.614
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.638
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.645
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.699
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.703
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.728
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.732
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.738
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_platinum
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.745
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : Missing Templates in: com.sap.ui5.themelib_sap_bluecrystal
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.780
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.785
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.799
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.803
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.905
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.909
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.952
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:30.958
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:31.021
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:31.027
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:31.042
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:31.046
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:31.118
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:31.122
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:31.155
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:31.161
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:31.184
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-10 16:13:31.190
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.templates.UI5PrepareControlTemplates
+   Method     : earlyStartup
+   Message    : cvc-elt.1: Cannot find the declaration of element 'Library'.
+   Exception  : 
+
