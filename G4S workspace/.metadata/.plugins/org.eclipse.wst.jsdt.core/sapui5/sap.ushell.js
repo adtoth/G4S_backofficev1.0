@@ -139,7 +139,7 @@ sap.ushell.enable = function() { return null; };
  * @class
  * Tile control embedding an image and allowing custom sizing
  * @extends sap.m.CustomTile
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -330,7 +330,7 @@ sap.ushell.components.factsheet.controls.PictureTile.prototype.setWidth = functi
  * @class
  * Picture viewer control relying on the TileContainer control
  * @extends sap.m.TileContainer
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -615,7 +615,7 @@ sap.ushell.components.factsheet.controls.PictureViewer.prototype.setTileScaling 
  * @class
  * Picture viewer control relying on the TileContainer control
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -766,7 +766,7 @@ sap.ushell.services.Bookmark = function() {};
  * @param {string} [oParameters.subtitle]
  *   The subtitle of the bookmark.
  * @param {string} [oParameters.serviceUrl]
- *   The URL to a REST or OData service that provides some dynamic information for the
+ *   The URL (a string or a JS function) to a REST or OData service that provides some dynamic information for the
  *   bookmark.
  * @param {string} [oParameters.serviceRefreshInterval]
  *   The refresh interval for the <code>serviceUrl</code> in seconds.
@@ -1301,6 +1301,81 @@ sap.ushell.services.CrossApplicationNavigation.prototype.isIntentSupported = fun
 sap.ushell.services.CrossApplicationNavigation.prototype.toExternal = function(oArgs) { return null; };
 
 
+// ---- sap.ushell.services.EndUserFeedback --------------------------------------------------------------------------
+
+/**
+ * 
+ * This method MUST be called by the Unified Shell's container only, others
+ * MUST call <code>sap.ushell.Container.getService("EndUserFeedback")</code>.
+ * Constructs a new instance of the support ticket service.
+ * @param {object}
+ *            oAdapter the service adapter for the end user feedback service,
+ *            as already provided by the container
+ * @param {object}
+ *            oContainerInterface the interface provided by the container
+ * @param {string}
+ *            sParameters the runtime configuration specified in the
+ *            <code>sap.ushell.Container.getService()</code> call (not
+ *            evaluated yet)
+ * @param {object}
+ *            oServiceConfiguration the service configuration defined in the
+ *            bootstrap configuration; the boolean property
+ *            <code>enabled</code> controls the service enablement
+ * </p><p>
+ * This service is disabled by default. It can be enabled explicitly in the
+ * bootstrap configuration of the start page:
+ * <pre>
+ * window[&quot;sap-ushell-config&quot;] = {
+ *     services: {
+ *         EndUserFeedback: {
+ *             config: {
+ *                 enabled: true
+ *             }
+ *         }
+ *     }
+ * }
+ * 
+ * Platform implementations can also enable it dynamically by modification of the
+ * bootstrap configuration during boot time.
+ * @class The Unified Shell's end user feedback service
+ * @public
+ * @constructor
+ * @see sap.ushell.services.Container#getService
+ * @since 1.25.1
+ * 
+ *      
+ */
+sap.ushell.services.EndUserFeedback = function(oAdapter,oContainerInterface,sParameters,oServiceConfiguration) {};
+/**
+ * 
+ * Receives the legal text for the feedback dialog box
+ * @param
+ * @public
+ * @since 1.25.1
+ */
+sap.ushell.services.EndUserFeedback.prototype.getLegalText = function() { return null; };
+
+/**
+ * 
+ * Checks if the service is enabled.
+ * <p>
+ * The service enablement depends on the configuration in the back-end system and the bootstrap configuration.
+ * @return {Object} Promise, done = if the service is enabled;
+ * @public
+ * @since 1.25.1
+ */
+sap.ushell.services.EndUserFeedback.prototype.isEnabled = function() { return null; };
+
+/**
+ * 
+ * Sends a feedback. Forwards the given data (JSON object) to the associated adapter.
+ * @param {JSON} JSON object containing the input fields required for the support ticket.
+ * @public
+ * @since 1.25.1
+ */
+sap.ushell.services.EndUserFeedback.prototype.sendFeedback = function(JSON) { return null; };
+
+
 // ---- sap.ushell.services.LaunchPage --------------------------------------------------------------------------
 
 /**
@@ -1503,7 +1578,7 @@ sap.ushell.services.LaunchPage.prototype.getCatalogTiles = function(oCatalog) { 
 
 /**
  * 
- * Returns the size of a catalog tile as a string. For example: "1x1", "1x2"  
+ * Returns the size of a catalog tile as a string. For example: "1x1", "1x2"
  * @param {object} oCatalogTile
  *     The catalog tile
  * @returns {string}
@@ -1511,6 +1586,18 @@ sap.ushell.services.LaunchPage.prototype.getCatalogTiles = function(oCatalog) { 
  * @public
  */
 sap.ushell.services.LaunchPage.prototype.getCatalogTileSize = function(oCatalogTile) { return ""; };
+
+/**
+ * 
+ * Returns the tags associated with a catalog tile which can be used to find the
+ * catalog tile in a tag filter.
+ * @param {object} oCatalogTile
+ *      The catalog tile
+ * @returns string[]
+ *      The tags associated with this catalog tile
+ * @public
+ */
+sap.ushell.services.LaunchPage.prototype.getCatalogTileTags = function(oCatalogTile) { return null; };
 
 /**
  * 
@@ -1686,6 +1773,20 @@ sap.ushell.services.LaunchPage.prototype.getTileView = function(oTile) { return 
  * @public
  */
 sap.ushell.services.LaunchPage.prototype.isCatalogsValid = function() { return false; };
+
+/**
+ * 
+ * Checks if a group was marked as locked (meaning the group and its tiles will lack several capabilities such as Rename, Drag&Drop...).
+ * </p><p>
+ * Returns <code>true</code> if the group is locked
+ * and <code>false</code> if not.
+ * @param {object} oGroup
+ *     The group to be checked
+ * @returns {boolean}
+ *  <code>true</code> if locked; <code>false</code> if not (or as default in case the function was not implemented in the proper adapter).
+ * @public
+ */
+sap.ushell.services.LaunchPage.prototype.isGroupLocked = function(oGroup) { return false; };
 
 /**
  * 
@@ -1980,11 +2081,11 @@ sap.ushell.services.Personalization = function(oAdapter) {};
  * Factory method to obtain an empty Data Context object. 
  * When data present in a prior context is not relevant 
  * (e.g. when using a "uniquely" generated key and planning to 
- * overwrite any colliding back-end data).
+ * overwrite any colliding front-end server data).
  * </p><p>
  * The call always returns an cleared container().
  * </p><p>
- * Note that an existing container at the back-end is not actually deleted or overwritten
+ * Note that an existing container at the front-end server is not actually deleted or overwritten
  * unless a save operation is executed.
  * </p><p>
  * </p><p>
@@ -2070,11 +2171,11 @@ sap.ushell.services.Personalization.prototype.delPersonalizationContainer = func
  * Executing load() on the container reloads the data from the persistence, discarding local changes. 
  * </p><p>
  * Note that the container allows the application to 
- * control the round trips to the back-end persistence. The factory method
+ * control the round trips to the front-end server persistence. The factory method
  * getContainer is asynchronous and loads the container via
- * the connected adapter from the back-end system. All operations (but for the
+ * the connected adapter from the front-end server. All operations (but for the
  * save operation) are executed synchronously, operating on the local data.
- * This allows the application to control the round trips to the back-end
+ * This allows the application to control the round trips to the front-end server
  * persistence.
  * </p><p>
  * A container can contain a set of items, identified by a key. 
@@ -2088,24 +2189,28 @@ sap.ushell.services.Personalization.prototype.delPersonalizationContainer = func
  * </p><p>
  * scope / validity parameter (@since 1.22.0):
  *   An unspecified (undefined validity) or infinite (Infinity) validity indicates that data is persisted in the 
- *   Personalization data of the back-end system. A round trip is executed on an initial get and at least every save operation.
- *   Data is stored per user and retained indefinitely at the back-end system.
+ *   Personalization data of the front-end server. A round trip is executed on an initial get and at least every save operation.
+ *   Data is stored per user and retained indefinitely at the front-end server.
  * </p><p>
  *   The validity parameter allows a designated storage validity for the created container. 
  *   A 0 validity indicates the data is only persisted within the Fiori Launchpad window. 
- *   No round trips to a back-end system are executed. Data is lost if the launchpad window state is lost 
+ *   No round trips to the front-end server are executed. Data is lost if the Fiori Launchpad window state is lost 
  *   (e.g. by navigating to a different page, pressing F5 (reload page) or duplicating the window).
  * </p><p>
+ *   For versions > 1.24 it may happen that for cross-app navigation a reload of the Fiori Launchpad is triggered.
+ *   In this case a storage of the personalization data in the Fiori lauchpad window would lead to data loss.
+ *   To overcome this a validity 0 is automatically changed to a validity 1440 (24h; storage on the front-end server).
+ *   This is only done if a relaod of the Fiori Launchpad is triggered for a cross-app navigation.
  * </p><p>
  * Security: It is the responsibility of the application to not persist information relevant to auditing or security
  * using the PersonalizationService with inappropriate validity models. No mechanisms exist
- * to destroy or selectively destroy application-specific data in the back-end persistence (especially for validity Infinity).
+ * to destroy or selectively destroy application-specific data in the front-end server persistence (especially for validity Infinity).
  * </p><p>
- * For non-zero validity scopes, data will be transmitted and persisted in the back-end system. 
+ * For non-zero validity scopes, data will be transmitted and persisted in the front-end server system. 
  * </p><p>
- * For limited validity, actual deletion of data on the back-end system is subject to explicit cleanup execution of back-end jobs
+ * For limited validity, actual deletion of data on the front-end server is subject to explicit cleanup execution of front-end server jobs
  * and not guaranteed. The data may still be persisted and retrievable. The interface only assures that expired data is no longer 
- * exposed to the application code in the launchpad.
+ * exposed to the application code in the Fiori Launchpad.
  * </p><p>
  * The ContainerKey uniquely defines the Container, validity is not part of the key (there are no separate
  * namespaces per validity). 
@@ -2117,7 +2222,7 @@ sap.ushell.services.Personalization.prototype.delPersonalizationContainer = func
  * The validity associated with the last getContainer or createEmptyContainer determines
  * the current validity of the container and the validity used during the next save operation.
  * </p><p>
- * Naturally, if a delete or get with validity 0 is issued, it will *not* delete or retrieve a backend persistent 
+ * Naturally, if a delete or get with validity 0 is issued, it will *not* delete or retrieve a front-end server persistent 
  * storage
  * Thus a sequence  delete( [validity 0])/wait for promise, getContainer(sKey,{ validity : Infinity}) may return a valid dataset.
  * @param {string}
@@ -2128,8 +2233,8 @@ sap.ushell.services.Personalization.prototype.delPersonalizationContainer = func
  *            E.g. <code> { validity : 30}</code> indicates a validity of the data for 30 minutes.<br/>
  *            oScope.validity : validity of the container persistence in minutes<br/>
  *              valid values include 0 ( per FLP Window), <br/>
- *                           Infinity, undefined  (back-end persistence per user ) [Default] <br/>
- *                           nn Minutes (back-end persistence per user, ignored if older than nn minutes) 
+ *                           Infinity, undefined  (front-end server persistence per user ) [Default] <br/>
+ *                           nn Minutes (front-end server persistence per user, ignored if older than nn minutes) 
  * @returns {object} Promise object whose done function returns a
  *            {@link sap.ushell.services.Personalization.ContextContainer} object 
  *            as parameter. The container provides setItemValue / getItemValue methods 
@@ -2165,15 +2270,15 @@ sap.ushell.services.Personalization.prototype.getContainer = function(sContainer
  * The Container data is asynchronously read on creation (if present, 
  * otherwise an initial object is created). 
  * The Container data can then be *synchronously* modified (read/write/delete). 
- * Only on invoking  the save() method the data is persisted on the back-end. 
+ * Only on invoking  the save() method the data is persisted at the front-end server. 
  * This allows the application to perform multiple local modifications and 
  * delay the save operation. 
  * Note that the personalization container allows the application to 
- * control the round trips to the back-end persistence. The factory method 
+ * control the round trips to the front-end server persistence. The factory method 
  * getPersonalizationContainer is asynchronous and loads the container via 
- * the connected adapter from the back-end. All operations (but for the 
+ * the connected adapter from the front-end server. All operations (but for the 
  * save operation) are executed synchronously, operating on the local data.
- * This allows the application to control the round trips to the back-end 
+ * This allows the application to control the round trips to the front-end server 
  * persistence.
  * </p><p>
  * A personalization container can contain items as well as variant sets.
@@ -2219,7 +2324,7 @@ sap.ushell.services.Personalization.prototype.getPersonalizationContainer = func
  * @param {object} oPersId
  *            JSON object consisting of the following parts:
  *            container - Identifies the set of personalization data that is
- *            loaded/saved as one bundle from the back-end system. item - The
+ *            loaded/saved as one bundle from the front-end server. item - The
  *            name of the object the personalization is applied to.
  * @returns {object} 
  *            {@link sap.ushell.services.Personalizer} which provides generic read and
@@ -3367,19 +3472,6 @@ sap.ushell.services.URLParsing.prototype.constructShellHash = function(oShellHas
 
 /**
  * 
- * extract search term with &  
- * it is not extracted by jQuery.sap.getUriParameters(sParams) 
- * @params {String} str
- *   string, e.g. <code>?searchTerm=SALES & COSTS&dataSource={...}</code>
- * @returns {String} searchTerm
- *   value "SALES & COSTS"
- * @since 1.23.0
- * @public
- */
-sap.ushell.services.URLParsing.prototype.extractSearchTerm = function(str) { return null; };
-
-/**
- * 
  * Extract a hash part from an URL, including an app-specific part
  * @param {String} sURL
  *   any value
@@ -3516,6 +3608,71 @@ sap.ushell.System = function(oData) {};
 // ---- sap.ushell.ui --------------------------------------------------------------------------
 
 
+// ---- sap.ushell.ui.footerbar --------------------------------------------------------------------------
+
+
+// ---- sap.ushell.ui.footerbar.EndUserFeedback --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructor for a new ui/footerbar/EndUserFeedback.
+ * </p><p>
+ * Accepts an object literal <code>mSettings</code> that defines initial 
+ * property values, aggregated and associated objects as well as event handlers. 
+ * </p><p>
+ * If the name of a setting is ambiguous (e.g. a property has the same name as an event), 
+ * then the framework assumes property, aggregation, association, event in that order. 
+ * To override this automatic resolution, one of the prefixes "aggregation:", "association:" 
+ * or "event:" can be added to the name of the setting (such a prefixed name must be
+ * enclosed in single or double quotes).
+ * </p><p>
+ * The supported settings are:
+ * <ul>
+ * <li>Properties
+ * <ul></ul>
+ * </li>
+ * <li>Aggregations
+ * <ul></ul>
+ * </li>
+ * <li>Associations
+ * <ul></ul>
+ * </li>
+ * <li>Events
+ * <ul></ul>
+ * </li>
+ * </ul> 
+ * </p><p>
+ * </p><p>
+ * In addition, all settings applicable to the base type {@link sap.m.Button#constructor sap.m.Button}
+ * can be used as well.
+ * @param {string} [sId] id for the new control, generated automatically if no id is given 
+ * @param {object} [mSettings] initial settings for the new control
+ * @class
+ * Add your documentation for the newui/footerbar/EndUserFeedback
+ * @extends sap.m.Button
+ * @version 1.26.4
+ * @constructor
+ * @public
+ * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
+ */
+sap.ushell.ui.footerbar.EndUserFeedback = function(sId,mSettings) {};
+/**
+ * 
+ * Creates a new subclass of class sap.ushell.ui.footerbar.EndUserFeedback with name <code>sClassName</code> 
+ * and enriches it with the information contained in <code>oClassInfo</code>.
+ * </p><p>
+ * <code>oClassInfo</code> might contain the same kind of informations as described in {@link sap.ui.core.Element.extend Element.extend}.
+ * @param {string} sClassName name of the class to be created
+ * @param {object} [oClassInfo] object literal with informations about the class  
+ * @param {function} [FNMetaImpl] constructor function for the metadata object. If not given, it defaults to sap.ui.core.ElementMetadata.
+ * @return {function} the created class / constructor function
+ * @public
+ * @static
+ * 
+ */
+sap.ushell.ui.footerbar.EndUserFeedback.extend = function(sClassName,oClassInfo,FNMetaImpl) { return function() {}; };
+
+
 // ---- sap.ushell.ui.launchpad --------------------------------------------------------------------------
 
 
@@ -3559,7 +3716,7 @@ sap.ushell.System = function(oData) {};
  * @class
  * Displays a loading dialog with an indicator that an app is loading
  * @extends sap.m.BusyDialog
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3647,7 +3804,7 @@ sap.ushell.ui.launchpad.LoadingDialog.prototype.setIconUri = function(sIconUri) 
  * @class
  * Add your documentation for the newui/launchpad/SearchResultAppItem
  * @extends sap.m.Button
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3759,7 +3916,7 @@ sap.ushell.ui.launchpad.SearchResultAppItem.prototype.setTargetUrl = function(sT
  * @class
  * A list containing all app search results
  * @extends sap.m.Table
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3935,7 +4092,7 @@ sap.ushell.ui.launchpad.SearchResultApps.prototype.setShowGrowingTrigger = funct
  * @class
  * Add your documentation for the newui/launchpad/SearchSuggestionList
  * @extends sap.m.List
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4134,7 +4291,7 @@ sap.ushell.ui.launchpad.SearchSuggestionList.prototype.setDisableKeyboardNavigat
  * @class
  * Add your documentation for the newui/launchpad/SearchSuggestionListItem
  * @extends sap.m.ListItemBase
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4539,7 +4696,7 @@ sap.ushell.ui.launchpad.SearchSuggestionListItem.prototype.setText = function(sT
  * @class
  * The tile state control that displays loading indicator, while tile view is loading and failed status in case tile view is not available.
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel

@@ -68,11 +68,9 @@
  * @class
  * This control shows a bullet chart.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
- * @experimental Since version 1.19. 
- * API is not yet finished and might change completely
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.BulletChart = function(sId,mSettings) {};
@@ -683,7 +681,7 @@ sap.suite.ui.commons.BulletChart.prototype.setWidth = function(sWidth) { return 
  * @class
  * Thresholds data holder.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -801,7 +799,7 @@ sap.suite.ui.commons.BulletChartMode.toString = function() { return ""; };
  * @class
  * This control allows you to display business card information including an image, first title (either URL link or text), second title, and multiple text lines.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1033,7 +1031,7 @@ sap.suite.ui.commons.BusinessCard.prototype.setWidth = function(sWidth) { return
  * </li>
  * <li>Aggregations
  * <ul>
- * <li>{@link #getDimensionSelectors dimensionSelectors} : sap.m.Select[]</li>
+ * <li>{@link #getDimensionSelectors dimensionSelectors} : sap.ui.core.Control[]</li>
  * <li>{@link #getContent content} <strong>(default aggregation)</strong> : sap.suite.ui.commons.ChartContainerContent[]</li></ul>
  * </li>
  * <li>Associations
@@ -1054,11 +1052,9 @@ sap.suite.ui.commons.BusinessCard.prototype.setWidth = function(sWidth) { return
  * - personalization icon
  * - showLegend toggle
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
- * @experimental Since version 1.23. 
- * The ChartContainer will be productized soon.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.ChartContainer = function(sId,mSettings) {};
@@ -1101,7 +1097,7 @@ sap.suite.ui.commons.ChartContainer.prototype.addContent = function(oContent) { 
  * 
  * Adds some dimensionSelector <code>oDimensionSelector</code> 
  * to the aggregation named <code>dimensionSelectors</code>.
- * @param {sap.m.Select}
+ * @param {sap.ui.core.Control}
  *            oDimensionSelector the dimensionSelector to add; if empty, nothing is inserted
  * @return {sap.suite.ui.commons.ChartContainer} <code>this</code> to allow method chaining
  * @public
@@ -1241,7 +1237,7 @@ sap.suite.ui.commons.ChartContainer.prototype.firePersonalizationPress = functio
 /**
  * 
  * Getter for property <code>autoAdjustHeight</code>.
- * Adjust the height of the Chart to the available space.
+ * Determine whether to stretch the chart height to the maximum possible height of ChartContainer's parent container. As a prerequisite, the parent container needs to have a fixed value height or be able to determine height from its parent.
  * </p><p>
  * Default value is <code>false</code>
  * @return {boolean} the value of property <code>autoAdjustHeight</code>
@@ -1266,7 +1262,7 @@ sap.suite.ui.commons.ChartContainer.prototype.getContent = function() { return n
  * 
  * Getter for aggregation <code>dimensionSelectors</code>.<br/>
  * Dimension Selects.
- * @return {sap.m.Select[]}
+ * @return {sap.ui.core.Control[]}
  * @public
  * 
  */
@@ -1358,9 +1354,9 @@ sap.suite.ui.commons.ChartContainer.prototype.indexOfContent = function(oContent
 
 /**
  * 
- * Checks for the provided <code>sap.m.Select</code> in the aggregation named <code>dimensionSelectors</code> 
+ * Checks for the provided <code>sap.ui.core.Control</code> in the aggregation named <code>dimensionSelectors</code> 
  * and returns its index if found or -1 otherwise.
- * @param {sap.m.Select}
+ * @param {sap.ui.core.Control}
  *            oDimensionSelector the dimensionSelector whose index is looked for.
  * @return {int} the index of the provided control in the aggregation if found, or -1 otherwise
  * @public
@@ -1387,7 +1383,7 @@ sap.suite.ui.commons.ChartContainer.prototype.insertContent = function(oContent,
 /**
  * 
  * Inserts a dimensionSelector into the aggregation named <code>dimensionSelectors</code>.
- * @param {sap.m.Select}
+ * @param {sap.ui.core.Control}
  *          oDimensionSelector the dimensionSelector to insert; if empty, nothing is inserted
  * @param {int}
  *             iIndex the <code>0</code>-based index the dimensionSelector should be inserted at; for 
@@ -1414,7 +1410,7 @@ sap.suite.ui.commons.ChartContainer.prototype.removeAllContent = function() { re
  * 
  * Removes all the controls in the aggregation named <code>dimensionSelectors</code>.<br/>
  * Additionally unregisters them from the hosting UIArea.
- * @return {sap.m.Select[]} an array of the removed elements (might be empty)
+ * @return {sap.ui.core.Control[]} an array of the removed elements (might be empty)
  * @public
  * 
  */
@@ -1433,12 +1429,12 @@ sap.suite.ui.commons.ChartContainer.prototype.removeContent = function(vContent)
 /**
  * 
  * Removes an dimensionSelector from the aggregation named <code>dimensionSelectors</code>.
- * @param {int | string | sap.m.Select} vDimensionSelector the dimensionSelector to remove or its index or id
- * @return {sap.m.Select} the removed dimensionSelector or null
+ * @param {int | string | sap.ui.core.Control} vDimensionSelector the dimensionSelector to remove or its index or id
+ * @return {sap.ui.core.Control} the removed dimensionSelector or null
  * @public
  * 
  */
-sap.suite.ui.commons.ChartContainer.prototype.removeDimensionSelector = function(vDimensionSelector) { return new sap.m.Select(); };
+sap.suite.ui.commons.ChartContainer.prototype.removeDimensionSelector = function(vDimensionSelector) { return new sap.ui.core.Control(); };
 
 /**
  * 
@@ -1563,11 +1559,9 @@ sap.suite.ui.commons.ChartContainer.prototype.setTitle = function(sTitle) { retu
  * @class
  * Content Aggregation for ChartContainer.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
- * @experimental Since version 1.23. 
- * The ChartContainerContent will be productized soon.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.ChartContainerContent = function(sId,mSettings) {};
@@ -1709,11 +1703,11 @@ sap.suite.ui.commons.ChartContainerContent.prototype.setTitle = function(sTitle)
  * @class
  * This control is the implementation of the InfoTile to show a comparison or bullet chart.
  * @extends sap.suite.ui.commons.InfoTile
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
- * @experimental Since version 1.19. 
- * API is not yet finished and might change completely
+ * @deprecated Since version 1.25. 
+ * This control has been deprecated in favor of new sap.suite.ui.commons.GenericTile.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.ChartTile = function(sId,mSettings) {};
@@ -1800,7 +1794,7 @@ sap.suite.ui.commons.ChartTile.prototype.setUnit = function(sUnit) { return new 
  * @class
  * Column data holder.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1935,7 +1929,7 @@ sap.suite.ui.commons.ColumnData.prototype.setValue = function(fValue) { return n
  * @class
  * This control shows a column chart.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2191,8 +2185,11 @@ sap.suite.ui.commons.CommonBackground.toString = function() { return ""; };
  * <ul>
  * <li>{@link #getScale scale} : string</li>
  * <li>{@link #getSize size} : sap.suite.ui.commons.InfoTileSize (default: sap.suite.ui.commons.InfoTileSize.Auto)</li>
+ * <li>{@link #getView view} : sap.suite.ui.commons.ComparisonChartView (default: sap.suite.ui.commons.ComparisonChartView.Normal)</li>
  * <li>{@link #getWidth width} : sap.ui.core.CSSSize</li>
- * <li>{@link #getColorPalette colorPalette} : string[] (default: [])</li></ul>
+ * <li>{@link #getColorPalette colorPalette} : string[] (default: [])</li>
+ * <li>{@link #getShrinkable shrinkable} : boolean (default: false)</li>
+ * <li>{@link #getHeight height} : sap.ui.core.CSSSize</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
@@ -2211,7 +2208,7 @@ sap.suite.ui.commons.CommonBackground.toString = function() { return ""; };
  * @class
  * This control shows a comparison chart.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2334,6 +2331,18 @@ sap.suite.ui.commons.ComparisonChart.prototype.getData = function() { return new
 
 /**
  * 
+ * Getter for property <code>height</code>.
+ * Height of the chart.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {sap.ui.core.CSSSize} the value of property <code>height</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.ComparisonChart.prototype.getHeight = function() { return new sap.ui.core.CSSSize(); };
+
+/**
+ * 
  * Getter for property <code>scale</code>.
  * The scaling suffix.
  * </p><p>
@@ -2346,6 +2355,18 @@ sap.suite.ui.commons.ComparisonChart.prototype.getScale = function() { return ""
 
 /**
  * 
+ * Getter for property <code>shrinkable</code>.
+ * If it is set to true, the height of the control is defined by its content.
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>shrinkable</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.ComparisonChart.prototype.getShrinkable = function() { return false; };
+
+/**
+ * 
  * Getter for property <code>size</code>.
  * Updates the size of the chart. If not set then the default size is applied based on the device tile.
  * </p><p>
@@ -2355,6 +2376,18 @@ sap.suite.ui.commons.ComparisonChart.prototype.getScale = function() { return ""
  * 
  */
 sap.suite.ui.commons.ComparisonChart.prototype.getSize = function() { return new sap.suite.ui.commons.InfoTileSize(); };
+
+/**
+ * 
+ * Getter for property <code>view</code>.
+ * The view of the chart. If not set, the Normal view is used by default.
+ * </p><p>
+ * Default value is <code>Normal</code>
+ * @return {sap.suite.ui.commons.ComparisonChartView} the value of property <code>view</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.ComparisonChart.prototype.getView = function() { return new sap.suite.ui.commons.ComparisonChartView(); };
 
 /**
  * 
@@ -2430,6 +2463,18 @@ sap.suite.ui.commons.ComparisonChart.prototype.setColorPalette = function(aColor
 
 /**
  * 
+ * Setter for property <code>height</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {sap.ui.core.CSSSize} sHeight  new value for property <code>height</code>
+ * @return {sap.suite.ui.commons.ComparisonChart} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.ComparisonChart.prototype.setHeight = function(sHeight) { return new sap.suite.ui.commons.ComparisonChart(); };
+
+/**
+ * 
  * Setter for property <code>scale</code>.
  * </p><p>
  * Default value is empty/<code>undefined</code> 
@@ -2439,6 +2484,18 @@ sap.suite.ui.commons.ComparisonChart.prototype.setColorPalette = function(aColor
  * 
  */
 sap.suite.ui.commons.ComparisonChart.prototype.setScale = function(sScale) { return new sap.suite.ui.commons.ComparisonChart(); };
+
+/**
+ * 
+ * Setter for property <code>shrinkable</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bShrinkable  new value for property <code>shrinkable</code>
+ * @return {sap.suite.ui.commons.ComparisonChart} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.ComparisonChart.prototype.setShrinkable = function(bShrinkable) { return new sap.suite.ui.commons.ComparisonChart(); };
 
 /**
  * 
@@ -2454,6 +2511,18 @@ sap.suite.ui.commons.ComparisonChart.prototype.setSize = function(oSize) { retur
 
 /**
  * 
+ * Setter for property <code>view</code>.
+ * </p><p>
+ * Default value is <code>Normal</code> 
+ * @param {sap.suite.ui.commons.ComparisonChartView} oView  new value for property <code>view</code>
+ * @return {sap.suite.ui.commons.ComparisonChart} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.ComparisonChart.prototype.setView = function(oView) { return new sap.suite.ui.commons.ComparisonChart(); };
+
+/**
+ * 
  * Setter for property <code>width</code>.
  * </p><p>
  * Default value is empty/<code>undefined</code> 
@@ -2464,6 +2533,11 @@ sap.suite.ui.commons.ComparisonChart.prototype.setSize = function(oSize) { retur
  */
 sap.suite.ui.commons.ComparisonChart.prototype.setWidth = function(sWidth) { return new sap.suite.ui.commons.ComparisonChart(); };
 
+
+// ---- sap.suite.ui.commons.ComparisonChartView --------------------------------------------------------------------------
+
+// dummy function to make Eclipse aware of namespace
+sap.suite.ui.commons.ComparisonChartView.toString = function() { return ""; };
 
 // ---- sap.suite.ui.commons.ComparisonData --------------------------------------------------------------------------
 
@@ -2508,11 +2582,9 @@ sap.suite.ui.commons.ComparisonChart.prototype.setWidth = function(sWidth) { ret
  * @class
  * Comparison tile value holder.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
- * @experimental Since version 1.19. 
- * API is not yet finished and might change completely
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.ComparisonData = function(sId,mSettings) {};
@@ -2669,7 +2741,7 @@ sap.suite.ui.commons.ComparisonData.prototype.setValue = function(fValue) { retu
  * @class
  * This control extends the sap.ui.ux3.NavigationItem control. This control can display the quantity of items on a corresponding content area. It also provides a rich tooltip that can appear and disappear after a certain delay.
  * @extends sap.ui.ux3.NavigationItem
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2754,7 +2826,7 @@ sap.suite.ui.commons.CountingNavigationItem.prototype.setQuantity = function(sQu
  * @class
  * The DateRangeScroller provides a method to scroll through a series of time periods, each of which is represented by a starting date and an ending date, known as the date range. The user may scroll to the previous or next date range. Several predefined ranges are supported such as day, week, work week, month, and year.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3060,7 +3132,7 @@ sap.suite.ui.commons.DateRangeScroller.prototype.setDateRangeYear = function(dIn
  * @class
  * The Date Range Slider provides the user with a Range Slider control that is optimized for use with Dates.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3570,7 +3642,7 @@ sap.suite.ui.commons.DateRangeSlider.prototype.setWidth = function(tWidth) { ret
  * @class
  * The Date Range Slider provides the user with a Range Slider control that is optimized for use with Dates.
  * @extends sap.ui.commons.RangeSlider
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3818,7 +3890,7 @@ sap.suite.ui.commons.DeviationIndicator.toString = function() { return ""; };
  * @class
  * The control that displays multiple GenericTile controls as changing slides.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4013,7 +4085,7 @@ sap.suite.ui.commons.DynamicContainer.prototype.setTransitionTime = function(iTr
  * @class
  * This control is used in UnifiedThingInspector to display the preview of the facet content.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4383,7 +4455,7 @@ sap.suite.ui.commons.FacetOverviewHeight.toString = function() { return ""; };
  * @class
  * This element represents a news feed item.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -4565,9 +4637,11 @@ sap.suite.ui.commons.FeedItem.prototype.setTitle = function(sTitle) { return new
  * @class
  * This control displays feed item header information.
  * @extends sap.m.ListItemBase
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.25. 
+ * This control has been deprecated in favor of new sap.suite.ui.commons.GenericTile.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.FeedItemHeader = function(sId,mSettings) {};
@@ -4765,9 +4839,11 @@ sap.suite.ui.commons.FeedItemHeader.prototype.setTitle = function(sTitle) { retu
  * @class
  * This control displays news feeds.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.25. 
+ * This control has been deprecated in favor of new sap.suite.ui.commons.GenericTile.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.FeedTile = function(sId,mSettings) {};
@@ -5054,7 +5130,8 @@ sap.suite.ui.commons.FrameType.toString = function() { return ""; };
  * <li>{@link #getFrameType frameType} : sap.suite.ui.commons.FrameType (default: sap.suite.ui.commons.FrameType.OneByOne)</li>
  * <li>{@link #getBackgroundImage backgroundImage} : sap.ui.core.URI</li>
  * <li>{@link #getHeaderImage headerImage} : sap.ui.core.URI</li>
- * <li>{@link #getState state} : sap.suite.ui.commons.LoadState (default: sap.suite.ui.commons.LoadState.Loaded)</li></ul>
+ * <li>{@link #getState state} : sap.suite.ui.commons.LoadState (default: sap.suite.ui.commons.LoadState.Loaded)</li>
+ * <li>{@link #getImageDescription imageDescription} : string</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
@@ -5074,7 +5151,7 @@ sap.suite.ui.commons.FrameType.toString = function() { return ""; };
  * @class
  * The tile control that displays the title, description, and customizable main area.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5255,6 +5332,18 @@ sap.suite.ui.commons.GenericTile.prototype.getIcon = function() { return new sap
 
 /**
  * 
+ * Getter for property <code>imageDescription</code>.
+ * Description of a header image that is used in the tooltip.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>imageDescription</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile.prototype.getImageDescription = function() { return ""; };
+
+/**
+ * 
  * Getter for property <code>size</code>.
  * The size of the tile. If not set, then the default size is applied based on the device tile.
  * </p><p>
@@ -5419,6 +5508,18 @@ sap.suite.ui.commons.GenericTile.prototype.setIcon = function(oIcon) { return ne
 
 /**
  * 
+ * Setter for property <code>imageDescription</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sImageDescription  new value for property <code>imageDescription</code>
+ * @return {sap.suite.ui.commons.GenericTile} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile.prototype.setImageDescription = function(sImageDescription) { return new sap.suite.ui.commons.GenericTile(); };
+
+/**
+ * 
  * Setter for property <code>size</code>.
  * </p><p>
  * Default value is <code>Auto</code> 
@@ -5452,6 +5553,459 @@ sap.suite.ui.commons.GenericTile.prototype.setState = function(oState) { return 
  * 
  */
 sap.suite.ui.commons.GenericTile.prototype.setSubheader = function(sSubheader) { return new sap.suite.ui.commons.GenericTile(); };
+
+
+// ---- sap.suite.ui.commons.GenericTile2X2 --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructor for a new GenericTile2X2.
+ * </p><p>
+ * Accepts an object literal <code>mSettings</code> that defines initial 
+ * property values, aggregated and associated objects as well as event handlers. 
+ * </p><p>
+ * If the name of a setting is ambiguous (e.g. a property has the same name as an event), 
+ * then the framework assumes property, aggregation, association, event in that order. 
+ * To override this automatic resolution, one of the prefixes "aggregation:", "association:" 
+ * or "event:" can be added to the name of the setting (such a prefixed name must be
+ * enclosed in single or double quotes).
+ * </p><p>
+ * The supported settings are:
+ * <ul>
+ * <li>Properties
+ * <ul>
+ * <li>{@link #getHeader header} : string</li>
+ * <li>{@link #getSubheader subheader} : string</li>
+ * <li>{@link #getFailedText failedText} : string</li>
+ * <li>{@link #getSize size} : sap.suite.ui.commons.InfoTileSize (default: sap.suite.ui.commons.InfoTileSize.Auto)</li>
+ * <li>{@link #getBackgroundImage backgroundImage} : sap.ui.core.URI</li>
+ * <li>{@link #getHeaderImage headerImage} : sap.ui.core.URI</li>
+ * <li>{@link #getFrameType frameType} : sap.suite.ui.commons.FrameType (default: sap.suite.ui.commons.FrameType.OneByOne)</li>
+ * <li>{@link #getState state} : sap.suite.ui.commons.LoadState (default: sap.suite.ui.commons.LoadState.Loaded)</li>
+ * <li>{@link #getImageDescription imageDescription} : string</li></ul>
+ * </li>
+ * <li>Aggregations
+ * <ul>
+ * <li>{@link #getTileContent tileContent} : sap.suite.ui.commons.TileContent2X2[]</li>
+ * <li>{@link #getIcon icon} : sap.ui.core.Control</li></ul>
+ * </li>
+ * <li>Associations
+ * <ul></ul>
+ * </li>
+ * <li>Events
+ * <ul>
+ * <li>{@link sap.suite.ui.commons.GenericTile2X2#event:press press} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
+ * </li>
+ * </ul> 
+ * @param {string} [sId] id for the new control, generated automatically if no id is given 
+ * @param {object} [mSettings] initial settings for the new control
+ * @class
+ * The tile control that displays the title, description, and customizable main area.
+ * @extends sap.ui.core.Control
+ * @version 1.26.4
+ * @constructor
+ * @public
+ * @experimental Since version 1.24. 
+ * API is not yet finished and might change completely
+ * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
+ */
+sap.suite.ui.commons.GenericTile2X2 = function(sId,mSettings) {};
+/**
+ * 
+ * The event is fired when the user chooses the tile.
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.press = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * Adds some tileContent <code>oTileContent</code> 
+ * to the aggregation named <code>tileContent</code>.
+ * @param {sap.suite.ui.commons.TileContent2X2}
+ *            oTileContent the tileContent to add; if empty, nothing is inserted
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.addTileContent = function(oTileContent) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'press' event of this <code>sap.suite.ui.commons.GenericTile2X2</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.suite.ui.commons.GenericTile2X2</code>.<br/> itself. 
+ * </p><p>
+ * The event is fired when the user chooses the tile.
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.suite.ui.commons.GenericTile2X2</code>.<br/> itself.
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.attachPress = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Destroys the icon in the aggregation 
+ * named <code>icon</code>.
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.destroyIcon = function() { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Destroys all the tileContent in the aggregation 
+ * named <code>tileContent</code>.
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.destroyTileContent = function() { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'press' event of this <code>sap.suite.ui.commons.GenericTile2X2</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.detachPress = function(fnFunction,oListener) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Creates a new subclass of class sap.suite.ui.commons.GenericTile2X2 with name <code>sClassName</code> 
+ * and enriches it with the information contained in <code>oClassInfo</code>.
+ * </p><p>
+ * <code>oClassInfo</code> might contain the same kind of informations as described in {@link sap.ui.core.Element.extend Element.extend}.
+ * @param {string} sClassName name of the class to be created
+ * @param {object} [oClassInfo] object literal with informations about the class  
+ * @param {function} [FNMetaImpl] constructor function for the metadata object. If not given, it defaults to sap.ui.core.ElementMetadata.
+ * @return {function} the created class / constructor function
+ * @public
+ * @static
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.extend = function(sClassName,oClassInfo,FNMetaImpl) { return function() {}; };
+
+/**
+ * 
+ * Fire event press to attached listeners.
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.firePress = function(mArguments) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Getter for property <code>backgroundImage</code>.
+ * The URI of the background image.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {sap.ui.core.URI} the value of property <code>backgroundImage</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getBackgroundImage = function() { return new sap.ui.core.URI(); };
+
+/**
+ * 
+ * Getter for property <code>failedText</code>.
+ * The message that appears when the control is in the Failed state.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>failedText</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getFailedText = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>frameType</code>.
+ * The frame type: 1x1 or 2x1.
+ * </p><p>
+ * Default value is <code>OneByOne</code>
+ * @return {sap.suite.ui.commons.FrameType} the value of property <code>frameType</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getFrameType = function() { return new sap.suite.ui.commons.FrameType(); };
+
+/**
+ * 
+ * Getter for property <code>header</code>.
+ * The header of the tile.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>header</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getHeader = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>headerImage</code>.
+ * The image to be displayed as a graphical element within the header. This can be an image or an icon from the icon font.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {sap.ui.core.URI} the value of property <code>headerImage</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getHeaderImage = function() { return new sap.ui.core.URI(); };
+
+/**
+ * 
+ * Getter for aggregation <code>icon</code>.<br/>
+ * An icon or image to be displayed in the control.
+ * @return {sap.ui.core.Control}
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getIcon = function() { return new sap.ui.core.Control(); };
+
+/**
+ * 
+ * Getter for property <code>imageDescription</code>.
+ * Description of a header image that is used in the tooltip.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>imageDescription</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getImageDescription = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>size</code>.
+ * The size of the tile. If not set, then the default size is applied based on the device tile.
+ * </p><p>
+ * Default value is <code>Auto</code>
+ * @return {sap.suite.ui.commons.InfoTileSize} the value of property <code>size</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getSize = function() { return new sap.suite.ui.commons.InfoTileSize(); };
+
+/**
+ * 
+ * Getter for property <code>state</code>.
+ * The load status.
+ * </p><p>
+ * Default value is <code>Loaded</code>
+ * @return {sap.suite.ui.commons.LoadState} the value of property <code>state</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getState = function() { return new sap.suite.ui.commons.LoadState(); };
+
+/**
+ * 
+ * Getter for property <code>subheader</code>.
+ * The subheader of the tile.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>subheader</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getSubheader = function() { return ""; };
+
+/**
+ * 
+ * Getter for aggregation <code>tileContent</code>.<br/>
+ * The switchable view that depends on the tile type.
+ * @return {sap.suite.ui.commons.TileContent2X2[]}
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.getTileContent = function() { return new Array(); };
+
+/**
+ * 
+ * Checks for the provided <code>sap.suite.ui.commons.TileContent2X2</code> in the aggregation named <code>tileContent</code> 
+ * and returns its index if found or -1 otherwise.
+ * @param {sap.suite.ui.commons.TileContent2X2}
+ *            oTileContent the tileContent whose index is looked for.
+ * @return {int} the index of the provided control in the aggregation if found, or -1 otherwise
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.indexOfTileContent = function(oTileContent) { return 0; };
+
+/**
+ * 
+ * Inserts a tileContent into the aggregation named <code>tileContent</code>.
+ * @param {sap.suite.ui.commons.TileContent2X2}
+ *          oTileContent the tileContent to insert; if empty, nothing is inserted
+ * @param {int}
+ *             iIndex the <code>0</code>-based index the tileContent should be inserted at; for 
+ *             a negative value of <code>iIndex</code>, the tileContent is inserted at position 0; for a value 
+ *             greater than the current size of the aggregation, the tileContent is inserted at 
+ *             the last position        
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.insertTileContent = function(oTileContent,iIndex) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Removes all the controls in the aggregation named <code>tileContent</code>.<br/>
+ * Additionally unregisters them from the hosting UIArea.
+ * @return {sap.suite.ui.commons.TileContent2X2[]} an array of the removed elements (might be empty)
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.removeAllTileContent = function() { return new Array(); };
+
+/**
+ * 
+ * Removes an tileContent from the aggregation named <code>tileContent</code>.
+ * @param {int | string | sap.suite.ui.commons.TileContent2X2} vTileContent the tileContent to remove or its index or id
+ * @return {sap.suite.ui.commons.TileContent2X2} the removed tileContent or null
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.removeTileContent = function(vTileContent) { return new sap.suite.ui.commons.TileContent2X2(); };
+
+/**
+ * 
+ * Setter for property <code>backgroundImage</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {sap.ui.core.URI} sBackgroundImage  new value for property <code>backgroundImage</code>
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.setBackgroundImage = function(sBackgroundImage) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Setter for property <code>failedText</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sFailedText  new value for property <code>failedText</code>
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.setFailedText = function(sFailedText) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Setter for property <code>frameType</code>.
+ * </p><p>
+ * Default value is <code>OneByOne</code> 
+ * @param {sap.suite.ui.commons.FrameType} oFrameType  new value for property <code>frameType</code>
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.setFrameType = function(oFrameType) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Setter for property <code>header</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sHeader  new value for property <code>header</code>
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.setHeader = function(sHeader) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Setter for property <code>headerImage</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {sap.ui.core.URI} sHeaderImage  new value for property <code>headerImage</code>
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.setHeaderImage = function(sHeaderImage) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Setter for the aggregated <code>icon</code>.
+ * @param {sap.ui.core.Control} oIcon
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.setIcon = function(oIcon) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Setter for property <code>imageDescription</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sImageDescription  new value for property <code>imageDescription</code>
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.setImageDescription = function(sImageDescription) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Setter for property <code>size</code>.
+ * </p><p>
+ * Default value is <code>Auto</code> 
+ * @param {sap.suite.ui.commons.InfoTileSize} oSize  new value for property <code>size</code>
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.setSize = function(oSize) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Setter for property <code>state</code>.
+ * </p><p>
+ * Default value is <code>Loaded</code> 
+ * @param {sap.suite.ui.commons.LoadState} oState  new value for property <code>state</code>
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.setState = function(oState) { return new sap.suite.ui.commons.GenericTile2X2(); };
+
+/**
+ * 
+ * Setter for property <code>subheader</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sSubheader  new value for property <code>subheader</code>
+ * @return {sap.suite.ui.commons.GenericTile2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.GenericTile2X2.prototype.setSubheader = function(sSubheader) { return new sap.suite.ui.commons.GenericTile2X2(); };
 
 
 // ---- sap.suite.ui.commons.HeaderCell --------------------------------------------------------------------------
@@ -5495,7 +6049,7 @@ sap.suite.ui.commons.GenericTile.prototype.setSubheader = function(sSubheader) {
  * @class
  * This control contains 4 cells (West, North, East, South). It can display one or more controls in different layouts. Each aggregation must contain only one instance of HeaderCellItem.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5731,7 +6285,7 @@ sap.suite.ui.commons.HeaderCell.prototype.setWest = function(oWest) { return new
  * @class
  * Object that contains instance of control and infomation about height. It should be used inside sap.suite.ui.commons.HeaderCell
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5828,7 +6382,10 @@ sap.suite.ui.commons.HeaderCellItem.prototype.setHeight = function(sHeight) { re
  * <li>Properties
  * <ul>
  * <li>{@link #getScrollStep scrollStep} : int (default: 300)</li>
- * <li>{@link #getScrollTime scrollTime} : int (default: 500)</li></ul>
+ * <li>{@link #getScrollTime scrollTime} : int (default: 500)</li>
+ * <li>{@link #getShowDividers showDividers} : boolean (default: true)</li>
+ * <li>{@link #getView view} : sap.suite.ui.commons.HeaderContainerView (default: sap.suite.ui.commons.HeaderContainerView.Horizontal)</li>
+ * <li>{@link #getHeight height} : sap.ui.core.CSSSize</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
@@ -5847,7 +6404,7 @@ sap.suite.ui.commons.HeaderCellItem.prototype.setHeight = function(sHeight) { re
  * Container that provides horizontal layout. Provides horizontal scroll on tablet and phone. On desktop provides scroll left and scroll right buttons. This control supports keyboard navigation. You can use left and right arrow keys to navigate through the inner contents. The Home key puts focus on the first control and the End key puts focus on the last control. Use Enter or Space to choose the control.
  * @extends sap.ui.core.Control
  * @implements sap.m.ObjectHeaderContainer
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -5893,6 +6450,18 @@ sap.suite.ui.commons.HeaderContainer.extend = function(sClassName,oClassInfo,FNM
 
 /**
  * 
+ * Getter for property <code>height</code>.
+ * Experimental. The height of the HeaderContainer in the Vertical view.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {sap.ui.core.CSSSize} the value of property <code>height</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.HeaderContainer.prototype.getHeight = function() { return new sap.ui.core.CSSSize(); };
+
+/**
+ * 
  * Getter for aggregation <code>items</code>.<br/>
  * Items to add to HeaderContainer.
  * @return {sap.ui.core.Control[]}
@@ -5924,6 +6493,30 @@ sap.suite.ui.commons.HeaderContainer.prototype.getScrollStep = function() { retu
  * 
  */
 sap.suite.ui.commons.HeaderContainer.prototype.getScrollTime = function() { return 0; };
+
+/**
+ * 
+ * Getter for property <code>showDividers</code>.
+ * If set to true, shows dividers between scrollable items.
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>showDividers</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.HeaderContainer.prototype.getShowDividers = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>view</code>.
+ * Experimental. The view of the HeaderContainer.
+ * </p><p>
+ * Default value is <code>Horizontal</code>
+ * @return {sap.suite.ui.commons.HeaderContainerView} the value of property <code>view</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.HeaderContainer.prototype.getView = function() { return new sap.suite.ui.commons.HeaderContainerView(); };
 
 /**
  * 
@@ -5975,6 +6568,18 @@ sap.suite.ui.commons.HeaderContainer.prototype.removeItem = function(vItem) { re
 
 /**
  * 
+ * Setter for property <code>height</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {sap.ui.core.CSSSize} sHeight  new value for property <code>height</code>
+ * @return {sap.suite.ui.commons.HeaderContainer} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.HeaderContainer.prototype.setHeight = function(sHeight) { return new sap.suite.ui.commons.HeaderContainer(); };
+
+/**
+ * 
  * Setter for property <code>scrollStep</code>.
  * </p><p>
  * Default value is <code>300</code> 
@@ -5997,6 +6602,35 @@ sap.suite.ui.commons.HeaderContainer.prototype.setScrollStep = function(iScrollS
  */
 sap.suite.ui.commons.HeaderContainer.prototype.setScrollTime = function(iScrollTime) { return new sap.suite.ui.commons.HeaderContainer(); };
 
+/**
+ * 
+ * Setter for property <code>showDividers</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bShowDividers  new value for property <code>showDividers</code>
+ * @return {sap.suite.ui.commons.HeaderContainer} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.HeaderContainer.prototype.setShowDividers = function(bShowDividers) { return new sap.suite.ui.commons.HeaderContainer(); };
+
+/**
+ * 
+ * Setter for property <code>view</code>.
+ * </p><p>
+ * Default value is <code>Horizontal</code> 
+ * @param {sap.suite.ui.commons.HeaderContainerView} oView  new value for property <code>view</code>
+ * @return {sap.suite.ui.commons.HeaderContainer} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.HeaderContainer.prototype.setView = function(oView) { return new sap.suite.ui.commons.HeaderContainer(); };
+
+
+// ---- sap.suite.ui.commons.HeaderContainerView --------------------------------------------------------------------------
+
+// dummy function to make Eclipse aware of namespace
+sap.suite.ui.commons.HeaderContainerView.toString = function() { return ""; };
 
 // ---- sap.suite.ui.commons.InfoTile --------------------------------------------------------------------------
 
@@ -6040,11 +6674,11 @@ sap.suite.ui.commons.HeaderContainer.prototype.setScrollTime = function(iScrollT
  * @class
  * The tile control that displays the title, description, footer, and customizable main area.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
- * @experimental Since version 1.19. 
- * API is not yet finished and might change completely
+ * @deprecated Since version 1.25. 
+ * This control has been deprecated in favor of new sap.suite.ui.commons.GenericTile.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.InfoTile = function(sId,mSettings) {};
@@ -6327,7 +6961,7 @@ sap.suite.ui.commons.InfoTileValueColor.toString = function() { return ""; };
  * @class
  * This control displays the jam content text, subheader, and numeric value in a tile.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -6590,7 +7224,7 @@ sap.suite.ui.commons.JamContent.prototype.setValueColor = function(oValueColor) 
  * @class
  * This control is used in UnifiedThingInspector to display object-related KPIs in a factsheet.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -6796,10 +7430,10 @@ sap.suite.ui.commons.KpiTile.prototype.setValueUnit = function(sValueUnit) { ret
  * @class
  * This control launches a URL.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
- * @experimental Since version 1.14. 
+ * @deprecated Since version 1.25. 
  * API is not yet finished and might change completely
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
@@ -6977,7 +7611,7 @@ sap.suite.ui.commons.LaunchTile.prototype.setTitle = function(sTitle) { return n
  * @class
  * This control contains one or more sap.m.Button controls or sap.ui.commons.Link controls. The LinkActionSheet control is closed if the user chooses one of the buttons or links. It looks similar to sap.m.Dialog in iPhone and Android, and to sap.m.Popover in iPad.
  * @extends sap.m.ActionSheet
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -7172,7 +7806,8 @@ sap.suite.ui.commons.LoadState.toString = function() { return ""; };
  * <li>{@link #getMaxXValue maxXValue} : float</li>
  * <li>{@link #getMinXValue minXValue} : float</li>
  * <li>{@link #getMaxYValue maxYValue} : float</li>
- * <li>{@link #getMinYValue minYValue} : float</li></ul>
+ * <li>{@link #getMinYValue minYValue} : float</li>
+ * <li>{@link #getView view} : sap.suite.ui.commons.MicroAreaChartView (default: sap.suite.ui.commons.MicroAreaChartView.Normal)</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
@@ -7202,11 +7837,9 @@ sap.suite.ui.commons.LoadState.toString = function() { return ""; };
  * @class
  * This control displays the history of values as a line mini chart or an area mini chart.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
- * @experimental Since version 1.19. 
- * API is not yet finished and might change completely
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.MicroAreaChart = function(sId,mSettings) {};
@@ -7583,6 +8216,18 @@ sap.suite.ui.commons.MicroAreaChart.prototype.getTarget = function() { return ne
 
 /**
  * 
+ * Getter for property <code>view</code>.
+ * The view of the chart.
+ * </p><p>
+ * Default value is <code>Normal</code>
+ * @return {sap.suite.ui.commons.MicroAreaChartView} the value of property <code>view</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.MicroAreaChart.prototype.getView = function() { return new sap.suite.ui.commons.MicroAreaChartView(); };
+
+/**
+ * 
  * Getter for property <code>width</code>.
  * The width of the chart.
  * </p><p>
@@ -7775,6 +8420,18 @@ sap.suite.ui.commons.MicroAreaChart.prototype.setTarget = function(oTarget) { re
 
 /**
  * 
+ * Setter for property <code>view</code>.
+ * </p><p>
+ * Default value is <code>Normal</code> 
+ * @param {sap.suite.ui.commons.MicroAreaChartView} oView  new value for property <code>view</code>
+ * @return {sap.suite.ui.commons.MicroAreaChart} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.MicroAreaChart.prototype.setView = function(oView) { return new sap.suite.ui.commons.MicroAreaChart(); };
+
+/**
+ * 
  * Setter for property <code>width</code>.
  * </p><p>
  * Default value is <code>200px</code> 
@@ -7827,7 +8484,7 @@ sap.suite.ui.commons.MicroAreaChart.prototype.setWidth = function(sWidth) { retu
  * @class
  * The configuration of the graphic element on the chart.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8017,7 +8674,7 @@ sap.suite.ui.commons.MicroAreaChartItem.prototype.unbindPoints = function() { re
  * @class
  * This element contains data for a label in MicroAreaChart control.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8129,7 +8786,7 @@ sap.suite.ui.commons.MicroAreaChartLabel.prototype.setLabel = function(sLabel) {
  * @class
  * This control contains data for the point.
  * @extends sap.ui.core.Element
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8218,6 +8875,11 @@ sap.suite.ui.commons.MicroAreaChartPoint.prototype.setX = function(fX) { return 
 sap.suite.ui.commons.MicroAreaChartPoint.prototype.setY = function(fY) { return new sap.suite.ui.commons.MicroAreaChartPoint(); };
 
 
+// ---- sap.suite.ui.commons.MicroAreaChartView --------------------------------------------------------------------------
+
+// dummy function to make Eclipse aware of namespace
+sap.suite.ui.commons.MicroAreaChartView.toString = function() { return ""; };
+
 // ---- sap.suite.ui.commons.MonitoringContent --------------------------------------------------------------------------
 
 /**
@@ -8260,9 +8922,11 @@ sap.suite.ui.commons.MicroAreaChartPoint.prototype.setY = function(fY) { return 
  * @class
  * This control is used in a tile or any other place to display numeric values and an icon.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.25. 
+ * This control has been deprecated in favor of new sap.suite.ui.commons.NumericContent.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.MonitoringContent = function(sId,mSettings) {};
@@ -8530,11 +9194,11 @@ sap.suite.ui.commons.MonitoringContent.prototype.setValue = function(sValue) { r
  * @class
  * This control is the implementation of the InfoTile to show a numeric value and an icon.
  * @extends sap.suite.ui.commons.InfoTile
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
- * @experimental Since version 1.19. 
- * API is not yet finished and might change completely
+ * @deprecated Since version 1.25. 
+ * This control has been deprecated in favor of new sap.suite.ui.commons.GenericTile.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.MonitoringTile = function(sId,mSettings) {};
@@ -8666,7 +9330,7 @@ sap.suite.ui.commons.MonitoringTile.prototype.setValue = function(sValue) { retu
  * @class
  * This control displays the news content text and subheader in a tile.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -8864,7 +9528,7 @@ sap.suite.ui.commons.NewsContent.prototype.setSubheader = function(sSubheader) {
  * @class
  * This control allows you to create and store your notes for further reference.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -9595,7 +10259,7 @@ sap.suite.ui.commons.NoteTaker.prototype.uploadAttachment = function() { return 
  * @class
  * This control allows you to store Note Taker card header and body text.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10164,7 +10828,7 @@ sap.suite.ui.commons.NoteTakerCard.prototype.setViewAllTrigger = function(iViewA
  * @class
  * This control allows you to enter a quick note and N note cards.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10700,7 +11364,8 @@ sap.suite.ui.commons.NoteTakerFeeder.prototype.setTitle = function(sTitle) { ret
  * <li>{@link #getTruncateValueTo truncateValueTo} : int (default: 4)</li>
  * <li>{@link #getIcon icon} : sap.ui.core.URI</li>
  * <li>{@link #getNullifyValue nullifyValue} : boolean (default: true)</li>
- * <li>{@link #getIconDescription iconDescription} : string</li></ul>
+ * <li>{@link #getIconDescription iconDescription} : string</li>
+ * <li>{@link #getWidth width} : sap.ui.core.CSSSize</li></ul>
  * </li>
  * <li>Aggregations
  * <ul></ul>
@@ -10718,7 +11383,7 @@ sap.suite.ui.commons.NoteTakerFeeder.prototype.setTitle = function(sTitle) { ret
  * @class
  * NumericContent to be used in tile or in other place where need to show numeric values with sematic colors and deviations.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -10941,6 +11606,18 @@ sap.suite.ui.commons.NumericContent.prototype.getValueColor = function() { retur
 
 /**
  * 
+ * Getter for property <code>width</code>.
+ * The width of the chart. If it is not set, the size of the control is defined by the size property.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {sap.ui.core.CSSSize} the value of property <code>width</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.NumericContent.prototype.getWidth = function() { return new sap.ui.core.CSSSize(); };
+
+/**
+ * 
  * Setter for property <code>animateTextChange</code>.
  * </p><p>
  * Default value is <code>true</code> 
@@ -11083,6 +11760,18 @@ sap.suite.ui.commons.NumericContent.prototype.setValue = function(sValue) { retu
  */
 sap.suite.ui.commons.NumericContent.prototype.setValueColor = function(oValueColor) { return new sap.suite.ui.commons.NumericContent(); };
 
+/**
+ * 
+ * Setter for property <code>width</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {sap.ui.core.CSSSize} sWidth  new value for property <code>width</code>
+ * @return {sap.suite.ui.commons.NumericContent} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.NumericContent.prototype.setWidth = function(sWidth) { return new sap.suite.ui.commons.NumericContent(); };
+
 
 // ---- sap.suite.ui.commons.NumericTile --------------------------------------------------------------------------
 
@@ -11128,11 +11817,11 @@ sap.suite.ui.commons.NumericContent.prototype.setValueColor = function(oValueCol
  * @class
  * This control is the implementation of the InfoTile to show a numeric value.
  * @extends sap.suite.ui.commons.InfoTile
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
- * @experimental Since version 1.19. 
- * API is not yet finished and might change completely
+ * @deprecated Since version 1.25. 
+ * This control has been deprecated in favor of new sap.suite.ui.commons.GenericTile.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.NumericTile = function(sId,mSettings) {};
@@ -11311,9 +12000,11 @@ sap.suite.ui.commons.NumericTile.prototype.setValueColor = function(oValueColor)
  * @class
  * Shows picture in fullscreen.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
+ * @experimental Since version 1.25. 
+ * API is not yet finished and might change completely
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.PictureZoomIn = function(sId,mSettings) {};
@@ -11456,7 +12147,7 @@ sap.suite.ui.commons.PictureZoomIn.prototype.setImageSrc = function(sImageSrc) {
  * @class
  * Process Flow is a complex control that enables you to display documents or other items in their flow.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -11491,6 +12182,8 @@ sap.suite.ui.commons.ProcessFlow.prototype.nodePress = function(oControlEvent) {
  * This event is fired when a process flow node title was
  * clicked. The user can access the clicked process flow node control object which is the only argument of the event handler.
  * @event
+ * @deprecated Since version 1.26. 
+ * Should not be used any longer, use nodePress event instead ( click on the node)
  * @param {sap.ui.base.Event} oControlEvent
  * @param {sap.ui.base.EventProvider} oControlEvent.getSource
  * @param {object} oControlEvent.getParameters
@@ -11597,6 +12290,8 @@ sap.suite.ui.commons.ProcessFlow.prototype.attachNodePress = function(oData,fnFu
  *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.suite.ui.commons.ProcessFlow</code>.<br/> itself.
  * @return {sap.suite.ui.commons.ProcessFlow} <code>this</code> to allow method chaining
  * @public
+ * @deprecated Since version 1.26. 
+ * Should not be used any longer, use nodePress event instead ( click on the node)
  * 
  */
 sap.suite.ui.commons.ProcessFlow.prototype.attachNodeTitlePress = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.ProcessFlow(); };
@@ -11681,6 +12376,8 @@ sap.suite.ui.commons.ProcessFlow.prototype.detachNodePress = function(fnFunction
  *            oListener Context object on which the given function had to be called.
  * @return {sap.suite.ui.commons.ProcessFlow} <code>this</code> to allow method chaining
  * @public
+ * @deprecated Since version 1.26. 
+ * Should not be used any longer, use nodePress event instead ( click on the node)
  * 
  */
 sap.suite.ui.commons.ProcessFlow.prototype.detachNodeTitlePress = function(fnFunction,oListener) { return new sap.suite.ui.commons.ProcessFlow(); };
@@ -11757,6 +12454,8 @@ sap.suite.ui.commons.ProcessFlow.prototype.fireNodePress = function(mArguments) 
  * @param {Map} [mArguments] the arguments to pass along with the event.
  * @return {sap.suite.ui.commons.ProcessFlow} <code>this</code> to allow method chaining
  * @protected
+ * @deprecated Since version 1.26. 
+ * Should not be used any longer, use nodePress event instead ( click on the node)
  * 
  */
 sap.suite.ui.commons.ProcessFlow.prototype.fireNodeTitlePress = function(mArguments) { return new sap.suite.ui.commons.ProcessFlow(); };
@@ -11775,15 +12474,6 @@ sap.suite.ui.commons.ProcessFlow.prototype.fireNodeTitlePress = function(mArgume
  * 
  */
 sap.suite.ui.commons.ProcessFlow.prototype.fireOnError = function(mArguments) { return new sap.suite.ui.commons.ProcessFlow(); };
-
-/**
- * 
- * This method returns the nodeId of the node, which is focused.
- * @type string
- * @public
- * @ui5-metamodel This method also will be described in the UI5 (legacy) designtime metamodel
- */
-sap.suite.ui.commons.ProcessFlow.prototype.getFocusedNode = function() { return ""; };
 
 /**
  * 
@@ -11992,6 +12682,15 @@ sap.suite.ui.commons.ProcessFlow.prototype.setWheelZoomable = function(bWheelZoo
  */
 sap.suite.ui.commons.ProcessFlow.prototype.updateModel = function() { return null; };
 
+/**
+ * 
+ * This method should be called when the contents of the nodes were changed. It updates only the nodes and rerenders the ProcessFlow.
+ * @type void
+ * @public
+ * @ui5-metamodel This method also will be described in the UI5 (legacy) designtime metamodel
+ */
+sap.suite.ui.commons.ProcessFlow.prototype.updateNodesOnly = function() { return null; };
+
 
 // ---- sap.suite.ui.commons.ProcessFlowConnection --------------------------------------------------------------------------
 
@@ -12030,7 +12729,7 @@ sap.suite.ui.commons.ProcessFlow.prototype.updateModel = function() { return nul
  * @class
  * This control is used internally to connect process flow node A with process flow node B in respect to the style(s) chosen by the end-user
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12166,7 +12865,7 @@ sap.suite.ui.commons.ProcessFlowDisplayState.toString = function() { return ""; 
  * @class
  * This control gives you an overview of documents/items used in the process flow. The process flow is represented by the doughnut chart sections which are colored according to the documents’ status(es). This control can be used in two different ways. If you use it standalone, an event is fired and can be caught in to display the node map. If you use it with the node/document, it gives you an overview of the documents/items used in the process flow that is represented by the doughnut chart sections.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12504,7 +13203,7 @@ sap.suite.ui.commons.ProcessFlowLaneState.toString = function() { return ""; };
  * @class
  * This control enables you to see documents (or other items) in respect to their statuses – positive, negative, neutral, planned. In addition to the node title (which can be optionally a hyperlink) also two other text fields are provided and can be filled. The process flow nodes consider all styles depending on the status they are in. The user can update or change the content of the node. The content of the node can be also filtered according to updated data and specific parameters set. This means that also the node’s style is affected.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -12526,6 +13225,8 @@ sap.suite.ui.commons.ProcessFlowNode.prototype.press = function(oControlEvent) {
  * 
  * This event handler is executed when the user clicks the node title. This event is fired only when the title is clickable (isTitleClickable equals true).
  * @event
+ * @deprecated Since version 1.26. 
+ * Should not be used any longer, use Press event instead ( click on the node)
  * @param {sap.ui.base.Event} oControlEvent
  * @param {sap.ui.base.EventProvider} oControlEvent.getSource
  * @param {object} oControlEvent.getParameters
@@ -12568,6 +13269,8 @@ sap.suite.ui.commons.ProcessFlowNode.prototype.attachPress = function(oData,fnFu
  *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.suite.ui.commons.ProcessFlowNode</code>.<br/> itself.
  * @return {sap.suite.ui.commons.ProcessFlowNode} <code>this</code> to allow method chaining
  * @public
+ * @deprecated Since version 1.26. 
+ * Should not be used any longer, use Press event instead ( click on the node)
  * 
  */
 sap.suite.ui.commons.ProcessFlowNode.prototype.attachTitlePress = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.ProcessFlowNode(); };
@@ -12598,6 +13301,8 @@ sap.suite.ui.commons.ProcessFlowNode.prototype.detachPress = function(fnFunction
  *            oListener Context object on which the given function had to be called.
  * @return {sap.suite.ui.commons.ProcessFlowNode} <code>this</code> to allow method chaining
  * @public
+ * @deprecated Since version 1.26. 
+ * Should not be used any longer, use Press event instead ( click on the node)
  * 
  */
 sap.suite.ui.commons.ProcessFlowNode.prototype.detachTitlePress = function(fnFunction,oListener) { return new sap.suite.ui.commons.ProcessFlowNode(); };
@@ -12651,6 +13356,8 @@ sap.suite.ui.commons.ProcessFlowNode.prototype.firePress = function(mArguments) 
  * @param {Map} [mArguments] the arguments to pass along with the event.
  * @return {sap.suite.ui.commons.ProcessFlowNode} <code>this</code> to allow method chaining
  * @protected
+ * @deprecated Since version 1.26. 
+ * Should not be used any longer, use Press event instead ( click on the node)
  * 
  */
 sap.suite.ui.commons.ProcessFlowNode.prototype.fireTitlePress = function(mArguments) { return new sap.suite.ui.commons.ProcessFlowNode(); };
@@ -12699,6 +13406,8 @@ sap.suite.ui.commons.ProcessFlowNode.prototype.getHighlighted = function() { ret
  * Default value is <code>false</code>
  * @return {boolean} the value of property <code>isTitleClickable</code>
  * @public
+ * @deprecated Since version 1.26. 
+ * According to the new requirement there should be only one click event for each node (click on the whole node – see Press event) that is why titlePress event should not be used any longer. Hence isTitleClickable should not be used either.
  * 
  */
 sap.suite.ui.commons.ProcessFlowNode.prototype.getIsTitleClickable = function() { return false; };
@@ -12796,6 +13505,13 @@ sap.suite.ui.commons.ProcessFlowNode.prototype.init = function() { return null; 
 
 /**
  * 
+ * the event binding must be removed to avoid memory leaks
+ * @public
+ */
+sap.suite.ui.commons.ProcessFlowNode.prototype.onBeforeRendering = function() { return null; };
+
+/**
+ * 
  * Setter for property <code>children</code>.
  * </p><p>
  * Default value is empty/<code>undefined</code> 
@@ -12838,6 +13554,8 @@ sap.suite.ui.commons.ProcessFlowNode.prototype.setHighlighted = function(bHighli
  * @param {boolean} bIsTitleClickable  new value for property <code>isTitleClickable</code>
  * @return {sap.suite.ui.commons.ProcessFlowNode} <code>this</code> to allow method chaining
  * @public
+ * @deprecated Since version 1.26. 
+ * According to the new requirement there should be only one click event for each node (click on the whole node – see Press event) that is why titlePress event should not be used any longer. Hence isTitleClickable should not be used either.
  * 
  */
 sap.suite.ui.commons.ProcessFlowNode.prototype.setIsTitleClickable = function(bIsTitleClickable) { return new sap.suite.ui.commons.ProcessFlowNode(); };
@@ -12984,7 +13702,7 @@ sap.suite.ui.commons.ProcessFlowZoomLevel.toString = function() { return ""; };
  * @class
  * A configuration control defining how the content of the sap.suite.ui.commons.ViewRepeater control is displayed and what data is bound.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13358,7 +14076,7 @@ sap.suite.ui.commons.SelectionState.toString = function() { return ""; };
  * The default-action button control represents a simple push button. It is used for initiating actions, such as save or print. It can contain some text, an icon, or both; the order of the two can be configured. The action initiated by this button is considered to be the default action for the control, and it must be one of the selections defined in the Menu Button menu.
  * The Menu Button control is a button that opens a menu upon user's click. MenuButton is a composition of the Menu control and the Button control and thus inheriting all features. When a menu item is selected by the user, MenuButton throws an event called itemSelected. The event transfers the itemId of the selected item. As an alternative, the button press event can be used which has a similar behavior.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13621,7 +14339,7 @@ sap.suite.ui.commons.SplitButton.prototype.setVisible = function(bVisible) { ret
  * @class
  * This control contains a collection of the sap.ui.ux3.ThingViewer controls or descendants of sap.ui.ux3.ThingViewer. It allows you to navigate through them as well as delete them from the collection.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -13897,7 +14615,7 @@ sap.suite.ui.commons.ThingGroupDesign.toString = function() { return ""; };
  * @class
  * This control extends the sap.ui.ux3.ThingInspector control. It displays the sap.suite.ui.commons.ThreePanelThingViewer control in the sap.ui.ux3.Overlay control.
  * @extends sap.ui.ux3.ThingInspector
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14115,7 +14833,7 @@ sap.suite.ui.commons.ThreePanelThingInspector.prototype.setSidebarWidth = functi
  * @class
  * This control extends the sap.ui.ux3.ThingViewer control. The first panel can display a thing icon, a title, the Action Menu button, up to two rows of text descriptions (the first is wrapped, the second is truncated), vertical navigation bar (sap.suite.ui.commons.VerticalNavigationBar), and an image aka key visual. The second panel displays the header area as a vertical panel containing ThingGroup objects. The third panel is a main content area designed to display ThingGroup objects.
  * @extends sap.ui.ux3.ThingViewer
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14321,7 +15039,8 @@ sap.suite.ui.commons.ThreePanelThingViewer.prototype.setSidebarWidth = function(
  * <li>{@link #getFooter footer} : string</li>
  * <li>{@link #getSize size} : sap.suite.ui.commons.InfoTileSize (default: "Auto")</li>
  * <li>{@link #getUnit unit} : string</li>
- * <li>{@link #getDisabled disabled} : boolean (default: false)</li></ul>
+ * <li>{@link #getDisabled disabled} : boolean (default: false)</li>
+ * <li>{@link #getFrameType frameType} : sap.suite.ui.commons.FrameType (default: sap.suite.ui.commons.FrameType.Auto)</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
@@ -14339,7 +15058,7 @@ sap.suite.ui.commons.ThreePanelThingViewer.prototype.setSidebarWidth = function(
  * @class
  * This control serves a universal container for different types of content and footer.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -14407,6 +15126,18 @@ sap.suite.ui.commons.TileContent.prototype.getFooter = function() { return ""; }
 
 /**
  * 
+ * Getter for property <code>frameType</code>.
+ * The frame type: 1x1 or 2x1.
+ * </p><p>
+ * Default value is <code>Auto</code>
+ * @return {sap.suite.ui.commons.FrameType} the value of property <code>frameType</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent.prototype.getFrameType = function() { return new sap.suite.ui.commons.FrameType(); };
+
+/**
+ * 
  * Getter for property <code>size</code>.
  * Updates the size of the tile. If not set then the default size is applied based on the device tile.
  * </p><p>
@@ -14465,6 +15196,18 @@ sap.suite.ui.commons.TileContent.prototype.setFooter = function(sFooter) { retur
 
 /**
  * 
+ * Setter for property <code>frameType</code>.
+ * </p><p>
+ * Default value is <code>Auto</code> 
+ * @param {sap.suite.ui.commons.FrameType} oFrameType  new value for property <code>frameType</code>
+ * @return {sap.suite.ui.commons.TileContent} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent.prototype.setFrameType = function(oFrameType) { return new sap.suite.ui.commons.TileContent(); };
+
+/**
+ * 
  * Setter for property <code>size</code>.
  * </p><p>
  * Default value is <code>"Auto"</code> 
@@ -14486,6 +15229,197 @@ sap.suite.ui.commons.TileContent.prototype.setSize = function(oSize) { return ne
  * 
  */
 sap.suite.ui.commons.TileContent.prototype.setUnit = function(sUnit) { return new sap.suite.ui.commons.TileContent(); };
+
+
+// ---- sap.suite.ui.commons.TileContent2X2 --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructor for a new TileContent2X2.
+ * </p><p>
+ * Accepts an object literal <code>mSettings</code> that defines initial 
+ * property values, aggregated and associated objects as well as event handlers. 
+ * </p><p>
+ * If the name of a setting is ambiguous (e.g. a property has the same name as an event), 
+ * then the framework assumes property, aggregation, association, event in that order. 
+ * To override this automatic resolution, one of the prefixes "aggregation:", "association:" 
+ * or "event:" can be added to the name of the setting (such a prefixed name must be
+ * enclosed in single or double quotes).
+ * </p><p>
+ * The supported settings are:
+ * <ul>
+ * <li>Properties
+ * <ul>
+ * <li>{@link #getFooter footer} : string</li>
+ * <li>{@link #getSize size} : sap.suite.ui.commons.InfoTileSize (default: "Auto")</li>
+ * <li>{@link #getUnit unit} : string</li>
+ * <li>{@link #getDisabled disabled} : boolean (default: false)</li></ul>
+ * </li>
+ * <li>Aggregations
+ * <ul>
+ * <li>{@link #getContent content} : sap.ui.core.Control</li></ul>
+ * </li>
+ * <li>Associations
+ * <ul></ul>
+ * </li>
+ * <li>Events
+ * <ul></ul>
+ * </li>
+ * </ul> 
+ * @param {string} [sId] id for the new control, generated automatically if no id is given 
+ * @param {object} [mSettings] initial settings for the new control
+ * @class
+ * This control serves a universal container for different types of content and footer.
+ * @extends sap.ui.core.Control
+ * @version 1.26.4
+ * @constructor
+ * @public
+ * @experimental Since version 1.24. 
+ * API is not yet finished and might change completely
+ * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
+ */
+sap.suite.ui.commons.TileContent2X2 = function(sId,mSettings) {};
+/**
+ * 
+ * Destroys the content in the aggregation 
+ * named <code>content</code>.
+ * @return {sap.suite.ui.commons.TileContent2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.destroyContent = function() { return new sap.suite.ui.commons.TileContent2X2(); };
+
+/**
+ * 
+ * Creates a new subclass of class sap.suite.ui.commons.TileContent2X2 with name <code>sClassName</code> 
+ * and enriches it with the information contained in <code>oClassInfo</code>.
+ * </p><p>
+ * <code>oClassInfo</code> might contain the same kind of informations as described in {@link sap.ui.core.Element.extend Element.extend}.
+ * @param {string} sClassName name of the class to be created
+ * @param {object} [oClassInfo] object literal with informations about the class  
+ * @param {function} [FNMetaImpl] constructor function for the metadata object. If not given, it defaults to sap.ui.core.ElementMetadata.
+ * @return {function} the created class / constructor function
+ * @public
+ * @static
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.extend = function(sClassName,oClassInfo,FNMetaImpl) { return function() {}; };
+
+/**
+ * 
+ * Getter for aggregation <code>content</code>.<br/>
+ * The switchable view that depends on the tile type.
+ * @return {sap.ui.core.Control}
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.getContent = function() { return new sap.ui.core.Control(); };
+
+/**
+ * 
+ * Getter for property <code>disabled</code>.
+ * Disables control if true.
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>disabled</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.getDisabled = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>footer</code>.
+ * The footer text of the tile.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>footer</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.getFooter = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>size</code>.
+ * Updates the size of the tile. If not set then the default size is applied based on the device tile.
+ * </p><p>
+ * Default value is <code>"Auto"</code>
+ * @return {sap.suite.ui.commons.InfoTileSize} the value of property <code>size</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.getSize = function() { return new sap.suite.ui.commons.InfoTileSize(); };
+
+/**
+ * 
+ * Getter for property <code>unit</code>.
+ * The percent sign, the currency symbol, or the unit of measure.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>unit</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.getUnit = function() { return ""; };
+
+/**
+ * 
+ * Setter for the aggregated <code>content</code>.
+ * @param {sap.ui.core.Control} oContent
+ * @return {sap.suite.ui.commons.TileContent2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.setContent = function(oContent) { return new sap.suite.ui.commons.TileContent2X2(); };
+
+/**
+ * 
+ * Setter for property <code>disabled</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bDisabled  new value for property <code>disabled</code>
+ * @return {sap.suite.ui.commons.TileContent2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.setDisabled = function(bDisabled) { return new sap.suite.ui.commons.TileContent2X2(); };
+
+/**
+ * 
+ * Setter for property <code>footer</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sFooter  new value for property <code>footer</code>
+ * @return {sap.suite.ui.commons.TileContent2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.setFooter = function(sFooter) { return new sap.suite.ui.commons.TileContent2X2(); };
+
+/**
+ * 
+ * Setter for property <code>size</code>.
+ * </p><p>
+ * Default value is <code>"Auto"</code> 
+ * @param {sap.suite.ui.commons.InfoTileSize} oSize  new value for property <code>size</code>
+ * @return {sap.suite.ui.commons.TileContent2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.setSize = function(oSize) { return new sap.suite.ui.commons.TileContent2X2(); };
+
+/**
+ * 
+ * Setter for property <code>unit</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sUnit  new value for property <code>unit</code>
+ * @return {sap.suite.ui.commons.TileContent2X2} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TileContent2X2.prototype.setUnit = function(sUnit) { return new sap.suite.ui.commons.TileContent2X2(); };
 
 
 // ---- sap.suite.ui.commons.Timeline --------------------------------------------------------------------------
@@ -14520,19 +15454,29 @@ sap.suite.ui.commons.TileContent.prototype.setUnit = function(sUnit) { return ne
  * <li>{@link #getGrowingThreshold growingThreshold} : int (default: 5)</li>
  * <li>{@link #getVisible visible} : boolean (default: true)</li>
  * <li>{@link #getEnableBackendFilter enableBackendFilter} : boolean (default: false)</li>
- * <li>{@link #getEnableAllInFilterItem enableAllInFilterItem} : boolean (default: true)</li></ul>
+ * <li>{@link #getEnableAllInFilterItem enableAllInFilterItem} : boolean (default: true)</li>
+ * <li>{@link #getEnableSocial enableSocial} : boolean (default: false)</li>
+ * <li>{@link #getShowSuggestion showSuggestion} : boolean (default: true)</li>
+ * <li>{@link #getEnableScroll enableScroll} : boolean (default: true)</li>
+ * <li>{@link #getForceGrowing forceGrowing} : boolean (default: false)</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
  * <li>{@link #getContent content} : sap.suite.ui.commons.TimelineItem[]</li>
- * <li>{@link #getFilterList filterList} : sap.suite.ui.commons.TimelineFilterListItem[]</li></ul>
+ * <li>{@link #getFilterList filterList} : sap.suite.ui.commons.TimelineFilterListItem[]</li>
+ * <li>{@link #getSuggestionItems suggestionItems} : sap.m.StandardListItem[]</li></ul>
  * </li>
  * <li>Associations
  * <ul></ul>
  * </li>
  * <li>Events
  * <ul>
- * <li>{@link sap.suite.ui.commons.Timeline#event:filterSelectionChange filterSelectionChange} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
+ * <li>{@link sap.suite.ui.commons.Timeline#event:filterSelectionChange filterSelectionChange} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.suite.ui.commons.Timeline#event:select select} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.suite.ui.commons.Timeline#event:addPost addPost} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.suite.ui.commons.Timeline#event:suggest suggest} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.suite.ui.commons.Timeline#event:suggestionItemSelected suggestionItemSelected} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.suite.ui.commons.Timeline#event:grow grow} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
  * </li>
  * </ul> 
  * @param {string} [sId] id for the new control, generated automatically if no id is given 
@@ -14540,12 +15484,24 @@ sap.suite.ui.commons.TileContent.prototype.setUnit = function(sUnit) { return ne
  * @class
  * Timeline Control for sFin.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.Timeline = function(sId,mSettings) {};
+/**
+ * 
+ * Event fire when user add a new post
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @param {string} oControlEvent.getParameters.value post message
+ * @public
+ */
+sap.suite.ui.commons.Timeline.prototype.addPost = function(oControlEvent) { return null; };
+
 /**
  * 
  * This event is getting triggered after selecting an item from filter list.
@@ -14557,6 +15513,55 @@ sap.suite.ui.commons.Timeline = function(sId,mSettings) {};
  * @public
  */
 sap.suite.ui.commons.Timeline.prototype.filterSelectionChange = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * this event is fired when "More" button is clicked.
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.suite.ui.commons.Timeline.prototype.grow = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * Select Timeline Item
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @param {sap.suite.ui.commons.TimelineItem} oControlEvent.getParameters.selectedItem Selected TimelineItem
+ * @public
+ */
+sap.suite.ui.commons.Timeline.prototype.select = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * This event is fired when user types in the input and showSuggestion is set to true. Changing the suggestItems aggregation will show the suggestions within a popup.
+ * @event
+ * @since 1.26.1
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @param {string} oControlEvent.getParameters.suggestValue The current value which has been typed in the input.
+ * @public
+ */
+sap.suite.ui.commons.Timeline.prototype.suggest = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * This event is fired when suggestionItem shown in suggestion popup are selected. This event is only fired when showSuggestion is set to true and there are suggestionItems shown in the suggestion popup.
+ * @event
+ * @since 1.26.1
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @param {sap.ui.core.Item} oControlEvent.getParameters.selectedItem This is the item selected in the suggestion popup.
+ * @public
+ */
+sap.suite.ui.commons.Timeline.prototype.suggestionItemSelected = function(oControlEvent) { return null; };
 
 /**
  * 
@@ -14584,6 +15589,37 @@ sap.suite.ui.commons.Timeline.prototype.addFilterList = function(oFilterList) { 
 
 /**
  * 
+ * Adds some suggestionItem <code>oSuggestionItem</code> 
+ * to the aggregation named <code>suggestionItems</code>.
+ * @param {sap.m.StandardListItem}
+ *            oSuggestionItem the suggestionItem to add; if empty, nothing is inserted
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.addSuggestionItem = function(oSuggestionItem) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'addPost' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself. 
+ * </p><p>
+ * Event fire when user add a new post
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.attachAddPost = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
  * Attach event handler <code>fnFunction</code> to the 'filterSelectionChange' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>.
  * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
  * otherwise to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself. 
@@ -14600,6 +15636,84 @@ sap.suite.ui.commons.Timeline.prototype.addFilterList = function(oFilterList) { 
  * 
  */
 sap.suite.ui.commons.Timeline.prototype.attachFilterSelectionChange = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'grow' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself. 
+ * </p><p>
+ * this event is fired when "More" button is clicked.
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.attachGrow = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'select' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself. 
+ * </p><p>
+ * Select Timeline Item
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.attachSelect = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'suggest' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself. 
+ * </p><p>
+ * This event is fired when user types in the input and showSuggestion is set to true. Changing the suggestItems aggregation will show the suggestions within a popup.
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * @since 1.26.1
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.attachSuggest = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'suggestionItemSelected' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself. 
+ * </p><p>
+ * This event is fired when suggestionItem shown in suggestion popup are selected. This event is only fired when showSuggestion is set to true and there are suggestionItems shown in the suggestion popup.
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.suite.ui.commons.Timeline</code>.<br/> itself.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * @since 1.26.1
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.attachSuggestionItemSelected = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
 
 /**
  * 
@@ -14623,6 +15737,31 @@ sap.suite.ui.commons.Timeline.prototype.destroyFilterList = function() { return 
 
 /**
  * 
+ * Destroys all the suggestionItems in the aggregation 
+ * named <code>suggestionItems</code>.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.destroySuggestionItems = function() { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'addPost' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.detachAddPost = function(fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
  * Detach event handler <code>fnFunction</code> from the 'filterSelectionChange' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>
  * </p><p>
  * The passed function and listener object must match the ones used for event registration.
@@ -14635,6 +15774,68 @@ sap.suite.ui.commons.Timeline.prototype.destroyFilterList = function() { return 
  * 
  */
 sap.suite.ui.commons.Timeline.prototype.detachFilterSelectionChange = function(fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'grow' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.detachGrow = function(fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'select' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.detachSelect = function(fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'suggest' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * @since 1.26.1
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.detachSuggest = function(fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'suggestionItemSelected' event of this <code>sap.suite.ui.commons.Timeline</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * @since 1.26.1
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.detachSuggestionItemSelected = function(fnFunction,oListener) { return new sap.suite.ui.commons.Timeline(); };
 
 /**
  * 
@@ -14654,6 +15855,21 @@ sap.suite.ui.commons.Timeline.extend = function(sClassName,oClassInfo,FNMetaImpl
 
 /**
  * 
+ * Fire event addPost to attached listeners.
+ * </p><p>
+ * Expects following event parameters:
+ * <ul>
+ * <li>'value' of type <code>string</code> post message</li>
+ * </ul>
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.fireAddPost = function(mArguments) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
  * Fire event filterSelectionChange to attached listeners.
  * </p><p>
  * Expects following event parameters:
@@ -14666,6 +15882,63 @@ sap.suite.ui.commons.Timeline.extend = function(sClassName,oClassInfo,FNMetaImpl
  * 
  */
 sap.suite.ui.commons.Timeline.prototype.fireFilterSelectionChange = function(mArguments) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Fire event grow to attached listeners.
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.fireGrow = function(mArguments) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Fire event select to attached listeners.
+ * </p><p>
+ * Expects following event parameters:
+ * <ul>
+ * <li>'selectedItem' of type <code>sap.suite.ui.commons.TimelineItem</code> Selected TimelineItem</li>
+ * </ul>
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.fireSelect = function(mArguments) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Fire event suggest to attached listeners.
+ * </p><p>
+ * Expects following event parameters:
+ * <ul>
+ * <li>'suggestValue' of type <code>string</code> The current value which has been typed in the input.</li>
+ * </ul>
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @protected
+ * @since 1.26.1
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.fireSuggest = function(mArguments) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Fire event suggestionItemSelected to attached listeners.
+ * </p><p>
+ * Expects following event parameters:
+ * <ul>
+ * <li>'selectedItem' of type <code>sap.ui.core.Item</code> This is the item selected in the suggestion popup.</li>
+ * </ul>
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @protected
+ * @since 1.26.1
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.fireSuggestionItemSelected = function(mArguments) { return new sap.suite.ui.commons.Timeline(); };
 
 /**
  * 
@@ -14760,6 +16033,30 @@ sap.suite.ui.commons.Timeline.prototype.getEnableBusyIndicator = function() { re
 
 /**
  * 
+ * Getter for property <code>enableScroll</code>.
+ * Enable scroll bar display
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>enableScroll</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.getEnableScroll = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>enableSocial</code>.
+ * enable Jam Integration
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>enableSocial</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.getEnableSocial = function() { return false; };
+
+/**
+ * 
  * Getter for aggregation <code>filterList</code>.<br/>
  * sap.suite.ui.commons/TimelineFilterListItem
  * @return {sap.suite.ui.commons.TimelineFilterListItem[]}
@@ -14767,6 +16064,18 @@ sap.suite.ui.commons.Timeline.prototype.getEnableBusyIndicator = function() { re
  * 
  */
 sap.suite.ui.commons.Timeline.prototype.getFilterList = function() { return new Array(); };
+
+/**
+ * 
+ * Getter for property <code>forceGrowing</code>.
+ * If set to true, the "More" button will always show.
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>forceGrowing</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.getForceGrowing = function() { return false; };
 
 /**
  * 
@@ -14830,6 +16139,19 @@ sap.suite.ui.commons.Timeline.prototype.getShowIcons = function() { return false
 
 /**
  * 
+ * Getter for property <code>showSuggestion</code>.
+ * If this is set to true, suggest event is fired when user types in the input. Changing the suggestItems aggregation in suggest event listener will show suggestions within a popup.
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>showSuggestion</code>
+ * @public
+ * @since 1.26.1
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.getShowSuggestion = function() { return false; };
+
+/**
+ * 
  * Getter for property <code>sortOldestFirst</code>.
  * Whether the oldest item will be displayed first.
  * </p><p>
@@ -14839,6 +16161,16 @@ sap.suite.ui.commons.Timeline.prototype.getShowIcons = function() { return false
  * 
  */
 sap.suite.ui.commons.Timeline.prototype.getSortOldestFirst = function() { return false; };
+
+/**
+ * 
+ * Getter for aggregation <code>suggestionItems</code>.<br/>
+ * Items for suggestions
+ * @return {sap.m.StandardListItem[]}
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.getSuggestionItems = function() { return new Array(); };
 
 /**
  * 
@@ -14890,6 +16222,18 @@ sap.suite.ui.commons.Timeline.prototype.indexOfFilterList = function(oFilterList
 
 /**
  * 
+ * Checks for the provided <code>sap.m.StandardListItem</code> in the aggregation named <code>suggestionItems</code> 
+ * and returns its index if found or -1 otherwise.
+ * @param {sap.m.StandardListItem}
+ *            oSuggestionItem the suggestionItem whose index is looked for.
+ * @return {int} the index of the provided control in the aggregation if found, or -1 otherwise
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.indexOfSuggestionItem = function(oSuggestionItem) { return 0; };
+
+/**
+ * 
  * Inserts a content into the aggregation named <code>content</code>.
  * @param {sap.suite.ui.commons.TimelineItem}
  *          oContent the content to insert; if empty, nothing is inserted
@@ -14922,6 +16266,22 @@ sap.suite.ui.commons.Timeline.prototype.insertFilterList = function(oFilterList,
 
 /**
  * 
+ * Inserts a suggestionItem into the aggregation named <code>suggestionItems</code>.
+ * @param {sap.m.StandardListItem}
+ *          oSuggestionItem the suggestionItem to insert; if empty, nothing is inserted
+ * @param {int}
+ *             iIndex the <code>0</code>-based index the suggestionItem should be inserted at; for 
+ *             a negative value of <code>iIndex</code>, the suggestionItem is inserted at position 0; for a value 
+ *             greater than the current size of the aggregation, the suggestionItem is inserted at 
+ *             the last position        
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.insertSuggestionItem = function(oSuggestionItem,iIndex) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
  * Removes all the controls in the aggregation named <code>content</code>.<br/>
  * Additionally unregisters them from the hosting UIArea.
  * @return {sap.suite.ui.commons.TimelineItem[]} an array of the removed elements (might be empty)
@@ -14942,6 +16302,16 @@ sap.suite.ui.commons.Timeline.prototype.removeAllFilterList = function() { retur
 
 /**
  * 
+ * Removes all the controls in the aggregation named <code>suggestionItems</code>.<br/>
+ * Additionally unregisters them from the hosting UIArea.
+ * @return {sap.m.StandardListItem[]} an array of the removed elements (might be empty)
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.removeAllSuggestionItems = function() { return new Array(); };
+
+/**
+ * 
  * Removes an content from the aggregation named <code>content</code>.
  * @param {int | string | sap.suite.ui.commons.TimelineItem} vContent the content to remove or its index or id
  * @return {sap.suite.ui.commons.TimelineItem} the removed content or null
@@ -14959,6 +16329,16 @@ sap.suite.ui.commons.Timeline.prototype.removeContent = function(vContent) { ret
  * 
  */
 sap.suite.ui.commons.Timeline.prototype.removeFilterList = function(vFilterList) { return new sap.suite.ui.commons.TimelineFilterListItem(); };
+
+/**
+ * 
+ * Removes an suggestionItem from the aggregation named <code>suggestionItems</code>.
+ * @param {int | string | sap.m.StandardListItem} vSuggestionItem the suggestionItem to remove or its index or id
+ * @return {sap.m.StandardListItem} the removed suggestionItem or null
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.removeSuggestionItem = function(vSuggestionItem) { return new sap.m.StandardListItem(); };
 
 /**
  * 
@@ -15045,6 +16425,42 @@ sap.suite.ui.commons.Timeline.prototype.setEnableBusyIndicator = function(bEnabl
 
 /**
  * 
+ * Setter for property <code>enableScroll</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bEnableScroll  new value for property <code>enableScroll</code>
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.setEnableScroll = function(bEnableScroll) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Setter for property <code>enableSocial</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bEnableSocial  new value for property <code>enableSocial</code>
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.setEnableSocial = function(bEnableSocial) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Setter for property <code>forceGrowing</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bForceGrowing  new value for property <code>forceGrowing</code>
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.setForceGrowing = function(bForceGrowing) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
  * Setter for property <code>growing</code>.
  * </p><p>
  * Default value is <code>true</code> 
@@ -15102,6 +16518,19 @@ sap.suite.ui.commons.Timeline.prototype.setShowHeaderBar = function(bShowHeaderB
  * 
  */
 sap.suite.ui.commons.Timeline.prototype.setShowIcons = function(bShowIcons) { return new sap.suite.ui.commons.Timeline(); };
+
+/**
+ * 
+ * Setter for property <code>showSuggestion</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bShowSuggestion  new value for property <code>showSuggestion</code>
+ * @return {sap.suite.ui.commons.Timeline} <code>this</code> to allow method chaining
+ * @public
+ * @since 1.26.1
+ * 
+ */
+sap.suite.ui.commons.Timeline.prototype.setShowSuggestion = function(bShowSuggestion) { return new sap.suite.ui.commons.Timeline(); };
 
 /**
  * 
@@ -15187,7 +16616,7 @@ sap.suite.ui.commons.TimelineAxisOrientation.toString = function() { return ""; 
  * @class
  * Provides Filter List Item for Timeline Control
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -15283,18 +16712,22 @@ sap.suite.ui.commons.TimelineFilterListItem.prototype.setText = function(sText) 
  * <li>{@link #getText text} : string</li>
  * <li>{@link #getIcon icon} : string</li>
  * <li>{@link #getFilterValue filterValue} : string</li>
- * <li>{@link #getUserNameClickable userNameClickable} : boolean (default: false)</li></ul>
+ * <li>{@link #getUserNameClickable userNameClickable} : boolean (default: false)</li>
+ * <li>{@link #getReplyCount replyCount} : int</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
- * <li>{@link #getEmbeddedControl embeddedControl} : sap.ui.core.Control</li></ul>
+ * <li>{@link #getEmbeddedControl embeddedControl} : sap.ui.core.Control</li>
+ * <li>{@link #getReplyList replyList} : sap.m.List</li></ul>
  * </li>
  * <li>Associations
  * <ul></ul>
  * </li>
  * <li>Events
  * <ul>
- * <li>{@link sap.suite.ui.commons.TimelineItem#event:userNameClicked userNameClicked} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
+ * <li>{@link sap.suite.ui.commons.TimelineItem#event:userNameClicked userNameClicked} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.suite.ui.commons.TimelineItem#event:replyPost replyPost} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.suite.ui.commons.TimelineItem#event:replyListOpen replyListOpen} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
  * </li>
  * </ul> 
  * @param {string} [sId] id for the new control, generated automatically if no id is given 
@@ -15302,12 +16735,35 @@ sap.suite.ui.commons.TimelineFilterListItem.prototype.setText = function(sText) 
  * @class
  * TimelineItem
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.suite.ui.commons.TimelineItem = function(sId,mSettings) {};
+/**
+ * 
+ * fire when the reply link is clicked to open reply popover
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.suite.ui.commons.TimelineItem.prototype.replyListOpen = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * fire when Reply button is clicked
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @param {string} oControlEvent.getParameters.value content of reply post
+ * @public
+ */
+sap.suite.ui.commons.TimelineItem.prototype.replyPost = function(oControlEvent) { return null; };
+
 /**
  * 
  * Fire when user name in the item header is clicked
@@ -15318,6 +16774,44 @@ sap.suite.ui.commons.TimelineItem = function(sId,mSettings) {};
  * @public
  */
 sap.suite.ui.commons.TimelineItem.prototype.userNameClicked = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'replyListOpen' event of this <code>sap.suite.ui.commons.TimelineItem</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.suite.ui.commons.TimelineItem</code>.<br/> itself. 
+ * </p><p>
+ * fire when the reply link is clicked to open reply popover
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.suite.ui.commons.TimelineItem</code>.<br/> itself.
+ * @return {sap.suite.ui.commons.TimelineItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.attachReplyListOpen = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.TimelineItem(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'replyPost' event of this <code>sap.suite.ui.commons.TimelineItem</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.suite.ui.commons.TimelineItem</code>.<br/> itself. 
+ * </p><p>
+ * fire when Reply button is clicked
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.suite.ui.commons.TimelineItem</code>.<br/> itself.
+ * @return {sap.suite.ui.commons.TimelineItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.attachReplyPost = function(oData,fnFunction,oListener) { return new sap.suite.ui.commons.TimelineItem(); };
 
 /**
  * 
@@ -15350,6 +16844,46 @@ sap.suite.ui.commons.TimelineItem.prototype.destroyEmbeddedControl = function() 
 
 /**
  * 
+ * Destroys the replyList in the aggregation 
+ * named <code>replyList</code>.
+ * @return {sap.suite.ui.commons.TimelineItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.destroyReplyList = function() { return new sap.suite.ui.commons.TimelineItem(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'replyListOpen' event of this <code>sap.suite.ui.commons.TimelineItem</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.suite.ui.commons.TimelineItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.detachReplyListOpen = function(fnFunction,oListener) { return new sap.suite.ui.commons.TimelineItem(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'replyPost' event of this <code>sap.suite.ui.commons.TimelineItem</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.suite.ui.commons.TimelineItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.detachReplyPost = function(fnFunction,oListener) { return new sap.suite.ui.commons.TimelineItem(); };
+
+/**
+ * 
  * Detach event handler <code>fnFunction</code> from the 'userNameClicked' event of this <code>sap.suite.ui.commons.TimelineItem</code>.<br/>
  * </p><p>
  * The passed function and listener object must match the ones used for event registration.
@@ -15378,6 +16912,31 @@ sap.suite.ui.commons.TimelineItem.prototype.detachUserNameClicked = function(fnF
  * 
  */
 sap.suite.ui.commons.TimelineItem.extend = function(sClassName,oClassInfo,FNMetaImpl) { return function() {}; };
+
+/**
+ * 
+ * Fire event replyListOpen to attached listeners.
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.suite.ui.commons.TimelineItem} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.fireReplyListOpen = function(mArguments) { return new sap.suite.ui.commons.TimelineItem(); };
+
+/**
+ * 
+ * Fire event replyPost to attached listeners.
+ * </p><p>
+ * Expects following event parameters:
+ * <ul>
+ * <li>'value' of type <code>string</code> content of reply post</li>
+ * </ul>
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.suite.ui.commons.TimelineItem} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.fireReplyPost = function(mArguments) { return new sap.suite.ui.commons.TimelineItem(); };
 
 /**
  * 
@@ -15434,6 +16993,28 @@ sap.suite.ui.commons.TimelineItem.prototype.getFilterValue = function() { return
  * 
  */
 sap.suite.ui.commons.TimelineItem.prototype.getIcon = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>replyCount</code>.
+ * count of the replies to the post
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {int} the value of property <code>replyCount</code>
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.getReplyCount = function() { return 0; };
+
+/**
+ * 
+ * Getter for aggregation <code>replyList</code>.<br/>
+ * Reply list related to the post
+ * @return {sap.m.List}
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.getReplyList = function() { return new sap.m.List(); };
 
 /**
  * 
@@ -15531,6 +17112,28 @@ sap.suite.ui.commons.TimelineItem.prototype.setIcon = function(sIcon) { return n
 
 /**
  * 
+ * Setter for property <code>replyCount</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {int} iReplyCount  new value for property <code>replyCount</code>
+ * @return {sap.suite.ui.commons.TimelineItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.setReplyCount = function(iReplyCount) { return new sap.suite.ui.commons.TimelineItem(); };
+
+/**
+ * 
+ * Setter for the aggregated <code>replyList</code>.
+ * @param {sap.m.List} oReplyList
+ * @return {sap.suite.ui.commons.TimelineItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.suite.ui.commons.TimelineItem.prototype.setReplyList = function(oReplyList) { return new sap.suite.ui.commons.TimelineItem(); };
+
+/**
+ * 
  * Setter for property <code>text</code>.
  * </p><p>
  * Default value is empty/<code>undefined</code> 
@@ -15622,7 +17225,7 @@ sap.suite.ui.commons.TimelineItemPosition.toString = function() { return ""; };
  * @class
  * This control is used in UnifiedThingInspector to display the facet header information.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -15803,7 +17406,7 @@ sap.suite.ui.commons.UnifiedThingGroup.prototype.setTitle = function(sTitle) { r
  * @class
  * This control provides an ability to display a thing (for example, object factsheet) on the desktop, tablet, and phone devices in a Fiori style.
  * @extends sap.ui.core.Control
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -17219,7 +18822,7 @@ sap.suite.ui.commons.ValueStatus.toString = function() { return ""; };
  * @class
  * This control extends the sap.ui.ux3.NavigationBar and allows you to display navigation items vertically. The navigation list can contain sap.ui.ux3.NavigationItem or sap.suite.ui.commons.CountingNavigationItem controls.
  * @extends sap.ui.ux3.NavigationBar
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -17293,7 +18896,7 @@ sap.suite.ui.commons.VerticalNavigationBar.extend = function(sClassName,oClassIn
  * @class
  * This control extends the sap.ui.commons.RowRepeater control providing an ability to change data representation by switching between a number of views. The data can be displayed not only in rows but also in tiles that are adjusted to fill the entire horizontal space in a row.
  * @extends sap.ui.commons.RowRepeater
- * @version 1.24.3
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -17829,6 +19432,25 @@ sap.suite.ui.commons.CommonBackground.Medium = null;
 sap.suite.ui.commons.CommonBackground.MediumLight = null;
 
 
+// ---- sap.suite.ui.commons.ComparisonChartView --------------------------------------------------------------------------
+
+/**
+ * 
+ * Titles and values are displayed above the bars.
+ * @public
+ * @memberOf sap.suite.ui.commons.ComparisonChartView
+ */
+sap.suite.ui.commons.ComparisonChartView.Normal = null;
+
+/**
+ * 
+ * Titles and values are displayed in the same line with the bars.
+ * @public
+ * @memberOf sap.suite.ui.commons.ComparisonChartView
+ */
+sap.suite.ui.commons.ComparisonChartView.Wide = null;
+
+
 // ---- sap.suite.ui.commons.DeviationIndicator --------------------------------------------------------------------------
 
 /**
@@ -17927,6 +19549,14 @@ sap.suite.ui.commons.FacetOverviewHeight.XXL = null;
 
 /**
  * 
+ * The Auto frame type that adjusts the size of the control to the content.
+ * @public
+ * @memberOf sap.suite.ui.commons.FrameType
+ */
+sap.suite.ui.commons.FrameType.Auto = null;
+
+/**
+ * 
  * The 1x1 frame type.
  * @public
  * @memberOf sap.suite.ui.commons.FrameType
@@ -17948,6 +19578,25 @@ sap.suite.ui.commons.FrameType.TwoByOne = null;
  * @memberOf sap.suite.ui.commons.FrameType
  */
 sap.suite.ui.commons.FrameType.TwoThirds = null;
+
+
+// ---- sap.suite.ui.commons.HeaderContainerView --------------------------------------------------------------------------
+
+/**
+ * 
+ * The horizontal orientation of the control.
+ * @public
+ * @memberOf sap.suite.ui.commons.HeaderContainerView
+ */
+sap.suite.ui.commons.HeaderContainerView.Horizontal = null;
+
+/**
+ * 
+ * The vertical orientation of the control.
+ * @public
+ * @memberOf sap.suite.ui.commons.HeaderContainerView
+ */
+sap.suite.ui.commons.HeaderContainerView.Vertical = null;
 
 
 // ---- sap.suite.ui.commons.InfoTileSize --------------------------------------------------------------------------
@@ -18090,6 +19739,25 @@ sap.suite.ui.commons.LoadState.Loaded = null;
 sap.suite.ui.commons.LoadState.Loading = null;
 
 
+// ---- sap.suite.ui.commons.MicroAreaChartView --------------------------------------------------------------------------
+
+/**
+ * 
+ * The view with labels on the top and bottom.
+ * @public
+ * @memberOf sap.suite.ui.commons.MicroAreaChartView
+ */
+sap.suite.ui.commons.MicroAreaChartView.Normal = null;
+
+/**
+ * 
+ * The view with labels on the left and right.
+ * @public
+ * @memberOf sap.suite.ui.commons.MicroAreaChartView
+ */
+sap.suite.ui.commons.MicroAreaChartView.Wide = null;
+
+
 // ---- sap.suite.ui.commons.ProcessFlowDisplayState --------------------------------------------------------------------------
 
 /**
@@ -18145,7 +19813,7 @@ sap.suite.ui.commons.ProcessFlowDisplayState.RegularFocused = null;
 
 /**
  * 
- * State associated to the given value
+ * The ?state? property is associated with the given value. The possible states are: positive, negative, neutral, and planned.
  * @public
  * @memberOf sap.suite.ui.commons.ProcessFlowLaneState
  */
@@ -18153,7 +19821,7 @@ sap.suite.ui.commons.ProcessFlowLaneState.state = null;
 
 /**
  * 
- * The percentage value from the entire 100 percent
+ * In the ?state? array , the total sum of all values needs to be 100%.
  * @public
  * @memberOf sap.suite.ui.commons.ProcessFlowLaneState
  */
@@ -18164,7 +19832,7 @@ sap.suite.ui.commons.ProcessFlowLaneState.value = null;
 
 /**
  * 
- * Negative status.
+ * Negative status for a Created document: a document has an issue
  * @public
  * @memberOf sap.suite.ui.commons.ProcessFlowNodeState
  */
@@ -18172,7 +19840,7 @@ sap.suite.ui.commons.ProcessFlowNodeState.Negative = null;
 
 /**
  * 
- * Neutral status.
+ * Neutral status for a Created document: document is in progress
  * @public
  * @memberOf sap.suite.ui.commons.ProcessFlowNodeState
  */
@@ -18180,7 +19848,7 @@ sap.suite.ui.commons.ProcessFlowNodeState.Neutral = null;
 
 /**
  * 
- * Planned state.
+ * Planned status for a document: a document is planned
  * @public
  * @memberOf sap.suite.ui.commons.ProcessFlowNodeState
  */
@@ -18188,7 +19856,15 @@ sap.suite.ui.commons.ProcessFlowNodeState.Planned = null;
 
 /**
  * 
- * Positive status.
+ * Planned document has an issue
+ * @public
+ * @memberOf sap.suite.ui.commons.ProcessFlowNodeState
+ */
+sap.suite.ui.commons.ProcessFlowNodeState.PlannedNegative = null;
+
+/**
+ * 
+ * Positive status for a Created document: document is done, finished, solved
  * @public
  * @memberOf sap.suite.ui.commons.ProcessFlowNodeState
  */
@@ -18288,6 +19964,14 @@ sap.suite.ui.commons.TimelineAlignment.Right = null;
 
 
 // ---- sap.suite.ui.commons.TimelineAxisOrientation --------------------------------------------------------------------------
+
+/**
+ * 
+ * Horizontal Orientation
+ * @public
+ * @memberOf sap.suite.ui.commons.TimelineAxisOrientation
+ */
+sap.suite.ui.commons.TimelineAxisOrientation.Horizontal = null;
 
 /**
  * 

@@ -10577,3 +10577,235 @@ Binding(CTRL+SHIFT+ARROW_DOWN,
 
 !ENTRY com.sap.ide.ui5.app 1 0 2015-02-13 13:53:57.698
 !MESSAGE Started Server for URL: http://localhost:54489/G4Sv1.5/index.html
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-02-13 14:01:12.495
+!MESSAGE Stopped Server
+!SESSION 2015-02-13 14:01:16.207 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-13 14:01:35.421
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-13 14:01:49.353
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-13 14:01:49.359
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-13 14:01:51.786
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-13 14:01:51.797
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2015-02-13 14:01:51.980
+!MESSAGE Started Server for URL: http://localhost:55011/G4Sv1.5/index.html
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-13 14:01:56.623
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-13 14:01:56.666
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dávid'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-13 14:14:08.079
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-13 14:14:08.142
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2015-02-13 14:14:08.227
+!MESSAGE Started Server for URL: http://localhost:55817/G4Sv1.0/index.html
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-13 14:14:31.983
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-13 14:14:31.997
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2015-02-13 14:14:32.055
+!MESSAGE Started Server for URL: http://localhost:55835/G4Sv1.75/index.html
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-02-13 14:14:53.939
+!MESSAGE Stopped Server
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-02-13 14:14:54.954
+!MESSAGE Stopped Server
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-02-13 14:27:33.692
+!MESSAGE Stopped Server
+!SESSION 2015-02-15 14:50:12.947 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-15 14:50:21.513
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-15 14:51:29.642
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-15 14:51:29.646
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-15 14:51:30.312
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-15 14:51:30.320
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2015-02-15 14:51:30.638
+!MESSAGE Started Server for URL: http://localhost:65204/G4Sv1.5/index.html
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-15 14:51:35.799
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-15 14:51:35.827
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dávid'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.sap.ide.ui5.app.plugin 1 0 2015-02-15 15:13:08.471
+!MESSAGE Stopped Server
+!SESSION 2015-02-16 09:51:20.500 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.7.0_67
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-16 09:51:37.759
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-16 09:52:18.898
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-16 09:52:18.904
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY com.sap.ide.ui5.services 1 1 2015-02-16 09:52:18.909
+!MESSAGE Internal Info
+   Plugin Name: SAPUI5 Services
+   Plugin ID  : com.sap.ide.ui5.services
+   Class      : com.sap.ide.ui5.services.preferences.UI5LibrariesRegistry
+   Method     : getBundleNamesUI5CoreLibs
+   Message    : found UI libraries null
+   Exception  : 
+
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-16 09:52:24.747
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-02-16 09:52:24.778
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Dávid'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-16 10:04:25.105
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.ELContextCleaner
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-16 10:04:25.116
+!MESSAGE Could not instantiate listener org.eclipse.jetty.servlet.listener.IntrospectorCleaner
+
+!ENTRY com.sap.ide.ui5.app 1 0 2015-02-16 10:04:25.464
+!MESSAGE Started Server for URL: http://localhost:61216/G4Sv1.5/index.html

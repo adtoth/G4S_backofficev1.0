@@ -12,6 +12,60 @@
  */
 _global_.getExternalObjectMapping = function(oOdataModel,oInternalObject,oPromise) { return null; };
 
+/**
+ * 
+ * Get the TimelineEntryDetail entity's fields
+ * @public
+ * @param sEntityCollection
+ * @returns {object} map of the TimelineEntry entity's fields
+ * @memberOf _global_
+ */
+_global_.getTimelineEntryDetailFields = function(sEntityCollection) { return new Object(); };
+
+/**
+ * 
+ * Get the TimelineEntry entity's fields
+ * @public
+ * @param sEntityCollection
+ * @returns {object} map of the TimelineEntry entity's fields
+ * @memberOf _global_
+ */
+_global_.getTimelineEntryFields = function(sEntityCollection) { return new Object(); };
+
+/**
+ * 
+ * Get the TimelineEntry navigation path for sEntityCollection
+ * @public
+ * @param sEntityCollection
+ * @returns {string}
+ * @memberOf _global_
+ */
+_global_.getTimelineEntryNavigationPath = function(sEntityCollection) { return ""; };
+
+/**
+ * 
+ * Resets the counters. To be used when changing business objects
+ * @public
+ * @memberOf _global_
+ */
+_global_.reset = function() { return null; };
+
+/**
+ * 
+ * Sets the header for the content if the user does not exist
+ * @public
+ * @memberOf _global_
+ */
+_global_.setHeaderNoUser = function() { return null; };
+
+/**
+ * 
+ * Sets the header for the content if the user exists
+ * @public
+ * @memberOf _global_
+ */
+_global_.setHeaderUserExists = function() { return null; };
+
 
 // ---- sap --------------------------------------------------------------------------
 
@@ -58,6 +112,8 @@ sap.collaboration.AppType.toString = function() { return ""; };
  * The Component class extends the base UI5 UIComponent class.<br>
  * This class defines the Reusable UI5 Component structure, i.e properties, aggregations and events, if any, and creates the UI5 controls to be displayed.
  * @public
+ * @deprecated Since version 1.26.0.
+ * Please use sap.collaboration.components.fiori.feed.dialog.Component instead.
  */
 sap.collaboration.components.fiori.feed.Component = function(oDataServiceUrl,feedType,groupIds,object) {};
 /**
@@ -159,6 +215,9 @@ sap.collaboration.components.fiori.feed.dialog.Component.prototype.setSettings =
  * This component refreshes itself when the number of seconds specified in the <tt>refreshInterval</tt> parameter elapses.
  * When refreshing, the backend is called to obtain the latest notifications.
  * @public
+ * @deprecated Since version 1.26.0.
+ * There is no replacement for this control. The Fiori Launchpad now provides its own implementation
+ * for this control. This control was never meant to be used directly by third parties.  
  */
 sap.collaboration.components.fiori.notification.Component = function(oDataServiceUrl,numberOfNotifications,transitionInterval,refreshInterval,notificationsTargetUrl) {};
 
@@ -223,12 +282,14 @@ sap.collaboration.components.fiori.sharing.attachment.Attachment = function(name
  * A Share Component is a ui5 component that applications 
  * can use to share information to SAP Jam
  * @public
+ * @deprecated Since version 1.26.0.
+ * Please use sap.collaboration.components.fiori.sharing.dialog.Component instead.
  */
 sap.collaboration.components.fiori.sharing.Component = function(oDataServiceUrl,object,externalObject,attachments) {};
 /**
  * 
  * Setter for the Component settings.
- * @param {JSON Object} oSettings A JSON object used to set the component settings, this object should contains the same 
+ * @param {object} oSettings A JSON object used to set the component settings, this object should contains the same 
  * properties used in the constructor. 
  * @public
  */
@@ -281,6 +342,7 @@ sap.collaboration.components.fiori.sharing.Component.prototype.shareToJam = func
  * A Share Dialog Component is a ui5 component that applications 
  * can use to render the share component in a dialog and then can 
  * be used to share information to SAP Jam
+ * @extends sap.ui.core.UIComponent
  * @public
  */
 sap.collaboration.components.fiori.sharing.dialog.Component = function(oDataServiceUrl,object,externalObject,attachments) {};
@@ -299,6 +361,291 @@ sap.collaboration.components.fiori.sharing.dialog.Component.prototype.open = fun
  * @public
  */
 sap.collaboration.components.fiori.sharing.dialog.Component.prototype.setSettings = function(oSettings) { return null; };
+
+
+// ---- sap.collaboration.components.SocialProfile --------------------------------------------------------------------------
+
+
+// ---- sap.collaboration.components.SocialProfile.Component --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructor for the Social Profile Component
+ * @since version 1.25
+ * @constructor
+ * @param {sap.m.PlacementType} [placement] Placement of the Social Profile popover (default: sap.m.PlacementType.Auto)
+ * @param {string} memberId Member ID for SAP Jam to receive profile information
+ * @param {object} openingControl Control which triggered the Social Profile. Needed to open the popover pointing to the control.
+ * @param {sap.ui.core.CSSSize} [height] Height of the popover content area (default: 380px)
+ * @param {sap.ui.core.CSSSize} [width] Width of the popover content area (default: 300px)
+ * @class Social Profile Component
+ * @experimental The API is not stable and the UI is not finalized. The implementation for this feature is subject to change.
+ * </p><p>
+ * The Social Profile Component is a ui5 component that applications can use to display the
+ * profile information for a specific user. The profile information is coming from SAP Jam. 
+ * @extends sap.ui.core.UIComponent
+ * @public
+ */
+sap.collaboration.components.SocialProfile.Component = function(placement,memberId,openingControl,height,width) {};
+
+// ---- sap.collaboration.components.SocialTimeline --------------------------------------------------------------------------
+
+
+// ---- sap.collaboration.components.SocialTimeline.Component --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructor for the Social Timeline Component.
+ * </p><p>
+ * Accepts an object literal <code>mSettings</code> that defines initial 
+ * property values, aggregated and associated objects as well as event handlers. 
+ * </p><p>
+ * If the name of a setting is ambiguous (e.g. a property has the same name as an event), 
+ * then the framework assumes property, aggregation, association, event in that order. 
+ * To override this automatic resolution, one of the prefixes "aggregation:", "association:" 
+ * or "event:" can be added to the name of the setting (such a prefixed name must be
+ * enclosed in single or double quotes).
+ * </p><p>
+ * The supported settings are:
+ * <ul>
+ * <li>Properties
+ * <ul>
+ * <li>{@link #getEnableSocial enableSocial} : boolean (default: false) </li>
+ * <li>{@link #getAlignment alignment} : sap.suite.ui.commons.TimelineAlignment (default: sap.suite.ui.commons.TimelineAlignment.Right)</li>
+ * <li>{@link #getAxisOrientation axisOrientation} : sap.suite.ui.commons.TimelineAxisOrientation (default: sap.suite.ui.commons.TimelineAxisOrientation.Vertical)</li>
+ * <li>{@link #getBackEndFilter backEndFilter} : {object} 
+ * <li>{@link #getCustomActionCallBack customActionCallBack} : {object} 
+ * <li>{@link #getNoDataText noDataText} : string</li>
+ * <li>{@link #getShowIcons showIcons} : boolean (default: true)</li>
+ * <li>{@link #getVisible visible} : boolean (default: true)</li>
+ * <li>{@link #getWidth width} : sap.ui.core.CSSSize (default: '100%')</li>
+ * </li>
+ * <li>Aggregations
+ * <ul></ul>
+ * </li>
+ * <li>Associations
+ * <ul></ul>
+ * </li>
+ * <li>Events
+ * <ul>
+ * <li>{@link ssap.collaboration.components.SocialTimeline.Component:customActionPress customActionPress} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * </li>
+ * </ul> 
+ * @param {string} [sId] id for the new control, generated automatically if no id is given 
+ * @param {object} [mSettings] initial settings for the new control
+ * @class 
+ * Social Timeline
+ * @extends sap.ui.core.UIComponent
+ * @version 1.27.0-SNAPSHOT
+ * @constructor
+ * @public
+ * @experimental The API is not stable and the UI is not finalized. The implementation for this feature is subject to change.
+ */
+sap.collaboration.components.SocialTimeline.Component = function(sId,mSettings) {};
+/**
+ * 
+ * Event fire when a custom action is clicked
+ * @event
+ * @param {object} oEventData
+ * @public
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.customActionPress = function(oEventData) { return null; };
+
+/**
+ * 
+ * The method to create the Content (UI Control Tree) of the Component. [borrowed from sap.ui.core.UIComponent]
+ * @protected
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.createContent = function() { return null; };
+
+/**
+ * 
+ * Cleans up the component instance before destruction. [borrowed from sap.ui.core.Component]
+ * @protected
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.exit = function() { return null; };
+
+/**
+ * 
+ * Getter for property <code>axisOrientation</code>.
+ * Timeline axis orientation.
+ * </p><p>
+ * Default value is <code>Vertical</code>
+ * @return {sap.suite.ui.commons.TimelineAxisOrientation} the value of property <code>axisOrientation</code>
+ * @public
+ * 
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.getAxisOrientation = function() { return new sap.suite.ui.commons.TimelineAxisOrientation(); };
+
+/**
+ * 
+ * Getter for property <code>noDataText</code>.
+ * This text is displayed when the control has no data.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>noDataText</code>
+ * @public
+ * 
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.getNoDataText = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>showIcons</code>.
+ * Show icon on each Timeline item.
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>showIcons</code>
+ * @public
+ * 
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.getShowIcons = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>visible</code>.
+ * Set Timeline control visibility
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>visible</code>
+ * @public
+ * 
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.getVisible = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>width</code>.
+ * Sets the width of the Timeline.
+ * </p><p>
+ * Default value is <code>100%</code>
+ * @return {sap.ui.core.CSSSize} the value of property <code>width</code>
+ * @public
+ * 
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.getWidth = function() { return new sap.ui.core.CSSSize(); };
+
+/**
+ * 
+ * Initializes the Component instance after creation. [borrowed from sap.ui.core.UIComponent]
+ * @protected
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.init = function() { return null; };
+
+/**
+ * 
+ * Function is called when the rendering of the Component Container is completed. [borrowed from sap.ui.core.UIComponent]
+ * @protected
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.onAfterRendering = function() { return null; };
+
+/**
+ * 
+ * Function is called when the rendering of the Component Container is started. [borrowed from sap.ui.core.UIComponent]
+ * @protected
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.onBeforeRendering = function() { return null; };
+
+/**
+ * 
+ * Opens the social profile component
+ * @public
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.open = function() { return null; };
+
+/**
+ * 
+ * Setter for property <code>axisOrientation</code>.
+ * </p><p>
+ * Default value is <code>Vertical</code> 
+ * @param {sap.suite.ui.commons.TimelineAxisOrientation} oAxisOrientation  new value for property <code>axisOrientation</code>
+ * @return {sap.collaboration.components.SocialTimeline.Component} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.setAxisOrientation = function(oAxisOrientation) { return new sap.collaboration.components.SocialTimeline.Component(); };
+
+/**
+ * 
+ * Set the current Business Object for the Social Timeline to display
+ * @public
+ * @param {string} key
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.setBusinessObjectKey = function(key) { return null; };
+
+/**
+ * 
+ * Set the Business Object Map
+ * @public
+ * @param {object] businessObjectMap required - JSON object containing the following properties:
+ * 	<ul>
+ * 		<li>{sap.ui.model.odata.ODataModel} serviceModel required - OData model to retrieve Timeline Entries
+ * 		<li>{string} servicePath: The relative path to the OData Service for the business object.  Example: "/sap/opu/odata/sap/ODATA_SRV"		
+ * 		<li>{string} collection: entity collection name of the business object
+ * 		<li>{string} applicationContext: The application context. Example: "CRM", "SD", etc
+ * 	<ul>
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.setBusinessObjectMap = function() { return null; };
+
+/**
+ * 
+ * Setter for property <code>noDataText</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sNoDataText  new value for property <code>noDataText</code>
+ * @return {sap.collaboration.components.SocialTimeline.Component} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.setNoDataText = function(sNoDataText) { return new sap.collaboration.components.SocialTimeline.Component(); };
+
+/**
+ * 
+ * Setter for the Component settings.
+ * @param {object} oSettings A JSON object used to set the component settings, this object should contains the same 
+ * properties used in the constructor. 
+ * @public
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.setSettings = function(oSettings) { return null; };
+
+/**
+ * 
+ * Setter for property <code>showIcons</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bShowIcons  new value for property <code>showIcons</code>
+ * @return {sap.collaboration.components.SocialTimeline.Component} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.setShowIcons = function(bShowIcons) { return new sap.collaboration.components.SocialTimeline.Component(); };
+
+/**
+ * 
+ * Setter for property <code>visible</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bVisible  new value for property <code>visible</code>
+ * @return {sap.collaboration.components.SocialTimeline.Component} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.setVisible = function(bVisible) { return new sap.collaboration.components.SocialTimeline.Component(); };
+
+/**
+ * 
+ * Setter for property <code>width</code>.
+ * </p><p>
+ * Default value is <code>100%</code> 
+ * @param {sap.ui.core.CSSSize} sWidth  new value for property <code>width</code>
+ * @return {sap.collaboration.components.SocialTimeline.Component} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.collaboration.components.SocialTimeline.Component.prototype.setWidth = function(sWidth) { return new sap.collaboration.components.SocialTimeline.Component(); };
+
+
+// ---- sap.collaboration.components.SocialTimeline.helper --------------------------------------------------------------------------
 
 
 // ---- sap.collaboration.FeedType --------------------------------------------------------------------------

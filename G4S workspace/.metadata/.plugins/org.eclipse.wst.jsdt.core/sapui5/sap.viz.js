@@ -102,7 +102,7 @@ sap.viz.ui5.api.env.Format.numericFormatter = function(formatter) { return new s
  * @class
  * Chart ui5/Area
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -895,7 +895,7 @@ sap.viz.ui5.Area.prototype.setYAxis = function(oYAxis) { return new sap.viz.ui5.
  * @class
  * Chart ui5/Area100
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -1688,7 +1688,7 @@ sap.viz.ui5.Area100.prototype.setYAxis = function(oYAxis) { return new sap.viz.u
  * @class
  * Chart ui5/Bar
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -2482,7 +2482,7 @@ sap.viz.ui5.Bar.prototype.setYAxis = function(oYAxis) { return new sap.viz.ui5.B
  * @class
  * Chart ui5/Bubble
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -3303,7 +3303,7 @@ sap.viz.ui5.Bubble.prototype.setYAxis = function(oYAxis) { return new sap.viz.ui
  * @class
  * Chart ui5/Bullet
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -4036,7 +4036,7 @@ sap.viz.ui5.Bullet.prototype.setYAxis2 = function(oYAxis2) { return new sap.viz.
  * @class
  * Chart ui5/Column
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -4829,7 +4829,7 @@ sap.viz.ui5.Column.prototype.setYAxis = function(oYAxis) { return new sap.viz.ui
  * @class
  * Chart ui5/Combination
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -5610,7 +5610,7 @@ sap.viz.ui5.Combination.prototype.setYAxis = function(oYAxis) { return new sap.v
  * @class
  * An abstract base class for all VIZ controls
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -5751,7 +5751,7 @@ sap.viz.ui5.controls.common.BaseControl.prototype.setWidth = function(sWidth) { 
  * @class
  * AnalysisObject Class
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.21.0
@@ -5909,7 +5909,7 @@ sap.viz.ui5.controls.common.feeds.AnalysisObject.prototype.toJSON = function(oAO
  * @class
  * FeedItem Class
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.21.0
@@ -5996,8 +5996,8 @@ sap.viz.ui5.controls.common.feeds.FeedItem.prototype.setType = function(sType) {
  * Please reference to feeds section in this doc to get the exact sUid string for each chart type.
  * </p><p>
  * For example:
- * 	Bar chart > feeds > Axis Labels > id: axisLabels.
- * 	The 'axisLabels' should be the sUid for x axis feeding for bar chart.
+ * 	Bar chart > bindings > categoryAxis ; color ; valueAxis.
+ * 	The 'categoryAxis' should be the sUid for x axis feeding for bar chart.
  * @param {string}
  *            sUid
  * @returns {sap.viz.ui5.controls.common.feeds.FeedItem}
@@ -6071,7 +6071,7 @@ sap.viz.ui5.controls.common.feeds.FeedItem.prototype.toJSON = function(ofObject)
  * @class
  * Viz Chart Popover
  * @extends sap.viz.ui5.controls.common.BaseControl
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -6212,7 +6212,8 @@ sap.viz.ui5.controls.Popover.prototype.setFormatString = function(oFormatString)
  * <li>Properties
  * <ul>
  * <li>{@link #getVizType vizType} : string</li>
- * <li>{@link #getVizProperties vizProperties} : string</li></ul>
+ * <li>{@link #getVizProperties vizProperties} : object</li>
+ * <li>{@link #getVizScales vizScales} : object</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
@@ -6238,7 +6239,7 @@ sap.viz.ui5.controls.Popover.prototype.setFormatString = function(oFormatString)
  * @class
  * VizFrame is a viz control that manages a visualization’s initialization, layout, feeding, customization and interactions.
  * @extends sap.viz.ui5.controls.common.BaseControl
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.22.0
@@ -6490,20 +6491,35 @@ sap.viz.ui5.controls.VizFrame.prototype.getResponsiveLegend = function() { retur
 /**
  * 
  * Getter for property <code>vizProperties</code>.
- * Chart properties, refer chart property doc for more details.
+ * Chart properties, refer to chart property doc for more details.
  * </p><p>
  * Default value is empty/<code>undefined</code>
- * @return {string} the value of property <code>vizProperties</code>
+ * @return {object} the value of property <code>vizProperties</code>
  * @public
  * 
  */
-sap.viz.ui5.controls.VizFrame.prototype.getVizProperties = function() { return ""; };
+sap.viz.ui5.controls.VizFrame.prototype.getVizProperties = function() { return new Object(); };
+
+/**
+ * 
+ * Getter for property <code>vizScales</code>.
+ * Chart scales, refer to chart property doc for more details.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {object} the value of property <code>vizScales</code>
+ * @public
+ * @since 1.25
+ * 
+ */
+sap.viz.ui5.controls.VizFrame.prototype.getVizScales = function() { return new Object(); };
 
 /**
  * 
  * Getter for property <code>vizType</code>.
- * Type for viz frame. Supported chart type: bubble, combination, column, bar, line, stacked_bar, stacked_column, bullet, timebubble.
- * User can pass 'chartType' or 'info/chartType'. For example both 'bar' and 'info/bar' will create a info bar chart.
+ * Type for viz frame. User can pass 'chartType' or 'info/chartType'. For example both 'bar' and 'info/bar' will create a info bar chart.
+ * Supported chart type: column, bar, stacked_bar, stacked_column, line, combination, bullet, bubble, time_bubble, pie,
+ * scatter, vertical_bullet, dual_stacked_bar, 100_stacked_bar, 100_dual_stacked_bar, dual_stacked_column, 100_stacked_column,
+ * 100_dual_stacked_column, stacked_combination, horizontal_stacked_combination, dual_stacked_combination, dual_horizontal_stacked_combination
  * </p><p>
  * Default value is empty/<code>undefined</code>
  * @return {string} the value of property <code>vizType</code>
@@ -6607,17 +6623,14 @@ sap.viz.ui5.controls.VizFrame.prototype.setUiConfig = function(oUiConfig) { retu
 
 /**
  * 
- * Properties for viz frame. Detail doc ref:
+ * Properties for viz frame.
  * </p><p>
  * Example:
  * </p><p>
  * <pre>
  *  var vizFrame = new sap.viz.ui5.controls.VizFrame(...);
  *  var properties = {
- *      'legend' : { 'visible'; : true },
- *      'plotArea' : {
- *      	'colorPalette' : ['#ff0000']
- *      }
+ *      'legend' : { 'visible'; : true }
  * };
  * vizFrame.setVizProperties(properties);
  * </pre>
@@ -6631,10 +6644,32 @@ sap.viz.ui5.controls.VizFrame.prototype.setVizProperties = function(oVizProperti
 
 /**
  * 
+ * Scales for viz frame. 
+ * </p><p>
+ * Example:
+ * </p><p>
+ * <pre>
+ *  var vizFrame = new sap.viz.ui5.controls.VizFrame(...);
+ *  var scales = [{
+ *      'feed': 'color',
+ *      'palette': ['#ff0000']
+ * }];
+ * vizFrame.setVizScales(scales);
+ * </pre>
+ * @param {object}
+ *            oVizScales
+ * @returns {sap.viz.ui5.controls.VizFrame}
+ * @public
+ * 
+ */
+sap.viz.ui5.controls.VizFrame.prototype.setVizScales = function(oVizScales) { return new sap.viz.ui5.controls.VizFrame(); };
+
+/**
+ * 
  * Setter for property vizType. vizType could only set via settings parameter in Constructor.
  * vizType is a string of supported chart type or extension chart type.
  * </p><p>
- * Supported chart types: bubble, combination, column, bar, line, stacked_bar, stacked_column, bullet, timebubble. 
+ * Supported chart types: bubble, combination, column, bar, line, stacked_bar, stacked_column, bullet, vertical_bullet, timebubble. 
  * User can pass 'chartType' or 'info/chartType' for these supported chart types. 
  * </p><p>
  * Example:
@@ -6776,7 +6811,7 @@ sap.viz.ui5.controls.VizFrame.prototype.vizUpdate = function(oOptions) { return 
  * @class
  * An abstract base class for all VIZ charts
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -7094,7 +7129,7 @@ sap.viz.ui5.core.BaseChart.prototype.setWidth = function(sWidth) { return new sa
  * @class
  * Abstract base class for all elements that represent VIZ modules or complex property types
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -7162,7 +7197,7 @@ sap.viz.ui5.core.BaseStructuredType.extend = function(sClassName,oClassInfo,FNMe
  * @class
  * Abstract Dataset implementation
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -7230,7 +7265,7 @@ sap.viz.ui5.data.Dataset.extend = function(sClassName,oClassInfo,FNMetaImpl) { r
  * @class
  * Definition of a single dimension in a dataset
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -7371,7 +7406,7 @@ sap.viz.ui5.data.DimensionDefinition.prototype.setValue = function(oValue) { ret
  * @class
  * A dataset for flattened (redundant) data using a tabular format.
  * @extends sap.viz.ui5.data.Dataset
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -7748,7 +7783,7 @@ sap.viz.ui5.data.FlattenedDataset.prototype.unbindData = function() { return new
  * @class
  * Definition of a single Measure
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -7901,7 +7936,7 @@ sap.viz.ui5.data.MeasureDefinition.prototype.setValue = function(oValue) { retur
  * @class
  * Chart ui5/Donut
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -8635,7 +8670,7 @@ sap.viz.ui5.Donut.prototype.setXyContainer = function(oXyContainer) { return new
  * @class
  * Chart ui5/DualBar
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -9459,7 +9494,7 @@ sap.viz.ui5.DualBar.prototype.setYAxis = function(oYAxis) { return new sap.viz.u
  * @class
  * Chart ui5/DualColumn
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -10283,7 +10318,7 @@ sap.viz.ui5.DualColumn.prototype.setYAxis2 = function(oYAxis2) { return new sap.
  * @class
  * Chart ui5/DualCombination
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -11107,7 +11142,7 @@ sap.viz.ui5.DualCombination.prototype.setYAxis2 = function(oYAxis2) { return new
  * @class
  * Chart ui5/DualLine
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -11931,7 +11966,7 @@ sap.viz.ui5.DualLine.prototype.setYAxis2 = function(oYAxis2) { return new sap.vi
  * @class
  * Chart ui5/DualStackedColumn
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -12755,7 +12790,7 @@ sap.viz.ui5.DualStackedColumn.prototype.setYAxis2 = function(oYAxis2) { return n
  * @class
  * Chart ui5/DualStackedColumn100
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -13577,7 +13612,7 @@ sap.viz.ui5.DualStackedColumn100.prototype.setYAxis2 = function(oYAxis2) { retur
  * @class
  * Chart ui5/Heatmap
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -14340,7 +14375,7 @@ sap.viz.ui5.Heatmap.prototype.setYAxis = function(oYAxis) { return new sap.viz.u
  * @class
  * Chart ui5/HorizontalArea
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -15133,7 +15168,7 @@ sap.viz.ui5.HorizontalArea.prototype.setYAxis = function(oYAxis) { return new sa
  * @class
  * Chart ui5/HorizontalArea100
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -15926,7 +15961,7 @@ sap.viz.ui5.HorizontalArea100.prototype.setYAxis = function(oYAxis) { return new
  * @class
  * Chart ui5/Line
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -16717,7 +16752,7 @@ sap.viz.ui5.Line.prototype.setYAxis = function(oYAxis) { return new sap.viz.ui5.
  * @class
  * Chart ui5/Pie
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -17451,7 +17486,7 @@ sap.viz.ui5.Pie.prototype.setXyContainer = function(oXyContainer) { return new s
  * @class
  * Chart ui5/Scatter
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -18274,7 +18309,7 @@ sap.viz.ui5.Scatter.prototype.setYAxis = function(oYAxis) { return new sap.viz.u
  * @class
  * Chart ui5/StackedColumn
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -19067,7 +19102,7 @@ sap.viz.ui5.StackedColumn.prototype.setYAxis = function(oYAxis) { return new sap
  * @class
  * Chart ui5/StackedColumn100
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -19861,7 +19896,7 @@ sap.viz.ui5.StackedColumn100.prototype.setYAxis = function(oYAxis) { return new 
  * @class
  * Chart ui5/TimeBubble
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -20681,7 +20716,7 @@ sap.viz.ui5.TimeBubble.prototype.setYAxis = function(oYAxis) { return new sap.vi
  * @class
  * Chart ui5/Treemap
  * @extends sap.viz.ui5.core.BaseChart
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -21381,7 +21416,7 @@ sap.viz.ui5.Treemap.prototype.setXyContainer = function(oXyContainer) { return n
  * @class
  * Module ui5/types/Area
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -21763,7 +21798,7 @@ sap.viz.ui5.types.Area.prototype.setToolTip = function(oToolTip) { return new sa
  * @class
  * Settings for animations in the plot area
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -21906,7 +21941,7 @@ sap.viz.ui5.types.Area_drawingEffect.toString = function() { return ""; };
  * @class
  * Settings for the hoverline.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -21999,7 +22034,7 @@ sap.viz.ui5.types.Area_hoverline.prototype.setVisible = function(bVisible) { ret
  * @class
  * Settings for marker and data point graphics
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -22184,7 +22219,7 @@ sap.viz.ui5.types.Area_orientation.toString = function() { return ""; };
  * @class
  * Settings for the tooltip
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -22294,7 +22329,7 @@ sap.viz.ui5.types.Area_tooltip.prototype.setEnabled = function(bEnabled) { retur
  * @class
  * Module ui5/types/Axis
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -22966,7 +23001,7 @@ sap.viz.ui5.types.Axis.prototype.setVisible = function(bVisible) { return new sa
  * @class
  * Settings for the axis line
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -23056,7 +23091,7 @@ sap.viz.ui5.types.Axis_axisline.prototype.setVisible = function(bVisible) { retu
  * @class
  * Settings for the ticks on the axis
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -23152,7 +23187,7 @@ sap.viz.ui5.types.Axis_axisTick.prototype.setVisible = function(bVisible) { retu
  * @class
  * Settings for the gridlines on the axis
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -23403,7 +23438,7 @@ sap.viz.ui5.types.Axis_gridline_type.toString = function() { return ""; };
  * @class
  * Settings for the axis indicator
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -23501,7 +23536,7 @@ sap.viz.ui5.types.Axis_indicator.prototype.setEnable = function(bEnable) { retur
  * @class
  * Settings for the labels on this axis
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -23697,7 +23732,7 @@ sap.viz.ui5.types.Axis_label_unitFormatType.toString = function() { return ""; }
  * @class
  * Settings for the layout of the category axis. This property only works for category type axes.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -23827,7 +23862,7 @@ sap.viz.ui5.types.Axis_position.toString = function() { return ""; };
  * @class
  * Set the scale of the value axis. This property only works on value type axes.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -23995,7 +24030,7 @@ sap.viz.ui5.types.Axis_scale.prototype.setMinValue = function(fMinValue) { retur
  * @class
  * Settings for the axis title
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -24146,7 +24181,7 @@ sap.viz.ui5.types.Axis_type.toString = function() { return ""; };
  * @class
  * Module ui5/types/Background
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -24347,7 +24382,7 @@ sap.viz.ui5.types.Background.prototype.setVisible = function(bVisible) { return 
  * @class
  * Settings for the border
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -24589,7 +24624,7 @@ sap.viz.ui5.types.Background_border.prototype.setTop = function(oTop) { return n
  * @class
  * Settings for the bottom border
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -24679,7 +24714,7 @@ sap.viz.ui5.types.Background_border_bottom.prototype.setVisible = function(bVisi
  * @class
  * Settings for the left border
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -24769,7 +24804,7 @@ sap.viz.ui5.types.Background_border_left.prototype.setVisible = function(bVisibl
  * @class
  * Settings for the right border
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -24859,7 +24894,7 @@ sap.viz.ui5.types.Background_border_right.prototype.setVisible = function(bVisib
  * @class
  * Settings for the top border
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -24969,7 +25004,7 @@ sap.viz.ui5.types.Background_drawingEffect.toString = function() { return ""; };
  * @class
  * Module ui5/types/Bar
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -25335,7 +25370,7 @@ sap.viz.ui5.types.Bar.prototype.setToolTip = function(oToolTip) { return new sap
  * @class
  * Settings for animations in the plot area
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -25483,7 +25518,7 @@ sap.viz.ui5.types.Bar_orientation.toString = function() { return ""; };
  * @class
  * Settings for tooltip related properties
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -25590,7 +25625,7 @@ sap.viz.ui5.types.Bar_tooltip.prototype.setEnabled = function(bEnabled) { return
  * @class
  * Module ui5/types/Bubble
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -26160,7 +26195,7 @@ sap.viz.ui5.types.Bubble.prototype.setTimeBased = function(bTimeBased) { return 
  * @class
  * Settings for animations in bubble and scatter charts
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -26299,7 +26334,7 @@ sap.viz.ui5.types.Bubble_animation.prototype.setResizing = function(bResizing) {
  * @class
  * Set tooltip related properties.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -26418,7 +26453,7 @@ sap.viz.ui5.types.Bubble_drawingEffect.toString = function() { return ""; };
  * @class
  * Settings for hoverline properties.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -26515,7 +26550,7 @@ sap.viz.ui5.types.Bubble_hoverline.prototype.setVisible = function(bVisible) { r
  * @class
  * Module ui5/types/Bullet
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -26811,7 +26846,7 @@ sap.viz.ui5.types.Bullet_orientation.toString = function() { return ""; };
  * @class
  * Settings for tooltip related properties
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -26911,7 +26946,7 @@ sap.viz.ui5.types.Bullet_tooltip.prototype.setEnabled = function(bEnabled) { ret
  * @class
  * Module ui5/types/Combination
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -27283,7 +27318,7 @@ sap.viz.ui5.types.Combination.prototype.setToolTip = function(oToolTip) { return
  * @class
  * Settings for animations in the plot area
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -27421,7 +27456,7 @@ sap.viz.ui5.types.Combination_animation.prototype.setResizing = function(bResizi
  * @class
  * Settings for bar properties
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -27517,7 +27552,7 @@ sap.viz.ui5.types.Combination_bar.prototype.setIsRoundCorner = function(bIsRound
  * @class
  * Settings for the shape of data series
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -27665,7 +27700,7 @@ sap.viz.ui5.types.Combination_drawingEffect.toString = function() { return ""; }
  * @class
  * Settings for line properties
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -27788,7 +27823,7 @@ sap.viz.ui5.types.Combination_line.prototype.setWidth = function(iWidth) { retur
  * @class
  * Settings for the visual markers for data points
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -27959,7 +27994,7 @@ sap.viz.ui5.types.Combination_orientation.toString = function() { return ""; };
  * @class
  * Settings for the tooltip
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -28063,7 +28098,7 @@ sap.viz.ui5.types.Combination_tooltip.prototype.setEnabled = function(bEnabled) 
  * @class
  * Module ui5/types/controller/Interaction
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -28494,7 +28529,7 @@ sap.viz.ui5.types.controller.Interaction.prototype.setTriggers = function(oTrigg
  * @class
  * Structured Type ui5/types/controller/Interaction_pan
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -28623,7 +28658,7 @@ sap.viz.ui5.types.controller.Interaction_pan_orientation.toString = function() {
  * @class
  * Settings for selectability
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -28887,7 +28922,7 @@ sap.viz.ui5.types.controller.Interaction_selectability_mode.toString = function(
  * @class
  * Module ui5/types/Datalabel
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -29466,7 +29501,7 @@ sap.viz.ui5.types.Datalabel_position.toString = function() { return ""; };
  * @class
  * Module ui5/types/Datatransform
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -29593,7 +29628,7 @@ sap.viz.ui5.types.Datatransform.prototype.setDataSampling = function(oDataSampli
  * @class
  * Settings for the auto-binning algorithm
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -29710,7 +29745,7 @@ sap.viz.ui5.types.Datatransform_autoBinning.prototype.setEnable = function(bEnab
  * @class
  * Settings for the data sampling algorithm
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -29879,7 +29914,7 @@ sap.viz.ui5.types.Datatransform_dataSampling.prototype.setSizeFactor = function(
  * @class
  * Structured Type ui5/types/Datatransform_dataSampling_grid
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -30000,7 +30035,7 @@ sap.viz.ui5.types.Datatransform_dataSampling_grid.prototype.setRow = function(iR
  * @class
  * Module ui5/types/Heatmap
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -30284,7 +30319,7 @@ sap.viz.ui5.types.Heatmap.prototype.setToolTip = function(oToolTip) { return new
  * @class
  * Settings for animations in the plot area
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -30422,7 +30457,7 @@ sap.viz.ui5.types.Heatmap_animation.prototype.setResizing = function(bResizing) 
  * @class
  * Settings for the border
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -30512,7 +30547,7 @@ sap.viz.ui5.types.Heatmap_border.prototype.setVisible = function(bVisible) { ret
  * @class
  * Settings for tooltip
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -30604,7 +30639,7 @@ sap.viz.ui5.types.Heatmap_tooltip.prototype.setEnabled = function(bEnabled) { re
  * @class
  * Module ui5/types/layout/Dock
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -30669,7 +30704,7 @@ sap.viz.ui5.types.layout.Dock.extend = function(sClassName,oClassInfo,FNMetaImpl
  * @class
  * Module ui5/types/layout/Stack
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -30735,7 +30770,7 @@ sap.viz.ui5.types.layout.Stack.extend = function(sClassName,oClassInfo,FNMetaImp
  * @class
  * Module ui5/types/Legend
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -30842,7 +30877,7 @@ sap.viz.ui5.types.Legend.prototype.setLayout = function(oLayout) { return new sa
  * @class
  * Module ui5/types/legend/Common
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -31162,7 +31197,7 @@ sap.viz.ui5.types.legend.Common_position.toString = function() { return ""; };
  * @class
  * Settings for the legend title
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -31282,7 +31317,7 @@ sap.viz.ui5.types.legend.Common_type.toString = function() { return ""; };
  * @class
  * Settings for the layout of the legend area
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -31416,7 +31451,7 @@ sap.viz.ui5.types.Legend_layout_position.toString = function() { return ""; };
  * @class
  * Module ui5/types/Line
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -31816,7 +31851,7 @@ sap.viz.ui5.types.Line.prototype.setWidth = function(iWidth) { return new sap.vi
  * @class
  * Settings for animations.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -31959,7 +31994,7 @@ sap.viz.ui5.types.Line_drawingEffect.toString = function() { return ""; };
  * @class
  * Settings for the hoverline.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -32052,7 +32087,7 @@ sap.viz.ui5.types.Line_hoverline.prototype.setVisible = function(bVisible) { ret
  * @class
  * Settings for marker/data point graphics
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -32228,7 +32263,7 @@ sap.viz.ui5.types.Line_orientation.toString = function() { return ""; };
  * @class
  * Settings for the tooltip
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -32326,7 +32361,7 @@ sap.viz.ui5.types.Line_tooltip.prototype.setEnabled = function(bEnabled) { retur
  * @class
  * Module ui5/types/Pie
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -32640,7 +32675,7 @@ sap.viz.ui5.types.Pie.prototype.setValign = function(oValign) { return new sap.v
  * @class
  * Settings for animations in the plot area
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -32786,7 +32821,7 @@ sap.viz.ui5.types.Pie_drawingEffect.toString = function() { return ""; };
  * @class
  * Settings for tooltip related properties
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -32961,7 +32996,7 @@ sap.viz.ui5.types.Pie_valign.toString = function() { return ""; };
  * @class
  * Module ui5/types/RootContainer
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -33065,7 +33100,7 @@ sap.viz.ui5.types.RootContainer.prototype.setLayout = function(oLayout) { return
  * @class
  * Settings for the layout of the root container
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -33376,7 +33411,7 @@ sap.viz.ui5.types.RootContainer_layout.prototype.setVgap = function(iVgap) { ret
  * @class
  * Module ui5/types/Scatter
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -33834,7 +33869,7 @@ sap.viz.ui5.types.Scatter.prototype.setTimeBased = function(bTimeBased) { return
  * @class
  * Settings for animations in bubble and scatter charts
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -33973,7 +34008,7 @@ sap.viz.ui5.types.Scatter_animation.prototype.setResizing = function(bResizing) 
  * @class
  * Set tooltip related properties.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -34092,7 +34127,7 @@ sap.viz.ui5.types.Scatter_drawingEffect.toString = function() { return ""; };
  * @class
  * Settings for hoverline properties.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -34191,7 +34226,7 @@ sap.viz.ui5.types.Scatter_hoverline.prototype.setVisible = function(bVisible) { 
  * @class
  * Module ui5/types/StackedVerticalBar
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -34525,7 +34560,7 @@ sap.viz.ui5.types.StackedVerticalBar.prototype.setToolTip = function(oToolTip) {
  * @class
  * Settings for animations in the plot area
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -34678,7 +34713,7 @@ sap.viz.ui5.types.StackedVerticalBar_orientation.toString = function() { return 
  * @class
  * Settings for tooltip related properties
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -34771,7 +34806,7 @@ sap.viz.ui5.types.StackedVerticalBar_tooltip.prototype.setEnabled = function(bEn
  * @class
  * Module ui5/types/Title
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -34951,7 +34986,7 @@ sap.viz.ui5.types.Title_alignment.toString = function() { return ""; };
  * @class
  * Settings for layout of title
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -35082,7 +35117,7 @@ sap.viz.ui5.types.Title_layout.prototype.setPriority = function(iPriority) { ret
  * @class
  * Module ui5/types/Tooltip
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -35579,7 +35614,7 @@ sap.viz.ui5.types.Tooltip.prototype.setVisible = function(bVisible) { return new
  * @class
  * Define the background style of the tooltip.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -35693,7 +35728,7 @@ sap.viz.ui5.types.Tooltip_background.prototype.setColor = function(sColor) { ret
  * @class
  * Define the color of the dimension name of the tooltip body.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -35783,7 +35818,7 @@ sap.viz.ui5.types.Tooltip_bodyDimensionLabel.prototype.setColor = function(sColo
  * @class
  * Define the color of the dimension value of the tooltip body.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -35873,7 +35908,7 @@ sap.viz.ui5.types.Tooltip_bodyDimensionValue.prototype.setColor = function(sColo
  * @class
  * Define the color of the measure name of the tooltip body.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -35963,7 +35998,7 @@ sap.viz.ui5.types.Tooltip_bodyMeasureLabel.prototype.setColor = function(sColor)
  * @class
  * Define the color of the measure value of the tooltip body.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -36054,7 +36089,7 @@ sap.viz.ui5.types.Tooltip_bodyMeasureValue.prototype.setColor = function(sColor)
  * @class
  * Define the background and border color of tooltip close button.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -36173,7 +36208,7 @@ sap.viz.ui5.types.Tooltip_drawingEffect.toString = function() { return ""; };
  * @class
  * Define the style of the label of the tooltip footer.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -36263,7 +36298,7 @@ sap.viz.ui5.types.Tooltip_footerLabel.prototype.setColor = function(sColor) { re
  * @class
  * Define the color of the value of the tooltip separation line.
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -36360,7 +36395,7 @@ sap.viz.ui5.types.Tooltip_separationLine.prototype.setBorderBottomColor = functi
  * @class
  * Module ui5/types/Treemap
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -36644,7 +36679,7 @@ sap.viz.ui5.types.Treemap.prototype.setToolTip = function(oToolTip) { return new
  * @class
  * Settings for animations in the plot area
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -36782,7 +36817,7 @@ sap.viz.ui5.types.Treemap_animation.prototype.setResizing = function(bResizing) 
  * @class
  * Settings for the border
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -36872,7 +36907,7 @@ sap.viz.ui5.types.Treemap_border.prototype.setVisible = function(bVisible) { ret
  * @class
  * Settings for tooltip
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -36970,7 +37005,7 @@ sap.viz.ui5.types.Treemap_tooltip.prototype.setEnabled = function(bEnabled) { re
  * @class
  * Module ui5/types/VerticalBar
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -37280,7 +37315,7 @@ sap.viz.ui5.types.VerticalBar.prototype.setToolTip = function(oToolTip) { return
  * @class
  * Settings for animations in the plot area
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -37428,7 +37463,7 @@ sap.viz.ui5.types.VerticalBar_orientation.toString = function() { return ""; };
  * @class
  * Settings for tooltip related properties
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -37518,7 +37553,7 @@ sap.viz.ui5.types.VerticalBar_tooltip.prototype.setEnabled = function(bEnabled) 
  * @class
  * Module ui5/types/XYContainer
  * @extends sap.viz.ui5.core.BaseStructuredType
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.7.2
@@ -37626,7 +37661,7 @@ sap.viz.ui5.types.XYContainer.prototype.setYAngle = function(fYAngle) { return n
  * @class
  * Controls ui5/VizContainer
  * @extends sap.viz.ui5.controls.common.BaseControl
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.19.0

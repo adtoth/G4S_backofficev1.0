@@ -35,9 +35,13 @@
  * <ul>
  * <li>{@link #getPersistencyKey persistencyKey} : string</li>
  * <li>{@link #getAdvancedMode advancedMode} : boolean (default: false)</li>
- * <li>{@link #getSimplifiedMode simplifiedMode} : boolean</li>
  * <li>{@link #getExpandAdvancedArea expandAdvancedArea} : boolean (default: true)</li>
- * <li>{@link #getSearchEnabled searchEnabled} : boolean (default: true)</li></ul>
+ * <li>{@link #getSearchEnabled searchEnabled} : boolean (default: true)</li>
+ * <li>{@link #getFilterBarExpanded filterBarExpanded} : boolean (default: true)</li>
+ * <li>{@link #getConsiderGroupTitle considerGroupTitle} : boolean (default: false)</li>
+ * <li>{@link #getShowClearButton showClearButton} : boolean (default: false)</li>
+ * <li>{@link #getShowRestoreButton showRestoreButton} : boolean (default: true)</li>
+ * <li>{@link #getShowGoButton showGoButton} : boolean (default: true)</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
@@ -53,7 +57,9 @@
  * <li>{@link sap.ui.comp.filterbar.FilterBar#event:search search} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
  * <li>{@link sap.ui.comp.filterbar.FilterBar#event:beforeVariantSave beforeVariantSave} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
  * <li>{@link sap.ui.comp.filterbar.FilterBar#event:afterVariantLoad afterVariantLoad} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
- * <li>{@link sap.ui.comp.filterbar.FilterBar#event:filterChange filterChange} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
+ * <li>{@link sap.ui.comp.filterbar.FilterBar#event:filterChange filterChange} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.ui.comp.filterbar.FilterBar#event:clear clear} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.ui.comp.filterbar.FilterBar#event:initialise initialise} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
  * </li>
  * </ul> 
  * </p><p>
@@ -63,12 +69,14 @@
  * @param {string} [sId] id for the new control, generated automatically if no id is given 
  * @param {object} [mSettings] initial settings for the new control
  * @class
- * FilterBar consist of two areas. The basic area which hosts the selection fields and the advanced area which hosts the filter fields.
- * Basic area consumes the first visible row and the advanced area is placed below.
- * The basic area fields are populated via the aggregation 'filterItems'. It also contains buttons like 'Reset' and 'Search'.
- * Advanced Area is populated via the aggregation 'filterGroupItems'. The advanced area is placed inside an expandable Pane.
+ * The FilterBar control displays filters in a user-friendly manner to populate values for a query. The FilterBar consists of a row containing the variant management control, the related buttons, and an area underneath displaying the filters.
+ * The filters are arranged in a logical row that is divided depending on the space available and the width of the filters.
+ * The area containing the filters can be hidden or shown using the HideFilterBar/ShowFilterBar button. The 'Go' button triggers the search event, and the 'Filters' button shows the filter dialog. In this dialog, the user has full control over the filter bar. The filters in this dialog are displayed in one column and organized in groups. The filter items of the filterItems aggregation are grouped in the 'Basic' group . Each filter can be marked as visible in the filter bar by selecting 'Add to Filter Bar'. In addition, the items in the 'filterGroupItems' aggregation can be marked as a part of the current variant.
+ * The variant management control will be displayed above the filters.
+ * The FilterBar also supports a different UI layout when used inside a value help dialog. In this case the FilterBar consists of two logical areas, one containing the general search button and in the s.c. 'Advanced Search' area.
+ * The 'Advanced Search' is a collapsible area displaying the advanced filters in two columns.
  * @extends sap.ui.layout.Grid
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -98,6 +106,17 @@ sap.ui.comp.filterbar.FilterBar.prototype.beforeVariantSave = function(oControlE
 
 /**
  * 
+ * Event fired if the Clear button is executed. The intention is to clear every filter.
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.clear = function(oControlEvent) { return null; };
+
+/**
+ * 
  * Event fired when the filter criteria has changed
  * @event
  * @param {sap.ui.base.Event} oControlEvent
@@ -106,6 +125,17 @@ sap.ui.comp.filterbar.FilterBar.prototype.beforeVariantSave = function(oControlE
  * @public
  */
 sap.ui.comp.filterbar.FilterBar.prototype.filterChange = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * Event fired when the filter bar is initialized and its controls are created
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.initialise = function(oControlEvent) { return null; };
 
 /**
  * 
@@ -133,8 +163,7 @@ sap.ui.comp.filterbar.FilterBar.prototype.search = function(oControlEvent) { ret
  * 
  * add an FilterItem element to the advanced area
  * @public
- * @param {sap.ui.comp.filterbar.FilterGroupItem}
- *            oFilterGroupItem
+ * @param {sap.ui.comp.filterbar.FilterGroupItem} oFilterGroupItem group filter item
  */
 sap.ui.comp.filterbar.FilterBar.prototype.addFilterGroupItem = function(oFilterGroupItem) { return null; };
 
@@ -142,8 +171,7 @@ sap.ui.comp.filterbar.FilterBar.prototype.addFilterGroupItem = function(oFilterG
  * 
  * add an FilterItem element to the basic area
  * @public
- * @param {sap.ui.comp.filterbar.FilterItem}
- *            oFilterItem
+ * @param {sap.ui.comp.filterbar.FilterItem} oFilterItem filter item
  */
 sap.ui.comp.filterbar.FilterBar.prototype.addFilterItem = function(oFilterItem) { return null; };
 
@@ -187,6 +215,25 @@ sap.ui.comp.filterbar.FilterBar.prototype.attachBeforeVariantSave = function(oDa
 
 /**
  * 
+ * Attach event handler <code>fnFunction</code> to the 'clear' event of this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/> itself. 
+ * </p><p>
+ * Event fired if the Clear button is executed. The intention is to clear every filter.
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/> itself.
+ * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.attachClear = function(oData,fnFunction,oListener) { return new sap.ui.comp.filterbar.FilterBar(); };
+
+/**
+ * 
  * Attach event handler <code>fnFunction</code> to the 'filterChange' event of this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/>.
  * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
  * otherwise to this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/> itself. 
@@ -203,6 +250,25 @@ sap.ui.comp.filterbar.FilterBar.prototype.attachBeforeVariantSave = function(oDa
  * 
  */
 sap.ui.comp.filterbar.FilterBar.prototype.attachFilterChange = function(oData,fnFunction,oListener) { return new sap.ui.comp.filterbar.FilterBar(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'initialise' event of this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/> itself. 
+ * </p><p>
+ * Event fired when the filter bar is initialized and its controls are created
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/> itself.
+ * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.attachInitialise = function(oData,fnFunction,oListener) { return new sap.ui.comp.filterbar.FilterBar(); };
 
 /**
  * 
@@ -308,6 +374,21 @@ sap.ui.comp.filterbar.FilterBar.prototype.detachBeforeVariantSave = function(fnF
 
 /**
  * 
+ * Detach event handler <code>fnFunction</code> from the 'clear' event of this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.detachClear = function(fnFunction,oListener) { return new sap.ui.comp.filterbar.FilterBar(); };
+
+/**
+ * 
  * Detach event handler <code>fnFunction</code> from the 'filterChange' event of this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/>
  * </p><p>
  * The passed function and listener object must match the ones used for event registration.
@@ -320,6 +401,21 @@ sap.ui.comp.filterbar.FilterBar.prototype.detachBeforeVariantSave = function(fnF
  * 
  */
 sap.ui.comp.filterbar.FilterBar.prototype.detachFilterChange = function(fnFunction,oListener) { return new sap.ui.comp.filterbar.FilterBar(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'initialise' event of this <code>sap.ui.comp.filterbar.FilterBar</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.detachInitialise = function(fnFunction,oListener) { return new sap.ui.comp.filterbar.FilterBar(); };
 
 /**
  * 
@@ -355,8 +451,7 @@ sap.ui.comp.filterbar.FilterBar.prototype.detachSearch = function(fnFunction,oLi
  * 
  * retrieve the control based on the filteBarItem
  * @public
- * @param {sap.ui.comp.filterbar.Filter.FilterItem}
- *            oFilterItem from the aggregations
+ * @param {sap.ui.comp.filterbar.Filter.FilterItem} oFilterItem from the aggregations
  * @returns {sap.ui.core.Control} the corresponding control. If no match is found null will returned.
  */
 sap.ui.comp.filterbar.FilterBar.prototype.determineControlByFilterItem = function(oFilterItem) { return new sap.ui.core.Control(); };
@@ -365,12 +460,10 @@ sap.ui.comp.filterbar.FilterBar.prototype.determineControlByFilterItem = functio
  * 
  * retrieve the control based on the name and group name
  * @public
- * @param {string}
- *            sName the control's name
- * @param {string}
- *            sGroupName is null for basic area
- * @returns {sap.ui.core.Control} the corresponding control. If no match is found null will returned. For filters in the advanced area the visibleInAdvancedArea
- *          flag is considered
+ * @param {string} sName the control's name
+ * @param {string} sGroupName is null for basic area
+ * @returns {sap.ui.core.Control} the corresponding control. If no match is found null will returned. For filters in the advanced area the
+ *          visibleInAdvancedArea flag is considered
  */
 sap.ui.comp.filterbar.FilterBar.prototype.determineControlByName = function(sName,sGroupName) { return new sap.ui.core.Control(); };
 
@@ -400,16 +493,6 @@ sap.ui.comp.filterbar.FilterBar.extend = function(sClassName,oClassInfo,FNMetaIm
 
 /**
  * 
- * Fire event afterVariantLoad to attached listeners.
- * @param {Map} [mArguments] the arguments to pass along with the event.
- * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
- * @protected
- * 
- */
-sap.ui.comp.filterbar.FilterBar.prototype.fireAfterVariantLoad = function(mArguments) { return new sap.ui.comp.filterbar.FilterBar(); };
-
-/**
- * 
  * Fire event beforeVariantSave to attached listeners.
  * @param {Map} [mArguments] the arguments to pass along with the event.
  * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
@@ -420,18 +503,18 @@ sap.ui.comp.filterbar.FilterBar.prototype.fireBeforeVariantSave = function(mArgu
 
 /**
  * 
- * Fire event filterChange to attached listeners.
+ * Fire event clear to attached listeners.
  * @param {Map} [mArguments] the arguments to pass along with the event.
  * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
  * @protected
  * 
  */
-sap.ui.comp.filterbar.FilterBar.prototype.fireFilterChange = function(mArguments) { return new sap.ui.comp.filterbar.FilterBar(); };
+sap.ui.comp.filterbar.FilterBar.prototype.fireClear = function(mArguments) { return new sap.ui.comp.filterbar.FilterBar(); };
 
 /**
  * 
- * read the personalization, apply eventual variants and inform all registered parties about the initialization finish. In case a default variant exists,
- * trigger search
+ * read the personalization, apply eventual variants and inform all registered parties about the initialization finish. In case a default variant
+ * exists, trigger search
  * @public
  */
 sap.ui.comp.filterbar.FilterBar.prototype.fireInitialise = function() { return null; };
@@ -459,11 +542,10 @@ sap.ui.comp.filterbar.FilterBar.prototype.fireSearch = function(mArguments) { re
 /**
  * 
  * Getter for property <code>advancedMode</code>.
- * The advance mode overwrites the standard behaviour such that:
+ * The advance mode overwrites the standard behavior such that:
  * - the text 'Dynamic Selection' is replaced by 'Advanced Search'
  * - all filter fields are added to the advanced area
- * - the Reset button is hidden
- * - the add/remove filter button is hidden
+ * - the Restore button is hidden
  * - the advanced area is expanded
  * </p><p>
  * Default value is <code>false</code>
@@ -477,11 +559,22 @@ sap.ui.comp.filterbar.FilterBar.prototype.getAdvancedMode = function() { return 
  * 
  * determine all known controls, regardless of their visibility
  * @public
- * @param {boolean}
- *            bConsiderOnlyVisibleFields based on this flag either all or just the visible items are returned
- * @returns {array} array of all/only visible items
+ * @param {boolean} bConsiderOnlyVisibleFields based on this flag either all or just the visible/partOfCurrentVariant items are returned
+ * @returns {array} array of all/only visible/partOfCurrentVariant items
  */
 sap.ui.comp.filterbar.FilterBar.prototype.getAllFilterItems = function(bConsiderOnlyVisibleFields) { return null; };
+
+/**
+ * 
+ * Getter for property <code>considerGroupTitle</code>.
+ * If this property is set, then the label for filters with a filter group title will be enhanced with the group title.
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>considerGroupTitle</code>
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.getConsiderGroupTitle = function() { return false; };
 
 /**
  * 
@@ -494,6 +587,18 @@ sap.ui.comp.filterbar.FilterBar.prototype.getAllFilterItems = function(bConsider
  * 
  */
 sap.ui.comp.filterbar.FilterBar.prototype.getExpandAdvancedArea = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>filterBarExpanded</code>.
+ * allow to display the FilterBar in expanded /collapsed mode
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>filterBarExpanded</code>
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.getFilterBarExpanded = function() { return false; };
 
 /**
  * 
@@ -541,15 +646,42 @@ sap.ui.comp.filterbar.FilterBar.prototype.getSearchEnabled = function() { return
 
 /**
  * 
- * Getter for property <code>simplifiedMode</code>.
- * set the new behaviour: all fields (select and filters) are displaayed in one ui region. The initial display occurs in one line.
+ * Getter for property <code>showClearButton</code>.
+ * indicates if the 'Clear' button should be shown.
+ * Has to be set during filter bar initialization.
  * </p><p>
- * Default value is empty/<code>undefined</code>
- * @return {boolean} the value of property <code>simplifiedMode</code>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>showClearButton</code>
  * @public
  * 
  */
-sap.ui.comp.filterbar.FilterBar.prototype.getSimplifiedMode = function() { return false; };
+sap.ui.comp.filterbar.FilterBar.prototype.getShowClearButton = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>showGoButton</code>.
+ * indicates if the 'Go' button should be shown in the filter bar.
+ * Has to be set during FilterBar initialization.
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>showGoButton</code>
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.getShowGoButton = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>showRestoreButton</code>.
+ * indicates if the 'Restore' button should be shown.
+ * Has to be set during filter bar initialization.
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>showRestoreButton</code>
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.getShowRestoreButton = function() { return false; };
 
 /**
  * 
@@ -609,23 +741,30 @@ sap.ui.comp.filterbar.FilterBar.prototype.insertFilterItem = function(oFilterIte
 
 /**
  * 
- * fCallBack for being able to participate in variant handling. This fCallBack will be executed, when ever a variant has to be applied. The fCallBack will
- * receive the corresponding data set, in Json notation, containing all relevant data as initially provided by the fCallBack for fetchData
+ * fCallBack for being able to participate in variant handling. This fCallBack will be executed, when ever a variant has to be applied. The fCallBack
+ * will receive the corresponding data set, in Json notation, containing all relevant data as initially provided by the fCallBack for fetchData
  * @public
- * @param {function}
- *            fCallBack to be called, when a variant has to be applied
+ * @param {function} fCallBack to be called, when a variant has to be applied
  */
 sap.ui.comp.filterbar.FilterBar.prototype.registerApplyData = function(fCallBack) { return null; };
 
 /**
  * 
- * fCallBack for being able to participate in variant save handling. This fCallBack will be executed, whenever the variant save is triggered and has to provide,
- * in Json notation, all relevant fields and values. This data blob will be saved along with the current variant
+ * fCallBack for being able to participate in variant save handling. This fCallBack will be executed, whenever the variant save is triggered and has
+ * to provide, in Json notation, all relevant fields and values. This data blob will be saved along with the current variant
  * @public
- * @param {function}
- *            fCallBack to be called, when a variant has to be applied
+ * @param {function} fCallBack to be called, when a variant has to be applied
  */
 sap.ui.comp.filterbar.FilterBar.prototype.registerFetchData = function(fCallBack) { return null; };
+
+/**
+ * 
+ * fCallBack for being able to participate in variant save handling. This fCallBack will be executed, whenever the variant save is triggered and has
+ * to provide, in Json notation, all relevant fields and values. This data blob will be saved along with the current variant
+ * @public
+ * @param {function} fCallBack to be called, when a variant has to be applied
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.registerGetFiltersWithValues = function(fCallBack) { return null; };
 
 /**
  * 
@@ -663,29 +802,37 @@ sap.ui.comp.filterbar.FilterBar.prototype.removeFilterItem = function(vFilterIte
 
 /**
  * 
- * rerender the filter area for the simplifiedMode
+ * adapt the visibility for all filter containers according to their property settings
  * @public
- * @param {boolean}
- *            The parameter 'bShowLess' determine if the filters should be shown 'true' or hidden behind the 'ShowMore'-button 'false'
  */
-sap.ui.comp.filterbar.FilterBar.prototype.rerenderFilters = function(The) { return null; };
+sap.ui.comp.filterbar.FilterBar.prototype.rerenderFilters = function() { return null; };
 
 /**
  * 
- * In advanced mode the text 'Dynamic Selection' is replaced by 'Advanced Search' all filter fields are added to the advanced area and the add/remove filter
- * button and the variant management buttons are hidden
+ * In advanced mode the text 'Dynamic Selection' is replaced by 'Advanced Search' all filter fields are added to the advanced area and the add/remove
+ * filter button and the variant management buttons are hidden
  * @public
- * @param {boolean}
- *            bFlag - true or false / set-reset advanced mode
+ * @param {boolean} bFlag - true or false / set-reset advanced mode
  */
 sap.ui.comp.filterbar.FilterBar.prototype.setAdvancedMode = function(bFlag) { return null; };
 
 /**
  * 
+ * Setter for property <code>considerGroupTitle</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bConsiderGroupTitle  new value for property <code>considerGroupTitle</code>
+ * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.setConsiderGroupTitle = function(bConsiderGroupTitle) { return new sap.ui.comp.filterbar.FilterBar(); };
+
+/**
+ * 
  * describes whether the advanced area should be displayed collapsed or expanded
  * @public
- * @param {boolean}
- *            bFlag sets/resets the advanced area to expanded/collapsed
+ * @param {boolean} bFlag sets/resets the advanced area to expanded/collapsed
  */
 sap.ui.comp.filterbar.FilterBar.prototype.setExpandAdvancedArea = function(bFlag) { return null; };
 
@@ -693,8 +840,7 @@ sap.ui.comp.filterbar.FilterBar.prototype.setExpandAdvancedArea = function(bFlag
  * 
  * set the persistency key for
  * @public
- * @param {string}
- *            sPersistenceKey
+ * @param {string} sPersistenceKey id for persistency
  */
 sap.ui.comp.filterbar.FilterBar.prototype.setPersistencyKey = function(sPersistenceKey) { return null; };
 
@@ -702,8 +848,7 @@ sap.ui.comp.filterbar.FilterBar.prototype.setPersistencyKey = function(sPersiste
  * 
  * sets the type of the Search-button to Emphasize. The state of the Search button will always be reset, once the event search is executed
  * @public
- * @param {boolean}
- *            bSetEmphasize sets the Emphasized or Default - type
+ * @param {boolean} bSetEmphasize sets the Emphasized or Default - type
  */
 sap.ui.comp.filterbar.FilterBar.prototype.setSearchButtonEmphType = function(bSetEmphasize) { return null; };
 
@@ -711,10 +856,45 @@ sap.ui.comp.filterbar.FilterBar.prototype.setSearchButtonEmphType = function(bSe
  * 
  * enables/disables the search button
  * @public
- * @param {boolean}
- *            bValue sets/resets the enable state of the search button
+ * @param {boolean} bValue sets/resets the enable state of the search button
  */
 sap.ui.comp.filterbar.FilterBar.prototype.setSearchEnabled = function(bValue) { return null; };
+
+/**
+ * 
+ * Setter for property <code>showClearButton</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bShowClearButton  new value for property <code>showClearButton</code>
+ * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.setShowClearButton = function(bShowClearButton) { return new sap.ui.comp.filterbar.FilterBar(); };
+
+/**
+ * 
+ * Setter for property <code>showGoButton</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bShowGoButton  new value for property <code>showGoButton</code>
+ * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.setShowGoButton = function(bShowGoButton) { return new sap.ui.comp.filterbar.FilterBar(); };
+
+/**
+ * 
+ * Setter for property <code>showRestoreButton</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bShowRestoreButton  new value for property <code>showRestoreButton</code>
+ * @return {sap.ui.comp.filterbar.FilterBar} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterBar.prototype.setShowRestoreButton = function(bShowRestoreButton) { return new sap.ui.comp.filterbar.FilterBar(); };
 
 
 // ---- sap.ui.comp.filterbar.FilterGroupItem --------------------------------------------------------------------------
@@ -757,14 +937,21 @@ sap.ui.comp.filterbar.FilterBar.prototype.setSearchEnabled = function(bValue) { 
  * @param {string} [sId] id for the new control, generated automatically if no id is given 
  * @param {object} [mSettings] initial settings for the new control
  * @class
- * representation for a filter field in the advanced area.
+ * representation for a filter field in the advanced area. Has the same semantical meaning as the new visible in filter bar property.
  * @extends sap.ui.comp.filterbar.FilterItem
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ui.comp.filterbar.FilterGroupItem = function(sId,mSettings) {};
+/**
+ * 
+ * destroys this element
+ * @public
+ */
+sap.ui.comp.filterbar.FilterGroupItem.prototype.destroy = function() { return null; };
+
 /**
  * 
  * Creates a new subclass of class sap.ui.comp.filterbar.FilterGroupItem with name <code>sClassName</code> 
@@ -807,13 +994,10 @@ sap.ui.comp.filterbar.FilterGroupItem.prototype.getGroupTitle = function() { ret
 
 /**
  * 
- * Getter for property <code>visibleInAdvancedArea</code>.
- * If set to true this field will be added to the advanced area (aka Dynamic Selection) by default.
- * </p><p>
- * Default value is <code>false</code>
- * @return {boolean} the value of property <code>visibleInAdvancedArea</code>
+ * getter for controlling the filters visibility in the filter bar. This property is deprecated, please use 'visibleInFilterBar' The successor of this property
+ * is 'visibleInFilterBar'.
  * @public
- * 
+ * @returns {boolean} bValue property
  */
 sap.ui.comp.filterbar.FilterGroupItem.prototype.getVisibleInAdvancedArea = function() { return false; };
 
@@ -840,12 +1024,13 @@ sap.ui.comp.filterbar.FilterGroupItem.prototype.setGroupTitle = function(sValue)
 
 /**
  * 
- * setter for group title
+ * setter for controlling the filters visibility in the filter bar. This property is deprecated, please use 'visibleInFilterBar' The successor of this property
+ * is 'visibleInFilterBar'.
  * @public
- * @param {string}
- *            sValue property
+ * @param {boolean}
+ *            bValue property
  */
-sap.ui.comp.filterbar.FilterGroupItem.prototype.setVisibleInAdvancedArea = function(sValue) { return null; };
+sap.ui.comp.filterbar.FilterGroupItem.prototype.setVisibleInAdvancedArea = function(bValue) { return null; };
 
 
 // ---- sap.ui.comp.filterbar.FilterItem --------------------------------------------------------------------------
@@ -871,7 +1056,9 @@ sap.ui.comp.filterbar.FilterGroupItem.prototype.setVisibleInAdvancedArea = funct
  * <li>{@link #getName name} : string</li>
  * <li>{@link #getMandatory mandatory} : boolean (default: false)</li>
  * <li>{@link #getVisible visible} : boolean (default: true)</li>
- * <li>{@link #getLabelTooltip labelTooltip} : string</li></ul>
+ * <li>{@link #getLabelTooltip labelTooltip} : string</li>
+ * <li>{@link #getPartOfCurrentVariant partOfCurrentVariant} : boolean (default: false)</li>
+ * <li>{@link #getVisibleInFilterBar visibleInFilterBar} : boolean</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
@@ -894,7 +1081,7 @@ sap.ui.comp.filterbar.FilterGroupItem.prototype.setVisibleInAdvancedArea = funct
  * @class
  * FilterItem represents a selection filed in the basic area of the FilterBar control
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1020,7 +1207,7 @@ sap.ui.comp.filterbar.FilterItem.prototype.getLabel = function() { return ""; };
  * 
  * retrieves the label control. Needed because of an eventual binding to the label
  * @public
- * @returns {sap.m.Label}
+ * @returns {sap.m.Label} the label control
  */
 sap.ui.comp.filterbar.FilterItem.prototype.getLabelControl = function() { return new sap.m.Label(); };
 
@@ -1062,6 +1249,18 @@ sap.ui.comp.filterbar.FilterItem.prototype.getName = function() { return ""; };
 
 /**
  * 
+ * Getter for property <code>partOfCurrentVariant</code>.
+ * Determines if a filter is part of the currently selected variant. This property is ONLY used internally and must not be used by the filter bar consumers.
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>partOfCurrentVariant</code>
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterItem.prototype.getPartOfCurrentVariant = function() { return false; };
+
+/**
+ * 
  * Getter for property <code>visible</code>.
  * visibility state of the FilterItem
  * </p><p>
@@ -1071,6 +1270,18 @@ sap.ui.comp.filterbar.FilterItem.prototype.getName = function() { return ""; };
  * 
  */
 sap.ui.comp.filterbar.FilterItem.prototype.getVisible = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>visibleInFilterBar</code>.
+ * Controls the visibility of a filter item in the FilterBar
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {boolean} the value of property <code>visibleInFilterBar</code>
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterItem.prototype.getVisibleInFilterBar = function() { return false; };
 
 /**
  * 
@@ -1130,12 +1341,35 @@ sap.ui.comp.filterbar.FilterItem.prototype.setName = function(sName) { return ne
 
 /**
  * 
+ * Setter for property <code>partOfCurrentVariant</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bPartOfCurrentVariant  new value for property <code>partOfCurrentVariant</code>
+ * @return {sap.ui.comp.filterbar.FilterItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.filterbar.FilterItem.prototype.setPartOfCurrentVariant = function(bPartOfCurrentVariant) { return new sap.ui.comp.filterbar.FilterItem(); };
+
+/**
+ * 
  * setter for visible
  * @public
  * @param {boolean}
  *            bIsVisible property
  */
 sap.ui.comp.filterbar.FilterItem.prototype.setVisible = function(bIsVisible) { return null; };
+
+/**
+ * 
+ * setter for visible in filter bar
+ * @public
+ * @param {boolean}
+ *            bIsVisible property
+ * @param {boolean}
+ *            bTriggerWithoutChangeNotification if set, the change notification will not be fired
+ */
+sap.ui.comp.filterbar.FilterItem.prototype.setVisibleInFilterBar = function(bIsVisible,bTriggerWithoutChangeNotification) { return null; };
 
 
 // ---- sap.ui.comp.odata --------------------------------------------------------------------------
@@ -1214,6 +1448,16 @@ sap.ui.comp.odata.MetadataAnalyser.prototype.getEntityContainerAttribute = funct
 
 /**
  * 
+ * Retrieves an array of FieldGroup Annotation for the specified target entity type
+ * @param {String}
+ *            sPath the entity type name -or- the full path of the entity type (including the namespace)
+ * @returns {Object} the resolved array of FieldGroup annotations (if any)
+ * @public
+ */
+sap.ui.comp.odata.MetadataAnalyser.prototype.getFieldGroupAnnotation = function(sPath) { return null; };
+
+/**
+ * 
  * @param sFullyQualifiedFieldName
  * @returns The field name without namespace and without entity
  * @public
@@ -1272,6 +1516,16 @@ sap.ui.comp.odata.MetadataAnalyser.prototype.getKeysByEntityTypeName = function(
 
 /**
  * 
+ * Retrieves the LineItem Annotation for the specified target entity type
+ * @param {String}
+ *            sPath the full path of the entity type (including the namespace)
+ * @returns {Object} the resolved LineItem annotation object (if any)
+ * @public
+ */
+sap.ui.comp.odata.MetadataAnalyser.prototype.getLineItemAnnotation = function(sPath) { return null; };
+
+/**
+ * 
  * Returns the namespace from the Schema
  * @returns {string} the namespace
  * @public
@@ -1298,6 +1552,9 @@ sap.ui.comp.odata.MetadataAnalyser.prototype.getValueListAnnotation = function(s
 sap.ui.comp.odata.MetadataAnalyser.prototype.removeNamespace = function(sString) { return null; };
 
 
+// ---- sap.ui.comp.personalization --------------------------------------------------------------------------
+
+
 // ---- sap.ui.comp.providers --------------------------------------------------------------------------
 
 
@@ -1307,18 +1564,56 @@ sap.ui.comp.odata.MetadataAnalyser.prototype.removeNamespace = function(sString)
  * 
  * Retrieves the data for a collection from the OData metadata to bind to a given control/aggregation
  * @constructor
+ * @experimental This module is only for internal/experimental use!
  * @public
  * @param {object}
  *            mParams - map containing the control,aggregation,annotation and the oODataModel *
  * 
  */
 sap.ui.comp.providers.BaseValueListProvider = function(mParams) {};
+
+// ---- sap.ui.comp.providers.TableProvider --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructs a class to generate the view/data model metadata for the SmartTable from the SAP-Annotations metadata
+ * @constructor
+ * @experimental This module is only for internal/experimental use!
+ * @public
+ * @param {object} mPropertyBag - PropertyBag having members model, entitySet
+ * 
+ */
+sap.ui.comp.providers.TableProvider = function(mPropertyBag) {};
 /**
  * 
  * Destroys the object
  * @public
  */
-sap.ui.comp.providers.BaseValueListProvider.prototype.destroy = function() { return null; };
+sap.ui.comp.providers.TableProvider.prototype.destroy = function() { return null; };
+
+/**
+ * 
+ * Returns a flag indicating whether date handling with UTC is enabled for the table.
+ * @returns {boolean}
+ * @public
+ */
+sap.ui.comp.providers.TableProvider.prototype.getIsUTCDateHandlingEnabled = function() { return false; };
+
+/**
+ * 
+ * Returns a flag indicating whether excel export is supported by this table (OData service).
+ * @returns {boolean}
+ * @public
+ */
+sap.ui.comp.providers.TableProvider.prototype.getSupportsExcelExport = function() { return false; };
+
+/**
+ * 
+ * Get the fields that can be added as Columns
+ * @returns {Array}
+ * @public
+ */
+sap.ui.comp.providers.TableProvider.prototype.getTableViewMetadata = function() { return null; };
 
 
 // ---- sap.ui.comp.providers.ValueHelpProvider --------------------------------------------------------------------------
@@ -1327,19 +1622,13 @@ sap.ui.comp.providers.BaseValueListProvider.prototype.destroy = function() { ret
  * 
  * Retrieves the data for a collection from the OData metadata to bind to a given control/aggregation
  * @constructor
+ * @experimental This module is only for internal/experimental use!
  * @public
  * @param {object}
  *            mParams - map containing the control,aggregation,annotation and the oODataModel
  * 
  */
 sap.ui.comp.providers.ValueHelpProvider = function(mParams) {};
-/**
- * 
- * Destroys the object
- * @public
- */
-sap.ui.comp.providers.ValueHelpProvider.prototype.destroy = function() { return null; };
-
 
 // ---- sap.ui.comp.providers.ValueListProvider --------------------------------------------------------------------------
 
@@ -1347,19 +1636,13 @@ sap.ui.comp.providers.ValueHelpProvider.prototype.destroy = function() { return 
  * 
  * Retrieves the data for a collection from the OData metadata to bind to a given control/aggregation
  * @constructor
+ * @experimental This module is only for internal/experimental use!
  * @public
  * @param {object}
  *            mParams - map containing the control,aggregation,annotation and the oODataModel
  * 
  */
 sap.ui.comp.providers.ValueListProvider = function(mParams) {};
-/**
- * 
- * Destroys the object
- * @public
- */
-sap.ui.comp.providers.ValueListProvider.prototype.destroy = function() { return null; };
-
 
 // ---- sap.ui.comp.smartfilterbar --------------------------------------------------------------------------
 
@@ -1450,7 +1733,7 @@ sap.ui.comp.smartfilterbar.AdditionalConfigurationHelper.prototype.getGroupConfi
  * @class
  * A ControlConfiguration can be used to add additional configuration for filter fields in the SmartFilterBar, in order to overwrite the default settings from the OData metadata. For instance it is possible to change the label, index or control type of a filter field.
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -1996,12 +2279,20 @@ sap.ui.comp.smartfilterbar.ControlConfiguration.prototype.setWidth = function(sW
  * 
  * Constructs a class to generate the view/datamodel metadata for the SmartFilterBar from the SAP-Annotations metadata
  * @constructor
+ * @experimental This module is only for internal/experimental use!
  * @public
  * @param {object}
  *            mPropertyBag - PropertyBag having members model, serviceUrl, entityType, additionalConfiguration
  * 
  */
 sap.ui.comp.smartfilterbar.FilterProvider = function(mPropertyBag) {};
+/**
+ * 
+ * Clears the model
+ * @public
+ */
+sap.ui.comp.smartfilterbar.FilterProvider.prototype.clear = function() { return null; };
+
 /**
  * 
  * Destroys the object
@@ -2152,7 +2443,7 @@ sap.ui.comp.smartfilterbar.FilterProvider.prototype.setFilterDataAsString = func
  * @class
  * A GroupConfiguration can be used to add additional configurations for groups in the SmartFilterBar. A group in the SmartFilterBar is a group of filter fields in the advanced search.
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2352,7 +2643,7 @@ sap.ui.comp.smartfilterbar.GroupConfiguration.prototype.setLabel = function(oLab
  * @class
  * A Select Option can be used to specify default filter values for a control configuration of the SmartFilterBar.
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -2503,8 +2794,7 @@ sap.ui.comp.smartfilterbar.SelectOption.prototype.setSign = function(sSign) { re
  * <ul></ul>
  * </li>
  * <li>Events
- * <ul>
- * <li>{@link sap.ui.comp.smartfilterbar.SmartFilterBar#event:initialise initialise} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
+ * <ul></ul>
  * </li>
  * </ul> 
  * </p><p>
@@ -2516,23 +2806,12 @@ sap.ui.comp.smartfilterbar.SelectOption.prototype.setSign = function(sSign) { re
  * @class
  * The SmartFilterBar uses the OData metadata of an entity type in order to create a FilterBar. It is automatically determined which fields will be used for the filter bar, if the fields support TypeAhead etc. Using control configurations and group configurations it is possible to configure the filter bar and adapt it according to your needs.
  * @extends sap.ui.comp.filterbar.FilterBar
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ui.comp.smartfilterbar.SmartFilterBar = function(sId,mSettings) {};
-/**
- * 
- * Event fired when the filter bar is initialized and its controls are created
- * @event
- * @param {sap.ui.base.Event} oControlEvent
- * @param {sap.ui.base.EventProvider} oControlEvent.getSource
- * @param {object} oControlEvent.getParameters
- * @public
- */
-sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.initialise = function(oControlEvent) { return null; };
-
 /**
  * 
  * Adds some controlConfiguration <code>oControlConfiguration</code> 
@@ -2547,10 +2826,9 @@ sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.addControlConfiguration = fu
 
 /**
  * 
- * Search for the filter field having the specified OData key and adds this filter field to the advanced area. If there is no corresponding field in the OData
- * metadata, this method has no effect.
- * @param {string}
- *            sKey - the key like specified in the OData metadata
+ * Search for the filter field having the specified OData key and adds this filter field to the advanced area. If there is no corresponding field in
+ * the OData metadata, this method has no effect.
+ * @param {string} sKey - the key like specified in the OData metadata
  * @public
  */
 sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.addFieldToAdvancedArea = function(sKey) { return null; };
@@ -2569,22 +2847,11 @@ sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.addGroupConfiguration = func
 
 /**
  * 
- * Attach event handler <code>fnFunction</code> to the 'initialise' event of this <code>sap.ui.comp.smartfilterbar.SmartFilterBar</code>.<br/>.
- * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
- * otherwise to this <code>sap.ui.comp.smartfilterbar.SmartFilterBar</code>.<br/> itself. 
- * </p><p>
- * Event fired when the filter bar is initialized and its controls are created
- * @param {object}
- *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
- * @param {function}
- *            fnFunction The function to call, when the event occurs.  
- * @param {object}
- *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.ui.comp.smartfilterbar.SmartFilterBar</code>.<br/> itself.
- * @return {sap.ui.comp.smartfilterbar.SmartFilterBar} <code>this</code> to allow method chaining
+ * Will be called from the smart variant control, as a request to apply the variant
+ * @param {string} oVariant json object
  * @public
- * 
  */
-sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.attachInitialise = function(oData,fnFunction,oListener) { return new sap.ui.comp.smartfilterbar.SmartFilterBar(); };
+sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.applyVariant = function(oVariant) { return null; };
 
 /**
  * 
@@ -2615,21 +2882,6 @@ sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.destroyGroupConfiguration = 
 
 /**
  * 
- * Detach event handler <code>fnFunction</code> from the 'initialise' event of this <code>sap.ui.comp.smartfilterbar.SmartFilterBar</code>.<br/>
- * </p><p>
- * The passed function and listener object must match the ones used for event registration.
- * @param {function}
- *            fnFunction The function to call, when the event occurs.
- * @param {object}
- *            oListener Context object on which the given function had to be called.
- * @return {sap.ui.comp.smartfilterbar.SmartFilterBar} <code>this</code> to allow method chaining
- * @public
- * 
- */
-sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.detachInitialise = function(fnFunction,oListener) { return new sap.ui.comp.smartfilterbar.SmartFilterBar(); };
-
-/**
- * 
  * Creates a new subclass of class sap.ui.comp.smartfilterbar.SmartFilterBar with name <code>sClassName</code> 
  * and enriches it with the information contained in <code>oClassInfo</code>.
  * </p><p>
@@ -2646,13 +2898,11 @@ sap.ui.comp.smartfilterbar.SmartFilterBar.extend = function(sClassName,oClassInf
 
 /**
  * 
- * Fire event initialise to attached listeners.
- * @param {Map} [mArguments] the arguments to pass along with the event.
- * @return {sap.ui.comp.smartfilterbar.SmartFilterBar} <code>this</code> to allow method chaining
- * @protected
- * 
+ * Will be called from the smart variant control, as a request to determine the content of
+ * @returns {object} json object
+ * @public
  */
-sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.fireInitialise = function(mArguments) { return new sap.ui.comp.smartfilterbar.SmartFilterBar(); };
+sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.fetchVariant = function() { return new Object(); };
 
 /**
  * 
@@ -2685,9 +2935,9 @@ sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.getBasicSearchFieldName = fu
 /**
  * 
  * Returns the control (if any) with the specified key. (Property name in OData entity)
- * @param {string}
- *            sKey - the key as present in the OData property name/control configuration. Use just the property name as the key when getting a control from the
- *            basic area. Ex: "CompanyCode" & Use "EntityName/GroupName.FieldName" format to get controls from groups. Ex:"Account.CompanyCode"
+ * @param {string} sKey - the key as present in the OData property name/control configuration. Use just the property name as the key when getting a
+ *        control from the basic area. Ex: "CompanyCode" & Use "EntityName/GroupName.FieldName" format to get controls from groups.
+ *        Ex:"Account.CompanyCode"
  * @returns {object|sap.ui.Control} the control in the filter bar, if any
  * @public
  */
@@ -2719,8 +2969,7 @@ sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.getEntityType = function() {
 /**
  * 
  * Returns the data currently set in the filter data model
- * @param {boolean}
- *            bAllFilterData - Also include empty/invisible fields filter data
+ * @param {boolean} bAllFilterData - Also include empty/invisible fields filter data
  * @returns {object} the json data in the filter bar
  * @public
  */
@@ -2729,8 +2978,7 @@ sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.getFilterData = function(bAl
 /**
  * 
  * Returns the data currently set in the filter data model as string
- * @param {boolean}
- *            bAllFilterData - Also include empty/invisible fields filter data
+ * @param {boolean} bAllFilterData - Also include empty/invisible fields filter data
  * @returns {string} the string json data in the filter bar
  * @public
  */
@@ -2887,8 +3135,7 @@ sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.setBasicSearchFieldName = fu
 /**
  * 
  * The entity type name from OData metadata, for which the filter bar shall be created
- * @param {string}
- *            sEntityTypeName
+ * @param {string} sEntityTypeName
  * @public
  */
 sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.setEntityType = function(sEntityTypeName) { return null; };
@@ -2896,10 +3143,8 @@ sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.setEntityType = function(sEn
 /**
  * 
  * Sets the data in the filter data model
- * @param {object}
- *            oJson - the json data in the filter bar *
- * @param {boolean}
- *            bReplace - Replace existing filter data
+ * @param {object} oJson - the json data in the filter bar *
+ * @param {boolean} bReplace - Replace existing filter data
  * @public
  */
 sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.setFilterData = function(oJson,bReplace) { return null; };
@@ -2907,27 +3152,1327 @@ sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.setFilterData = function(oJs
 /**
  * 
  * Sets the data in the filter data model as string
- * @param {string}
- *            sJson - the json data in the filter bar *
- * @param {boolean}
- *            bReplace - Replace existing filter data
+ * @param {string} sJson - the json data in the filter bar *
+ * @param {boolean} bReplace - Replace existing filter data
  * @public
  */
 sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.setFilterDataAsString = function(sJson,bReplace) { return null; };
 
 /**
  * 
- * Uses the provided resource URI to fetch the OData metadata instead of using the default ODataModel (getModel()). You should only set this if you intend to
- * get the metadata for the filter bar from elsewhere!
- * @param {string}
- *            sResourceUri - The URI of the oData service from which the metadata would be read
+ * Uses the provided resource URI to fetch the OData metadata instead of using the default ODataModel (getModel()). You should only set this if you
+ * intend to get the metadata for the filter bar from elsewhere!
+ * @param {string} sResourceUri - The URI of the oData service from which the metadata would be read
  * @public
  */
 sap.ui.comp.smartfilterbar.SmartFilterBar.prototype.setResourceUri = function(sResourceUri) { return null; };
 
 
+// ---- sap.ui.comp.smarttable --------------------------------------------------------------------------
+
+
+// ---- sap.ui.comp.smarttable.SmartTable --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructor for a new smarttable/SmartTable.
+ * </p><p>
+ * Accepts an object literal <code>mSettings</code> that defines initial 
+ * property values, aggregated and associated objects as well as event handlers. 
+ * </p><p>
+ * If the name of a setting is ambiguous (e.g. a property has the same name as an event), 
+ * then the framework assumes property, aggregation, association, event in that order. 
+ * To override this automatic resolution, one of the prefixes "aggregation:", "association:" 
+ * or "event:" can be added to the name of the setting (such a prefixed name must be
+ * enclosed in single or double quotes).
+ * </p><p>
+ * The supported settings are:
+ * <ul>
+ * <li>Properties
+ * <ul>
+ * <li>{@link #getEntitySet entitySet} : string</li>
+ * <li>{@link #getSmartFilterId smartFilterId} : string</li>
+ * <li>{@link #getIgnoredFields ignoredFields} : string</li>
+ * <li>{@link #getTableType tableType} : sap.ui.comp.smarttable.TableType</li>
+ * <li>{@link #getUseVariantManagement useVariantManagement} : boolean (default: true)</li>
+ * <li>{@link #getUseExportToExcel useExportToExcel} : boolean (default: true)</li>
+ * <li>{@link #getUseTablePersonalisation useTablePersonalisation} : boolean (default: true)</li>
+ * <li>{@link #getShowRowCount showRowCount} : boolean (default: true)</li>
+ * <li>{@link #getHeader header} : string</li>
+ * <li>{@link #getToolbarStyleClass toolbarStyleClass} : string</li>
+ * <li>{@link #getEnableCustomFilter enableCustomFilter} : boolean (default: true)</li>
+ * <li>{@link #getPersistencyKey persistencyKey} : string</li>
+ * <li>{@link #getUseOnlyOneSolidToolbar useOnlyOneSolidToolbar} : boolean (default: false)</li></ul>
+ * </li>
+ * <li>Aggregations
+ * <ul>
+ * <li>{@link #getCustomToolbar customToolbar} : sap.m.Toolbar</li></ul>
+ * </li>
+ * <li>Associations
+ * <ul></ul>
+ * </li>
+ * <li>Events
+ * <ul>
+ * <li>{@link sap.ui.comp.smarttable.SmartTable#event:initialise initialise} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.ui.comp.smarttable.SmartTable#event:beforeRebindTable beforeRebindTable} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
+ * </li>
+ * </ul> 
+ * </p><p>
+ * </p><p>
+ * In addition, all settings applicable to the base type {@link sap.m.VBox#constructor sap.m.VBox}
+ * can be used as well.
+ * @param {string} [sId] id for the new control, generated automatically if no id is given 
+ * @param {object} [mSettings] initial settings for the new control
+ * @class
+ * The SmartTable control creates a table based on OData metadata and the configuration specified. The entitySet attribute must be specified to use the control. This attribute is used to fetch fields from OData metadata, from which columns will be generated. Note that this attribute is not dynamic and cannot be changed once the control has been initialized! It can also be used to fetch the actual table data based on the tableType attribute. This control will render a standard, analytical, or responsive table.
+ * @extends sap.m.VBox
+ * @version 1.26.4
+ * @constructor
+ * @public
+ * @experimental Since version 1.25. 
+ * The SmartTable will be productised soon.
+ * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
+ */
+sap.ui.comp.smarttable.SmartTable = function(sId,mSettings) {};
+/**
+ * 
+ * Event fired just before the binding is being done
+ * </p><p>
+ * Parameters:
+ * @param {object} [bindingParams] the bindingParams object contains filters, sorters and other binding related information for the table.
+ * @param {boolean} [bindingParams.preventTableBind] can be set to true by the listener to prevent binding from being done
+ * @param {object} [bindingParams.filters] the combined filter array containing a set of sap.ui.model.Filter instances from SmartTable and SmartFilter - can be modified by users to influence filtering
+ * @param {object} [bindingParams.sorter] an array containing a set of sap.ui.model.Sorter instances from SmartTable (personalisation) - can be modified by users to influence sorting
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.beforeRebindTable = function(bindingParams,oControlEvent) { return null; };
+
+/**
+ * 
+ * Event fired once the control has been initialized.
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.initialise = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * Interface function for SmartVariantManagment control, sets the current variant
+ * @param {Object}
+ *            oVariantJSON - the variants json
+ * @public
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.applyVariant = function(oVariantJSON) { return null; };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'beforeRebindTable' event of this <code>sap.ui.comp.smarttable.SmartTable</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.ui.comp.smarttable.SmartTable</code>.<br/> itself. 
+ * </p><p>
+ * Event fired just before the binding is being done
+ * </p><p>
+ * Parameters:
+ * @param {object} [bindingParams] the bindingParams object contains filters, sorters and other binding related information for the table.
+ * @param {boolean} [bindingParams.preventTableBind] can be set to true by the listener to prevent binding from being done
+ * @param {object} [bindingParams.filters] the combined filter array containing a set of sap.ui.model.Filter instances from SmartTable and SmartFilter - can be modified by users to influence filtering
+ * @param {object} [bindingParams.sorter] an array containing a set of sap.ui.model.Sorter instances from SmartTable (personalisation) - can be modified by users to influence sorting
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.ui.comp.smarttable.SmartTable</code>.<br/> itself.
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.attachBeforeRebindTable = function(bindingParams,oData,fnFunction,oListener) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'initialise' event of this <code>sap.ui.comp.smarttable.SmartTable</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.ui.comp.smarttable.SmartTable</code>.<br/> itself. 
+ * </p><p>
+ * Event fired once the control has been initialized.
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.ui.comp.smarttable.SmartTable</code>.<br/> itself.
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.attachInitialise = function(oData,fnFunction,oListener) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Destroys the customToolbar in the aggregation 
+ * named <code>customToolbar</code>.
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.destroyCustomToolbar = function() { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'beforeRebindTable' event of this <code>sap.ui.comp.smarttable.SmartTable</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.detachBeforeRebindTable = function(fnFunction,oListener) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'initialise' event of this <code>sap.ui.comp.smarttable.SmartTable</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.detachInitialise = function(fnFunction,oListener) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Cleans up the control
+ * @public
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.exit = function() { return null; };
+
+/**
+ * 
+ * Creates a new subclass of class sap.ui.comp.smarttable.SmartTable with name <code>sClassName</code> 
+ * and enriches it with the information contained in <code>oClassInfo</code>.
+ * </p><p>
+ * <code>oClassInfo</code> might contain the same kind of informations as described in {@link sap.ui.core.Element.extend Element.extend}.
+ * @param {string} sClassName name of the class to be created
+ * @param {object} [oClassInfo] object literal with informations about the class  
+ * @param {function} [FNMetaImpl] constructor function for the metadata object. If not given, it defaults to sap.ui.core.ElementMetadata.
+ * @return {function} the created class / constructor function
+ * @public
+ * @static
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.extend = function(sClassName,oClassInfo,FNMetaImpl) { return function() {}; };
+
+/**
+ * 
+ * Interface function for SmartVariantManagment control, returns the current used variant data
+ * @public
+ * @returns {json} The currently set variant
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.fetchVariant = function() { return null; };
+
+/**
+ * 
+ * Fire event beforeRebindTable to attached listeners.
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.fireBeforeRebindTable = function(mArguments) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Fire event initialise to attached listeners.
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.fireInitialise = function(mArguments) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Getter for aggregation <code>customToolbar</code>.<br/>
+ * An additional toolbar that can be added by the users, which can contain further custom buttons, controls, etc.
+ * @return {sap.m.Toolbar}
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getCustomToolbar = function() { return new sap.m.Toolbar(); };
+
+/**
+ * 
+ * Getter for property <code>enableCustomFilter</code>.
+ * Set this parameter to true to implement your own filter behaviour. Instead of the filter input box a button will be rendered for which' press event (customFilter) you can register an event handler.
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>enableCustomFilter</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getEnableCustomFilter = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>entitySet</code>.
+ * The entity set name from which to fetch data and generate the columns.
+ * </p><p>
+ * Note that this is not a dynamic UI5 property
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>entitySet</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getEntitySet = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>header</code>.
+ * Specifies header text that is shown in table
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>header</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getHeader = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>ignoredFields</code>.
+ * CSV of fields that must be ignored in the OData metadata, by the SmartTable
+ * </p><p>
+ * Note that No validation will be done here, please ensure you do not add spaces or special characters here!
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>ignoredFields</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getIgnoredFields = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>persistencyKey</code>.
+ * Key used to save personalization data.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>persistencyKey</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getPersistencyKey = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>showRowCount</code>.
+ * If the showRowCount attribute is set to true number of rows is shown along with the header text.
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>showRowCount</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getShowRowCount = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>smartFilterId</code>.
+ * ID of the corresponding SmartFilter control;
+ * When specified, the SmartTable searches for the SmartFilter (also in the closest parent View) and attaches to the relevant events of the SmartFilter; to fetch data, show overlay etc.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>smartFilterId</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getSmartFilterId = function() { return ""; };
+
+/**
+ * 
+ * returns the internally used table object
+ * @public
+ * @returns {object} the table
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getTable = function() { return new Object(); };
+
+/**
+ * 
+ * Getter for property <code>tableType</code>.
+ * tableType attribute can be used to specify the type of table to create in the SmartFilter. For available options, see type.
+ * </p><p>
+ * Note that if you add a table to the content of the SmartTable in the view; this property has no effect!
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {sap.ui.comp.smarttable.TableType} the value of property <code>tableType</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getTableType = function() { return new sap.ui.comp.smarttable.TableType(); };
+
+/**
+ * 
+ * Getter for property <code>toolbarStyleClass</code>.
+ * a style class which is defined for the toolbar of the table
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>toolbarStyleClass</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getToolbarStyleClass = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>useExportToExcel</code>.
+ * The useExportToExcel attribute can be set to true or false depending on whether you want to export data to MS Excel®.
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>useExportToExcel</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getUseExportToExcel = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>useOnlyOneSolidToolbar</code>.
+ * if true, items of standard toolbar and custom toolbar will be merged into one toolbar. The combined toolbar will have a solid style.
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>useOnlyOneSolidToolbar</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getUseOnlyOneSolidToolbar = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>useTablePersonalisation</code>.
+ * The useTablePersonalisation attribute can be set to true or false depending on whether you want to define personalized table settings.
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>useTablePersonalisation</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getUseTablePersonalisation = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>useVariantManagement</code>.
+ * The useVariantManagement attribute can be set to true or false depending on whether you want to use variants
+ * </p><p>
+ * Default value is <code>true</code>
+ * @return {boolean} the value of property <code>useVariantManagement</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.getUseVariantManagement = function() { return false; };
+
+/**
+ * 
+ * This can be used to trigger binding on the table used in the SmartTable
+ * @protected
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.rebindTable = function() { return null; };
+
+/**
+ * 
+ * Setter for the aggregated <code>customToolbar</code>.
+ * @param {sap.m.Toolbar} oCustomToolbar
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setCustomToolbar = function(oCustomToolbar) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>enableCustomFilter</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bEnableCustomFilter  new value for property <code>enableCustomFilter</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setEnableCustomFilter = function(bEnableCustomFilter) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * The entity set name from OData metadata, with which the table should be bound to
+ * @param {string}
+ *            sEntitySetName The entity set
+ * @public
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setEntitySet = function(sEntitySetName) { return null; };
+
+/**
+ * 
+ * Setter for property <code>header</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sHeader  new value for property <code>header</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setHeader = function(sHeader) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>ignoredFields</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sIgnoredFields  new value for property <code>ignoredFields</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setIgnoredFields = function(sIgnoredFields) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>persistencyKey</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sPersistencyKey  new value for property <code>persistencyKey</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setPersistencyKey = function(sPersistencyKey) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>showRowCount</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bShowRowCount  new value for property <code>showRowCount</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setShowRowCount = function(bShowRowCount) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>smartFilterId</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sSmartFilterId  new value for property <code>smartFilterId</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setSmartFilterId = function(sSmartFilterId) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>tableType</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {sap.ui.comp.smarttable.TableType} oTableType  new value for property <code>tableType</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setTableType = function(oTableType) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>toolbarStyleClass</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sToolbarStyleClass  new value for property <code>toolbarStyleClass</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setToolbarStyleClass = function(sToolbarStyleClass) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>useExportToExcel</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bUseExportToExcel  new value for property <code>useExportToExcel</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setUseExportToExcel = function(bUseExportToExcel) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>useOnlyOneSolidToolbar</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bUseOnlyOneSolidToolbar  new value for property <code>useOnlyOneSolidToolbar</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setUseOnlyOneSolidToolbar = function(bUseOnlyOneSolidToolbar) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>useTablePersonalisation</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bUseTablePersonalisation  new value for property <code>useTablePersonalisation</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setUseTablePersonalisation = function(bUseTablePersonalisation) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * Setter for property <code>useVariantManagement</code>.
+ * </p><p>
+ * Default value is <code>true</code> 
+ * @param {boolean} bUseVariantManagement  new value for property <code>useVariantManagement</code>
+ * @return {sap.ui.comp.smarttable.SmartTable} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.setUseVariantManagement = function(bUseVariantManagement) { return new sap.ui.comp.smarttable.SmartTable(); };
+
+/**
+ * 
+ * This can be called once data is received to update table header (count) and toolbar buttons(e.g. Excel Export) enabled state
+ * @public
+ */
+sap.ui.comp.smarttable.SmartTable.prototype.updateTableHeaderState = function() { return null; };
+
+
+// ---- sap.ui.comp.smarttable.TableType --------------------------------------------------------------------------
+
+// dummy function to make Eclipse aware of namespace
+sap.ui.comp.smarttable.TableType.toString = function() { return ""; };
+
+// ---- sap.ui.comp.smartvariants --------------------------------------------------------------------------
+
+
+// ---- sap.ui.comp.smartvariants.PersonalizableInfo --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructor for a new smartvariants/PersonalizableInfo.
+ * </p><p>
+ * Accepts an object literal <code>mSettings</code> that defines initial 
+ * property values, aggregated and associated objects as well as event handlers. 
+ * </p><p>
+ * If the name of a setting is ambiguous (e.g. a property has the same name as an event), 
+ * then the framework assumes property, aggregation, association, event in that order. 
+ * To override this automatic resolution, one of the prefixes "aggregation:", "association:" 
+ * or "event:" can be added to the name of the setting (such a prefixed name must be
+ * enclosed in single or double quotes).
+ * </p><p>
+ * The supported settings are:
+ * <ul>
+ * <li>Properties
+ * <ul>
+ * <li>{@link #getType type} : string</li>
+ * <li>{@link #getDataSource dataSource} : string</li>
+ * <li>{@link #getKeyName keyName} : string</li></ul>
+ * </li>
+ * <li>Aggregations
+ * <ul></ul>
+ * </li>
+ * <li>Associations
+ * <ul>
+ * <li>{@link #getControl control} : string | sap.ui.core.Control</li></ul>
+ * </li>
+ * <li>Events
+ * <ul></ul>
+ * </li>
+ * </ul> 
+ * </p><p>
+ * </p><p>
+ * In addition, all settings applicable to the base type {@link sap.ui.core.Element#constructor sap.ui.core.Element}
+ * can be used as well.
+ * @param {string} [sId] id for the new control, generated automatically if no id is given 
+ * @param {object} [mSettings] initial settings for the new control
+ * @class
+ * Describes the control associated with the smart variant control.
+ * @extends sap.ui.core.Element
+ * @version 1.26.4
+ * @constructor
+ * @public
+ * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
+ */
+sap.ui.comp.smartvariants.PersonalizableInfo = function(sId,mSettings) {};
+/**
+ * 
+ * Creates a new subclass of class sap.ui.comp.smartvariants.PersonalizableInfo with name <code>sClassName</code> 
+ * and enriches it with the information contained in <code>oClassInfo</code>.
+ * </p><p>
+ * <code>oClassInfo</code> might contain the same kind of informations as described in {@link sap.ui.core.Element.extend Element.extend}.
+ * @param {string} sClassName name of the class to be created
+ * @param {object} [oClassInfo] object literal with informations about the class  
+ * @param {function} [FNMetaImpl] constructor function for the metadata object. If not given, it defaults to sap.ui.core.ElementMetadata.
+ * @return {function} the created class / constructor function
+ * @public
+ * @static
+ * 
+ */
+sap.ui.comp.smartvariants.PersonalizableInfo.extend = function(sClassName,oClassInfo,FNMetaImpl) { return function() {}; };
+
+/**
+ * 
+ * Contains the control that can be personalized.
+ * @return {string} Id of the element which is the current target of the <code>control</code> association, or null
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.PersonalizableInfo.prototype.getControl = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>dataSource</code>.
+ * Name of the data service
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>dataSource</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.PersonalizableInfo.prototype.getDataSource = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>keyName</code>.
+ * Defines the property name of the controller containing the stableId.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>keyName</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.PersonalizableInfo.prototype.getKeyName = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>type</code>.
+ * Describes the type of variant management.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>type</code>
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.PersonalizableInfo.prototype.getType = function() { return ""; };
+
+/**
+ * 
+ * Contains the control that can be personalized.
+ * @param {string | sap.ui.core.Control} vControl 
+ *    Id of an element which becomes the new target of this <code>control</code> association.
+ *    Alternatively, an element instance may be given.
+ * @return {sap.ui.comp.smartvariants.PersonalizableInfo} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.PersonalizableInfo.prototype.setControl = function(vControl) { return new sap.ui.comp.smartvariants.PersonalizableInfo(); };
+
+/**
+ * 
+ * Setter for property <code>dataSource</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sDataSource  new value for property <code>dataSource</code>
+ * @return {sap.ui.comp.smartvariants.PersonalizableInfo} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.PersonalizableInfo.prototype.setDataSource = function(sDataSource) { return new sap.ui.comp.smartvariants.PersonalizableInfo(); };
+
+/**
+ * 
+ * Setter for property <code>keyName</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sKeyName  new value for property <code>keyName</code>
+ * @return {sap.ui.comp.smartvariants.PersonalizableInfo} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.PersonalizableInfo.prototype.setKeyName = function(sKeyName) { return new sap.ui.comp.smartvariants.PersonalizableInfo(); };
+
+/**
+ * 
+ * Setter for property <code>type</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sType  new value for property <code>type</code>
+ * @return {sap.ui.comp.smartvariants.PersonalizableInfo} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.PersonalizableInfo.prototype.setType = function(sType) { return new sap.ui.comp.smartvariants.PersonalizableInfo(); };
+
+
+// ---- sap.ui.comp.smartvariants.SmartVariantManagement --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructor for a new smartvariants/SmartVariantManagement.
+ * </p><p>
+ * Accepts an object literal <code>mSettings</code> that defines initial 
+ * property values, aggregated and associated objects as well as event handlers. 
+ * </p><p>
+ * If the name of a setting is ambiguous (e.g. a property has the same name as an event), 
+ * then the framework assumes property, aggregation, association, event in that order. 
+ * To override this automatic resolution, one of the prefixes "aggregation:", "association:" 
+ * or "event:" can be added to the name of the setting (such a prefixed name must be
+ * enclosed in single or double quotes).
+ * </p><p>
+ * The supported settings are:
+ * <ul>
+ * <li>Properties
+ * <ul></ul>
+ * </li>
+ * <li>Aggregations
+ * <ul>
+ * <li>{@link #getPersonalizableControls personalizableControls} : sap.ui.comp.smartvariants.PersonalizableInfo[]</li></ul>
+ * </li>
+ * <li>Associations
+ * <ul></ul>
+ * </li>
+ * <li>Events
+ * <ul>
+ * <li>{@link sap.ui.comp.smartvariants.SmartVariantManagement#event:initialise initialise} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
+ * </li>
+ * </ul> 
+ * </p><p>
+ * </p><p>
+ * In addition, all settings applicable to the base type {@link sap.ui.comp.variants.VariantManagement#constructor sap.ui.comp.variants.VariantManagement}
+ * can be used as well.
+ * @param {string} [sId] id for the new control, generated automatically if no id is given 
+ * @param {object} [mSettings] initial settings for the new control
+ * @class
+ * SmartVariantManagement is a specialization of the VariantManagementControl and communicates with the flexibility layer to manage the variants.
+ * @extends sap.ui.comp.variants.VariantManagement
+ * @version 1.26.4
+ * @constructor
+ * @public
+ * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement = function(sId,mSettings) {};
+/**
+ * 
+ * Once the the SmartVariantControl has been initialized, and especially after retrieving the variants from the backend system, the registered consumers receive the information that this phase has been completed
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.initialise = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * all controls interested and relying on variant handling have to be registered by this association
+ * @public
+ * @param {sap.ui.comp/smartvariants/PersonalizableInfo}
+ *            oCurrentControlInfo control providing the required aggregation for flex-layer
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.addPersonalizableControl = function(oCurrentControlInfo) { return null; };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'initialise' event of this <code>sap.ui.comp.smartvariants.SmartVariantManagement</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.ui.comp.smartvariants.SmartVariantManagement</code>.<br/> itself. 
+ * </p><p>
+ * Once the the SmartVariantControl has been initialized, and especially after retrieving the variants from the backend system, the registered consumers receive the information that this phase has been completed
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.ui.comp.smartvariants.SmartVariantManagement</code>.<br/> itself.
+ * @return {sap.ui.comp.smartvariants.SmartVariantManagement} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.attachInitialise = function(oData,fnFunction,oListener) { return new sap.ui.comp.smartvariants.SmartVariantManagement(); };
+
+/**
+ * 
+ * Destroys all the personalizableControls in the aggregation 
+ * named <code>personalizableControls</code>.
+ * @return {sap.ui.comp.smartvariants.SmartVariantManagement} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.destroyPersonalizableControls = function() { return new sap.ui.comp.smartvariants.SmartVariantManagement(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'initialise' event of this <code>sap.ui.comp.smartvariants.SmartVariantManagement</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.ui.comp.smartvariants.SmartVariantManagement} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.detachInitialise = function(fnFunction,oListener) { return new sap.ui.comp.smartvariants.SmartVariantManagement(); };
+
+/**
+ * 
+ * Destroys the control
+ * @public
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.exit = function() { return null; };
+
+/**
+ * 
+ * Creates a new subclass of class sap.ui.comp.smartvariants.SmartVariantManagement with name <code>sClassName</code> 
+ * and enriches it with the information contained in <code>oClassInfo</code>.
+ * </p><p>
+ * <code>oClassInfo</code> might contain the same kind of informations as described in {@link sap.ui.core.Element.extend Element.extend}.
+ * @param {string} sClassName name of the class to be created
+ * @param {object} [oClassInfo] object literal with informations about the class  
+ * @param {function} [FNMetaImpl] constructor function for the metadata object. If not given, it defaults to sap.ui.core.ElementMetadata.
+ * @return {function} the created class / constructor function
+ * @public
+ * @static
+ * 
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.extend = function(sClassName,oClassInfo,FNMetaImpl) { return function() {}; };
+
+/**
+ * 
+ * Fire event initialise to attached listeners.
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.ui.comp.smartvariants.SmartVariantManagement} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.fireInitialise = function(mArguments) { return new sap.ui.comp.smartvariants.SmartVariantManagement(); };
+
+/**
+ * 
+ * is called by the variant management control, when managing the variants
+ * @public
+ * @param {object}
+ *            oVariantInfo describes the variants, which will be deleted/renamed
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.fireManage = function(oVariantInfo) { return null; };
+
+/**
+ * 
+ * is called by the variant management control, when saving a variant
+ * @public
+ * @param {object}
+ *            oVariantInfo describes the variant to be saved
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.fireSave = function(oVariantInfo) { return null; };
+
+/**
+ * 
+ * is called by the variant management control, when a variant was selected
+ * @public
+ * @param {object}
+ *            oVariantInfo describes the selected variant
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.fireSelect = function(oVariantInfo) { return null; };
+
+/**
+ * 
+ * Getter for aggregation <code>personalizableControls</code>.<br/>
+ * All controls that are interested and rely on variant handling have to be registered by this aggregation
+ * @return {sap.ui.comp.smartvariants.PersonalizableInfo[]}
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.getPersonalizableControls = function() { return new Array(); };
+
+/**
+ * 
+ * all controls interested and relying on variant handling have to be registered by this association
+ * @public
+ * @param {sap.ui.core.Control}
+ *            oControl current control
+ * @param {string}
+ *            sKey the variant key
+ * @returns {object} json object representing the content of the variant
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.getVariantContent = function(oControl,sKey) { return new Object(); };
+
+/**
+ * 
+ * retrieve the list of known variants via access to VM
+ * @public
+ * @params {function} fCallBack
+ * @returns {array} list of variants
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.getVariantsInfo = function(fCallBack) { return null; };
+
+/**
+ * 
+ * Checks for the provided <code>sap.ui.comp.smartvariants.PersonalizableInfo</code> in the aggregation named <code>personalizableControls</code> 
+ * and returns its index if found or -1 otherwise.
+ * @param {sap.ui.comp.smartvariants.PersonalizableInfo}
+ *            oPersonalizableControl the personalizableControl whose index is looked for.
+ * @return {int} the index of the provided control in the aggregation if found, or -1 otherwise
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.indexOfPersonalizableControl = function(oPersonalizableControl) { return 0; };
+
+/**
+ * 
+ * first function to be called. will initialize the flex layer, by retrieving the list of variants Once the initialization is completed the control for
+ * personalization will be informed via the event "initialise"
+ * @public
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.initialise = function() { return null; };
+
+/**
+ * 
+ * Inserts a personalizableControl into the aggregation named <code>personalizableControls</code>.
+ * @param {sap.ui.comp.smartvariants.PersonalizableInfo}
+ *          oPersonalizableControl the personalizableControl to insert; if empty, nothing is inserted
+ * @param {int}
+ *             iIndex the <code>0</code>-based index the personalizableControl should be inserted at; for 
+ *             a negative value of <code>iIndex</code>, the personalizableControl is inserted at position 0; for a value 
+ *             greater than the current size of the aggregation, the personalizableControl is inserted at 
+ *             the last position        
+ * @return {sap.ui.comp.smartvariants.SmartVariantManagement} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.insertPersonalizableControl = function(oPersonalizableControl,iIndex) { return new sap.ui.comp.smartvariants.SmartVariantManagement(); };
+
+/**
+ * 
+ * Removes all the controls in the aggregation named <code>personalizableControls</code>.<br/>
+ * Additionally unregisters them from the hosting UIArea.
+ * @return {sap.ui.comp.smartvariants.PersonalizableInfo[]} an array of the removed elements (might be empty)
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.removeAllPersonalizableControls = function() { return new Array(); };
+
+/**
+ * 
+ * Removes an personalizableControl from the aggregation named <code>personalizableControls</code>.
+ * @param {int | string | sap.ui.comp.smartvariants.PersonalizableInfo} vPersonalizableControl the personalizableControl to remove or its index or id
+ * @return {sap.ui.comp.smartvariants.PersonalizableInfo} the removed personalizableControl or null
+ * @public
+ * 
+ */
+sap.ui.comp.smartvariants.SmartVariantManagement.prototype.removePersonalizableControl = function(vPersonalizableControl) { return new sap.ui.comp.smartvariants.PersonalizableInfo(); };
+
+
+// ---- sap.ui.comp.transport --------------------------------------------------------------------------
+
+
+// ---- sap.ui.comp.transport.TransportDialog --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructor for a new transport/TransportDialog.
+ * </p><p>
+ * Accepts an object literal <code>mSettings</code> that defines initial 
+ * property values, aggregated and associated objects as well as event handlers. 
+ * </p><p>
+ * If the name of a setting is ambiguous (e.g. a property has the same name as an event), 
+ * then the framework assumes property, aggregation, association, event in that order. 
+ * To override this automatic resolution, one of the prefixes "aggregation:", "association:" 
+ * or "event:" can be added to the name of the setting (such a prefixed name must be
+ * enclosed in single or double quotes).
+ * </p><p>
+ * The supported settings are:
+ * <ul>
+ * <li>Properties
+ * <ul>
+ * <li>{@link #getPkg pkg} : string</li>
+ * <li>{@link #getTransports transports} : any</li>
+ * <li>{@link #getLrepObject lrepObject} : any</li>
+ * <li>{@link #getHidePackage hidePackage} : boolean</li></ul>
+ * </li>
+ * <li>Aggregations
+ * <ul></ul>
+ * </li>
+ * <li>Associations
+ * <ul></ul>
+ * </li>
+ * <li>Events
+ * <ul>
+ * <li>{@link sap.ui.comp.transport.TransportDialog#event:ok ok} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.ui.comp.transport.TransportDialog#event:cancel cancel} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
+ * </li>
+ * </ul> 
+ * </p><p>
+ * </p><p>
+ * In addition, all settings applicable to the base type {@link sap.m.Dialog#constructor sap.m.Dialog}
+ * can be used as well.
+ * @param {string} [sId] id for the new control, generated automatically if no id is given 
+ * @param {object} [mSettings] initial settings for the new control
+ * @class
+ * The Transport Dialog Control can be used to implement a value help for selecting an ABAP package and transport request. It is not a generic utility, but part of the Variantmanament and therefore cannot be used in any other application.
+ * @extends sap.m.Dialog
+ * @version 1.26.4
+ * @constructor
+ * @public
+ * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
+ */
+sap.ui.comp.transport.TransportDialog = function(sId,mSettings) {};
+/**
+ * 
+ * This event will be fired when the user clicks the Cancel button on the dialog.
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.ui.comp.transport.TransportDialog.prototype.cancel = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * This event will be fired when the user clicks the OK button on the dialog.
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.ui.comp.transport.TransportDialog.prototype.ok = function(oControlEvent) { return null; };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'cancel' event of this <code>sap.ui.comp.transport.TransportDialog</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.ui.comp.transport.TransportDialog</code>.<br/> itself. 
+ * </p><p>
+ * This event will be fired when the user clicks the Cancel button on the dialog.
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.ui.comp.transport.TransportDialog</code>.<br/> itself.
+ * @return {sap.ui.comp.transport.TransportDialog} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.prototype.attachCancel = function(oData,fnFunction,oListener) { return new sap.ui.comp.transport.TransportDialog(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'ok' event of this <code>sap.ui.comp.transport.TransportDialog</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.ui.comp.transport.TransportDialog</code>.<br/> itself. 
+ * </p><p>
+ * This event will be fired when the user clicks the OK button on the dialog.
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.ui.comp.transport.TransportDialog</code>.<br/> itself.
+ * @return {sap.ui.comp.transport.TransportDialog} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.prototype.attachOk = function(oData,fnFunction,oListener) { return new sap.ui.comp.transport.TransportDialog(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'cancel' event of this <code>sap.ui.comp.transport.TransportDialog</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.ui.comp.transport.TransportDialog} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.prototype.detachCancel = function(fnFunction,oListener) { return new sap.ui.comp.transport.TransportDialog(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'ok' event of this <code>sap.ui.comp.transport.TransportDialog</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.ui.comp.transport.TransportDialog} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.prototype.detachOk = function(fnFunction,oListener) { return new sap.ui.comp.transport.TransportDialog(); };
+
+/**
+ * 
+ * Creates a new subclass of class sap.ui.comp.transport.TransportDialog with name <code>sClassName</code> 
+ * and enriches it with the information contained in <code>oClassInfo</code>.
+ * </p><p>
+ * <code>oClassInfo</code> might contain the same kind of informations as described in {@link sap.ui.core.Element.extend Element.extend}.
+ * @param {string} sClassName name of the class to be created
+ * @param {object} [oClassInfo] object literal with informations about the class  
+ * @param {function} [FNMetaImpl] constructor function for the metadata object. If not given, it defaults to sap.ui.core.ElementMetadata.
+ * @return {function} the created class / constructor function
+ * @public
+ * @static
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.extend = function(sClassName,oClassInfo,FNMetaImpl) { return function() {}; };
+
+/**
+ * 
+ * Fire event cancel to attached listeners.
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.ui.comp.transport.TransportDialog} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.prototype.fireCancel = function(mArguments) { return new sap.ui.comp.transport.TransportDialog(); };
+
+/**
+ * 
+ * Fire event ok to attached listeners.
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.ui.comp.transport.TransportDialog} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.prototype.fireOk = function(mArguments) { return new sap.ui.comp.transport.TransportDialog(); };
+
+/**
+ * 
+ * Getter for property <code>hidePackage</code>.
+ * Flag indicating whether the selection of an ABAP package is to be hidden or not.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {boolean} the value of property <code>hidePackage</code>
+ * @public
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.prototype.getHidePackage = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>lrepObject</code>.
+ * The LREP object for which as transport request has to be selected
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {any} the value of property <code>lrepObject</code>
+ * @public
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.prototype.getLrepObject = function() { return null; };
+
+/**
+ * 
+ * Getter for property <code>pkg</code>.
+ * An ABAP package that can be used as default for the ABAP package selection.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>pkg</code>
+ * @public
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.prototype.getPkg = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>transports</code>.
+ * The set of ABAP transport requests that can be selected by a user.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {any} the value of property <code>transports</code>
+ * @public
+ * 
+ */
+sap.ui.comp.transport.TransportDialog.prototype.getTransports = function() { return null; };
+
+/**
+ * 
+ * Flag indicating whether the selection of an ABAP package is to be hidden or not.
+ * @param {boolean}
+ *            bHide if set to <code>true</code>, the package selection is hidden.
+ * @public
+ */
+sap.ui.comp.transport.TransportDialog.prototype.setHidePackage = function(bHide) { return null; };
+
+/**
+ * 
+ * The LREP object for which as transport request has to be selected. 
+ * The property can only be set once and afterwards it cannot be changed.
+ * @param {object}
+ *            oObject an LREP object for which as transport request has to be selected. The object has the attributes name, namespace and type.
+ * @public
+ */
+sap.ui.comp.transport.TransportDialog.prototype.setLrepObject = function(oObject) { return null; };
+
+/**
+ * 
+ * An ABAP package that can be used as default for the ABAP package selection.
+ * The property can only be set once and afterwards it cannot be changed.
+ * @param {string}
+ *            sPackage an ABAP package that can be used as default for the ABAP package selection.
+ * @public
+ */
+sap.ui.comp.transport.TransportDialog.prototype.setPkg = function(sPackage) { return null; };
+
+/**
+ * 
+ * The set of ABAP transport requests that can be selected by a user.
+ * @param {array}
+ *            aSelection the set of ABAP transport requests that can be selected by a user.
+ * @public          
+ */
+sap.ui.comp.transport.TransportDialog.prototype.setTransports = function(aSelection) { return null; };
+
+
 // ---- sap.ui.comp.valuehelpdialog --------------------------------------------------------------------------
 
+
+// ---- sap.ui.comp.valuehelpdialog._ValueHelpService --------------------------------------------------------------------------
+
+/**
+ * 
+ * </p><p>
+ * OData bases Value Help Service which internal uses the ValueHelpDialog. Please do not use! deprecated!!!
+ * @deprecated
+ * @constructor
+ * @this sap.ui.comp.valuehelpdialog._ValueHelpService
+ * @public
+ */
+sap.ui.comp.valuehelpdialog._ValueHelpService = function(mParams) {};
 
 // ---- sap.ui.comp.valuehelpdialog.ItemsCollection --------------------------------------------------------------------------
 
@@ -2980,13 +4525,15 @@ sap.ui.comp.valuehelpdialog.ItemsCollection.prototype.getModelData = function() 
  * 
  * returns an array of all selected tokens in the map
  * @param {string}
+ *            sKey - the property name of the obj in the map which will be used for the Display Key in the tokens returned  in the array
+ * @param {string}
  *            sDescriptionKey - the property name of the obj in the map which will be returned in the array
  * @param {string}
  *            sDisplayBehaviour - the behaviour/format of the token text (See: sap.ui.comp.smartfilterbar.ControlConfiguration.DISPLAYBEHAVIOUR)
  * @returns {array} array of objects with the given key and the text value
  * @public
  */
-sap.ui.comp.valuehelpdialog.ItemsCollection.prototype.getSelectedItemsTokenArray = function(sDescriptionKey,sDisplayBehaviour) { return null; };
+sap.ui.comp.valuehelpdialog.ItemsCollection.prototype.getSelectedItemsTokenArray = function(sKey,sDescriptionKey,sDisplayBehaviour) { return null; };
 
 /**
  * 
@@ -3058,7 +4605,7 @@ sap.ui.comp.valuehelpdialog.ItemsCollection.prototype.removeAll = function() { r
  * @class
  * The ValueHelpDialog Control can be used to implement an F4 value help for a multi-input field.
  * @extends sap.m.Dialog
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3579,19 +5126,6 @@ sap.ui.comp.valuehelpdialog.ValueHelpDialog.prototype.TableStateSearchData = fun
 sap.ui.comp.valuehelpdialog.ValueHelpDialog.prototype.update = function() { return null; };
 
 
-// ---- sap.ui.comp.valuehelpdialog.ValueHelpService --------------------------------------------------------------------------
-
-/**
- * 
- * </p><p>
- * OData bases Value Help Service which internal uses the ValueHelpDialog. Please do not use! deprecated!!!
- * @deprecated
- * @constructor
- * @this sap.ui.comp.valuehelpdialog.ValueHelpService
- * @public
- */
-sap.ui.comp.valuehelpdialog.ValueHelpService = function(mParams) {};
-
 // ---- sap.ui.comp.variants --------------------------------------------------------------------------
 
 
@@ -3614,7 +5148,13 @@ sap.ui.comp.valuehelpdialog.ValueHelpService = function(mParams) {};
  * <ul>
  * <li>Properties
  * <ul>
- * <li>{@link #getKey key} : string</li></ul>
+ * <li>{@link #getKey key} : string</li>
+ * <li>{@link #getGlobal global} : boolean</li>
+ * <li>{@link #getLifecyclePackage lifecyclePackage} : string</li>
+ * <li>{@link #getLifecycleTransportId lifecycleTransportId} : string</li>
+ * <li>{@link #getNamespace namespace} : string</li>
+ * <li>{@link #getReadOnly readOnly} : boolean (default: false)</li>
+ * <li>{@link #getAccessOptions accessOptions} : string</li></ul>
  * </li>
  * <li>Aggregations
  * <ul></ul>
@@ -3628,14 +5168,14 @@ sap.ui.comp.valuehelpdialog.ValueHelpService = function(mParams) {};
  * </ul> 
  * </p><p>
  * </p><p>
- * In addition, all settings applicable to the base type {@link sap.m.InputListItem#constructor sap.m.InputListItem}
+ * In addition, all settings applicable to the base type {@link sap.m.ColumnListItem#constructor sap.m.ColumnListItem}
  * can be used as well.
  * @param {string} [sId] id for the new control, generated automatically if no id is given 
  * @param {object} [mSettings] initial settings for the new control
  * @class
- * Edittable Variant List item for the Management Popup
- * @extends sap.m.InputListItem
- * @version 1.24.4
+ * Editable Variant List item for the Management Popup
+ * @extends sap.m.ColumnListItem
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3659,6 +5199,30 @@ sap.ui.comp.variants.EditableVariantItem.extend = function(sClassName,oClassInfo
 
 /**
  * 
+ * Getter for property <code>accessOptions</code>.
+ * Flags for a variant to indicate why it might be read-only
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>accessOptions</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.getAccessOptions = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>global</code>.
+ * Indicator if a variant is visible for all users.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {boolean} the value of property <code>global</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.getGlobal = function() { return false; };
+
+/**
+ * 
  * Getter for property <code>key</code>.
  * Key of the List Item
  * </p><p>
@@ -3671,6 +5235,78 @@ sap.ui.comp.variants.EditableVariantItem.prototype.getKey = function() { return 
 
 /**
  * 
+ * Getter for property <code>lifecyclePackage</code>.
+ * ABAP Package the variant is assigned. Used for transport functionality
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>lifecyclePackage</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.getLifecyclePackage = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>lifecycleTransportId</code>.
+ * Identifier of the transport object the variant is assigned to.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>lifecycleTransportId</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.getLifecycleTransportId = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>namespace</code>.
+ * Variant namespace
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>namespace</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.getNamespace = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>readOnly</code>.
+ * Indication if variant can be changed
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>readOnly</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.getReadOnly = function() { return false; };
+
+/**
+ * 
+ * Setter for property <code>accessOptions</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sAccessOptions  new value for property <code>accessOptions</code>
+ * @return {sap.ui.comp.variants.EditableVariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.setAccessOptions = function(sAccessOptions) { return new sap.ui.comp.variants.EditableVariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>global</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {boolean} bGlobal  new value for property <code>global</code>
+ * @return {sap.ui.comp.variants.EditableVariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.setGlobal = function(bGlobal) { return new sap.ui.comp.variants.EditableVariantItem(); };
+
+/**
+ * 
  * Setter for property <code>key</code>.
  * </p><p>
  * Default value is empty/<code>undefined</code> 
@@ -3680,6 +5316,291 @@ sap.ui.comp.variants.EditableVariantItem.prototype.getKey = function() { return 
  * 
  */
 sap.ui.comp.variants.EditableVariantItem.prototype.setKey = function(sKey) { return new sap.ui.comp.variants.EditableVariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>lifecyclePackage</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sLifecyclePackage  new value for property <code>lifecyclePackage</code>
+ * @return {sap.ui.comp.variants.EditableVariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.setLifecyclePackage = function(sLifecyclePackage) { return new sap.ui.comp.variants.EditableVariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>lifecycleTransportId</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sLifecycleTransportId  new value for property <code>lifecycleTransportId</code>
+ * @return {sap.ui.comp.variants.EditableVariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.setLifecycleTransportId = function(sLifecycleTransportId) { return new sap.ui.comp.variants.EditableVariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>namespace</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sNamespace  new value for property <code>namespace</code>
+ * @return {sap.ui.comp.variants.EditableVariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.setNamespace = function(sNamespace) { return new sap.ui.comp.variants.EditableVariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>readOnly</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bReadOnly  new value for property <code>readOnly</code>
+ * @return {sap.ui.comp.variants.EditableVariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.EditableVariantItem.prototype.setReadOnly = function(bReadOnly) { return new sap.ui.comp.variants.EditableVariantItem(); };
+
+
+// ---- sap.ui.comp.variants.VariantItem --------------------------------------------------------------------------
+
+/**
+ * 
+ * Constructor for a new variants/VariantItem.
+ * </p><p>
+ * Accepts an object literal <code>mSettings</code> that defines initial 
+ * property values, aggregated and associated objects as well as event handlers. 
+ * </p><p>
+ * If the name of a setting is ambiguous (e.g. a property has the same name as an event), 
+ * then the framework assumes property, aggregation, association, event in that order. 
+ * To override this automatic resolution, one of the prefixes "aggregation:", "association:" 
+ * or "event:" can be added to the name of the setting (such a prefixed name must be
+ * enclosed in single or double quotes).
+ * </p><p>
+ * The supported settings are:
+ * <ul>
+ * <li>Properties
+ * <ul>
+ * <li>{@link #getExecuteOnSelection executeOnSelection} : boolean (default: false)</li>
+ * <li>{@link #getReadOnly readOnly} : boolean (default: false)</li>
+ * <li>{@link #getLifecycleTransportId lifecycleTransportId} : string</li>
+ * <li>{@link #getGlobal global} : boolean</li>
+ * <li>{@link #getLifecyclePackage lifecyclePackage} : string</li>
+ * <li>{@link #getNamespace namespace} : string</li>
+ * <li>{@link #getAccessOptions accessOptions} : string</li></ul>
+ * </li>
+ * <li>Aggregations
+ * <ul></ul>
+ * </li>
+ * <li>Associations
+ * <ul></ul>
+ * </li>
+ * <li>Events
+ * <ul></ul>
+ * </li>
+ * </ul> 
+ * </p><p>
+ * </p><p>
+ * In addition, all settings applicable to the base type {@link sap.ui.core.Item#constructor sap.ui.core.Item}
+ * can be used as well.
+ * @param {string} [sId] id for the new control, generated automatically if no id is given 
+ * @param {object} [mSettings] initial settings for the new control
+ * @class
+ * VariantItem for VariantManagement item collection
+ * @extends sap.ui.core.Item
+ * @version 1.26.4
+ * @constructor
+ * @public
+ * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
+ */
+sap.ui.comp.variants.VariantItem = function(sId,mSettings) {};
+/**
+ * 
+ * Creates a new subclass of class sap.ui.comp.variants.VariantItem with name <code>sClassName</code> 
+ * and enriches it with the information contained in <code>oClassInfo</code>.
+ * </p><p>
+ * <code>oClassInfo</code> might contain the same kind of informations as described in {@link sap.ui.core.Element.extend Element.extend}.
+ * @param {string} sClassName name of the class to be created
+ * @param {object} [oClassInfo] object literal with informations about the class  
+ * @param {function} [FNMetaImpl] constructor function for the metadata object. If not given, it defaults to sap.ui.core.ElementMetadata.
+ * @return {function} the created class / constructor function
+ * @public
+ * @static
+ * 
+ */
+sap.ui.comp.variants.VariantItem.extend = function(sClassName,oClassInfo,FNMetaImpl) { return function() {}; };
+
+/**
+ * 
+ * Getter for property <code>accessOptions</code>.
+ * Flags for a variant to indicate why it might be read-only
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>accessOptions</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.getAccessOptions = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>executeOnSelection</code>.
+ * Attribute for usage in Smart Filter Bar
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>executeOnSelection</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.getExecuteOnSelection = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>global</code>.
+ * Indicator if a variant is visible for all users.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {boolean} the value of property <code>global</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.getGlobal = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>lifecyclePackage</code>.
+ * ABAP Package the variant is assigned. Used for transport functionality.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>lifecyclePackage</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.getLifecyclePackage = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>lifecycleTransportId</code>.
+ * Identifier of the transport object the variant is assigned to.
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>lifecycleTransportId</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.getLifecycleTransportId = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>namespace</code>.
+ * Variant namespace
+ * </p><p>
+ * Default value is empty/<code>undefined</code>
+ * @return {string} the value of property <code>namespace</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.getNamespace = function() { return ""; };
+
+/**
+ * 
+ * Getter for property <code>readOnly</code>.
+ * Is the user allowed to change the item's data
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>readOnly</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.getReadOnly = function() { return false; };
+
+/**
+ * 
+ * Setter for property <code>accessOptions</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sAccessOptions  new value for property <code>accessOptions</code>
+ * @return {sap.ui.comp.variants.VariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.setAccessOptions = function(sAccessOptions) { return new sap.ui.comp.variants.VariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>executeOnSelection</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bExecuteOnSelection  new value for property <code>executeOnSelection</code>
+ * @return {sap.ui.comp.variants.VariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.setExecuteOnSelection = function(bExecuteOnSelection) { return new sap.ui.comp.variants.VariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>global</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {boolean} bGlobal  new value for property <code>global</code>
+ * @return {sap.ui.comp.variants.VariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.setGlobal = function(bGlobal) { return new sap.ui.comp.variants.VariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>lifecyclePackage</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sLifecyclePackage  new value for property <code>lifecyclePackage</code>
+ * @return {sap.ui.comp.variants.VariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.setLifecyclePackage = function(sLifecyclePackage) { return new sap.ui.comp.variants.VariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>lifecycleTransportId</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sLifecycleTransportId  new value for property <code>lifecycleTransportId</code>
+ * @return {sap.ui.comp.variants.VariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.setLifecycleTransportId = function(sLifecycleTransportId) { return new sap.ui.comp.variants.VariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>namespace</code>.
+ * </p><p>
+ * Default value is empty/<code>undefined</code> 
+ * @param {string} sNamespace  new value for property <code>namespace</code>
+ * @return {sap.ui.comp.variants.VariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.setNamespace = function(sNamespace) { return new sap.ui.comp.variants.VariantItem(); };
+
+/**
+ * 
+ * Setter for property <code>readOnly</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bReadOnly  new value for property <code>readOnly</code>
+ * @return {sap.ui.comp.variants.VariantItem} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantItem.prototype.setReadOnly = function(bReadOnly) { return new sap.ui.comp.variants.VariantItem(); };
 
 
 // ---- sap.ui.comp.variants.VariantManagement --------------------------------------------------------------------------
@@ -3703,13 +5624,17 @@ sap.ui.comp.variants.EditableVariantItem.prototype.setKey = function(sKey) { ret
  * <ul>
  * <li>{@link #getInitialSelectionKey initialSelectionKey} : string</li>
  * <li>{@link #getEnabled enabled} : boolean (default: true)</li>
- * <li>{@link #getVisible visible} : boolean (default: true)</li>
  * <li>{@link #getDefaultVariantKey defaultVariantKey} : string</li>
- * <li>{@link #getSelectionKey selectionKey} : string</li></ul>
+ * <li>{@link #getSelectionKey selectionKey} : string</li>
+ * <li>{@link #getShowCreateTile showCreateTile} : boolean (default: false)</li>
+ * <li>{@link #getShowExecuteOnSelection showExecuteOnSelection} : boolean (default: false)</li>
+ * <li>{@link #getShowShare showShare} : boolean (default: false)</li>
+ * <li>{@link #getLifecycleSupport lifecycleSupport} : boolean (default: false)</li></ul>
  * </li>
  * <li>Aggregations
  * <ul>
- * <li>{@link #getItems items} <strong>(default aggregation)</strong> : sap.ui.core.Item[]</li></ul>
+ * <li>{@link #getItems items} <strong>(default aggregation)</strong> : sap.ui.core.Item[]</li>
+ * <li>{@link #getVariantItems variantItems} : sap.ui.comp.variants.VariantItem[]</li></ul>
  * </li>
  * <li>Associations
  * <ul></ul>
@@ -3726,7 +5651,7 @@ sap.ui.comp.variants.EditableVariantItem.prototype.setKey = function(sKey) { ret
  * @class
  * The variant management control can be used to manage variants, such as filter bar variants or table variants.
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3773,9 +5698,23 @@ sap.ui.comp.variants.VariantManagement.prototype.select = function(oControlEvent
  *            oItem the item to add; if empty, nothing is inserted
  * @return {sap.ui.comp.variants.VariantManagement} <code>this</code> to allow method chaining
  * @public
+ * @deprecated Since version 1.26.00. 
+ * Additional information needed for each item. New Collection variantItems introduced.
  * 
  */
 sap.ui.comp.variants.VariantManagement.prototype.addItem = function(oItem) { return new sap.ui.comp.variants.VariantManagement(); };
+
+/**
+ * 
+ * Adds some variantItem <code>oVariantItem</code> 
+ * to the aggregation named <code>variantItems</code>.
+ * @param {sap.ui.comp.variants.VariantItem}
+ *            oVariantItem the variantItem to add; if empty, nothing is inserted
+ * @return {sap.ui.comp.variants.VariantManagement} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.addVariantItem = function(oVariantItem) { return new sap.ui.comp.variants.VariantManagement(); };
 
 /**
  * 
@@ -3849,9 +5788,21 @@ sap.ui.comp.variants.VariantManagement.prototype.clearVariantSelection = functio
  * named <code>items</code>.
  * @return {sap.ui.comp.variants.VariantManagement} <code>this</code> to allow method chaining
  * @public
+ * @deprecated Since version 1.26.00. 
+ * Additional information needed for each item. New Collection variantItems introduced.
  * 
  */
 sap.ui.comp.variants.VariantManagement.prototype.destroyItems = function() { return new sap.ui.comp.variants.VariantManagement(); };
+
+/**
+ * 
+ * Destroys all the variantItems in the aggregation 
+ * named <code>variantItems</code>.
+ * @return {sap.ui.comp.variants.VariantManagement} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.destroyVariantItems = function() { return new sap.ui.comp.variants.VariantManagement(); };
 
 /**
  * 
@@ -3988,9 +5939,23 @@ sap.ui.comp.variants.VariantManagement.prototype.getInitialSelectionKey = functi
  * <strong>Note</strong>: this is the default aggregation for variants/VariantManagement.
  * @return {sap.ui.core.Item[]}
  * @public
+ * @deprecated Since version 1.26.00. 
+ * Additional information needed for each item. New Collection variantItems introduced.
  * 
  */
 sap.ui.comp.variants.VariantManagement.prototype.getItems = function() { return new Array(); };
+
+/**
+ * 
+ * Getter for property <code>lifecycleSupport</code>.
+ * Enables the lifecycle support for VariantItems.
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>lifecycleSupport</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.getLifecycleSupport = function() { return false; };
 
 /**
  * 
@@ -4006,15 +5971,49 @@ sap.ui.comp.variants.VariantManagement.prototype.getSelectionKey = function() { 
 
 /**
  * 
- * Getter for property <code>visible</code>.
- * Shows or hides the control.
+ * Getter for property <code>showCreateTile</code>.
+ * Indicates that a Create Tile is visible in the Create dialog.
  * </p><p>
- * Default value is <code>true</code>
- * @return {boolean} the value of property <code>visible</code>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>showCreateTile</code>
  * @public
  * 
  */
-sap.ui.comp.variants.VariantManagement.prototype.getVisible = function() { return false; };
+sap.ui.comp.variants.VariantManagement.prototype.getShowCreateTile = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>showExecuteOnSelection</code>.
+ * Indicates that Execute on Selection is visible in the Create and in the Management Dialog
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>showExecuteOnSelection</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.getShowExecuteOnSelection = function() { return false; };
+
+/**
+ * 
+ * Getter for property <code>showShare</code>.
+ * Indicates that a share function is available in Variant Management
+ * </p><p>
+ * Default value is <code>false</code>
+ * @return {boolean} the value of property <code>showShare</code>
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.getShowShare = function() { return false; };
+
+/**
+ * 
+ * Getter for aggregation <code>variantItems</code>.<br/>
+ * Main aggregation for variant items displayed by the Variant Management control
+ * @return {sap.ui.comp.variants.VariantItem[]}
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.getVariantItems = function() { return new Array(); };
 
 /**
  * 
@@ -4024,9 +6023,23 @@ sap.ui.comp.variants.VariantManagement.prototype.getVisible = function() { retur
  *            oItem the item whose index is looked for.
  * @return {int} the index of the provided control in the aggregation if found, or -1 otherwise
  * @public
+ * @deprecated Since version 1.26.00. 
+ * Additional information needed for each item. New Collection variantItems introduced.
  * 
  */
 sap.ui.comp.variants.VariantManagement.prototype.indexOfItem = function(oItem) { return 0; };
+
+/**
+ * 
+ * Checks for the provided <code>sap.ui.comp.variants.VariantItem</code> in the aggregation named <code>variantItems</code> 
+ * and returns its index if found or -1 otherwise.
+ * @param {sap.ui.comp.variants.VariantItem}
+ *            oVariantItem the variantItem whose index is looked for.
+ * @return {int} the index of the provided control in the aggregation if found, or -1 otherwise
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.indexOfVariantItem = function(oVariantItem) { return 0; };
 
 /**
  * 
@@ -4040,9 +6053,27 @@ sap.ui.comp.variants.VariantManagement.prototype.indexOfItem = function(oItem) {
  *             the last position        
  * @return {sap.ui.comp.variants.VariantManagement} <code>this</code> to allow method chaining
  * @public
+ * @deprecated Since version 1.26.00. 
+ * Additional information needed for each item. New Collection variantItems introduced.
  * 
  */
 sap.ui.comp.variants.VariantManagement.prototype.insertItem = function(oItem,iIndex) { return new sap.ui.comp.variants.VariantManagement(); };
+
+/**
+ * 
+ * Inserts a variantItem into the aggregation named <code>variantItems</code>.
+ * @param {sap.ui.comp.variants.VariantItem}
+ *          oVariantItem the variantItem to insert; if empty, nothing is inserted
+ * @param {int}
+ *             iIndex the <code>0</code>-based index the variantItem should be inserted at; for 
+ *             a negative value of <code>iIndex</code>, the variantItem is inserted at position 0; for a value 
+ *             greater than the current size of the aggregation, the variantItem is inserted at 
+ *             the last position        
+ * @return {sap.ui.comp.variants.VariantManagement} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.insertVariantItem = function(oVariantItem,iIndex) { return new sap.ui.comp.variants.VariantManagement(); };
 
 /**
  * 
@@ -4050,9 +6081,21 @@ sap.ui.comp.variants.VariantManagement.prototype.insertItem = function(oItem,iIn
  * Additionally unregisters them from the hosting UIArea.
  * @return {sap.ui.core.Item[]} an array of the removed elements (might be empty)
  * @public
+ * @deprecated Since version 1.26.00. 
+ * Additional information needed for each item. New Collection variantItems introduced.
  * 
  */
 sap.ui.comp.variants.VariantManagement.prototype.removeAllItems = function() { return new Array(); };
+
+/**
+ * 
+ * Removes all the controls in the aggregation named <code>variantItems</code>.<br/>
+ * Additionally unregisters them from the hosting UIArea.
+ * @return {sap.ui.comp.variants.VariantItem[]} an array of the removed elements (might be empty)
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.removeAllVariantItems = function() { return new Array(); };
 
 /**
  * 
@@ -4060,9 +6103,21 @@ sap.ui.comp.variants.VariantManagement.prototype.removeAllItems = function() { r
  * @param {int | string | sap.ui.core.Item} vItem the item to remove or its index or id
  * @return {sap.ui.core.Item} the removed item or null
  * @public
+ * @deprecated Since version 1.26.00. 
+ * Additional information needed for each item. New Collection variantItems introduced.
  * 
  */
 sap.ui.comp.variants.VariantManagement.prototype.removeItem = function(vItem) { return new sap.ui.core.Item(); };
+
+/**
+ * 
+ * Removes an variantItem from the aggregation named <code>variantItems</code>.
+ * @param {int | string | sap.ui.comp.variants.VariantItem} vVariantItem the variantItem to remove or its index or id
+ * @return {sap.ui.comp.variants.VariantItem} the removed variantItem or null
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.removeVariantItem = function(vVariantItem) { return new sap.ui.comp.variants.VariantItem(); };
 
 /**
  * 
@@ -4102,6 +6157,18 @@ sap.ui.comp.variants.VariantManagement.prototype.setInitialSelectionKey = functi
 
 /**
  * 
+ * Setter for property <code>lifecycleSupport</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bLifecycleSupport  new value for property <code>lifecycleSupport</code>
+ * @return {sap.ui.comp.variants.VariantManagement} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.setLifecycleSupport = function(bLifecycleSupport) { return new sap.ui.comp.variants.VariantManagement(); };
+
+/**
+ * 
  * Setter for property <code>selectionKey</code>.
  * </p><p>
  * Default value is empty/<code>undefined</code> 
@@ -4114,14 +6181,73 @@ sap.ui.comp.variants.VariantManagement.prototype.setSelectionKey = function(sSel
 
 /**
  * 
- * Setter for property <code>visible</code>.
+ * Setter for property <code>showCreateTile</code>.
  * </p><p>
- * Default value is <code>true</code> 
- * @param {boolean} bVisible  new value for property <code>visible</code>
+ * Default value is <code>false</code> 
+ * @param {boolean} bShowCreateTile  new value for property <code>showCreateTile</code>
  * @return {sap.ui.comp.variants.VariantManagement} <code>this</code> to allow method chaining
  * @public
  * 
  */
-sap.ui.comp.variants.VariantManagement.prototype.setVisible = function(bVisible) { return new sap.ui.comp.variants.VariantManagement(); };
+sap.ui.comp.variants.VariantManagement.prototype.setShowCreateTile = function(bShowCreateTile) { return new sap.ui.comp.variants.VariantManagement(); };
+
+/**
+ * 
+ * Setter for property <code>showExecuteOnSelection</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bShowExecuteOnSelection  new value for property <code>showExecuteOnSelection</code>
+ * @return {sap.ui.comp.variants.VariantManagement} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.setShowExecuteOnSelection = function(bShowExecuteOnSelection) { return new sap.ui.comp.variants.VariantManagement(); };
+
+/**
+ * 
+ * Setter for property <code>showShare</code>.
+ * </p><p>
+ * Default value is <code>false</code> 
+ * @param {boolean} bShowShare  new value for property <code>showShare</code>
+ * @return {sap.ui.comp.variants.VariantManagement} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.comp.variants.VariantManagement.prototype.setShowShare = function(bShowShare) { return new sap.ui.comp.variants.VariantManagement(); };
 
 // ---- static fields of namespaces ---------------------------------------------------------------------
+
+// ---- sap.ui.comp.smarttable.TableType --------------------------------------------------------------------------
+
+/**
+ * 
+ * An analytical table (sap.ui.table.AnalyticalTable) control shall be created as the content of the SmartTable, if no table already exists
+ * @public
+ * @memberOf sap.ui.comp.smarttable.TableType
+ */
+sap.ui.comp.smarttable.TableType.AnalyticalTable = null;
+
+/**
+ * 
+ * A responsive table (sap.m.Table) control that can be used on mobile devices shall be created as the content of the SmartTable, if no table already exists
+ * @public
+ * @memberOf sap.ui.comp.smarttable.TableType
+ */
+sap.ui.comp.smarttable.TableType.ResponsiveTable = null;
+
+/**
+ * 
+ * A table (sap.ui.table.Table) control shall be created as the content of the SmartTable, if no table already exists (default)
+ * @public
+ * @memberOf sap.ui.comp.smarttable.TableType
+ */
+sap.ui.comp.smarttable.TableType.Table = null;
+
+/**
+ * 
+ * A tree table (sap.ui.table.TreeTable) control shall be created as the content of the SmartTable, if no table already exists (TODO)
+ * @public
+ * @memberOf sap.ui.comp.smarttable.TableType
+ */
+sap.ui.comp.smarttable.TableType.TreeTable = null;
+

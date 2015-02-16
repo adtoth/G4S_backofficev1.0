@@ -1,6 +1,6 @@
 ﻿jQuery.sap.require("sap.m.MessageBox");
 jQuery.sap.require("sap.m.MessageToast");
-jQuery.sap.require("jSignature");
+jQuery.sap.require("sap.ui.netlife.G4S.resources.jSignature");
 jQuery.sap.require("sap.ui.netlife.G4S.util.Formatter");
 sap.ui.controller("sap.ui.netlife.G4S.view.aktualis", {
 	

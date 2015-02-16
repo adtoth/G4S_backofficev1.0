@@ -9,6 +9,30 @@
 
 // dummy function to make Eclipse aware of namespace
 sap.apf.toString = function() { return ""; };
+/**
+ * 
+ * @public
+ * @see sap.apf#createReadRequest
+ * ription Creates an object for performing an Odata Request get operation.
+ * @param {String|Object} requestConfiguration - identifies a request configuration, which is contained in the analytical configuration.
+ *                        or the request configuration is directly passed as an object oRequestConfiguration.
+ * @returns {sap.apf.core.ReadRequest}
+ * @memberOf sap.apf
+ */
+sap.apf.createReadRequest = function(requestConfiguration) { return new sap.apf.core.ReadRequest(); };
+
+/**
+ * 
+ * @public
+ * @see sap.apf#createReadRequestByRequiredFilter
+ * ription Creates an object for performing an Odata Request get operation with required filter for HANA view parameter & required filters.
+ * @param {String|Object} requestConfiguration - identifies a request configuration, which is contained in the analytical configuration.
+ *                        or the request configuration is directly passed as an object oRequestConfiguration.
+ * @returns {sap.apf.core.ReadRequestByRequiredFilter}
+ * @memberOf sap.apf
+ */
+sap.apf.createReadRequestByRequiredFilter = function(requestConfiguration) { return new sap.apf.core.ReadRequestByRequiredFilter(); };
+
 
 // ---- sap.apf.Api --------------------------------------------------------------------------
 
@@ -23,7 +47,7 @@ sap.apf.toString = function() { return ""; };
  * Objects and types returned by methods of APF API or passed in parameters of APF API method also belong to the API.
  * These objects and types are documented in their respective sections of this documentation.
  * All methods, objects or types that are not explicitly documented as public are strictly internal and may be changed without prior notice.
- * This also includes all artefacts being classified as experimental.<br>
+ * This also includes all methods, objects or types being classified as experimental.<br>
  * Furthermore there is no need to instantiate required entities directly by applying the JavaScript 'new'-operator on their respective constructors.
  * Instead they should be created by consumers using a create method available on API-level, such as e.g. {@link sap.apf.Api#createMessageObject} for {@link sap.apf.core.MessageObject} or {@link sap.apf.Api#createFilter} for {@link sap.apf.utils.Filter}.
  * </p>
@@ -452,6 +476,21 @@ sap.apf.core.ReadRequestByRequiredFilter.prototype.send = function(oFilter,fnCal
 // ---- sap.apf.core.utils --------------------------------------------------------------------------
 
 
+// ---- sap.apf.modeler --------------------------------------------------------------------------
+
+
+// ---- sap.apf.modeler.core --------------------------------------------------------------------------
+
+
+// ---- sap.apf.modeler.ui --------------------------------------------------------------------------
+
+
+// ---- sap.apf.modeler.ui.controller --------------------------------------------------------------------------
+
+
+// ---- sap.apf.modeler.ui.utils --------------------------------------------------------------------------
+
+
 // ---- sap.apf.ui --------------------------------------------------------------------------
 
 
@@ -743,17 +782,18 @@ sap.apf.ui.representations.RepresentationInterfaceProxy.prototype.putMessage = f
  *              filter values between the path and the representation of the
  *              initial step. This function object supports the top down
  *              construction of filter expressions.
+ * @param {sap.apf.core.MessageHandler} oMessageHandler
  * @returns {sap.apf.utils.Filter}
  */
-sap.apf.utils.Filter = function() {};
+sap.apf.utils.Filter = function(oMessageHandler) {};
 /**
  * 
  * @public
  * ription Returns filter object or expression for a given ID, if exists.
  * @param {string} sId - ID of the object to be returned.
- * @returns {(sap.apf.utils.FilterAnd | sap.apf.utils.FilterOr | sap.apf.utils.FilterExpression | undefined)}
+ * @returns {(sap.apf.utils.FilterAnd|sap.apf.utils.FilterOr|sap.apf.utils.FilterExpression|undefined)}
  */
-sap.apf.utils.Filter.prototype.getById = function(sId) { return new (sap.apf.utils.FilterAnd (); };
+sap.apf.utils.Filter.prototype.getById = function(sId) { return new (sap.apf.utils.FilterAnd(); };
 
 /**
  * 
@@ -777,7 +817,7 @@ sap.apf.utils.Filter.prototype.getExpressions = function() { return new Array();
  * @public
  * ription Convenience function to get the OData operators which are
  *              defined in {sap.apf.core.constants.FilterOperators}.
- * @returns {sap.apf.core.constants.FilterOperators}
+ * @returns {sap.apf.core.constants.FilterOperators} 
  */
 sap.apf.utils.Filter.prototype.getOperators = function() { return new sap.apf.core.constants.FilterOperators(); };
 
@@ -793,31 +833,22 @@ sap.apf.utils.Filter.prototype.getTopAnd = function() { return new sap.apf.utils
  * 
  * @public
  * ription Build the intersection of the this filter object with the supplied filter(s). The method does not change the "this"-instance.
- * @param {(sap.apf.utils.Filter|...sap.apf.utils.Filter|sap.apf.utils.Filter[])} Single filter object {@link sap.apf.utils.Filter}, a comma separated parameter list of filter objects, or an array of filter objects
+ * @param args {(...sap.apf.utils.Filter|sap.apf.utils.Filter[])} Single filter object {@link sap.apf.utils.Filter}, a comma separated parameter list of filter objects, or an array of filter objects
  * @returns {sap.apf.utils.Filter} new filter object {@link sap.apf.utils.Filter} for the intersected filters
  */
-sap.apf.utils.Filter.prototype.intersectWith = function(Single) { return new sap.apf.utils.Filter(); };
+sap.apf.utils.Filter.prototype.intersectWith = function(args) { return new sap.apf.utils.Filter(); };
 
 /**
  * 
  * @public
  * ription Updates an expression.
- * @param {string}
- *            sId ID of expression to be updated
- * @param {object}
- *            oExpression Expression object containing the updated
- *            properties
- * @param oExpression.id
- *            Updated expression ID
- * @param oExpression.name
- *            Updated expression name
- * @param oExpression.operator
- *            Updated expression operator of type
- *            {@link sap.apf.utils.Filter#getOperators}
- * @param oExpression.value
- *            Updated expression low value
- * @param oExpression.high
- *            Updated expression high value
+ * @param {string} sId ID of expression to be updated
+ * @param {object} oExpression Expression object containing the updated properties
+ * @param oExpression.id Updated expression ID
+ * @param oExpression.name Updated expression name
+ * @param oExpression.operator Updated expression operator of type  {sap.apf.core.constants.FilterOperators}
+ * @param oExpression.value Updated expression low value
+ * @param oExpression.high Updated expression high value
  * @returns undefined
  */
 sap.apf.utils.Filter.prototype.updateExpression = function(sId,oExpression) { return null; };
@@ -826,12 +857,9 @@ sap.apf.utils.Filter.prototype.updateExpression = function(sId,oExpression) { re
  * 
  * @public
  * ription Updates a value of an expression object.
- * @param {string}
- *            sId ID of the expression object to be updated
- * @param {string}
- *            value The new low value for the expression (optional)
- * @param {string}
- *            high The new high value for the expression (optional)
+ * @param {string} sId ID of the expression object to be updated
+ * @param {string} value The new low value for the expression (optional)
+ * @param {string} high The new high value for the expression (optional)
  * @returns undefined
  */
 sap.apf.utils.Filter.prototype.updateValue = function(sId,value,high) { return null; };
@@ -843,26 +871,20 @@ sap.apf.utils.Filter.prototype.updateValue = function(sId,value,high) { return n
  * 
  * @public
  * @class FilterAnd
- * @param {string}
- *            sId Identifier for the object
+ * @param {sap.apf.core.MessageHandler} oMessageHandler
+ * @param {string} sId Identifier for the object
  * @returns {sap.apf.utils.FilterAnd}
  */
-sap.apf.utils.FilterAnd = function(sId) {};
+sap.apf.utils.FilterAnd = function(oMessageHandler,sId) {};
 /**
  * 
  * @public
  * ription Adds an expression object to this filter.
- * @param {object}
- *            oExpression Expression object
- * @param oExpression.id
- *            Expression ID
- * @param oExpression.name
- *            Expression name
- * @param oExpression.operator
- *            Expression operator of type
- *            {@link sap.apf.utils.Filter#getOperators}
- * @param oExpression.value
- *            Expression value
+ * @param {object} oExpression Expression object
+ * @param oExpression.id Expression ID
+ * @param oExpression.name Expression name
+ * @param oExpression.operator Expression operator of type  {sap.apf.core.constants.FilterOperators}
+ * @param oExpression.value Expression value
  * @returns {sap.apf.utils.FilterAnd} this to allow method chaining
  */
 sap.apf.utils.FilterAnd.prototype.addExpression = function(oExpression) { return new sap.apf.utils.FilterAnd(); };
@@ -870,9 +892,8 @@ sap.apf.utils.FilterAnd.prototype.addExpression = function(oExpression) { return
 /**
  * 
  * @public
- * ription Adds an object of type {@link sap.apf.utils.FilterOr}.
- * @param {string}
- *            sId Identifier for the object to be added.
+ * ription Adds an object of type {sap.apf.utils.FilterOr}.
+ * @param {string} sId Identifier for the object to be added.
  * @returns {sap.apf.utils.FilterOr}
  */
 sap.apf.utils.FilterAnd.prototype.addOr = function(sId) { return new sap.apf.utils.FilterOr(); };
@@ -892,22 +913,16 @@ sap.apf.utils.FilterAnd.prototype.getId = function() { return ""; };
  * 
  * @public
  * @class Filter expression
- * @param {object}
- *            oExpression Expression object
- * @param oExpression.id
- *            Expression ID
- * @param oExpression.name
- *            Expression name
- * @param oExpression.operator
- *            Expression operator of type
- *            {@link sap.apf.utils.Filter#getOperators}
- * @param oExpression.value
- *            Expression value
- * @param oExpression.high
- *            Expression high value
+ * @param {sap.apf.core.MessageHandler} oMessageHandler
+ * @param {object} oExpression Expression object
+ * @param oExpression.id Expression ID
+ * @param oExpression.name Expression name
+ * @param oExpression.operator Expression operator of type  {sap.apf.core.constants.FilterOperators}
+ * @param oExpression.value Expression value
+ * @param oExpression.high Expression high value
  * @returns {sap.apf.utils.FilterExpression}
  */
-sap.apf.utils.FilterExpression = function(oExpression) {};
+sap.apf.utils.FilterExpression = function(oMessageHandler,oExpression) {};
 
 // ---- sap.apf.utils.FilterOr --------------------------------------------------------------------------
 
@@ -915,19 +930,17 @@ sap.apf.utils.FilterExpression = function(oExpression) {};
  * 
  * @public
  * @class FilterOr
- * @param {string}
- *            sId Identifier for the object
- * @param {sap.apf.utils.FilterAnd}
- *            oAnd Parent object
+ * @param {sap.apf.core.MessageHandler} oMessageHandler
+ * @param {string} sId Identifier for the object
+ * @param {sap.apf.utils.FilterAnd} oAnd Parent object
  * @returns {sap.apf.utils.FilterOr}
  */
-sap.apf.utils.FilterOr = function(sId,oAnd) {};
+sap.apf.utils.FilterOr = function(oMessageHandler,sId,oAnd) {};
 /**
  * 
  * @public
  * ription Adds an object of type {@link sap.apf.utils.FilterAnd}.
- * @param {string}
- *            sId Identifier for the object to be added.
+ * @param {string} sId Identifier for the object to be added.
  * @returns {sap.apf.utils.FilterAnd}
  */
 sap.apf.utils.FilterOr.prototype.addAnd = function(sId) { return new sap.apf.utils.FilterAnd(); };
@@ -936,17 +949,11 @@ sap.apf.utils.FilterOr.prototype.addAnd = function(sId) { return new sap.apf.uti
  * 
  * @public
  * ription Adds an expression object to this filter.
- * @param {object}
- *            oExpression Expression object
- * @param oExpression.id
- *            Expression ID
- * @param oExpression.name
- *            Expression name
- * @param oExpression.operator
- *            Expression operator of type
- *            {@link sap.apf.utils.Filter#getOperators}
- * @param oExpression.value
- *            Expression value
+ * @param {object} oExpression Expression object
+ * @param oExpression.id Expression ID
+ * @param oExpression.name Expression name
+ * @param oExpression.operator Expression operator of type  {sap.apf.core.constants.FilterOperators}
+ * @param oExpression.value Expression value
  * @returns {sap.apf.utils.FilterOr} this to allow method chaining
  */
 sap.apf.utils.FilterOr.prototype.addExpression = function(oExpression) { return new sap.apf.utils.FilterOr(); };
@@ -972,4 +979,13 @@ sap.apf.utils.FilterOr.prototype.getId = function() { return ""; };
  * @memberOf sap.apf
  */
 sap.apf.constants = null;
+
+/**
+ * 
+ * @public
+ * ription Contains 'api'
+ * @returns {string}
+ * @memberOf sap.apf
+ */
+sap.apf.type = "";
 

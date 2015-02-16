@@ -11,6 +11,11 @@
 // ---- sap.ui.richtexteditor --------------------------------------------------------------------------
 
 
+// ---- sap.ui.richtexteditor.EditorType --------------------------------------------------------------------------
+
+// dummy function to make Eclipse aware of namespace
+sap.ui.richtexteditor.EditorType.toString = function() { return ""; };
+
 // ---- sap.ui.richtexteditor.RichTextEditor --------------------------------------------------------------------------
 
 /**
@@ -61,7 +66,8 @@
  * <li>Events
  * <ul>
  * <li>{@link sap.ui.richtexteditor.RichTextEditor#event:change change} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
- * <li>{@link sap.ui.richtexteditor.RichTextEditor#event:ready ready} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
+ * <li>{@link sap.ui.richtexteditor.RichTextEditor#event:ready ready} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li>
+ * <li>{@link sap.ui.richtexteditor.RichTextEditor#event:beforeEditorInit beforeEditorInit} : fnListenerFunction or [fnListenerFunction, oListenerObject] or [oData, fnListenerFunction, oListenerObject]</li></ul>
  * </li>
  * </ul> 
  * @param {string} [sId] id for the new control, generated automatically if no id is given 
@@ -69,7 +75,7 @@
  * @class
  * The RichTextEditor-Control is used to enter formatted text.
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @disclaimer Since version 1.6.0. 
@@ -77,6 +83,17 @@
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ui.richtexteditor.RichTextEditor = function(sId,mSettings) {};
+/**
+ * 
+ * This event is fired right before the TinyMCE instance is created and can be used to change the settings object that will be given to TinyMCE. The parameter "configuration" is the javascript oject that will be given to TinyMCE upon first instantiation. The configuration parameter contains a map that can be changed in the case of TinyMCE.
+ * @event
+ * @param {sap.ui.base.Event} oControlEvent
+ * @param {sap.ui.base.EventProvider} oControlEvent.getSource
+ * @param {object} oControlEvent.getParameters
+ * @public
+ */
+sap.ui.richtexteditor.RichTextEditor.prototype.beforeEditorInit = function(oControlEvent) { return null; };
+
 /**
  * 
  * Event is fired when the text in the field has changed AND the focus leaves the editor or when the Enter key is pressed.
@@ -110,17 +127,38 @@ sap.ui.richtexteditor.RichTextEditor.prototype.ready = function(oControlEvent) {
  * @param {int}        [mGroup.row=0] (optional) Row number in which the button should be
  * @param {int}        [mGroup.priority=10] (optional) The priority of the button group. Lower priorities are added first.
  * @public
+ * @returns {object} Control instance (for method chaining)
  */
-sap.ui.richtexteditor.RichTextEditor.prototype.addButtonGroup = function(mGroup) { return null; };
+sap.ui.richtexteditor.RichTextEditor.prototype.addButtonGroup = function(mGroup) { return new Object(); };
 
 /**
  * 
  * Allows to add plugins (that must already be installed on the server) to the
  * RichtextEditor.
- * @param {map|string} A map with the property name containing the plugin IDs/name or an object with the property "name".
+ * @param {map|string} [mPlugin] A map with the property name containing the plugin IDs/name or an object with the property "name".
  * @public
+ * @returns {object} Control instance (for method chaining)
  */
-sap.ui.richtexteditor.RichTextEditor.prototype.addPlugin = function(A) { return null; };
+sap.ui.richtexteditor.RichTextEditor.prototype.addPlugin = function(mPlugin) { return new Object(); };
+
+/**
+ * 
+ * Attach event handler <code>fnFunction</code> to the 'beforeEditorInit' event of this <code>sap.ui.richtexteditor.RichTextEditor</code>.<br/>.
+ * When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener<code> if specified
+ * otherwise to this <code>sap.ui.richtexteditor.RichTextEditor</code>.<br/> itself. 
+ * </p><p>
+ * This event is fired right before the TinyMCE instance is created and can be used to change the settings object that will be given to TinyMCE. The parameter "configuration" is the javascript oject that will be given to TinyMCE upon first instantiation. The configuration parameter contains a map that can be changed in the case of TinyMCE.
+ * @param {object}
+ *            [oData] An application specific payload object, that will be passed to the event handler along with the event object when firing the event.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.  
+ * @param {object}
+ *            [oListener] Context object to call the event handler with. Defaults to this <code>sap.ui.richtexteditor.RichTextEditor</code>.<br/> itself.
+ * @return {sap.ui.richtexteditor.RichTextEditor} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.richtexteditor.RichTextEditor.prototype.attachBeforeEditorInit = function(oData,fnFunction,oListener) { return new sap.ui.richtexteditor.RichTextEditor(); };
 
 /**
  * 
@@ -159,6 +197,21 @@ sap.ui.richtexteditor.RichTextEditor.prototype.attachChange = function(oData,fnF
  * 
  */
 sap.ui.richtexteditor.RichTextEditor.prototype.attachReady = function(oData,fnFunction,oListener) { return new sap.ui.richtexteditor.RichTextEditor(); };
+
+/**
+ * 
+ * Detach event handler <code>fnFunction</code> from the 'beforeEditorInit' event of this <code>sap.ui.richtexteditor.RichTextEditor</code>.<br/>
+ * </p><p>
+ * The passed function and listener object must match the ones used for event registration.
+ * @param {function}
+ *            fnFunction The function to call, when the event occurs.
+ * @param {object}
+ *            oListener Context object on which the given function had to be called.
+ * @return {sap.ui.richtexteditor.RichTextEditor} <code>this</code> to allow method chaining
+ * @public
+ * 
+ */
+sap.ui.richtexteditor.RichTextEditor.prototype.detachBeforeEditorInit = function(fnFunction,oListener) { return new sap.ui.richtexteditor.RichTextEditor(); };
 
 /**
  * 
@@ -208,6 +261,16 @@ sap.ui.richtexteditor.RichTextEditor.extend = function(sClassName,oClassInfo,FNM
 
 /**
  * 
+ * Fire event beforeEditorInit to attached listeners.
+ * @param {Map} [mArguments] the arguments to pass along with the event.
+ * @return {sap.ui.richtexteditor.RichTextEditor} <code>this</code> to allow method chaining
+ * @protected
+ * 
+ */
+sap.ui.richtexteditor.RichTextEditor.prototype.fireBeforeEditorInit = function(mArguments) { return new sap.ui.richtexteditor.RichTextEditor(); };
+
+/**
+ * 
  * Fire event change to attached listeners.
  * </p><p>
  * Expects following event parameters:
@@ -234,7 +297,7 @@ sap.ui.richtexteditor.RichTextEditor.prototype.fireReady = function(mArguments) 
 /**
  * 
  * Getter for property <code>buttonGroups</code>.
- * An array of button configurations. These configurations contain the names of buttons as array in the property "buttons" and the name of the group in "name", they can also contain the "row" where the buttons should be placed, a "priority" and whether the buttons are "visible".
+ * An array of button configurations. These configurations contain the names of buttons as array in the property "buttons" and the name of the group in "name", they can also contain the "row" where the buttons should be placed, a "priority" and whether the buttons are "visible". See method addButtonGroup() for more details on the structure of the objects in this array.
  * </p><p>
  * Default value is <code>[]</code>
  * @return {object[]} the value of property <code>buttonGroups</code>
@@ -264,6 +327,8 @@ sap.ui.richtexteditor.RichTextEditor.prototype.getEditable = function() { return
  * Default value is <code>'js/tiny_mce/tiny_mce_src.js'</code>
  * @return {string} the value of property <code>editorLocation</code>
  * @public
+ * @deprecated Since version 1.25.0. 
+ * The editorLocation is set implicitly when choosing the editorType.
  * 
  */
 sap.ui.richtexteditor.RichTextEditor.prototype.getEditorLocation = function() { return ""; };
@@ -272,7 +337,7 @@ sap.ui.richtexteditor.RichTextEditor.prototype.getEditorLocation = function() { 
  * 
  * Getter for property <code>editorType</code>.
  * The editor implementation to use.
- * Valid values are "TinyMCE" and any other editor identifier that may be introduced by other groups (hence this is not an enumeration).
+ * Valid values are the ones found under sap.ui.richtexteditor.EditorType and any other editor identifier that may be introduced by other groups (hence this is not an enumeration).
  * Any attempts to set this property after the first rendering will not have any effect.
  * </p><p>
  * Default value is <code>'TinyMCE'</code>
@@ -529,21 +594,21 @@ sap.ui.richtexteditor.RichTextEditor.prototype.setEditable = function(bEditable)
  * @param {string} sEditorLocation  new value for property <code>editorLocation</code>
  * @return {sap.ui.richtexteditor.RichTextEditor} <code>this</code> to allow method chaining
  * @public
+ * @deprecated Since version 1.25.0. 
+ * The editorLocation is set implicitly when choosing the editorType.
  * 
  */
 sap.ui.richtexteditor.RichTextEditor.prototype.setEditorLocation = function(sEditorLocation) { return new sap.ui.richtexteditor.RichTextEditor(); };
 
 /**
  * 
- * Setter for property <code>editorType</code>.
- * </p><p>
- * Default value is <code>'TinyMCE'</code> 
- * @param {string} sEditorType  new value for property <code>editorType</code>
- * @return {sap.ui.richtexteditor.RichTextEditor} <code>this</code> to allow method chaining
+ * Switches the editor type and sets the default settings for the editor.
+ * All plugins and button groups should be set after this has been invoked
+ * @param {string} [sEditorType] Which editor type to be used (currently only TinyMCE 3 and 4)
+ * @returns {object} Control instance (for method chaining)
  * @public
- * 
  */
-sap.ui.richtexteditor.RichTextEditor.prototype.setEditorType = function(sEditorType) { return new sap.ui.richtexteditor.RichTextEditor(); };
+sap.ui.richtexteditor.RichTextEditor.prototype.setEditorType = function(sEditorType) { return new Object(); };
 
 /**
  * 
@@ -706,10 +771,11 @@ sap.ui.richtexteditor.RichTextEditor.prototype.setTextDirection = function(oText
  * Allows to opt out of the legacy theme that is applied to keep the old button look. In case
  * butons are used that are not in the legacy theme, this can be disabled in order to show
  * the button correctly.
- * @param {boolean} Whether to use the legacy button theme
+ * @param {boolean} [bUseLegacyTheme] Whether to use the legacy button theme
  * @public
+ * @returns {object} Control instance (for method chaining)
  */
-sap.ui.richtexteditor.RichTextEditor.prototype.setUseLegacyTheme = function(Whether) { return null; };
+sap.ui.richtexteditor.RichTextEditor.prototype.setUseLegacyTheme = function(bUseLegacyTheme) { return new Object(); };
 
 /**
  * 
@@ -748,3 +814,22 @@ sap.ui.richtexteditor.RichTextEditor.prototype.setWidth = function(sWidth) { ret
 sap.ui.richtexteditor.RichTextEditor.prototype.setWrapping = function(bWrapping) { return new sap.ui.richtexteditor.RichTextEditor(); };
 
 // ---- static fields of namespaces ---------------------------------------------------------------------
+
+// ---- sap.ui.richtexteditor.EditorType --------------------------------------------------------------------------
+
+/**
+ * 
+ * Uses TinyMCE version 3 as editor (default)
+ * @public
+ * @memberOf sap.ui.richtexteditor.EditorType
+ */
+sap.ui.richtexteditor.EditorType.TinyMCE = null;
+
+/**
+ * 
+ * Uses TinyMCE version 4 as editor
+ * @public
+ * @memberOf sap.ui.richtexteditor.EditorType
+ */
+sap.ui.richtexteditor.EditorType.TinyMCE4 = null;
+

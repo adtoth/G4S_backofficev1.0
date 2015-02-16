@@ -66,7 +66,7 @@
  * @class
  * This is the Calendar control
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @experimental Since version 1.12. 
@@ -544,6 +544,15 @@ sap.me.Calendar.parseDate = function(strDate) { return null; };
 
 /**
  * 
+ * Sets the current date of the calendar.
+ * @param {String} strDate The Date to set, the format being identical to a date string produced by "toDateString".
+ * @return {sap.me.Calendar} <code>this</code> to allow method chaining.
+ * @public
+ */
+sap.me.Calendar.prototype.setCurrentDate = function(strDate) { return new sap.me.Calendar(); };
+
+/**
+ * 
  * Setter for property <code>dayHeight</code>.
  * </p><p>
  * Default value is <code>50</code> 
@@ -883,7 +892,7 @@ sap.me.CalendarEventType.toString = function() { return ""; };
  * @class
  * Legend for the calendar control
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @experimental Since version 1.12. 
@@ -1318,7 +1327,7 @@ sap.me.CalendarSelectionMode.toString = function() { return ""; };
  * @class
  * A calendar that allows to display events in a grid and show the overlapped events
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @experimental Since version 1.12. 
@@ -1780,7 +1789,7 @@ sap.me.OverlapCalendar.prototype.setWidth = function(sWidth) { return new sap.me
  * @class
  * Represent the data of an event for the overlap calendar
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @experimental Since version 1.12. 
@@ -2208,7 +2217,7 @@ sap.me.OverlapCalendarEvent.prototype.unbindTypeName = function() { return new s
  * Shows the progress of a process in a graphical way. The indicator can be displayed with or without numerical values.
  * The filling can be displayed in color only, or additionally with the percentage rate. The indicator status can be interactive.
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.14. 
@@ -2450,7 +2459,7 @@ sap.me.ProgressIndicator.prototype.setWidth = function(sWidth) { return new sap.
  * The TabContainer allow to stack 1 to 4 contents in a
  * view with corresponding icons
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.15.0. 

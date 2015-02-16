@@ -52,7 +52,7 @@
  * @class
  * Base element for the Axis object for the Chart.
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.8
@@ -241,7 +241,7 @@ sap.makit.Axis.prototype.setThickness = function(fThickness) { return new sap.ma
  * @class
  * Represents the Category data region of the Chart.
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.8
@@ -383,7 +383,7 @@ sap.makit.Category.prototype.setFormat = function(sFormat) { return new sap.maki
  * @class
  * Contains the properties of the Category's Axis.
  * @extends sap.makit.Axis
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.8
@@ -539,7 +539,7 @@ sap.makit.CategoryAxis.prototype.setSortOrder = function(oSortOrder) { return ne
  * @class
  * The Chart control.
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.8
@@ -1374,7 +1374,7 @@ sap.makit.ChartType.toString = function() { return ""; };
  * @class
  * The data column of the Chart's data table
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.8
@@ -1526,7 +1526,7 @@ sap.makit.Column.prototype.setValue = function(oValue) { return new sap.makit.Co
  * @class
  * The CombinationChart control.
  * @extends sap.ui.core.Control
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.12
@@ -2119,7 +2119,7 @@ sap.makit.CombinationChart.prototype.setWidth = function(sWidth) { return new sa
  * @class
  * Layer represent a chart in the CombinationChart
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.12
@@ -2530,7 +2530,7 @@ sap.makit.LegendPosition.toString = function() { return ""; };
  * @class
  * Wrapper for MAKit Chart Library. Only to be used used internally.
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.12
@@ -2594,7 +2594,7 @@ sap.makit.MakitLib.extend = function(sClassName,oClassInfo,FNMetaImpl) { return 
  * @class
  * The data row of the Chart's data table
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.8
@@ -2740,7 +2740,7 @@ sap.makit.Row.prototype.removeCell = function(vCell) { return new sap.makit.Colu
  * @class
  * Represents the Series data region of the Chart.
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.8
@@ -2888,7 +2888,7 @@ sap.makit.SortOrder.toString = function() { return ""; };
  * @class
  * Represents the Value data region of the Chart.
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.8
@@ -3060,12 +3060,10 @@ sap.makit.Value.prototype.setLocale = function(sLocale) { return new sap.makit.V
  * @class
  * Contains the properties of the Value's Axis.
  * @extends sap.makit.Axis
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.8
- * @experimental Since version 1.8. 
- * API is not yet finished and might change completely
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.makit.ValueAxis = function(sId,mSettings) {};
@@ -3182,12 +3180,10 @@ sap.makit.ValueAxis.prototype.setMin = function(sMin) { return new sap.makit.Val
  * @class
  * The properties of the Chart's Value Bubble.
  * @extends sap.ui.core.Element
- * @version 1.24.4
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.8
- * @experimental Since version 1.8. 
- * API is not yet finished and might change completely
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.makit.ValueBubble = function(sId,mSettings) {};

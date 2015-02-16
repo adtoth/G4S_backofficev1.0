@@ -62,9 +62,11 @@
  * Enables users to add pictures into a form. Contains PictureItem controls that describe the media.
  * It is designed to be used simultaneously with the PictureViewer control
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.26. 
+ * As per central UX requirements, this control is replaced by sap.m.UploadCollection. Please use the new control if you start developing an application instead of using this AddPicture control.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.AddPicture = function(sId,mSettings) {};
@@ -726,9 +728,15 @@ sap.ca.ui.AddPicture.prototype.unbindPictures = function() { return new sap.ca.u
  * @class
  * The display list item consists of a label and a value.
  * @extends sap.m.ListItemBase
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.24. 
+ * </p><p>
+ * Sap.ca charts have been replaced with sap.viz and vizFrame in 1.24.
+ * The UI5 control "sap.viz.ui5.controls.VizFrame" serves as a single point of entry for all the new charts.
+ * Now that 1.24 is available you are asked to use sap.viz charts and the VizFrame instead!
+ * This control will not be supported anymore from 1.24.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.charts.BarListItem = function(sId,mSettings) {};
@@ -884,14 +892,14 @@ sap.ca.ui.charts.BarListItem.prototype.setValue = function(sValue) { return new 
  * </p><p>
  * Bubble chart.
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
  * </p><p>
- * Sap.ca charts are being replaced with sap.viz and vizFrame in 1.24.
- * The UI5 control “sap.viz.ui5.controls.VizFrame” serves as a single point of entry for all the new charts.
- * When 1.24 will be available you will be asked to use sap.viz charts and the VizFrame instead!
+ * Sap.ca charts have been replaced with sap.viz and vizFrame in 1.24.
+ * The UI5 control "sap.viz.ui5.controls.VizFrame" serves as a single point of entry for all the new charts.
+ * Now that 1.24 is available you are asked to use sap.viz charts and the VizFrame instead!
  * This control will not be supported anymore from 1.24.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
@@ -1637,14 +1645,14 @@ sap.ca.ui.charts.BubbleChart.prototype.setYAxisTitle = function(sYAxisTitle) { r
  * - Minimum bar / dot / blip ... size
  * - Integration with ChartToolbar and ChartPopover
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
  * </p><p>
- * Sap.ca charts are being replaced with sap.viz and vizFrame in 1.24.
- * The UI5 control “sap.viz.ui5.controls.VizFrame” serves as a single point of entry for all the new charts.
- * When 1.24 will be available you will be asked to use sap.viz charts and the VizFrame instead!
+ * Sap.ca charts have been replaced with sap.viz and vizFrame in 1.24.
+ * The UI5 control "sap.viz.ui5.controls.VizFrame" serves as a single point of entry for all the new charts.
+ * Now that 1.24 is available you are asked to use sap.viz charts and the VizFrame instead!
  * This control will not be supported anymore from 1.24.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
@@ -2846,14 +2854,14 @@ sap.ca.ui.charts.ChartSemanticColor.toString = function() { return ""; };
  * - personalization icon
  * - showLegend toggle
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
  * </p><p>
- * Sap.viz charts are not supported by this sap.ca version of the chart toolbar.
- * A new version of the chart toolbar will be delivered for the sap.viz charts in 1.24.
- * When 1.24 will be available you will be asked to use the new chart toolbar along with sap.viz charts!
+ * Sap.ca charts and the ChartToolBar have been replaced with sap.viz and vizFrame in 1.24.
+ * The UI5 control "sap.viz.ui5.controls.VizFrame" serves as a single point of entry for all the new charts.
+ * Now that 1.24 is available you are asked to use sap.viz charts and the VizFrame instead!
  * This control will not be supported anymore from 1.24.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
@@ -3531,7 +3539,7 @@ sap.ca.ui.charts.ChartType.toString = function() { return ""; };
  * @class
  * The cluster list item consists of a title and items.
  * @extends sap.m.ListItemBase
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
@@ -3645,14 +3653,14 @@ sap.ca.ui.charts.ClusterListItem.prototype.setTitle = function(sTitle) { return 
  * @class
  * Allows you to create a chart using vertical bars and lines to represent the data
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
  * </p><p>
- * Sap.ca charts are being replaced with sap.viz and vizFrame in 1.24.
- * The UI5 control “sap.viz.ui5.controls.VizFrame” serves as a single point of entry for all the new charts.
- * When 1.24 will be available you will be asked to use sap.viz charts and the VizFrame instead!
+ * Sap.ca charts have been replaced with sap.viz and vizFrame in 1.24.
+ * The UI5 control "sap.viz.ui5.controls.VizFrame" serves as a single point of entry for all the new charts.
+ * Now that 1.24 is available you are asked to use sap.viz charts and the VizFrame instead!
  * This control will not be supported anymore from 1.24.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
@@ -3821,14 +3829,14 @@ sap.ca.ui.charts.CombinedChart.prototype.setSecondAxis = function(oSecondAxis) {
  * @class
  * Allows you to create a chart using horizontal bars to represent the data
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
  * </p><p>
- * Sap.ca charts are being replaced with sap.viz and vizFrame in 1.24.
- * The UI5 control “sap.viz.ui5.controls.VizFrame” serves as a single point of entry for all the new charts.
- * When 1.24 will be available you will be asked to use sap.viz charts and the VizFrame instead!
+ * Sap.ca charts have been replaced with sap.viz and vizFrame in 1.24.
+ * The UI5 control "sap.viz.ui5.controls.VizFrame" serves as a single point of entry for all the new charts.
+ * Now that 1.24 is available you are asked to use sap.viz charts and the VizFrame instead!
  * This control will not be supported anymore from 1.24.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
@@ -4078,15 +4086,15 @@ sap.ca.ui.charts.HorizontalBarChart.prototype.setVerticalArea = function(oVertic
  * @class
  * Line Chart for the Fiori Project
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @since 1.0.0
  * @deprecated Since version 1.24. 
  * </p><p>
- * Sap.ca charts are being replaced with sap.viz and vizFrame in 1.24.
- * The UI5 control “sap.viz.ui5.controls.VizFrame” serves as a single point of entry for all the new charts.
- * When 1.24 will be available you will be asked to use sap.viz charts and the VizFrame instead!
+ * Sap.ca charts have been replaced with sap.viz and vizFrame in 1.24.
+ * The UI5 control "sap.viz.ui5.controls.VizFrame" serves as a single point of entry for all the new charts.
+ * Now that 1.24 is available you are asked to use sap.viz charts and the VizFrame instead!
  * This control will not be supported anymore from 1.24.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
@@ -4616,14 +4624,14 @@ sap.ca.ui.charts.LineChart.prototype.setVertical = function(oVertical) { return 
  * Stacked Horizontal Bar Chart wrapper around the viz StackedBarChart / MultipleStackedBarChart.
  * To be used in conjunction with the chart toolbar.
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
  * </p><p>
- * Sap.ca charts are being replaced with sap.viz and vizFrame in 1.24.
- * The UI5 control “sap.viz.ui5.controls.VizFrame” serves as a single point of entry for all the new charts.
- * When 1.24 will be available you will be asked to use sap.viz charts and the VizFrame instead!
+ * Sap.ca charts have been replaced with sap.viz and vizFrame in 1.24.
+ * The UI5 control "sap.viz.ui5.controls.VizFrame" serves as a single point of entry for all the new charts.
+ * Now that 1.24 is available you are asked to use sap.viz charts and the VizFrame instead!
  * This control will not be supported anymore from 1.24.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
@@ -4874,14 +4882,14 @@ sap.ca.ui.charts.StackedHorizontalBarChart.prototype.setType = function(sType) {
  * Stacked Vertical Column Chart wrapper around the viz StackedColumnChart / MultipleStackedColumnChart.
  * To be used in conjunction with the chart toolbar.
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
  * </p><p>
- * Sap.ca charts are being replaced with sap.viz and vizFrame in 1.24.
- * The UI5 control “sap.viz.ui5.controls.VizFrame” serves as a single point of entry for all the new charts.
- * When 1.24 will be available you will be asked to use sap.viz charts and the VizFrame instead!
+ * Sap.ca charts have been replaced with sap.viz and vizFrame in 1.24.
+ * The UI5 control "sap.viz.ui5.controls.VizFrame" serves as a single point of entry for all the new charts.
+ * Now that 1.24 is available you are asked to use sap.viz charts and the VizFrame instead!
  * This control will not be supported anymore from 1.24.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
@@ -5140,14 +5148,14 @@ sap.ca.ui.charts.StackedVerticalColumnChart.prototype.setType = function(sType) 
  * @class
  * Allows you to create a chart using vertical bars to represent the data
  * @extends sap.ca.ui.charts.Chart
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
  * </p><p>
- * Sap.ca charts are being replaced with sap.viz and vizFrame in 1.24.
- * The UI5 control “sap.viz.ui5.controls.VizFrame” serves as a single point of entry for all the new charts.
- * When 1.24 will be available you will be asked to use sap.viz charts and the VizFrame instead!
+ * Sap.ca charts have been replaced with sap.viz and vizFrame in 1.24.
+ * The UI5 control "sap.viz.ui5.controls.VizFrame" serves as a single point of entry for all the new charts.
+ * Now that 1.24 is available you are asked to use sap.viz charts and the VizFrame instead!
  * This control will not be supported anymore from 1.24.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
@@ -5495,9 +5503,13 @@ sap.ca.ui.charts.VerticalBarChart.prototype.setVerticalBarChart = function(oVert
  * </p><p>
  * When opening the dialog in "select" mode, if a customer has been persisted in a previous session, it will be retrieved and the dialog won't open at all.
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.24.3. 
+ * This control is not required anymore as per central UX requirements.
+ * Please use Contextual Filter design instead!
+ * This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.CustomerContext = function(sId,mSettings) {};
@@ -5870,9 +5882,13 @@ sap.ca.ui.CustomerContext.prototype.setShowSalesArea = function(bShowSalesArea) 
  * @class
  * Extends the ObjectListItem to display a line in the customer context control.
  * @extends sap.m.CustomListItem
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.24.3. 
+ * This control is not required anymore as per central UX requirements.
+ * Please use Contextual Filter design instead!
+ * This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.CustomerControlListItem = function(sId,mSettings) {};
@@ -6079,7 +6095,7 @@ sap.ca.ui.CustomerControlListItem.prototype.setShowSalesArea = function(bShowSal
  * Allows end users to interact with dates.
  * Entries can directly be written in, or selected from a calendar pad.
  * @extends sap.m.InputBase
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.22. 
@@ -6233,7 +6249,7 @@ sap.ca.ui.dialog.confirmation.open = function(oSettings,fnClose) { return null; 
  * Extends the FeedListItem to hide text when it is longer than maxLines. When text is hidden a See more
  * link is displayed, clicking on the link displays the entire text.
  * @extends sap.m.FeedListItem
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24. 
@@ -6351,13 +6367,12 @@ sap.ca.ui.ExpansibleFeedListItem.prototype.setMaxLines = function(iMaxLines) { r
  * @class
  * Allows you to display a list of uploaded files. You can also upload a new one, rename or delete them
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
- * @deprecated Since version 1.24. 
- * This control will be available in sap.m in 1.24.
- * When 1.24 will be available you will be asked to use sap.m.FileUpload instead!
- * This control will not be supported anymore from 1.24.
+ * @deprecated Since version 1.26. 
+ * This control is available in sap.m in 1.26, as sap.m.UploadCollection.
+ * Please use UploadCollection, as sap.ca.ui.FileUpload will not be supported anymore from 1.26.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.FileUpload = function(sId,mSettings) {};
@@ -7305,9 +7320,12 @@ sap.ca.ui.FileUpload.prototype.setXsrfToken = function(sXsrfToken) { return new 
  * @class
  * A Tile container for the Overview tile with growing capabilities
  * @extends sap.m.ScrollContainer
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.24.3. 
+ * This control is not required anymore as per central UX requirements.
+ * This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.GrowingTileContainer = function(sId,mSettings) {};
@@ -7442,7 +7460,7 @@ sap.ca.ui.GrowingTileContainer.prototype.setGrowingThreshold = function(iGrowing
  * @class
  * Select an item in a dialog from a hierarchical list
  * @extends sap.m.Dialog
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24.1. 
@@ -7685,11 +7703,14 @@ sap.ca.ui.HierarchicalSelectDialog.prototype.removeItem = function(vItem) { retu
  * @class
  * </p><p>
  * Kind of item required by the sap.ca.ui.HierarchicalSelectDialog control.
- * An item is actually one page of the Dialog
+ * An item is actually one page of the Dialog.
  * @extends sap.ui.core.Item
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.24. 
+ * This control is deprecated as per central UX requirements.
+ * This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.HierarchicalSelectDialogItem = function(sId,mSettings) {};
@@ -7823,11 +7844,16 @@ sap.ca.ui.HierarchicalSelectDialogItem.prototype.setTitle = function(sTitle) { r
  * @param {string} [sId] id for the new control, generated automatically if no id is given 
  * @param {object} [mSettings] initial settings for the new control
  * @class
- * Display the Hierarchy of an item. Useful to indicates where an object stand in a chain of hierarchical data. The emphasized item shows the one item to display. Optional item can be hidden using the hideOptionalLevels property. Hidden items will stay accessible with an expand button.
+ * Display the Hierarchy of an item. Useful to indicates where an object stand in a chain of
+ * hierarchical data. The emphasized item shows the one item to display. Optional item can be hidden using the
+ * hideOptionalLevels property. Hidden items will stay accessible with an expand button.
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.24.3. 
+ * This control is not required anymore as per central UX requirements.
+ * This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.Hierarchy = function(sId,mSettings) {};
@@ -8015,11 +8041,16 @@ sap.ca.ui.Hierarchy.prototype.unbindItems = function() { return new sap.ca.ui.Hi
  * @param {string} [sId] id for the new control, generated automatically if no id is given 
  * @param {object} [mSettings] initial settings for the new control
  * @class
- * Item that represent a line of the Hierarchy control. The emphasized property should apply to the item that we want to represent in his hierarchy. Optionals item will be hidden if the option is true on the Hierarchy control.
+ * Item that represent a line of the Hierarchy control. The emphasized property should apply to the item
+ * that we want to represent in his hierarchy. Optionals item will be hidden if the option is true on the Hierarchy
+ * control.
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.24. 
+ * This control is deprecated as per central UX requirements.
+ * This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.HierarchyItem = function(sId,mSettings) {};
@@ -8303,7 +8334,7 @@ sap.ca.ui.HierarchyItem.prototype.setTitle = function(sTitle) { return new sap.c
  * </p><p>
  * This control is used to switch between readonly and edit modes. A typical use case would be to change the value of a Label.
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.22. 
@@ -9122,7 +9153,7 @@ sap.ca.ui.model.type.Time.extend = function(sClassName,oClassInfo,FNMetaImpl) { 
  * the FeedListItem or the ExpansibleFeedListItem). The developer is also responsible to implement the code to send
  * the notes to the backend system, by responding to the addNote event.
  * @extends sap.m.List
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.22. 
@@ -9326,7 +9357,7 @@ sap.ca.ui.Notes.prototype.setTextMaxLength = function(iTextMaxLength) { return n
  * The OverflowContainer allows the content of a control to be partially displayed before being fully expanded.
  * It will cut its content to a fixed height that can be defined. It is fully suitable within an IconTabBar.
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.24.1. 
@@ -9533,9 +9564,12 @@ sap.ca.ui.OverflowContainer.prototype.setOverflowHeight = function(sOverflowHeig
  * @class
  * Display aTile that presents an overview of a customer
  * @extends sap.m.Tile
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.24.3. 
+ * This control is not required anymore as per central UX requirements.
+ * This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.OverviewTile = function(sId,mSettings) {};
@@ -9613,7 +9647,7 @@ sap.ca.ui.OverviewTile.prototype.fireContactPress = function(mArguments) { retur
 /**
  * 
  * Getter for property <code>address</code>.
- * This property is used to set the adress field in the form of the tile
+ * This property is used to set the address field in the form of the tile
  * </p><p>
  * Default value is <code>null</code>
  * @return {string} the value of property <code>address</code>
@@ -9673,7 +9707,7 @@ sap.ca.ui.OverviewTile.prototype.getNextContact = function() { return ""; };
 /**
  * 
  * Getter for property <code>opportunities</code>.
- * This property is used to set the opportunitiesfield in the form of the tile
+ * This property is used to set the opportunities field in the form of the tile
  * </p><p>
  * Default value is <code>null</code>
  * @return {string} the value of property <code>opportunities</code>
@@ -9937,9 +9971,13 @@ sap.ca.ui.OverviewTile.prototype.setWidth = function(sWidth) { return new sap.ca
  * @class
  * A picture / photo Item for AddPicture and PictureViewer Controls
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.22. 
+ * This control has been made available in sap.m.
+ * Please use the sap.m.Carousel instead!
+ * This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.PictureItem = function(sId,mSettings) {};
@@ -10195,9 +10233,14 @@ sap.ca.ui.PictureItem.prototype.setWidth = function(sWidth) { return new sap.ca.
  * @class
  * Tile control embedding an image and allowing custom sizing
  * @extends sap.m.CustomTile
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.22. 
+ * </p><p>
+ * PictureTile is used in PictureViewer control and is not meant to be consumed outside of PictureViewer usage.
+ * PictureViewer was replacing the sap.m.Carousel as it wasn't supporting some versions of MS Internet Explorer.
+ * Now, the sap.m.Carousel is fully functional, please use sap.m.Carousel instead. This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.PictureTile = function(sId,mSettings) {};
@@ -10386,7 +10429,7 @@ sap.ca.ui.PictureTile.prototype.setWidth = function(sWidth) { return new sap.ca.
  * @class
  * Picture viewer control relying on the TileContainer control
  * @extends sap.m.TileContainer
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
  * @deprecated Since version 1.22. 
@@ -10678,9 +10721,14 @@ sap.ca.ui.PictureViewer.prototype.setTileScaling = function(fTileScale) { return
  * @class
  * Picture viewer control relying on the TileContainer control
  * @extends sap.ui.core.Control
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.22. 
+ * </p><p>
+ * PictureViewerItem is used in PictureViewer control and is not meant to be consumed outside of PictureViewer usage.
+ * PictureViewer was replacing the Carousel as it wasn't supporting some versions of MS Internet Explorer. Now, the
+ * sap.m.Carousel is fully functional, please use sap.m.Carousel instead. This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.PictureViewerItem = function(sId,mSettings) {};
@@ -10762,8 +10810,8 @@ sap.ca.ui.PictureViewerItem.prototype.setSrc = function(sSrc) { return new sap.c
 
 /**
  * 
- * Destroys the waiting/blocking screen (this method is only recommended if the App developer 
- * or the “Unified Shell” has a clean-up strategy and want to release the memory on purpose) 
+ * Destroys the waiting/blocking screen (this method is only recommended if the App developer
+ * or the "Unified Shell" has a clean-up strategy and want to release the memory on purpose)
  * @public
  * 
  * @memberOf sap.ca.ui.utils.busydialog
@@ -10834,9 +10882,14 @@ sap.ca.ui.utils.busydialog.requireBusyDialog = function(oSettings) { return null
  * @class
  * Based on a ScrollContainer, it allows you to pinch and zoom on mobile devices
  * @extends sap.m.ScrollContainer
- * @version 1.24.5
+ * @version 1.26.4
  * @constructor
  * @public
+ * @deprecated Since version 1.22. 
+ * </p><p>
+ * ZoomableScrollContainer is used in PictureViewer control and is not meant to be consumed outside of PictureViewer usage.
+ * PictureViewer was replacing the Carousel as it wasn't supporting some versions of MS Internet Explorer. Now, the
+ * sap.m.Carousel is fully functional, please use sap.m.Carousel instead. This control will not be supported anymore.
  * @ui5-metamodel This control/element also will be described in the UI5 (legacy) designtime metamodel
  */
 sap.ca.ui.ZoomableScrollContainer = function(sId,mSettings) {};
@@ -10895,7 +10948,8 @@ sap.ca.ui.ZoomableScrollContainer.prototype.getMinScale = function() { return 0.
 /**
  * 
  * Getter for property <code>zoomable</code>.
- * Activate or not the zooming functionality. If FALSE, it acts exactly as a basic ScrollContainer.
+ * Activate or not the zooming functionality. If FALSE, it acts exactly as a basic
+ * ScrollContainer.
  * </p><p>
  * Default value is <code>true</code>
  * @return {boolean} the value of property <code>zoomable</code>
