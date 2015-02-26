@@ -1,0 +1,61 @@
+<core:View controllerName="sap.ui.netlife.G4S.view.Master"
+	xmlns="sap.m" xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+	 <u:Shell
+      id="myShell"
+      icon="{/logo}">
+      <u:headItems>
+        <u:ShellHeadItem
+          tooltip="Configuration"
+          icon="sap-icon://menu2"
+          press="handlePressConfiguration" />
+        <u:ShellHeadItem
+          tooltip="Home"
+          icon="sap-icon://home"
+          visible="false"
+          press="handlePressHome" />
+      </u:headItems>
+      <u:headEndItems>
+        <u:ShellHeadItem
+          icon="sap-icon://log"
+          tooltip="Logoff"
+          press="handleLogoffPress" />
+      </u:headEndItems>
+      <u:user>
+        <u:ShellHeadUserItem
+          image="sap-icon://person-placeholder"
+          username="Karl Mustermann"
+          press="handleUserItemPressed" />
+      </u:user>
+      <u:search>
+        <SearchField
+          search="handleSearchPressed"/>
+      </u:search>
+      <u:paneContent>
+        		<StandardTile icon="sap-icon://database" id="bevetTile" number="0" title="Bevételezés"
+			press="handleBevetelezesPress" />
+			
+		<StandardTile id="aktualisTile" icon="sap-icon://sys-enter-2"
+			title="Aktuális szállítás" number="0" press="handleAktualisPress" />
+			
+		<StandardTile id="leadTile" icon="sap-icon://toaster-down"
+			title="Leadás" number="0" press="handleLeadasPress" />
+			
+		<StandardTile id="leadLezartTile" icon="sap-icon://locked"
+			title="Lezárt Leadások" number="0" press="handleLezartLeadasPress" />
+			
+		<StandardTile id="felvetTile" icon="sap-icon://toaster-up" title="Felvét"
+			press="handleFelvetelPress" number="0" />
+			
+		<StandardTile id="felvetLezartTile" icon="sap-icon://locked"
+			title="Lezárt Felvétek" number="0" press="handleLezartFelvetelPress" />
+			
+		<StandardTile icon="sap-icon://payment-approval" title="Utánvét"
+			press="handleUtanvetPress" />
+			
+		<StandardTile icon="sap-icon://home" title="Depo"
+			press="handleDepoPress" number="0" id="depoTile" />
+      </u:paneContent>
+    </u:Shell>
+
+			
+</core:View>

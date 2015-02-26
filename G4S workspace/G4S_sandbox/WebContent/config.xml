@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "netlife.g4s.v1.5"
+        version   = "1.5.0">
+    <name>G4S Futár PG</name>
+
+    <description>
+        G4S futár alkalmazás. v1.5
+    </description>
+
+    <author href="http://netlife.hu" email="info@netlife.hu">
+        Netlife Consulting
+    </author>
+    <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
+
+    <preference name="phonegap-version" value="3.6.3" />
+    <preference name="orientation"      value="default" />
+    <preference name="target-device"    value="universal" />
+    <preference name="fullscreen"       value="false" />
+    <preference name="webviewbounce"    value="false" />
+	<feature name="Geolocation">
+		<param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+	</feature>
+	<icon src="icon.png" />
+  
+	<access origin="*" subdomains="true"/>
+
+    <!-- content src="http://www.w3.org/2010/05/video/mediaevents.html" / -->
+</widget>

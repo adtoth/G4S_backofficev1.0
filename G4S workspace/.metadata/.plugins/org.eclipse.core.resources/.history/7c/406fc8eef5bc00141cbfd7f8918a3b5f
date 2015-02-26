@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>G4S Backoffice</title>
+		
+<!-- src="resources/sap-ui-core.js" -->
+ 		
+
+	</head>
+	<body class="sapUiBody" id="content">
+    	  <script type="text/javascript" src="cordova.js"></script> 
+		<script
+			id="sap-ui-bootstrap"
+			src='https://sapui5.hana.ondemand.com/resources/sap-ui-core-dbg.js'			
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-libs="sap.m, sap.ui.layout, sap.ui.unified"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-resourceroots='{
+				"sap.ui.netlife.G4S": "./"
+			}' >
+		</script>
+
+		<script>
+			new sap.m.Shell({
+				app : new sap.ui.core.ComponentContainer({
+					name : "sap.ui.netlife.G4S"
+				})
+			}).placeAt("content");
+		</script>
+	</body>
+</html>

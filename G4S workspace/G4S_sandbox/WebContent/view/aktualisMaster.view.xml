@@ -1,0 +1,124 @@
+<core:View 
+	controllerName="sap.ui.netlife.G4S.view.aktualisMaster"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<u:Shell
+      id="myShell"
+      icon="{/logo}">
+      <u:headItems>
+        <u:ShellHeadItem
+          tooltip="Configuration"
+          icon="sap-icon://menu2"
+          press="handlePressConfiguration" />
+        <u:ShellHeadItem
+          tooltip="Home"
+          icon="sap-icon://home"
+          visible="false"
+          press="handlePressHome" />
+      </u:headItems>
+      <u:headEndItems>
+        <u:ShellHeadItem
+          icon="sap-icon://log"
+          tooltip="Logoff"
+          press="handleLogoffPress" />
+      </u:headEndItems>
+      <u:user>
+        <u:ShellHeadUserItem
+          image="sap-icon://person-placeholder"
+          press="handleUserItemPressed" />
+      </u:user>
+      <u:search>
+        <SearchField
+          search="handleSearchPressed"/>
+      </u:search>
+      <u:paneContent>
+      <List headerText="Actions" >
+	    
+	    <ActionListItem id="bevetALI" icon="sap-icon://database" counter="0" 
+	    		text="Bevételezés" press="handleBevetelezesPress"/>
+	    
+	    <ActionListItem id="aktualisALI" icon="sap-icon://sys-enter-2"
+				text="Aktuális szállítás" counter="25" press="handleAktualisPress" />
+				
+		<ActionListItem id="leadSikeresLezartALI" icon="sap-icon://locked"
+				text="Sikeres Lezárt Leadások" counter="10" press="handleLezartLeadasSikeresPress" />
+				
+		<ActionListItem id="leadSikertelenLezartALI" icon="sap-icon://locked"
+				text="Sikertelen Lezárt Leadások" counter="0" press="handleLezartLeadasSikerestelenPress" />	
+			
+		<ActionListItem id="felfuggSzallALI" icon="sap-icon://locked"
+				text="Felfüggesztett szállítások" counter="0" press="handleFelfuggSzall" />
+				
+		<ActionListItem id="utanvetALI" icon="sap-icon://payment-approval" 
+				text="Utánvét" counter= "0" press="handleUtanvetPress" />
+				
+  	  </List>
+      </u:paneContent>
+		<Page showNavButton="true" navButtonPress="handleNavButtonPress"
+			title="Aktuális Szállítás">
+			<List id="list" select="handleListSelect" items="{/Address?$filter=DelStatus eq '999'}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel">
+				<ObjectListItem type="Active" press="handleListItemPress"
+				
+					title="{Company}" icon="sap-icon://toaster-{IconPic}" number="{path: 'PicType',
+								formatter: 'sap.ui.netlife.G4S.util.Formatter.statusText'}">
+					
+					<attributes>
+						<!-- <ObjectAttribute text="Feladó: " />
+						<ObjectAttribute text="{FPostalCode}, {FCity}, {FPostalCode}, {FStreet}" /> -->
+						<ObjectAttribute text="Szállítási cím: " />
+						<ObjectAttribute text="{TPostalCode}, {TCity}, {TPostalCode}, {TStreet}" />
+						<ObjectAttribute text="{path: 'HasCOD', formatter: 'sap.ui.netlife.G4S.util.Formatter.HasCODText'}" />
+						<ObjectAttribute text="Telefon: {Phone}"/>
+					</attributes>
+					
+					<firstStatus>
+						<ObjectStatus
+							text="{
+								path: 'DelStatus',
+								formatter: 'sap.ui.netlife.G4S.util.Formatter.statusText'
+							}"
+							state="{
+								path: 'DelStatus',
+								formatter: 'sap.ui.netlife.G4S.util.Formatter.statusState'
+							}"
+						
+							/>
+	
+					</firstStatus>
+					
+						<secondStatus>
+						<ObjectStatus
+							text="{
+								path: 'SzallitasStatus',
+								formatter: 'sap.ui.netlife.G4S.util.Formatter.statusText'
+							}"
+							state="{
+								path: 'SzallitasStatus',
+								formatter: 'sap.ui.netlife.G4S.util.Formatter.statusState'
+							}"
+						
+							/>
+	
+					</secondStatus>
+	
+				</ObjectListItem>
+			</List>
+			<footer>
+				<Bar>
+					<contentRight>
+						<Select id="groupSelect" name="Csoportosít" change="handleGroup" icon="sap-icon://group-2"
+							type="Default" selectedKey="None" autoAdjustWidth="true">
+							<core:Item key="None" text="Nincs csoportosítás" />
+							<core:Item key="TPostalCode" text="Irányítószám" />
+							<core:Item key="To" text="Címzett neve szerint" />
+							<core:Item key="TStreet" text="Címzett utcanév szerint" />
+						</Select>
+					</contentRight>
+				</Bar>
+			</footer>
+		</Page>
+	</u:Shell>
+</core:View>

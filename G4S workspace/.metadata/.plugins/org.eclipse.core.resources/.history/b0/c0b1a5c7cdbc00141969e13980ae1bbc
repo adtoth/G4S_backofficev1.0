@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="G4S_backofficev1.0">
+        <property name="context-root" value="G4S_backofficev1.0"/>
+        <property name="java-output-path" value="/G4S_backofficev1.0/build/classes"/>
+    </wb-module>
+</project-modules>

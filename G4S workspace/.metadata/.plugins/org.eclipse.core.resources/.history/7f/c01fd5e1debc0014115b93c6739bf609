@@ -1,0 +1,63 @@
+<core:View controllerName="sap.ui.netlife.G4S.view.bevetMaster"
+	xmlns="sap.m" xmlns:core="sap.ui.core">
+		<!-- items="{/Item}" -->
+		<List id="list" select="handleListSelect" items="{/Item?$filter=PickupStatus eq 'M' and Today eq '1'}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel, vagy üres a lista">
+			<ObjectListItem type="Active" press="handleListItemPress"
+				title="{From}"
+				icon="sap-icon://shipping-status">
+				
+		 		<firstStatus>
+					<ObjectStatus
+						text="{
+							path: 'PickupStatus',
+							formatter: 'sap.ui.netlife.G4S.util.Formatter.statusText'
+						}"
+						state="{
+							path: 'PickupStatus',
+							formatter: 'sap.ui.netlife.G4S.util.Formatter.statusState'
+						}"
+						  />
+				</firstStatus>
+				 <secondStatus>
+					<ObjectStatus
+						text="{
+							path: 'PicType',
+							formatter: 'sap.ui.netlife.G4S.util.Formatter.statusText'
+						}"
+												  />
+				</secondStatus>
+				<attributes>
+					<ObjectAttribute text="Csomagnév: {ProductName}" />
+					<ObjectAttribute text="Csomag ID: {ProductId}"/>
+	
+				</attributes>
+
+			</ObjectListItem>
+		</List>
+		
+ 		<List id="listItems" visible="false" items="{/Address}">
+			<ObjectListItem type="Active" press="handleListItemPress"
+				title="{From}"
+				icon="sap-icon://customer">
+
+			</ObjectListItem>
+		</List>
+		<footer>
+			<Bar>
+			<!-- 	<contentRight>
+					<Select id="groupSelect" name="Csoportosít" change="handleGroup" icon="sap-icon://group-2"
+						type="Default" selectedKey="None" autoAdjustWidth="true">
+						<core:Item key="none" text="Nincs rendezés" />
+						<core:Item key="SzallitasStatus" text="Státus szerint" />
+					</Select>
+				</contentRight> -->
+				<contentRight>
+					<Button type="Emphasized" text="Start Scan" press="scan"
+					 width="150px" icon="sap-icon://camera" />
+				</contentRight> 
+				
+				
+			</Bar>
+		</footer>
+	
+</core:View>
