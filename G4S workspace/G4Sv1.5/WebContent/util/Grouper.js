@@ -4,8 +4,8 @@ sap.ui.netlife.G4S.util.Grouper = {
 
 	bundle : null, // somebody has to set this
 
-	TPostalCode : function (oContext) {
-		var status = oContext.getProperty("TPostalCode");
+	Number : function (oContext) {
+		var status = oContext.getProperty("Number");
 		var text = sap.ui.netlife.G4S.util.Grouper.bundle.getText(status);
 		return {
 			key: status,
