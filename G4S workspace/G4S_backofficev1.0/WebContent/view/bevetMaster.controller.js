@@ -269,6 +269,11 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMaster", {
 	handleToggleSecondaryContent: function(oEvent) {
 	    var oSplitContainer = this.getView().byId("mySplitContainer");
 	    oSplitContainer.setShowSecondaryContent(!oSplitContainer.getShowSecondaryContent());
+	    if(oSplitContainer.getShowSecondaryContent() == true){
+	    	this.byId("toggleListBtn").setIcon("sap-icon://close-command-field");
+	    } else {
+	    	this.byId("toggleListBtn").setIcon("sap-icon://open-command-field");   	
+	    }
 	},
 
 	

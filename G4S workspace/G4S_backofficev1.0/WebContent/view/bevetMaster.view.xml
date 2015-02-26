@@ -16,8 +16,13 @@
 			</List>
 		      </u:secondaryContent>
 		      <u:content>
-		        <Button text ="Toggle Secondary Content" press="handleToggleSecondaryContent" />
-		        <Button text="Switch SplitContainer Orientation" press="handleSwitchOrientation"/>
+		      	<Toolbar>
+		        	<Button id="toggleListBtn" press="handleToggleSecondaryContent" icon="sap-icon://close-command-field"/>
+			        <core:Icon src="sap-icon://close-command-field" hoverColor="#FFFFFF"/>
+			        <ToolbarSpacer></ToolbarSpacer>
+			        <Label id="" text="Toolbar center"></Label>
+			        <ToolbarSpacer></ToolbarSpacer>
+			    </Toolbar>
 		        
 			  	<l:FixFlex class="fixFlexVertical">
 			    	<l:fixContent>
