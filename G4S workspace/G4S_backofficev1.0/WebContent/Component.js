@@ -1,7 +1,7 @@
 jQuery.sap.declare("sap.ui.netlife.G4S.Component");
 sap.ui.core.UIComponent.extend("sap.ui.netlife.G4S.Component", {
 
-
+	//Hello Dave
 	
 	createContent : function() {
 		/*window.globalpw = 0;
