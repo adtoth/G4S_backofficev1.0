@@ -33,7 +33,7 @@
      					<Text text="{TStreet}"/>	
      					<Label text="Telefonszám" />
      					<m:Link text="{Phone}" href="tel:{Phone}" press="handlePhonePress" id="phoneLink"/>									
-						</form:SimpleForm>
+					</form:SimpleForm>
 						<VBox >
 						<RadioButton groupName="GroupA" enabled="false" id="grpA01" select="onSelect"  text="Sikeres" />
 <!-- 							 <CheckBox text="Utánvét összeg átvéve" enabled="false" selected="false" id="uv01" />	 -->
