@@ -37,6 +37,27 @@ sap.ui.netlife.G4S.util.Formatter = {
 		return bundle.getText("StatusText" + value, "?");
 	},
 	
+	countLeadas : function () {
+		var a = this.getBindingContext();
+		sap.ui.getCore().getModel().read(a.sPath , null , {
+			"$expand" : "Addresses"
+		}, false, function(response){
+			var lengthOfAddresses = response.result.length;
+			for (var i = 0; i < lengthOfAddresses; i++){
+				sap.ui.getCore().getModel().read("/Address(" + response.result[i].Id + ")", null , {
+					"$expand" : "Items"
+				}, false, function(response){
+					var lengthOfItems = response.result.length;
+					for (var j = 0; j < lengthOfItems; j++){
+						alert("segg");
+					}
+				})
+			}
+		});
+		
+		
+	},
+	
 	HasCODText :  function (value) {
 		var a = this.getBindingContext();
 		var COD = 0;

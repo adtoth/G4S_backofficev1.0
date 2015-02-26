@@ -5,15 +5,16 @@
 		      showSecondaryContent="true">
 		      <u:secondaryContent>
 		        <List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Több" noDataText="Nincs kapcsolat a szerverrel, vagy üres a lista">
-				<ObjectListItem type="Active" press="handleList2ItemPress"
-					title="{From}"
-					icon="sap-icon://physical-activity">		
-					<attributes>
-						<ObjectAttribute text="{Firstname} {Lastname}" />
-						<ObjectAttribute text="ID: {External_ID}"/>
-					</attributes>
-				</ObjectListItem>
-			</List>
+					<ObjectListItem type="Active" press="handleList2ItemPress"
+						title="{From}"
+						number="{path: '', formatter: 'sap.ui.netlife.G4S.util.Formatter.countLeadas'"
+						icon="sap-icon://physical-activity">
+						<attributes>
+							<ObjectAttribute text="{Firstname} {Lastname}" />
+							<ObjectAttribute text="ID: {External_ID}"/>
+						</attributes>
+					</ObjectListItem>
+				</List>
 		      </u:secondaryContent>
 		      <u:content>
 		      	<Toolbar>
