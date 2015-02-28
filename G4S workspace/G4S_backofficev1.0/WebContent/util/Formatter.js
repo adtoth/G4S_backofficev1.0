@@ -51,7 +51,7 @@ sap.ui.netlife.G4S.util.Formatter = {
 						}, false, function(response){
 							var lengthOfItems = response.Items.results.length;
 							for (var j = 0; j < lengthOfItems; j++){
-								if(response.Items.results[j].PickupStatus == 'M'){
+								if(response.Items.results[j].PickupStatus == 'M' && response.Items.results[j].PicType == 'D'){
 									cntr++
 								}
 							}

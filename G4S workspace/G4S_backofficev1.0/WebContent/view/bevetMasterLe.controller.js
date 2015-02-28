@@ -1,17 +1,29 @@
 jQuery.sap.require("sap.ui.netlife.G4S.util.Formatter");
 jQuery.sap.require("sap.ui.netlife.G4S.util.Grouper");
 jQuery.sap.require("sap.m.MessageToast");
-sap.ui.controller("sap.ui.netlife.G4S.view.bevetMaster", {
+sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 	
 	
-	onInit: function(){
-		window.globalBevetLeadMaster = this;
+	onAfterRendering: function(){
+		sap.ui.getCore().getModel().setDefaultCountMode("none");
+		window.globalMaster = this;
 		this.getView().addDelegate({ onAfterShow: function(evt) {
-			console.log("asd");
+			alert("1");
+			
+
         }});
-	
 	},
 	
+	handleFilterPress: function(){
+		var item = globalMaster.getView().byId("list2").getItems();
+		for(var b = 0; b < item.length; b++){
+			var id = item[b].sId;
+			if(item[b].getNumber() == 0){
+				globalMaster.getView().byId("list2").removeItem(id);
+			}
+		}
+	},
+
 	handleList2ItemPress : function(evt) {
 		var context = evt.getSource().getBindingContext();
 		this.nav.to("bevetDetail", context);

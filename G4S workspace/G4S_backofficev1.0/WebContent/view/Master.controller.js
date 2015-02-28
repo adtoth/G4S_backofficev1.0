@@ -1,13 +1,8 @@
 jQuery.sap.require("sap.ui.netlife.G4S.util.Formatter");
 sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 
-	/*onInit: function(){
-		document.addEventListener("backbutton", this.yourCallbackFunction, false);
-	},
-	yourCallbackFunction: function(){
-		alert("back");
-	},*/
-	/*onBeforeRendering: function(){
+
+	onBeforeRendering: function(){
 		sap.ui.getCore().getModel().setDefaultCountMode("none");
 		window.globalMaster = this;
 		this.getView().addDelegate({ onAfterShow: function(evt) {
@@ -30,12 +25,13 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 			
 			globalMaster.getView().getModel().read("/Item", null, paramurl, true, function(response) {	
 				for(var i = 0; i < response.results.length; i++){
-						if(response.results[i].PickupStatus == 'M'){
+						if(response.results[i].PickupStatus == 'M' && response.results[i].PicType == 'D'){
 							bevet++;
 						}
 					
 				}
 				globalMaster.getView().byId("bevetTile").setNumber(bevet);
+				globalMaster.getView().byId("bevetLeALI").setCounter(bevet);
 				
 				var lengthOfAddresses = 0;
 				//var startOfIndex = 0;
@@ -59,15 +55,15 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 				});
 			});
         }});
-	},*/
+	},
 	
 	 handlePressConfiguration: function(oEvent) {
 		    var oItem = oEvent.getSource();
 		    var oShell = this.getView().byId("myShell");
 		    var bState = oShell.getShowPane();
 		    oShell.setShowPane(!bState);
-		    oItem.setShowMarker(!bState);
-		    oItem.setSelected(!bState);
+		    //oItem.setShowMarker(!bState);
+		    //oItem.setSelected(!bState);
 		  },
 	
 	getAddress: function(response) {
@@ -105,21 +101,22 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 		
 	},
 	
-	handleBevetelezesPress : function (evt) {
+	handleBevetelezesLePress : function (evt) {
 		var context = evt.getSource().getBindingContext();
 		/*if(globalMaster.getView().byId("bevetTile").getNumber() >= 1){
 			this.nav.to("bevetMaster", context);
 		}*/
-		
-		var myView = sap.ui.xmlview("Bevet_list", "sap.ui.netlife.G4S.view.bevetMaster_list");
+		this.handlePressConfiguration(evt);
+	    
+		var myView2 = sap.ui.xmlview("bevetMasterLe", "sap.ui.netlife.G4S.view.bevetMasterLe");
 		this.byId("myShell").destroyContent();
-		this.byId("myShell").addContent(myView);
+		this.byId("myShell").addContent(myView2);
 	},
 	
 	handleFelvetelPress : function (evt) {
 		var context = evt.getSource().getBindingContext();
 		//if(globalMaster.getView().byId("felvetTile").getNumber() >= 1){
-			this.nav.to("bevetMaster", context);
+			this.nav.to("bevetMasterLe", context);
 		//}
 
 	},
@@ -129,9 +126,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 		/*if(globalMaster.getView().byId("aktualisTile").getNumber() >= 1){
 			this.nav.to("aktualisMaster", context);
 		}*/
-		var myView2 = sap.ui.xmlview("bevetMaster", "sap.ui.netlife.G4S.view.bevetMaster");
-		this.byId("myShell").destroyContent();
-		this.byId("myShell").addContent(myView2);
+
 	},
 	
 	handleLeadasPress : function (evt) {

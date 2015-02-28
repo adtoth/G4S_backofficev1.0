@@ -29,11 +29,13 @@
 		<u:paneContent>
       <List>
 	    
-	    <ActionListItem id="bevetALI" icon="sap-icon://database" counter="0" 
-	    		text="Bevételezés" press="handleBevetelezesPress"/>
+	    <ActionListItem id="bevetLeALI" icon="sap-icon://database" counter="0" 
+	    		text="Bevételezés Leadás" press="handleBevetelezesLePress"/>
+	    <ActionListItem id="bevetFelALI" icon="sap-icon://database" counter="0" 
+	    		text="Bevételezés Felvét" press="handleBevetelezesFelPress"/>
 	    
 	    <ActionListItem id="aktualisALI" icon="sap-icon://sys-enter-2"
-				text="Aktuális szállítás" counter="25" press="handleAktualisPress" />
+				text="Aktuális szállítás" number="25" press="handleAktualisPress" />
 				
 		<ActionListItem id="leadSikeresLezartALI" icon="sap-icon://locked"
 				text="Sikeres Lezárt Leadások" counter="10" press="handleLezartLeadasSikeresPress" />

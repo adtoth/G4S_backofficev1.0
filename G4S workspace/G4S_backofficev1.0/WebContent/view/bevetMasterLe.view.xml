@@ -1,11 +1,20 @@
-<core:View controllerName="sap.ui.netlife.G4S.view.bevetMaster"
+<core:View controllerName="sap.ui.netlife.G4S.view.bevetMasterLe"
 	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout">
 		    <u:SplitContainer
 		      id="mySplitContainer"
 		      showSecondaryContent="true"
 		      secondaryContentSize="300px" >
 		      <u:secondaryContent>
-		        <List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingThreshold="50" noDataText="Nincs kapcsolat a szerverrel, vagy üres a lista">
+		        <List id="list2" select="handleListSelect" items="{/Courier}" growing="false" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="10" noDataText="Üres a lista">
+					<headerToolbar>
+					      <Toolbar>
+					        <Label text="Bevét Leadások" />
+					        <ToolbarSpacer />
+					        <Button
+					          icon="sap-icon://filter"
+					          press="handleFilterPress" />	
+					      </Toolbar>
+					 </headerToolbar>
 					<ObjectListItem type="Active" press="handleList2ItemPress"
 						title="{Firstname} {Lastname}"
 						number="{path: 'From', formatter: 'sap.ui.netlife.G4S.util.Formatter.countLeadas'}"
