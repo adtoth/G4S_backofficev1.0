@@ -31,6 +31,7 @@
 	    
 	    <ActionListItem id="bevetLeALI" icon="sap-icon://database" counter="0" 
 	    		text="Bevételezés Leadás" press="handleBevetelezesLePress"/>
+	    
 	    <ActionListItem id="bevetFelALI" icon="sap-icon://database" counter="0" 
 	    		text="Bevételezés Felvét" press="handleBevetelezesFelPress"/>
 	    

@@ -113,6 +113,11 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 		this.byId("myShell").addContent(myView2);
 	},
 	
+	handleBevetelezesFelPress : function (evt) {
+		var context = evt.getSource().getBindingContext();
+		this.nav.to("bevetMasterFel", context);
+	},
+	
 	handleFelvetelPress : function (evt) {
 		var context = evt.getSource().getBindingContext();
 		//if(globalMaster.getView().byId("felvetTile").getNumber() >= 1){
@@ -135,6 +140,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 			this.nav.to("leadasMaster", context);
 		}
 	},
+	
 	
 	handleUtanvetPress : function (evt) {
 		var context = evt.getSource().getBindingContext();

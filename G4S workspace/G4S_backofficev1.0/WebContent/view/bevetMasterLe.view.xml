@@ -1,11 +1,12 @@
 <core:View controllerName="sap.ui.netlife.G4S.view.bevetMasterLe"
-	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout">
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout">
 		    <u:SplitContainer
 		      id="mySplitContainer"
 		      showSecondaryContent="true"
 		      secondaryContentSize="300px" >
 		      <u:secondaryContent>
-		        <List id="list2" select="handleListSelect" items="{/Courier}" growing="false" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="10" noDataText="Üres a lista">
+		        <List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="10" noDataText="Üres a lista">
 					<headerToolbar>
 					      <Toolbar>
 					        <Label text="Bevét Leadások" />
@@ -34,17 +35,26 @@
 			        <Label id="2" text="Toolbar center"></Label>
 			        <ToolbarSpacer></ToolbarSpacer>
 			    </Toolbar>
-		        
-			  	<l:FixFlex class="fixFlexVertical">
-			    	<l:fixContent>
-				   		
-		    		</l:fixContent>
-		    	
-		    		<l:flexContent>
-			     		<Text class="column1" text="This container is flexible and it will adapts its size to fill the remaining size in the FixFlex contol"></Text>
-			   		</l:flexContent>
-			  	</l:FixFlex>
-		        
+		          <f:SimpleForm id="SimpleFormDisplay354"
+			        minWidth="1024"
+			        maxContainerCols="2"
+			        editable="false"
+			        layout="ResponsiveGridLayout"
+			        title="Address"
+			        labelSpanL="3"
+			        labelSpanM="3"
+			        emptySpanL="4"
+			        emptySpanM="4"
+			        columnsL="1"
+			        columnsM="1">
+			        <f:content>
+			          <Label text="Összes mai csomag" />
+			          <Text text="{SupplierName}" />
+			          <Label text="Street/No." />
+			          <Text text="{Street} {HouseNumber}" />
+			          <Label text="ZIP Code/City" />
+			        </f:content>
+			      </f:SimpleForm>
 		      </u:content>
 		    </u:SplitContainer>
 		    

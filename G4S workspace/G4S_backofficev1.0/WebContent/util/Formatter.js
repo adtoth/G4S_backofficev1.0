@@ -40,7 +40,7 @@ sap.ui.netlife.G4S.util.Formatter = {
 	countLeadas : function () {
 		var a = this.getBindingContext();
 		var cntr = 0;
-		sap.ui.getCore().getModel().read(a.sPath , null , {
+		sap.ui.getCore().getModel().read(a.sPath, null , {
 			"$expand" : "Addresses"
 		}, false, function(response){
 			var lengthOfAddresses = response.Addresses.results.length;				
