@@ -9,9 +9,113 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 		window.globalMaster = this;
 		this.getView().addDelegate({ onAfterShow: function(evt) {
 			alert("1");
-			
-
         }});
+		
+		var sumFelveve = 0;
+		var sumFelvetlen = 0;
+		sap.ui.getCore().getModel().read("/Item?$filter=Today eq '1'", null , {}, false, function(response){
+			var lengthOfItems = response.results.length;				
+				for (var i = 0; i < lengthOfItems; i++){
+					if(response.results[i].PickupStatus == 'A'){
+						sumFelveve += response.results[i].Quantity;
+					} else if(response.results[i].PickupStatus == 'M')
+						sumFelvetlen += response.results[i].Quantity;						
+				}
+							
+		});
+		this.getView().byId("bevetNumText").setText(sumFelveve);
+		this.getView().byId("bevetFelvetlenNumText").setText(sumFelvetlen);
+		
+		var dimension = new sap.viz.ui5.data.MeasureDefinition();
+		var dimension2 = new sap.viz.ui5.data.DimensionDefinition();
+		
+		dimension.setName("FelvettCsomagok");
+		dimension.bindProperty("value", sumFelveve);
+		
+		dimension2.setName("FelvetlenCsomagok");
+		dimension2.bindProperty("value", sumFelvetlen);
+		
+		globalMaster.getView().byId("dataSet").bindData("/Courier");
+		globalMaster.getView().byId("dataSet").addMeasure(dimension);
+		globalMaster.getView().byId("dataSet").addDimension(dimension2);
+		
+		
+		
+		/*
+		  var oModel = new sap.ui.model.json.JSONModel({
+		      "Products":[
+		                 {
+		                 "label": "felvettCsomagok",
+		                 "quantity": sumFelvetlen,
+		                 },
+		                 {
+		                 "label": "osszesCsomag",
+		                 "quantity": 500,
+		                 }
+		                 ]
+		  });
+		  globalMaster.getView().byId("dataSet").setData("/Courier");
+		  globalMaster.getView().byId("dimension1").setValue("quantity");
+		  globalMaster.getView().byId("dimension2").setValue("label");
+		  
+		/*
+		var oVizFrame = this.getView().byId("idVizFrameStackedColumn");
+		var oDataset = new sap.viz.ui5.data.FlattenedDataset({
+	            dimensions: [{
+	                name: "Year",
+	                value: 'sap'
+	            }],
+	            measures: [
+	                {
+	                    name: 'Revenue', 
+	                    value: '{Id}' 
+	                }
+	            ],
+	            data: {
+	                path: "/Courier"
+	            }
+	         });
+
+	    oVizFrame.setDataset(oDataset);
+	    oVizFrame.setModel(globalMaster.getView().getModel());
+		
+	    var feedPrimaryValues = new sap.viz.ui5.controls.common.feeds.FeedItem({
+            'uid' : "primaryValues",
+            'type' : "Measure",
+            'values' : ["Revenue"]
+        }), feedAxisLabels = new sap.viz.ui5.controls.common.feeds.FeedItem({
+            'uid' : "axisLabels",
+            'type' : "Dimension",
+            'values' : ["Year"]
+        }), feedColor = new sap.viz.ui5.controls.common.feeds.FeedItem({
+            'uid' : "regionColor",
+            'type' : "Dimension",
+            'values' : ["City"]
+        });
+
+    oVizFrame.setVizProperties({
+          valueAxis : {
+            label : {
+                   formatString : 'u'
+            }
+          },
+      legend : {
+        title: {visible : false}
+      },
+      
+          title: {
+              visible: true,
+              text: 'Revenue by City and Year'
+          }
+  });
+    
+    
+    oVizFrame.addFeed(feedPrimaryValues);
+    oVizFrame.addFeed(feedAxisLabels);
+        oVizFrame.addFeed(feedColor);
+//    oPopOver.connect(oVizFrame.getVizUid());
+	
+	*/
 	},
 	
 	handleFilterPress: function(){

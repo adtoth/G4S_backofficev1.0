@@ -1,6 +1,6 @@
 <core:View controllerName="sap.ui.netlife.G4S.view.bevetMasterLe"
 	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
-	xmlns:l="sap.ui.layout">
+	xmlns:viz="sap.viz" xmlns:l="sap.ui.layout">
 		    <u:SplitContainer
 		      id="mySplitContainer"
 		      showSecondaryContent="true"
@@ -29,13 +29,29 @@
 	
 		      </u:secondaryContent>
 		      <u:content>
+		      	 <viz:ui5.Pie>  
+                    <viz:dataset>  
+                           <viz:ui5.data.FlattenedDataset id="dataSet" data="{/Item}">  
+                                <viz:dimensions>  
+                                     <viz:ui5.data.DimensionDefinition id="dimension1" axis="1" name="Verkaufsorganisation" value="{ProductId}">  
+                                     </viz:ui5.data.DimensionDefinition>  
+                                </viz:dimensions>  
+                                <viz:measures>  
+                                     <viz:ui5.data.MeasureDefinition id="dimension2" name="Verkaufsmenge" value="{Price}">  
+                                     </viz:ui5.data.MeasureDefinition>  
+                                </viz:measures>  
+                           </viz:ui5.data.FlattenedDataset>  
+                    </viz:dataset>  
+               	</viz:ui5.Pie>  
+						      	
 		      	<Toolbar>
 		        	<Button id="toggleListBtn" press="handleToggleSecondaryContent" icon="sap-icon://close-command-field"/>
 			        <ToolbarSpacer></ToolbarSpacer>
 			        <Label id="2" text="Toolbar center"></Label>
 			        <ToolbarSpacer></ToolbarSpacer>
 			    </Toolbar>
-		          <f:SimpleForm id="SimpleFormDisplay354"
+			    
+		        <f:SimpleForm id="SimpleFormDisplay354"
 			        minWidth="1024"
 			        maxContainerCols="2"
 			        editable="false"
@@ -48,13 +64,12 @@
 			        columnsL="1"
 			        columnsM="1">
 			        <f:content>
-			          <Label text="Összes mai csomag" />
-			          <Text text="{SupplierName}" />
-			          <Label text="Street/No." />
-			          <Text text="{Street} {HouseNumber}" />
-			          <Label text="ZIP Code/City" />
+			          <Label text="Mai bevételezendő csomagok" />
+			          <Text id="bevetNumText" text="{BevetNum}" />
+			          <Label text="Mai még bevételezetlen csomagok" />
+			          <Text id="bevetFelvetlenNumText" text="{BevetFelvetlenNum-}" />
 			        </f:content>
-			      </f:SimpleForm>
+			    </f:SimpleForm>
 		      </u:content>
 		    </u:SplitContainer>
 		    
