@@ -15,10 +15,13 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 		sap.ui.getCore().getModel().read("/Item?$filter=Today eq '1'", null , {}, false, function(response){
 			var lengthOfItems = response.results.length;				
 				for (var i = 0; i < lengthOfItems; i++){
-					if(response.results[i].PickupStatus == 'A'){
-						sumFelveve += response.results[i].Quantity;
-					} else if(response.results[i].PickupStatus == 'M')
-						sumFelvetlen += response.results[i].Quantity;						
+					if(response.results[i].PicType == 'D'){
+						if(response.results[i].PickupStatus == 'A'){
+							sumFelveve += response.results[i].Quantity;
+						} else if(response.results[i].PickupStatus == 'M'){
+							sumFelvetlen += response.results[i].Quantity;	
+						}
+					}
 				}
 							
 		});

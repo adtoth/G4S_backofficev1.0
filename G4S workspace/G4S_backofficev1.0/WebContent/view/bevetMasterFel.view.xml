@@ -1,25 +1,25 @@
-<core:View controllerName="sap.ui.netlife.G4S.view.bevetMasterLe"
+<core:View controllerName="sap.ui.netlife.G4S.view.bevetMasterFel"
 	xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
 	xmlns:viz="sap.viz" xmlns:l="sap.ui.layout"
 	xmlns="sap.suite.ui.commons">
 		    <u:SplitContainer
-		      id="mySplitContainer"
+		      id="mySplitContainer2"
 		      showSecondaryContent="true"
 		      secondaryContentSize="300px" >
 		      <u:secondaryContent>
-		        <m:List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="10" noDataText="Üres a lista">
+		        <m:List id="list3" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="10" noDataText="Üres a lista">
 					<m:headerToolbar>
 					      <m:Toolbar>
-					        <m:Label text="Bevét Leadások" />
+					        <m:Label text="Bevét Felvételek" />
 					        <m:ToolbarSpacer />
 					        <m:Button
 					          icon="sap-icon://filter"
 					          press="handleFilterPress" />	
 					      </m:Toolbar>
 					 </m:headerToolbar>
-					<m:ObjectListItem type="Active" press="handleList2ItemPress"
+					<m:ObjectListItem type="Active" press="handleList3ItemPress"
 						title="{Firstname} {Lastname}"
-						number="{path: 'From', formatter: 'sap.ui.netlife.G4S.util.Formatter.countLeadas'}"
+						number="{path: 'From', formatter: 'sap.ui.netlife.G4S.util.Formatter.countFelvetel'}"
 						numberUnit="Bevételezetlen"
 						icon="sap-icon://physical-activity">
 						<m:attributes>
@@ -48,9 +48,9 @@
 				
 								
 		      	<m:Toolbar>
-		        	<m:Button id="toggleListBtn" press="handleToggleSecondaryContent" icon="sap-icon://close-command-field"/>
+		        	<m:Button id="toggleListBtn2" press="handleToggleSecondaryContent" icon="sap-icon://close-command-field"/>
 			        <m:ToolbarSpacer></m:ToolbarSpacer>
-			        <m:Label id="2" text="Toolbar center"></m:Label>
+			        <m:Label id="3" text="Toolbar center"></m:Label>
 			        <m:ToolbarSpacer></m:ToolbarSpacer>
 			    </m:Toolbar>
 			    
@@ -68,16 +68,16 @@
 			        columnsM="1">
 			        <f:content>
 			          <m:Label text="Mai bevételezendő csomagok" />
-			          <m:Text id="bevetNumText" text="{BevetNum}" />
+			          <m:Text id="bevetNumText2" text="{BevetNum}" />
 			          <m:Label text="Mai még bevételezetlen csomagok" />
-			          <m:Text id="bevetFelvetlenNumText" text="{BevetFelvetlenNum-}" />
+			          <m:Text id="bevetFelvetlenNumText2" text="{BevetFelvetlenNum}" />
 			        </f:content>
 			    </f:SimpleForm>
 			    
 			      <ColumnMicroChart size="M" press="press" class="marginTopLeft">
 			      <columns>
-   				        <ColumnData  id="col1" value="60" color="Error"/>
-					    <ColumnData id="col2" value="80" color="Good"/>
+   				        <ColumnData  id="colFelvetDiagram1" value="60" color="Error"/>
+					    <ColumnData id="colFelvetDiagram2" value="80" color="Good"/>
 					    <ColumnData />
 			      </columns>
 			    </ColumnMicroChart>

@@ -70,7 +70,7 @@
 			          <m:Label text="Mai bevételezendő csomagok" />
 			          <m:Text id="bevetNumText" text="{BevetNum}" />
 			          <m:Label text="Mai még bevételezetlen csomagok" />
-			          <m:Text id="bevetFelvetlenNumText" text="{BevetFelvetlenNum-}" />
+			          <m:Text id="bevetFelvetlenNumText" text="{BevetFelvetlenNum}" />
 			        </f:content>
 			    </f:SimpleForm>
 			    

@@ -60,6 +60,32 @@ sap.ui.netlife.G4S.util.Formatter = {
 					}
 				}		
 		});
+		return cntr;
+	},
+	
+	countFelvetel : function () {
+		var a = this.getBindingContext();
+		var cntr = 0;
+		sap.ui.getCore().getModel().read(a.sPath, null , {
+			"$expand" : "Addresses"
+		}, false, function(response){
+			var lengthOfAddresses = response.Addresses.results.length;				
+				for (var i = 0; i < lengthOfAddresses; i++){
+					if(response.Addresses.results[i].Today == 1){
+						sap.ui.getCore().getModel().read("/Address(" + response.Addresses.results[i].Id + ")", null , {
+							"$expand" : "Items"
+						}, false, function(response){
+							var lengthOfItems = response.Items.results.length;
+							for (var j = 0; j < lengthOfItems; j++){
+								if(response.Items.results[j].PickupStatus == 'M' && response.Items.results[j].PicType == 'U	'){
+									cntr++;
+								}
+							}
+							
+						})
+					}
+				}		
+		});
 		
 		return cntr;
 	},
