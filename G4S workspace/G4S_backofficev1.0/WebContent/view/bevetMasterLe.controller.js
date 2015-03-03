@@ -8,7 +8,6 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 		sap.ui.getCore().getModel().setDefaultCountMode("none");
 		window.globalMaster = this;
 		this.getView().addDelegate({ onAfterShow: function(evt) {
-			alert("1");
         }});
 		
 		var sumFelveve = 0;
@@ -26,6 +25,10 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 		this.getView().byId("bevetNumText").setText(sumFelveve);
 		this.getView().byId("bevetFelvetlenNumText").setText(sumFelvetlen);
 		
+		this.getView().byId("col1").setValue(sumFelvetlen);
+		this.getView().byId("col2").setValue(sumFelveve);		
+		
+		/*
 		var dimension = new sap.viz.ui5.data.MeasureDefinition();
 		var dimension2 = new sap.viz.ui5.data.DimensionDefinition();
 		
@@ -35,9 +38,9 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 		dimension2.setName("FelvetlenCsomagok");
 		dimension2.bindProperty("value", sumFelvetlen);
 		
-		globalMaster.getView().byId("dataSet").bindData("/Courier");
-		globalMaster.getView().byId("dataSet").addMeasure(dimension);
-		globalMaster.getView().byId("dataSet").addDimension(dimension2);
+		//globalMaster.getView().byId("dataSet").bindData("/Courier");
+		//globalMaster.getView().byId("dataSet").addMeasure(dimension);
+		//globalMaster.getView().byId("dataSet").addDimension(dimension2);
 		
 		
 		
@@ -130,7 +133,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 
 	handleList2ItemPress : function(evt) {
 		var context = evt.getSource().getBindingContext();
-		this.nav.to("bevetDetail", context);
+		this.nav.to("futarDetailMasterLe", context);
 	},
 
 	handleNavButtonPress : function(evt) {

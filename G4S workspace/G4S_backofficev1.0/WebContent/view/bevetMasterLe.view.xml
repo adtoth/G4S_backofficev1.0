@@ -1,37 +1,38 @@
 <core:View controllerName="sap.ui.netlife.G4S.view.bevetMasterLe"
-	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
-	xmlns:viz="sap.viz" xmlns:l="sap.ui.layout">
+	xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
+	xmlns:viz="sap.viz" xmlns:l="sap.ui.layout"
+	xmlns="sap.suite.ui.commons">
 		    <u:SplitContainer
 		      id="mySplitContainer"
 		      showSecondaryContent="true"
 		      secondaryContentSize="300px" >
 		      <u:secondaryContent>
-		        <List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="10" noDataText="Üres a lista">
-					<headerToolbar>
-					      <Toolbar>
-					        <Label text="Bevét Leadások" />
-					        <ToolbarSpacer />
-					        <Button
+		        <m:List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="10" noDataText="Üres a lista">
+					<m:headerToolbar>
+					      <m:Toolbar>
+					        <m:Label text="Bevét Leadások" />
+					        <m:ToolbarSpacer />
+					        <m:Button
 					          icon="sap-icon://filter"
 					          press="handleFilterPress" />	
-					      </Toolbar>
-					 </headerToolbar>
-					<ObjectListItem type="Active" press="handleList2ItemPress"
+					      </m:Toolbar>
+					 </m:headerToolbar>
+					<m:ObjectListItem type="Active" press="handleList2ItemPress"
 						title="{Firstname} {Lastname}"
 						number="{path: 'From', formatter: 'sap.ui.netlife.G4S.util.Formatter.countLeadas'}"
 						numberUnit="Bevételezetlen"
 						icon="sap-icon://physical-activity">
-						<attributes>
-							<ObjectAttribute text="ID: {External_ID}"/>
-						</attributes>
-					</ObjectListItem>
-				</List>
+						<m:attributes>
+							<m:ObjectAttribute text="ID: {External_ID}"/>
+						</m:attributes>
+					</m:ObjectListItem>
+				</m:List>
 	
 		      </u:secondaryContent>
 		      <u:content>
-		      	 <viz:ui5.Pie>  
+		      	 <!--  <viz:ui5.Pie>  
                     <viz:dataset>  
-                           <viz:ui5.data.FlattenedDataset id="dataSet" data="{/Item}">  
+                           <viz:ui5.data.FlattenedDataset id="dataSet">  
                                 <viz:dimensions>  
                                      <viz:ui5.data.DimensionDefinition id="dimension1" axis="1" name="Verkaufsorganisation" value="{ProductId}">  
                                      </viz:ui5.data.DimensionDefinition>  
@@ -43,20 +44,22 @@
                            </viz:ui5.data.FlattenedDataset>  
                     </viz:dataset>  
                	</viz:ui5.Pie>  
-						      	
-		      	<Toolbar>
-		        	<Button id="toggleListBtn" press="handleToggleSecondaryContent" icon="sap-icon://close-command-field"/>
-			        <ToolbarSpacer></ToolbarSpacer>
-			        <Label id="2" text="Toolbar center"></Label>
-			        <ToolbarSpacer></ToolbarSpacer>
-			    </Toolbar>
+				-->      
+				
+								
+		      	<m:Toolbar>
+		        	<m:Button id="toggleListBtn" press="handleToggleSecondaryContent" icon="sap-icon://close-command-field"/>
+			        <m:ToolbarSpacer></m:ToolbarSpacer>
+			        <m:Label id="2" text="Toolbar center"></m:Label>
+			        <m:ToolbarSpacer></m:ToolbarSpacer>
+			    </m:Toolbar>
 			    
 		        <f:SimpleForm id="SimpleFormDisplay354"
 			        minWidth="1024"
 			        maxContainerCols="2"
 			        editable="false"
 			        layout="ResponsiveGridLayout"
-			        title="Address"
+			        title="Összesített adatok"
 			        labelSpanL="3"
 			        labelSpanM="3"
 			        emptySpanL="4"
@@ -64,12 +67,21 @@
 			        columnsL="1"
 			        columnsM="1">
 			        <f:content>
-			          <Label text="Mai bevételezendő csomagok" />
-			          <Text id="bevetNumText" text="{BevetNum}" />
-			          <Label text="Mai még bevételezetlen csomagok" />
-			          <Text id="bevetFelvetlenNumText" text="{BevetFelvetlenNum-}" />
+			          <m:Label text="Mai bevételezendő csomagok" />
+			          <m:Text id="bevetNumText" text="{BevetNum}" />
+			          <m:Label text="Mai még bevételezetlen csomagok" />
+			          <m:Text id="bevetFelvetlenNumText" text="{BevetFelvetlenNum-}" />
 			        </f:content>
 			    </f:SimpleForm>
+			    
+			      <ColumnMicroChart size="M" press="press" class="marginTopLeft">
+			      <columns>
+   				        <ColumnData  id="col1" value="60" color="Error"/>
+					    <ColumnData id="col2" value="80" color="Good"/>
+					    <ColumnData />
+			      </columns>
+			    </ColumnMicroChart>
+			    
 		      </u:content>
 		    </u:SplitContainer>
 		    
