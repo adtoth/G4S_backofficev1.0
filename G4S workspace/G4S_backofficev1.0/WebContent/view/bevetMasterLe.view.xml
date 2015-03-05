@@ -7,7 +7,7 @@
 		      showSecondaryContent="true"
 		      secondaryContentSize="300px" >
 		      <u:secondaryContent>
-		        <m:List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="10" noDataText="Üres a lista">
+		        <m:List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="0" noDataText="Üres a lista">
 					<m:headerToolbar>
 					      <m:Toolbar>
 					        <m:Label text="Bevét Leadások" />

@@ -40,25 +40,39 @@ sap.ui.netlife.G4S.util.Formatter = {
 	countLeadas : function () {
 		var a = this.getBindingContext();
 		var cntr = 0;
-		sap.ui.getCore().getModel().read(a.sPath, null , {
-			"$expand" : "Addresses"
-		}, false, function(response){
-			var lengthOfAddresses = response.Addresses.results.length;				
-				for (var i = 0; i < lengthOfAddresses; i++){
-					if(response.Addresses.results[i].Today == 1){
-						sap.ui.getCore().getModel().read("/Address(" + response.Addresses.results[i].Id + ")", null , {
-							"$expand" : "Items"
-						}, false, function(response){
-							var lengthOfItems = response.Items.results.length;
-							for (var j = 0; j < lengthOfItems; j++){
-								if(response.Items.results[j].PickupStatus == 'M' && response.Items.results[j].PicType == 'D'){
-									cntr++;
-								}
-							}
-							
-						})
+//		sap.ui.getCore().getModel().read(a.sPath, null , {
+//			"$expand" : "Addresses"
+//		}, false, function(response){
+//			var lengthOfAddresses = response.Addresses.results.length;				
+//				for (var i = 0; i < lengthOfAddresses; i++){
+//					if(response.Addresses.results[i].Today == 1){
+//						sap.ui.getCore().getModel().read("/Address(" + response.Addresses.results[i].Id + ")", null , {
+//							"$expand" : "Items"
+//						}, false, function(response){
+//							var lengthOfItems = response.Items.results.length;
+//							for (var j = 0; j < lengthOfItems; j++){
+//								if(response.Items.results[j].PickupStatus == 'M' && response.Items.results[j].PicType == 'D'){
+//									cntr++;
+//								}
+//							}
+//							
+//						})
+//					}
+//				}		
+//		});
+		sap.ui.getCore().getModel().read(a.sPath, null, {
+			"$expand" : "Addresses/Items"
+		}, false, function(response) {
+				for(var i = 0; i < response.Addresses.results.length; i++){
+					var b = response.Addresses.results[i].Items.results.length;
+					for(var j = 0; j < b; j++){
+						var ps = response.Addresses.results[i].Items.results[j].PickupStatus;
+						var pt = response.Addresses.results[i].Items.results[j].PicType;
+						if(response.Addresses.results[i].Today == '1' && response.Addresses.results[i].Items.results[j].PickupStatus == 'M' && response.Addresses.results[i].Items.results[j].PicType == 'D'){
+							cntr++;
+						}
 					}
-				}		
+				}
 		});
 		return cntr;
 	},
