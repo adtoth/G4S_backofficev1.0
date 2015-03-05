@@ -30,7 +30,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 		
 		this.getView().byId("col1").setValue(sumFelvetlen);
 		this.getView().byId("col2").setValue(sumFelveve);		
-		
+		this.getView().byId("chart").setTooltip("Felvéve: " + sumFelveve + "\n" + "Nincs felvéve: " + sumFelvetlen);
 		/*
 		var dimension = new sap.viz.ui5.data.MeasureDefinition();
 		var dimension2 = new sap.viz.ui5.data.DimensionDefinition();

@@ -55,7 +55,7 @@
 			    </m:Toolbar>
 			    
 		        <f:SimpleForm id="SimpleFormDisplay354"
-			        minWidth="1024"
+			        minWidth="500"
 			        maxContainerCols="2"
 			        editable="false"
 			        layout="ResponsiveGridLayout"
@@ -74,11 +74,10 @@
 			        </f:content>
 			    </f:SimpleForm>
 			    
-			      <ColumnMicroChart size="M" press="press" class="marginTopLeft">
+			      <ColumnMicroChart size="M" id="chart" press="press" class="marginTopLeft">
 			      <columns>
    				        <ColumnData  id="col1" value="60" color="Error"/>
 					    <ColumnData id="col2" value="80" color="Good"/>
-					    <ColumnData />
 			      </columns>
 			    </ColumnMicroChart>
 			    

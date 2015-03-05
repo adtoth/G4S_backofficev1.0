@@ -74,11 +74,10 @@
 			        </f:content>
 			    </f:SimpleForm>
 			    
-			      <ColumnMicroChart size="M" press="press" class="marginTopLeft">
+			      <ColumnMicroChart id="chart" size="M" press="press" class="marginTopLeft">
 			      <columns>
    				        <ColumnData  id="colFelvetDiagram1" value="60" color="Error"/>
 					    <ColumnData id="colFelvetDiagram2" value="80" color="Good"/>
-					    <ColumnData />
 			      </columns>
 			    </ColumnMicroChart>
 			    

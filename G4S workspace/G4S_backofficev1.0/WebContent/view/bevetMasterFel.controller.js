@@ -29,7 +29,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterFel", {
 		
 		this.getView().byId("colFelvetDiagram1").setValue(sumFelvetlen);
 		this.getView().byId("colFelvetDiagram2").setValue(sumFelveve);
-		
+		this.getView().byId("chart").setTooltip("Felvéve: " + sumFelveve + "\n" + "Nincs felvéve: " + sumFelvetlen);
 	},
 
 
