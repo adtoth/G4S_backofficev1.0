@@ -1,32 +1,32 @@
 <core:View controllerName="sap.ui.netlife.G4S.view.bevetMasterLe"
-	xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
 	xmlns:viz="sap.viz" xmlns:l="sap.ui.layout"
-	xmlns="sap.suite.ui.commons">
+	xmlns:c="sap.suite.ui.commons">
 		    <u:SplitContainer
 		      id="mySplitContainer"
 		      showSecondaryContent="true"
 		      secondaryContentSize="300px" >
 		      <u:secondaryContent>
-		        <m:List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="0" noDataText="Üres a lista">
-					<m:headerToolbar>
-					      <m:Toolbar>
-					        <m:Label text="Bevét Leadások" />
-					        <m:ToolbarSpacer />
-					        <m:Button
+		        <List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="0" noDataText="Üres a lista">
+					<headerToolbar>
+					      <Toolbar>
+					        <Label text="Bevét Leadások" />
+					        <ToolbarSpacer />
+					        <Button
 					          icon="sap-icon://filter"
 					          press="handleFilterPress" />	
-					      </m:Toolbar>
-					 </m:headerToolbar>
-					<m:ObjectListItem type="Active" press="handleList2ItemPress"
+					      </Toolbar>
+					 </headerToolbar>
+					<ObjectListItem type="Active" press="handleList2ItemPress"
 						title="{Firstname} {Lastname}"
 						number="{path: 'From', formatter: 'sap.ui.netlife.G4S.util.Formatter.countLeadas'}"
 						numberUnit="Bevételezetlen"
 						icon="sap-icon://physical-activity">
-						<m:attributes>
-							<m:ObjectAttribute text="ID: {External_ID}"/>
-						</m:attributes>
-					</m:ObjectListItem>
-				</m:List>
+						<attributes>
+							<ObjectAttribute text="ID: {External_ID}"/>
+						</attributes>
+					</ObjectListItem>
+				</List>
 	
 		      </u:secondaryContent>
 		      <u:content>
@@ -47,12 +47,12 @@
 				-->      
 				
 								
-		      	<m:Toolbar>
-		        	<m:Button id="toggleListBtn" press="handleToggleSecondaryContent" icon="sap-icon://close-command-field"/>
-			        <m:ToolbarSpacer></m:ToolbarSpacer>
-			        <m:Label id="2" text="Toolbar center"></m:Label>
-			        <m:ToolbarSpacer></m:ToolbarSpacer>
-			    </m:Toolbar>
+		      	<Toolbar>
+		        	<Button id="toggleListBtn" press="handleToggleSecondaryContent" icon="sap-icon://close-command-field"/>
+			        <ToolbarSpacer></ToolbarSpacer>
+			        <Label id="2" text="Toolbar center"></Label>
+			        <ToolbarSpacer></ToolbarSpacer>
+			    </Toolbar>
 			    
 		        <f:SimpleForm id="SimpleFormDisplay354"
 			        minWidth="500"
@@ -67,20 +67,85 @@
 			        columnsL="1"
 			        columnsM="1">
 			        <f:content>
-			          <m:Label text="Mai bevételezendő csomagok" />
-			          <m:Text id="bevetNumText" text="{BevetNum}" />
-			          <m:Label text="Mai még bevételezetlen csomagok" />
-			          <m:Text id="bevetFelvetlenNumText" text="{BevetFelvetlenNum}" />
+			          <Label text="Mai bevételezendő csomagok" />
+			          <Text id="bevetNumText" text="{BevetNum}" />
+			          <Label text="Mai még bevételezetlen csomagok" />
+			          <Text id="bevetFelvetlenNumText" text="{BevetFelvetlenNum}" />
 			        </f:content>
 			    </f:SimpleForm>
 			    
-			      <ColumnMicroChart size="M" id="chart" press="press" class="marginTopLeft">
-			      <columns>
-   				        <ColumnData  id="col1" value="60" color="Error"/>
-					    <ColumnData id="col2" value="80" color="Good"/>
-			      </columns>
-			    </ColumnMicroChart>
-			    
+			      <c:ColumnMicroChart size="M" id="chart" press="press" class="marginTopLeft">
+				      <c:columns>
+	   				        <c:ColumnData  id="col1" value="60" color="Error"/>
+						    <c:ColumnData id="col2" value="80" color="Good"/>
+				      </c:columns>
+			    </c:ColumnMicroChart>
+			     <Table id="idProductsTable"
+				    inset="false"
+				    items="{
+				      path: '/ProductCollection',
+				      sorter: {
+				        path: 'Name'
+				      }
+				    }">
+				    <headerToolbar>
+				      <Toolbar>
+				        <Label text="Products"></Label>
+				      </Toolbar>
+				    </headerToolbar>
+				    <columns>
+				      <Column
+				        width="12em">
+				        <Text text="Product" />
+				      </Column>
+				      <Column
+				        minScreenWidth="Tablet"
+				        demandPopin="true">
+				        <Text text="Supplier" />
+				      </Column>
+				      <Column
+				        minScreenWidth="Tablet"
+				        demandPopin="true"
+				        hAlign="Right">
+				        <Text text="Dimensions" />
+				      </Column>
+				      <Column
+				        minScreenWidth="Tablet"
+				        demandPopin="true"
+				        hAlign="Center">
+				        <Text text="Weight" />
+				      </Column>
+				      <Column
+				        hAlign="Right">
+				        <Text text="Price" />
+				      </Column>
+				    </columns>
+				    <items>
+				      <ColumnListItem>
+				        <cells>
+				          <ObjectIdentifier
+				            title="{Name}"
+				            text="{ProductId}"
+				            class="sapMTableContentMargin" />
+				          <Text
+				            text="{SupplierName}" />
+				          <Text
+				            text="{Width} x {Depth} x {Height} {DimUnit}" />
+				          <ObjectNumber
+				            number="{WeightMeasure}"
+				            unit="{WeightUnit}"
+				            state="{
+				              path: 'WeightMeasure',
+				              formatter: 'sap.m.sample.Table.Formatter.weightState'
+				            }" />
+				          <ObjectNumber
+				          number="{Price}"
+				          unit="{CurrencyCode}" />
+				        </cells>
+				      </ColumnListItem>
+				    </items>
+				  </Table>
+							    
 		      </u:content>
 		    </u:SplitContainer>
 		    
