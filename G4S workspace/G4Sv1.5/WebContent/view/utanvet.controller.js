@@ -8,17 +8,14 @@ sap.ui.controller("sap.ui.netlife.G4S.view.utanvet", {
 		window.globalUtanvetView = this.getView(); 
         this.getView().addDelegate({ onAfterShow: function(evt) { 
         	var total = 0;
-        	var yesterdayTotal = 0;
-        	//var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({pattern : "yyyy-MM-dd" });   
+        	var yesterdayTotal = 0;   
         	$today = new Date();
         	$yesterday = new Date($today);
         	$yesterday.setDate($today.getDate() - 1);
-			//yesterdayTotal = new sap.ca.ui.model.format.AmountFormat.FormatAmountShortWithCurrency(yesterdayTotal, HUF, preserve);
 			var oNumberFormat = sap.ui.core.format.NumberFormat.getIntegerInstance({maxFractionDigits: 1, minFractionDigits: 0, groupingEnabled: true, groupingSeparator: " ",
 				  decimalSeparator: "."});
         	var dd = $yesterday.getDate();
         	var mm = $yesterday.getMonth()+1; //January is 0!
-        	
         	if(mm < 10){
         		mm = '0' + mm;
         	}
@@ -61,8 +58,6 @@ sap.ui.controller("sap.ui.netlife.G4S.view.utanvet", {
         	
         }});
 	},
-	
-	
 
 	handleNavButtonPress : function(evt) {
 		this.nav.back("Master");
