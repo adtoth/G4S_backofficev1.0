@@ -16,6 +16,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 			
 			var depo = 0;
 			var bevet = 0;
+			var bevetFel = 0;
 			var paramurl = "$filter=Today eq '1'";
 			var response;
 			
@@ -28,10 +29,17 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 						if(response.results[i].PickupStatus == 'M' && response.results[i].PicType == 'D'){
 							bevet++;
 						}
+						if(response.results[i].PickupStatus == 'M' && response.results[i].PicType == 'U'){
+							bevetFel++;
+						}
 					
 				}
 				globalMaster.getView().byId("bevetTile").setNumber(bevet);
 				globalMaster.getView().byId("bevetLeALI").setCounter(bevet);
+				
+				globalMaster.getView().byId("bevetFelTile").setNumber(bevetFel);
+				globalMaster.getView().byId("bevetFelALI").setCounter(bevetFel);
+				
 				
 				var lengthOfAddresses = 0;
 				//var startOfIndex = 0;
@@ -178,6 +186,13 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 	handleToggleSecondaryContent: function(oEvent) {
 	    var oSplitContainer = this.getView().byId("mySplitContainer");
 	    oSplitContainer.setShowSecondaryContent(!oSplitContainer.getShowSecondaryContent());
+	},
+	
+	handlePressHome : function (evt){
+		var myView3 = sap.ui.xmlview("bevetMasterFel", "sap.ui.netlife.G4S.view.bevetMasterFel");
+		this.byId("myShell").destroyContent();
+		this.byId("myShell").addContent(myView3);
+		
 	},
 	
 	   /*handlePhonePress: function(){
