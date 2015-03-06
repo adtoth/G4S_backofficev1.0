@@ -188,6 +188,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 	    oSplitContainer.setShowSecondaryContent(!oSplitContainer.getShowSecondaryContent());
 	},
 	
+	
 	   /*handlePhonePress: function(){
 		   var b = this.getView().byId("phoneLink").getHref();
 		   document.location.href = b;
