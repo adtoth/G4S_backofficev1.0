@@ -53,8 +53,11 @@
   	  </List>
       </u:paneContent>
       <u:content>
-      <StandardTile icon="sap-icon://database" id="bevetTile" number="0" title="Bevételezés"
-			press="handleBevetelezesPress" />
+      <StandardTile icon="sap-icon://database" id="bevetTile" number="0" title="Bevételezés Leadás"
+			press="handleBevetelezesLePress" />
+			
+		<StandardTile icon="sap-icon://database" id="bevetFelTile" number="0" title="Bevételezés Feladás"
+			press="handleBevetelezesFelPress" />
 			
 		<StandardTile id="aktualisTile" icon="sap-icon://sys-enter-2"
 			title="Aktuális szállítás" number="0" press="handleAktualisPress" />
