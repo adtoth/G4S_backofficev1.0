@@ -188,6 +188,12 @@ sap.ui.controller("sap.ui.netlife.G4S.view.Master", {
 	    oSplitContainer.setShowSecondaryContent(!oSplitContainer.getShowSecondaryContent());
 	},
 	
+	handlePressHome : function (evt){
+		var myView3 = sap.ui.xmlview("bevetMasterFel", "sap.ui.netlife.G4S.view.bevetMasterFel");
+		this.byId("myShell").destroyContent();
+		this.byId("myShell").addContent(myView3);
+		
+	},
 	
 	   /*handlePhonePress: function(){
 		   var b = this.getView().byId("phoneLink").getHref();
