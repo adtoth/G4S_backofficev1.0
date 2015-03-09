@@ -169,6 +169,8 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
     },
 
     handleRowPressed: function (oEvent) {
+      var context = oEvent.getSource().getBindingContext();
+      alert(context.sPath);
       this.openDialog('Std');
     },
 
