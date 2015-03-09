@@ -13,22 +13,16 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 		var sumFelveve = 0;
 		var sumFelvetlen = 0;
 		
-		sap.ui.getCore().getModel().read("/Courier(48)", null, {
-			"$expand" : "Addresses/Items"
-		}, true, function(response) {
-			var c = response;
-		});
-		
 		sap.ui.getCore().getModel().read("/Item?$filter=Today eq '1'", null , {}, false, function(response){
 			var lengthOfItems = response.results.length;				
 				for (var i = 0; i < lengthOfItems; i++){
-					if(response.results[i].PicType == 'D'){
+					//if(response.results[i].PicType == 'D'){
 						if(response.results[i].PickupStatus == 'A'){
 							sumFelveve += response.results[i].Quantity;
 						} else if(response.results[i].PickupStatus == 'M'){
 							sumFelvetlen += response.results[i].Quantity;	
 						}
-					}
+					//}
 				}
 							
 		});
@@ -38,6 +32,15 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 		this.getView().byId("col1").setValue(sumFelvetlen);
 		this.getView().byId("col2").setValue(sumFelveve);		
 		this.getView().byId("chart").setTooltip("Felvéve: " + sumFelveve + "\n" + "Nincs felvéve: " + sumFelvetlen);
+		/*
+		var oModel = new sap.ui.model.json.JSONModel();
+		var names = [
+		             {firstname:"Jim1", lastname: "Dan1"},
+		             {firstname:"Jim2", lastname: "Dan2"},
+		             {firstname:"Jim3", lastname: "Dan3"},
+		            ]; 
+	    this.getView().byId("packageTable").setModel(oModel);
+	    
 		/*
 		var dimension = new sap.viz.ui5.data.MeasureDefinition();
 		var dimension2 = new sap.viz.ui5.data.DimensionDefinition();

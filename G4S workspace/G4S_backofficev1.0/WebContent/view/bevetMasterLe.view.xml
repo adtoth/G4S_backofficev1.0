@@ -83,64 +83,44 @@
 			     <Table id="idProductsTable"
 				    inset="false"
 				    items="{
-				      path: '/ProductCollection',
-				      sorter: {
-				        path: 'Name'
-				      }
+				      path: '/Item'
 				    }">
 				    <headerToolbar>
 				      <Toolbar>
 				        <Label text="Products"></Label>
 				      </Toolbar>
 				    </headerToolbar>
-				    <columns>
+				    <columns
+				    	id="packageTable">
 				      <Column
 				        width="12em">
-				        <Text text="Product" />
+				        <Text text="Csomag ID" />
 				      </Column>
 				      <Column
 				        minScreenWidth="Tablet"
 				        demandPopin="true">
-				        <Text text="Supplier" />
+				        <Text text="Státusz" />
 				      </Column>
 				      <Column
 				        minScreenWidth="Tablet"
 				        demandPopin="true"
 				        hAlign="Right">
-				        <Text text="Dimensions" />
-				      </Column>
-				      <Column
-				        minScreenWidth="Tablet"
-				        demandPopin="true"
-				        hAlign="Center">
-				        <Text text="Weight" />
-				      </Column>
-				      <Column
-				        hAlign="Right">
-				        <Text text="Price" />
+				        <Text text="Ügyfél"/>
 				      </Column>
 				    </columns>
 				    <items>
 				      <ColumnListItem>
 				        <cells>
 				          <ObjectIdentifier
-				            title="{Name}"
-				            text="{ProductId}"
+				            title="{Id}"
+				            text="{ProductName}"
 				            class="sapMTableContentMargin" />
 				          <Text
-				            text="{SupplierName}" />
-				          <Text
-				            text="{Width} x {Depth} x {Height} {DimUnit}" />
-				          <ObjectNumber
-				            number="{WeightMeasure}"
-				            unit="{WeightUnit}"
-				            state="{
-				              path: 'WeightMeasure',
-				              formatter: 'sap.m.sample.Table.Formatter.weightState'
-				            }" />
-				          <ObjectNumber
-				          number="{Price}"
-				          unit="{CurrencyCode}" />
+				            text="{PickupStatus}" />
+					      <ObjectIdentifier
+					          title="{Id}"
+					          text="{ProductName}"
+					          class="sapMTableContentMargin" />
 				        </cells>
 				      </ColumnListItem>
 				    </items>
