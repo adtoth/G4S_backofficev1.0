@@ -7,7 +7,7 @@
 		      showSecondaryContent="true"
 		      secondaryContentSize="300px" >
 		      <u:secondaryContent>
-		        <List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="0" noDataText="Üres a lista">
+		        <List id="list2" select="handleListSelect" items="{/Courier}" growing="true" growingTriggerText="Többet mutat" growingScrollToLoad="true" growingThreshold="20" noDataText="Üres a lista">
 					<headerToolbar>
 					      <Toolbar>
 					        <Label text="Bevét Leadások" />
@@ -82,6 +82,7 @@
 			    </c:ColumnMicroChart>
 			     <Table id="idProductsTable"
 				    inset="false"
+				    press="handleRowPressed"
 				    items="{
 				      path: '/Item'
 				    }">
@@ -109,7 +110,9 @@
 				      </Column>
 				    </columns>
 				    <items>
-				      <ColumnListItem>
+				      <ColumnListItem
+				      	type="Navigation"
+				      	press="handleRowPressed">
 				        <cells>
 				          <ObjectIdentifier
 				            title="{Id}"
@@ -125,7 +128,7 @@
 				      </ColumnListItem>
 				    </items>
 				  </Table>
-							    
+    
 		      </u:content>
 		    </u:SplitContainer>
 		    

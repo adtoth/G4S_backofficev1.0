@@ -134,6 +134,44 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 	*/
 	},
 	
+	onStdDialogPress: function (oEvent) {
+	    this.openDialog('Std');
+	},
+	
+	openDialog: function (sType) {
+	    if (!this[sType]) {
+	      this[sType] = sap.ui.xmlfragment(
+	        "sap.m.sample.Dialog." + sType + "Dialog",
+	        this // associate controller with the fragment
+	      );
+	      this.getView().addDependent(this[sType]);
+	    }
+
+	    this[sType].bindElement("/ProductCollection/0");
+	    // toggle compact style
+	    jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this[sType]);
+	    this[sType].open();
+	  },
+		
+   openDialog: function (sType) {
+	    if (!this[sType]) {
+	      this[sType] = sap.ui.xmlfragment(
+	        "sap.ui.netlife.G4S.view." + sType + "Dialog",
+	        this // associate controller with the fragment
+	      );
+	      this.getView().addDependent(this[sType]);
+	    }
+
+	    this[sType].bindElement("/ProductCollection/0");
+	    // toggle compact style
+	    jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this[sType]);
+	    this[sType].open();
+    },
+
+    handleRowPressed: function (oEvent) {
+      this.openDialog('Std');
+    },
+
 	handleFilterPress: function(){
 		var item = globalMaster.getView().byId("list2").getItems();
 		for(var b = 0; b < item.length; b++){

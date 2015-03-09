@@ -43,6 +43,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterFel", {
 		}
 	},
 	
+	
 	handleList3ItemPress : function(evt) {
 		var context = evt.getSource().getBindingContext();
 		this.nav.to("futarDetailMasterLe", context);
