@@ -2,7 +2,7 @@
 <simple-type xmlns="http://www.sap.com/sap.ui.library.xsd" >
 
 	<name>FlexWrap</name>
-	<author>SAP AG</author>
+	<author>SAP SE</author>
 	<documentation>Available wrap options for flexbox layouts</documentation>
 	<baseType>sap.ui.core/string</baseType>
 	<enumeration>

@@ -1,6 +1,6 @@
 /*!
  * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
- * (c) Copyright 2009-2014 SAP AG or an SAP affiliate company. 
+ * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -15,11 +15,11 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'jquery.sap.script'],
 	 * @class Provides library information.
 	 *
 	 * @extends sap.ui.base.Object
-	 * @author SAP AG
-	 * @version 1.22.5
+	 * @author SAP SE
+	 * @version 1.26.8
 	 * @constructor
 	 * @private
-	 * @name sap.ui.core.util.LibraryInfo
+	 * @alias sap.ui.core.util.LibraryInfo
 	 */
 	var LibraryInfo = BaseObject.extend("sap.ui.core.util.LibraryInfo", {
 		constructor : function() {
@@ -41,7 +41,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'jquery.sap.script'],
 	LibraryInfo.prototype._loadLibraryMetadata = function(sLibraryName, fnCallback) {
 		sLibraryName = sLibraryName.replace(/\//g, ".");
 		
-		if(this._oLibInfos[sLibraryName]){
+		if (this._oLibInfos[sLibraryName]) {
 			jQuery.sap.delayedCall(0, window, fnCallback, [this._oLibInfos[sLibraryName]]);
 			return;
 		}
@@ -50,14 +50,14 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'jquery.sap.script'],
 			that = this;
 		
 		jQuery.ajax({
-			url : sUrl+".library",
+			url : sUrl + ".library",
 			dataType : "xml",
 			error : function(xhr, status, e) {
 				jQuery.sap.log.error("failed to load library details from '" + sUrl + ".library': " + status + ", " + e);
 				that._oLibInfos[sLibraryName] = {name: sLibraryName, data: null, url: sUrl};
 				fnCallback(that._oLibInfos[sLibraryName]);
 			},
-			success : function(oData, sStatus, oXHR) { 
+			success : function(oData, sStatus, oXHR) {
 				that._oLibInfos[sLibraryName] = {name: sLibraryName, data: oData, url: sUrl};
 				fnCallback(that._oLibInfos[sLibraryName]);
 			}
@@ -69,7 +69,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'jquery.sap.script'],
 		this._loadLibraryMetadata(sLibraryName, function(oData){
 			var result = {libs: [], library: oData.name, libraryUrl: oData.url};
 	
-			if(oData.data){
+			if (oData.data) {
 				var $data = jQuery(oData.data);
 				result.vendor = $data.find("vendor").text();
 				result.copyright = $data.find("copyright").text();
@@ -86,10 +86,10 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'jquery.sap.script'],
 		this._loadLibraryMetadata(sLibraryName, function(oData){
 			var result = {libs: [], library: oData.name, libraryUrl: oData.url};
 	
-			if(oData.data){
+			if (oData.data) {
 				var $Libs = jQuery(oData.data).find("appData").find("thirdparty").children();
 				$Libs.each(function(i, o){
-					if(o.nodeName === "lib"){
+					if (o.nodeName === "lib") {
 						var $Lib = jQuery(o);
 						var $license = $Lib.children("license");
 						result.libs.push({
@@ -116,7 +116,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'jquery.sap.script'],
 				libUrl = oData.url,
 				result = {"docu": {}, library: lib, libraryUrl: libUrl};
 	
-			if(!oData.data){
+			if (!oData.data) {
 				fnCallback(result);
 				return;
 			}
@@ -124,12 +124,12 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'jquery.sap.script'],
 			var $Doc = jQuery(oData.data).find("appData").find("documentation");
 			var sUrl = $Doc.attr("indexUrl");
 			
-			if(!sUrl){
+			if (!sUrl) {
 				fnCallback(result);
 				return;
 			}
 				
-			if($Doc.attr("resolve") == "lib"){
+			if ($Doc.attr("resolve") == "lib") {
 				sUrl = oData.url + sUrl;
 			}
 			
@@ -140,12 +140,12 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', 'jquery.sap.script'],
 					jQuery.sap.log.error("failed to load library docu from '" + sUrl + "': " + status + ", " + e);
 					fnCallback(result);
 				},
-				success : function(oData, sStatus, oXHR) { 
+				success : function(oData, sStatus, oXHR) {
 					oData.library = lib;
 					oData.libraryUrl = libUrl;
 					fnCallback(oData);
 				}
-			});					
+			});
 		});
 	};
 

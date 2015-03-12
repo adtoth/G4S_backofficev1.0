@@ -1,4 +1,5 @@
 {
   "sEntity" : "Theme",
-  "sId" : "base"
+  "sId" : "base",
+  "sVendor" : "SAP"
 }

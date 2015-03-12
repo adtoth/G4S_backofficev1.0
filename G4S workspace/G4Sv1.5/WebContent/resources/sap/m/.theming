@@ -1,4 +1,5 @@
 {
   "sEntity" : "Library",
-  "sId" : "sap/m"
+  "sId" : "sap/m",
+  "sVersion" : "1.26.8"
 }

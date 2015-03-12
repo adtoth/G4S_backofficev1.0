@@ -85,7 +85,7 @@
       <module name="sap/ui/unified/library.js"/>
     </requires>
   </module>
-  <module name="sap/ui/unified/FileUploader.js" size="43033" compressedSize="17026">
+  <module name="sap/ui/unified/FileUploader.js" size="43294" compressedSize="17200">
     <description>Provides control sap.ui.unified.FileUploader.</description>
     <requires>
       <module name="jquery.sap.global.js"/>
@@ -107,7 +107,7 @@
       <module name="jquery.sap.global.js"/>
     </requires>
   </module>
-  <module name="sap/ui/unified/Menu.js" size="34571" compressedSize="15815">
+  <module name="sap/ui/unified/Menu.js" size="35074" compressedSize="16138">
     <description>Provides control sap.ui.unified.Menu.</description>
     <requires>
       <module name="jquery.sap.global.js"/>

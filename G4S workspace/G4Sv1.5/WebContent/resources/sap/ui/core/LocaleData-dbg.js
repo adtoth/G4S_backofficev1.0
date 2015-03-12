@@ -1,6 +1,6 @@
 /*!
  * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
- * (c) Copyright 2009-2014 SAP AG or an SAP affiliate company. 
+ * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -17,11 +17,11 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 	 * @param {sap.ui.core.Locale} oLocale the locale
 	 *
 	 * @extends sap.ui.base.Object
-	 * @author SAP AG
-	 * @version 1.22.5
+	 * @author SAP SE
+	 * @version 1.26.8
 	 * @constructor
 	 * @public
-	 * @name sap.ui.core.LocaleData
+	 * @alias sap.ui.core.LocaleData
 	 */
 	var LocaleData = BaseObject.extend("sap.ui.core.LocaleData", /** @lends sap.ui.core.LocaleData.prototype */ {
 
@@ -135,6 +135,18 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 		},
 
 		/**
+		 * Get stand alone quarter names in width "narrow", "abbreviated" or "wide"
+		 *
+		 * @param {string} sWidth the required width for the quarter names
+		 * @returns {array} array of quarters
+		 * @public
+		 */
+		getQuartersStandAlone : function(sWidth) {
+			jQuery.sap.assert(sWidth == "narrow" || sWidth == "abbreviated" || sWidth == "wide", "sWidth must be narrow, abbreviated or wide");
+			return this._get("quarters-standAlone-" + sWidth);
+		},
+
+		/**
 		 * Get day periods in width "narrow", "abbreviated" or "wide"
 		 *
 		 * @param {string} sWidth the required width for the day period names
@@ -183,14 +195,14 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 		},
 
 		/**
-		 * Get number symbol "decimal", "group", "plusSign", "minusSign"
+		 * Get number symbol "decimal", "group", "plusSign", "minusSign", "percentSign"
 		 *
 		 * @param {string} sType the required type of symbol
 		 * @returns {string} the selected number symbol
 		 * @public
 		 */
 		getNumberSymbol : function(sType) {
-			jQuery.sap.assert(sType == "decimal" || sType == "group" || sType == "plusSign" || sType == "minusSign", "sType must be decimal, group, plusSign or minusSign");
+			jQuery.sap.assert(sType == "decimal" || sType == "group" || sType == "plusSign" || sType == "minusSign" || sType == "percentSign", "sType must be decimal, group, plusSign, minusSign or percentSign");
 			return this._get("symbols-latn-" + sType);
 		},
 		
@@ -288,7 +300,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 		 * @since 1.17.0 
 		 */
 		getIntervalPattern : function(sId) {
-			return (sId && this._get("intervalFormat-" + sId)) || this._get("intervalFormatFallback"); 
+			return (sId && this._get("intervalFormat-" + sId)) || this._get("intervalFormatFallback");
 		},
 		
 		/**
@@ -323,8 +335,92 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 		getCurrencySymbol : function(sCurrency) {
 			var oCurrencySymbols = this._get("currencySymbols");
 			return (oCurrencySymbols && oCurrencySymbols[sCurrency]) || sCurrency;
-		}
+		},
 		
+		_getRelative : function(sType, iDiff) {
+			if (Math.abs(iDiff) <= 1) {
+				return this._get("dateField-" + sType + "-relative-" + iDiff);
+			}
+			return this._get("dateField-" + sType + "-relative-" + (iDiff < 0 ? "past" : "future") + "-other");
+		},
+		
+		/**
+		 * Returns the relative day resource pattern (like "Today", "Yesterday", "{0} days ago") based on the given
+		 * difference of days (0 means today, 1 means tommorrow, -1 means yesterday, ...).
+		 *
+		 * @param {int} iDiff the difference in days
+		 * @returns {string} the relative day resource pattern
+		 * @public
+		 * @since 1.25.0
+		 */
+		getRelativeDay : function(iDiff) {
+			return this._getRelative("day", iDiff);
+		},
+		
+		/**
+		 * Returns the relative month resource pattern (like "This month", "Last month", "{0} months ago") based on the given
+		 * difference of months (0 means this month, 1 means next month, -1 means last month, ...).
+		 *
+		 * @param {int} iDiff the difference in months
+		 * @returns {string} the relative month resource pattern
+		 * @public
+		 * @since 1.25.0
+		 */
+		getRelativeMonth : function(iDiff) {
+			return this._getRelative("month", iDiff);
+		},
+		
+		/**
+		 * Returns the relative year resource pattern (like "This year", "Last year", "{0} year ago") based on the given
+		 * difference of years (0 means this year, 1 means next year, -1 means last year, ...).
+		 *
+		 * @param {int} iDiff the difference in years
+		 * @returns {string} the relative year resource pattern
+		 * @public
+		 * @since 1.25.0
+		 */
+		getRelativeYear : function(iDiff) {
+			return this._getRelative("year", iDiff);
+		},
+
+		/**
+		 * Returns the short decimal formats (like 1K, 1M....)
+		 *
+		 * @param {string} sStyle short or long
+		 * @param {string} sNumber 1000, 10000 ...
+		 * @param {string} sPlural one or other (if not exists other is used)
+		 * @returns {string} decimal format
+		 * @public
+		 * @since 1.25.0
+		 */
+		getDecimalFormat : function(sStyle, sNumber, sPlural) {
+
+			var sFormat;
+			var oFormats;
+
+			switch (sStyle) {
+			case "long":
+				oFormats = this._get("decimalFormat-long");
+				break;
+
+			default: //short
+				oFormats = this._get("decimalFormat-short");
+				break;
+			}
+
+			if (oFormats) {
+				var sName = sNumber + "-" + sPlural;
+				sFormat = oFormats[sName];
+				if (!sFormat) {
+					sName = sNumber + "-other";
+					sFormat = oFormats[sName];
+				}
+			}
+
+			return sFormat;
+
+		}
+
 	});
 
 	/**
@@ -368,10 +464,13 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 			"quarters-format-abbreviated":["Q1","Q2","Q3","Q4"],
 			"quarters-format-wide":["1st quarter","2nd quarter","3rd quarter","4th quarter"],
 			"quarters-standAlone-narrow":["1","2","3","4"],
+			"quarters-standAlone-abbreviated":["Q1","Q2","Q3","Q4"],
+			"quarters-standAlone-wide":["1st quarter","2nd quarter","3rd quarter","4th quarter"],
 			"symbols-latn-decimal":".",
 			"symbols-latn-group":",",
 			"symbols-latn-plusSign":"+",
 			"symbols-latn-minusSign":"-",
+			"symbols-latn-percentSign":"%",
 			"dayPeriods-format-narrow":["AM","PM"],
 			"dayPeriods-format-wide":["AM","PM"],
 			"dayPeriods-format-abbreviated":["AM","PM"],
@@ -385,7 +484,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 	var M_ISO639_OLD_TO_NEW = {
 			"iw" : "he",
 			"ji" : "yi",
-			"in" : "id", 
+			"in" : "id",
 			"sh" : "sr"
 	};
 
@@ -394,22 +493,19 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 	 * 
 	 * Helps to avoid unsatisfiable backend calls.
 	 * 
-	 * The string literal below is substituted during the build.
-	 * The value is determined from the names of the CLDR JSON files which 
-	 * are bundled with the UI5 runtime.
 	 * @private
 	 */
 	var M_SUPPORTED_LOCALES = (function() {
-		var LOCALES = "ar,ar_AE,ar_EG,ar_SA,bg,bg_BG,br,ca_ES,cs,cs_CZ,da,da_DK,de,de_AT,de_BE,de_CH,de_DE,de_LU,el,el_CY,el_GR,en,en_AU,en_CA,en_GB,en_HK,en_IE,en_IN,en_NZ,en_PG,en_SG,en_US,en_ZA,es,es_AR,es_BO,es_CL,es_CO,es_ES,es_MX,es_PE,es_UY,es_VE,et,et_EE,fa,fa_IR,fi,fi_FI,fr,fr_BE,fr_CA,fr_CH,fr_FR,fr_LU,he,he_IL,hi,hi_IN,hr,hr_HR,hu,hu_HU,id,id_ID,it,it_CH,it_IT,ja,ja_JP,ko,ko_KR,lt,lt_LT,lv,lv_LV,nb,nb_NO,nl,nl_BE,nl_NL,nn,nn_NO,pl,pl_PL,pt,pt_BR,pt_PT,ro,ro_RO,ru,ru_KZ,ru_RU,ru_UA,sk_SK,sl,sl_SI,sr,sv,sv_SE,th,th_TH,tr,tr_CY,tr_TR,uk,uk_UA,vi,vi_VN,zh_CN,zh_HK,zh_SG,zh_TW".split(","), 
-			i,result;
+		var LOCALES = Locale._cldrLocales,
+			result = {},
+			i;
 		
-		if ( LOCALES.length != 1 || (LOCALES[0] && LOCALES[0].indexOf("@") < 0) ) { // check that list has been substituted 
-			result = {};
-			for(i=0; i<LOCALES.length; i++) {
+		if ( LOCALES ) {
+			for (i = 0; i < LOCALES.length; i++) {
 				result[LOCALES[i]] = true;
 			}
 		}
-		
+
 		return result;
 	}());
 	
@@ -431,7 +527,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 			mData;
 
 		function getOrLoad(sId) {
-			var oData;
 			if ( !mLocaleDatas[sId] && (!M_SUPPORTED_LOCALES || M_SUPPORTED_LOCALES[sId] === true) ) {
 				mLocaleDatas[sId] = jQuery.sap.loadResource("sap/ui/core/cldr/" + sId + ".json", {
 					dataType: "json",
@@ -445,9 +540,14 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 
 		// normalize language and handle special cases
 		sLanguage = (sLanguage && M_ISO639_OLD_TO_NEW[sLanguage]) || sLanguage;
+		// Special case 1: in a SAP context, the inclusive language code "no" always means Norwegian Bokmal ("nb") 
+		if ( sLanguage === "no" ) {
+			sLanguage = "nb";
+		}
+		// Special case 2: for Chinese, derive a default region from the script (this behavior is inherited from Java) 
 		if ( sLanguage === "zh" && !sRegion ) {
 			if ( sScript === "Hans" ) {
-				sRegion = "CN"; 
+				sRegion = "CN";
 			} else if ( sScript === "Hant" ) {
 				sRegion = "TW";
 			}
@@ -466,7 +566,7 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 		mLocaleDatas[sId] = mData || M_DEFAULT_DATA;
 		
 		return mLocaleDatas[sId];
-	};
+	}
 
 
 	/**
@@ -485,8 +585,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/base/Object', './Configuration', './
 
 	/**
 	 * 
-	 * @name sap.ui.core.LocaleData.getInstance
-	 * @function
 	 */
 	LocaleData.getInstance = function(oLocale) {
 		return oLocale.hasPrivateUseSubtag("sapufmt") ? new sap.ui.core.CustomLocaleData(oLocale) : new LocaleData(oLocale);

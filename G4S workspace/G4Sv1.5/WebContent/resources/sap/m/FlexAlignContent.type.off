@@ -2,7 +2,7 @@
 <simple-type xmlns="http://www.sap.com/sap.ui.library.xsd" >
 
 	<name>FlexAlignContent</name>
-	<author>SAP AG</author>
+	<author>SAP SE</author>
 	<documentation>Available options for the layout of elements along the cross axis for multi-line flexbox layouts.</documentation>
 	<baseType>sap.ui.core/string</baseType>
 	<enumeration>

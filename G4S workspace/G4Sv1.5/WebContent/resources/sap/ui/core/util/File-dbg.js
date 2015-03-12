@@ -1,6 +1,6 @@
 /*!
  * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
- * (c) Copyright 2009-2014 SAP AG or an SAP affiliate company. 
+ * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
  */
 
@@ -13,13 +13,13 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/Device'],
 	 * Utility class to handle files.
 	 *
 	 * @class Utility class to handle files
-	 * @author SAP AG
-	 * @version 1.22.5
+	 * @author SAP SE
+	 * @version 1.26.8
 	 * @static
 	 *
 	 * @public
 	 * @since 1.22.0
-	 * @name sap.ui.core.util.File
+	 * @alias sap.ui.core.util.File
 	 */
 	var File = {
 
@@ -48,8 +48,6 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/Device'],
 		 * @param {string} sCharset file charset
 		 *
 		 * @public
-		 * @name sap.ui.core.util.File.save
-		 * @function
 		 */
 		save: function(sData, sFileName, sFileExtension, sMimeType, sCharset) {
 			var sFullFileName = sFileName + '.' + sFileExtension;
@@ -87,6 +85,10 @@ sap.ui.define(['jquery.sap.global', 'sap/ui/Device'],
 
 						$link.remove();
 					} else {
+						// remove utf-8 byte-order-mark (BOM) again to prevent an exception when using btoa
+						if (sData && sCharset === 'utf-8' && sFileExtension === 'csv') {
+							sData = sData.substr(1);
+						}
 						// Safari (user has to save the file manually)
 						window.open(sType + ";base64," + window.btoa(sData));
 					}

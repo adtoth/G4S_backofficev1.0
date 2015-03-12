@@ -1,374 +1,16 @@
+/* NOTE: This file was generated as an optimized version of "library.source.less" for the Theme Designer. */
 
-/* SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
- * (c) Copyright 2009-2014 SAP AG or an SAP affiliate company. 
+/*!
+ * SAP UI development toolkit for HTML5 (SAPUI5/OpenUI5)
+ * (c) Copyright 2009-2015 SAP SE or an SAP affiliate company.
  * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
- * 
- *//* Global CSS for 'base' theme */
+ */
 
-// $BEGIN_BASE_LESS$
+@import "../../../../../Base/baseLib/baseTheme/base.less"; /* ORIGINAL IMPORT PATH: "../../../../sap/ui/core/themes/base/base.less" */
 
-@sapBrandColor: #000;
-@sapHighlightColor: #fff;
-@sapBaseColor: #ddd;
-@sapShellColor: #000;
-@sapBackgroundColor: #fff;
+@import "../../../../sap/ui/core/themes/base/global.less";
 
-@sapTextColor: #000;
-@sapLinkColor: #000;
-
-@sapCompanyLogo: none;
-@sapBackgroundImage: none;
-@sapBackgroundImageOpacity: 1.0;
-@sapBackgroundImageRepeat: false;
-
-@sapSelectedColor: @sapHighlightColor;
-@sapActiveColor: @sapHighlightColor;
-@sapHighlightTextColor: contrast(@sapHighlightColor, @sapTextColor, #fff);
-@sapTitleColor: contrast(@sapBaseColor, lighten(@sapTextColor,20), #fff);
-@sapNegativeColor: #d0001d;
-@sapCriticalColor: #fffcb5;
-@sapPositiveColor: #008a3b;
-@sapNeutralColor: #306898;
-
-@sapContent_LabelColor: @sapTextColor;
-@sapContent_DisabledTextColor: lighten(@sapTextColor, 60);
-@sapContent_ForegroundColor: darken(saturate(@sapBaseColor, 2), 14);
-@sapContent_ForegroundBorderColor: darken(desaturate(@sapContent_ForegroundColor, 16), 12);
-@sapContent_ForegroundTextColor: @sapTextColor;
-
-@sapShell_Background: darken(saturate(@sapBaseColor, 4), 43);
-@sapShell_BorderColor: darken(saturate(@sapShell_Background, 6), 11);
-@sapShell_TextColor: contrast(@sapShell_Background, @sapTextColor, #fff);
-
-@sapButton_Background: white;
-@sapButton_BorderColor: black;
-@sapButton_TextColor: @sapTextColor;
-@sapButton_Disabled_Background: lighten(desaturate(@sapButton_Background, 45), 5);
-@sapButton_Disabled_BorderColor: lighten(@sapButton_TextColor,58);
-@sapButton_Disabled_TextColor: contrast(@sapButton_Disabled_Background, lighten(@sapButton_TextColor, 51), darken(#fff, 47));
-@sapButton_Hover_Background: darken(desaturate(@sapHighlightColor, 5), 18);
-@sapButton_Hover_BorderColor: darken(@sapButton_BorderColor, 39);
-@sapButton_Hover_TextColor: contrast(@sapButton_Hover_Background, @sapButton_TextColor, #fff);
-@sapButton_Emphasized_Background: @sapButton_Background;
-@sapButton_Emphasized_BorderColor: darken(@sapButton_BorderColor, 39);
-@sapButton_Emphasized_TextColor: contrast(@sapButton_Emphasized_Background, @sapButton_TextColor, #fff);
-@sapButton_Reject_Background: @sapNegativeColor;
-@sapButton_Accept_Background: @sapPositiveColor;
-
-@sapField_Background: #fff;
-@sapField_BorderColor: darken(desaturate(@sapBaseColor, 46), 28);
-@sapField_HelpBackground: desaturate(@sapBaseColor, 24);
-@sapField_Hover_Background: @sapField_Background;
-@sapField_Hover_BorderColor: @sapField_BorderColor;
-@sapField_Hover_HelpBackground: @sapField_Hover_BorderColor;   //check
-@sapField_Focus_Background: #fef09e;
-@sapField_Focus_BorderColor: @sapField_BorderColor;
-@sapField_Focus_HelpBackground: @sapField_Focus_Background;   //check
-@sapField_ReadOnly_Background: @sapField_Background;   //check
-@sapField_ReadOnly_BorderColor: @sapField_BorderColor;   //check
-@sapField_ReadOnly_HelpBackground: @sapField_ReadOnly_Background;   //check
-@sapField_Disabled_Background: @sapField_ReadOnly_Background;
-@sapField_Disabled_BorderColor: lighten(saturate(@sapField_BorderColor, 10), 14);
-@sapField_Disabled_HelpBackground: @sapField_Disabled_Background;   //check
-@sapField_RequiredColor: #d0001d;
-@sapField_InvalidColor: #d0001d;
-@sapField_InvalidBackground: lighten(desaturate(@sapField_InvalidColor, 31), 54);
-@sapField_WarningColor: #fffcb5;
-@sapField_WarningBackground: lighten(desaturate(@sapField_WarningColor, 31), 54);
-@sapField_SuccessColor: green;
-@sapField_SuccessBackground: lighten(desaturate(@sapField_SuccessColor, 31), 54);
-
-@sapGroup_TitleBackground: @sapBaseColor;
-@sapGroup_TitleBorderColor: darken(desaturate(@sapGroup_TitleBackground, 9), 12);
-@sapGroup_TitleTextColor: @sapTextColor;
-@sapGroup_ContentBackground: @sapField_Background;
-@sapGroup_ContentBorderColor: darken(desaturate(@sapGroup_TitleBorderColor,9),9);
-@sapGroup_FooterBackground: @sapGroup_TitleBackground;
-
-@sapToolbar_Background: @sapGroup_TitleBackground;
-@sapToolbar_SeparatorColor: #fff;
-
-@sapList_HeaderBackground: lighten(desaturate(@sapBaseColor, 39), 1);
-@sapList_HeaderBorderColor: @sapList_BorderColor;
-@sapList_HeaderTextColor: contrast(@sapList_HeaderBackground, darken(@sapBaseColor,67), #fff);
-@sapList_BorderColor: darken(desaturate(@sapBaseColor, 32), 3);
-@sapList_HighlightColor: @sapHighlightColor;
-@sapList_SelectionBackgroundColor: @sapHighlightColor;
-@sapList_Hover_Background: mix(@sapHighlightColor, #fff, 10.35%);
-
-@sapScrollBar_FaceColor: lighten(@sapGroup_TitleBackground, 4);
-@sapScrollBar_TrackColor: lighten(desaturate(@sapBackgroundColor, 7), 3);
-@sapScrollBar_BorderColor: desaturate(spin(@sapScrollBar_FaceColor, 7), 11);
-@sapScrollBar_SymbolColor: darken(desaturate(@sapScrollBar_FaceColor, 32), 59);
-
-// $END_BASE_LESS$
-
-// Semantic Theming Mapping
-@sapUiBaseColor: @sapBaseColor;
-
-@sapUiContentDisabledTextColor: @sapContent_DisabledTextColor;
-@sapUiContentForegroundBorderColor: #A6A6A6;
-
-@sapUiButtonBackground: @sapButton_Background;
-@sapUiButtonBorderColor: @sapButton_BorderColor;
-@sapUiButtonTextColor: @sapButton_TextColor;
-@sapUiButtonDisabledBackground: @sapButton_Disabled_Background;
-@sapUiButtonDisabledBorderColor: @sapButton_Disabled_BorderColor;
-@sapUiButtonDisabledTextColor: @sapButton_Disabled_TextColor;
-@sapUiButtonHoverBackground: @sapButton_Hover_Background;
-@sapUiButtonHoverBorderColor: @sapButton_Hover_BorderColor;
-@sapUiButtonHoverTextColor: @sapButton_Hover_TextColor;
-// @sapUiButtonEmphasizedBackground: @sapButton_Emphasized_Background;
-// @sapUiButtonEmphasizedBorderColor: @sapButton_Emphasized_BorderColor;
-// @sapUiButtonEmphasizedTextColor: @sapButton_Emphasized_TextColor;
-@sapUiButtonRejectBackground: red;
-@sapUiButtonAcceptBackground: green;
-
-@sapUiFieldBackground: @sapField_Background;
-@sapUiFieldBorderColor: #BFBFBF;
-@sapUiFieldHelpBackground: @sapField_Background;
-@sapUiFieldHoverBackground: @sapField_Hover_Background;
-@sapUiFieldHoverBorderColor: @sapField_Hover_BorderColor;
-@sapUiFieldHoverHelpBackground: @sapField_Hover_HelpBackground;
-@sapUiFieldFocusBackground: @sapField_Background;
-@sapUiFieldFocusBorderColor: @sapField_Focus_BorderColor;
-@sapUiFieldFocusHelpBackground: @sapField_Background;
-@sapUiFieldReadOnlyBackground: #808080;
-@sapUiFieldReadOnlyBorderColor: @sapField_ReadOnly_BorderColor;
-@sapUiFieldReadOnlyHelpBackground: #808080;
-@sapUiFieldDisabledBackground: @sapField_Background;
-@sapUiFieldDisabledBorderColor: @sapField_BorderColor;
-@sapUiFieldDisabledHelpBackground: @sapField_Background;
-@sapUiFieldRequiredColor: @sapField_BorderColor;
-@sapUiFieldInvalidColor: #FF0000;
-@sapUiFieldInvalidBackground: #FF9A90;
-@sapUiFieldWarningColor: #FFFF00;
-@sapUiFieldWarningBackground: #FAF2B0;
-@sapUiFieldSuccessColor: @sapField_SuccessColor;
-@sapUiFieldSuccessBackground: @sapField_SuccessBackground;
-
-@sapUiListHeaderBorderColor: #000000;
-@sapUiListHighlightColor: @sapList_HighlightColor;
-@sapUiListHoverBackground: @sapList_Hover_Background;
-@sapUiListSelectionBackgroundColor: @sapUiHighlight;
-
-
-// Brand Colors
-@sapUiBrand: #F0AB00;     // SAP Gold #f0ab00
-@sapUiHighlight: #111177;
-@sapUiSelected: @sapUiHighlight;
-@sapUiActive: @sapUiHighlight;
-
-// Accent Colors
-@sapUiPurple: purple;
-@sapUiOrange: orange;
-@sapUiGreen: green;
-@sapUiBlue: blue;
-@sapUiRed: red;
-@sapUiYellow: yellow;
-
-// Base Colors
-@sapUiBase: darken(@sapBaseColor, 100);			// #000000
-@sapUiBaseBG: lighten(@sapBaseColor, 100);			// #ffffff
-@sapUiBaseBorder: @sapUiBase;
-@sapUiBaseText: @sapTextColor;
-@sapUiBaseLine: @sapUiBase;
-
-// Background Colors
-// Grayscale Backgrounds
-@sapUiWhite: #FFFFFF;
-@sapUiWhiteBG: lighten(@sapBaseColor, 100);			// #ffffff
-@sapUiExtraLightBG: @sapUiBaseBG;
-@sapUiLightBG: lightgray;
-@sapUiMediumBG: gray;
-@sapUiDarkBG: darkgray;
-@sapUiDeepBG: black;
-@sapUiBlackBG: #000000;
-
-// Tinted Backgrounds
-@sapUiHoverBG: grey;
-@sapUiMediumAltBG: grey;
-@sapUiDarkAltBG: darkgrey;
-
-// Button Background Colors
-@sapUiButtonStandardBG: @sapUiBaseBG;
-@sapUiButtonEmphasizedBG: yellow;
-@sapUiButtonNegativeBG: red;
-@sapUiButtonPositiveBG: green;
-
-// Semantic Background Colors
-@sapUiErrorBG: #FF9A90;
-@sapUiWarningBG: #FAF2B0;
-@sapUiReadOnlyBG: grey;
-
-// Text Colors
-@sapUiExtraLightText: lightgray;
-@sapUiLightText: lightgray;
-@sapUiMediumText: grey;
-@sapUiDarkText: darkgrey;
-@sapUiDeepText: black;
-@sapUiText: @sapUiBaseText; // black
-@sapUiTextInverted: lighten(@sapUiBaseText, 100%);			// #ffffff;
-
-// Link
-@sapUiLink: #0000FF;
-@sapUiLinkInverted: @sapUiLink;
-@sapUiLinkVisited: #800080;               // the color for a vistited link
-@sapUiLinkActive: #FF0000;                // the color for a link while being clicked
-@sapUiLinkHover: #FF0000;                 // the color for a link while being hovered
-
-// Semantic Text Colors
-@sapUiNegativeText: red;
-@sapUiPositiveText: #B5E7A8;
-
-// Grayscale Borders
-@sapUiWhiteBorder: lighten(@sapUiBaseBorder, 100%);	// #ffffff
-@sapUiExtraLightBorder: lightgrey;
-@sapUiLightBorder: grey;
-@sapUiMediumBorder: @sapUiBaseBorder;
-@sapUiDarkBorder: @sapUiBaseBorder;
-@sapUiBlackBorder: darken(@sapUiBaseBorder, 100%);	// #000000
-
-// Semantic Border Colors
-@sapUiErrorBorder: red;
-@sapUiWarningBorder: yellow;
-
-// Line Colors
-@sapUiLightLine: lightgrey;
-@sapUiMediumLine: grey;
-@sapUiEmphasizedLine: @sapUiHighlight;
-@sapUiDarkLine: darkgrey;
-
-// Table Colors
-@sapUiTableRowBG: @sapUiWhite;
-@sapUiTableRowAlternatingBG: @sapUiWhite;
-@sapUiTableRowSelectionBG: @sapUiHighlight;
-@sapUiTableRowSelectionReadOnlyBG: @sapUiHighlight;
-@sapUiTableRowHoverBG: @sapUiHoverBG;
-
-// MOBILE-specific, but still very global-like:
-@sapUiListBG: #f7f7f7;
-
-
-/* ---------------------------------------------------------------------------------------- */
-/* TMP during LESS convertion ---- to be deleted */
-@sapUiTextColor: green; /* may be required by SubstitutionRulesManager.css in inbox lib */
-@sapUiTextTitleColor: green;
-@sapUiTextSelectionColor: green;
-
-/* ---------------------------------------------------------------------------------------- */
-
-@sapUiTextDisabled: lighten(@sapUiText, 60%); // the color for disabled text
-@sapUiTextTitle: @sapUiBaseText;  // the text color for titles of all kinds
-@sapUiTextSelection: @sapUiTextInverted; // the color for selected text
-@sapUiTextfieldBackground: @sapUiWhite; // better to have an own parameter insted of using sapUiWhite
-
-@sapUiLineHeight: 21px;
-
-@sapUiFontFamily: Arial,Helvetica,sans-serif;  // the default font
-@sapUiFontMonospaceFamily: Lucida Console;     // the default monospacefont
-@sapUiFontSize: medium;                        // the default font size
-@sapUiFontLargeSize: large;                    // TODO: might also be title font size
-@sapUiFontSmallSize: small;
-@sapUiFontHeader1Size: xx-large;
-@sapUiFontHeader2Size: x-large;
-@sapUiFontHeader3Size: @sapUiFontLargeSize;
-@sapUiFontHeader4Size: @sapUiFontSize;
-@sapUiFontHeader5Size: @sapUiFontSize;
-@sapUiFontHeader6Size: @sapUiFontSize;
-
-
-// SOME important control-specific parameters...
-
-@sapUiUx3ShellBackgroundColor: @sapUiExtraLightBG;
-@sapUiUx3ShellHoverColor: @sapUiBaseText;
-/** 
-  * This parameter is used in the Shell control to calculate the size when it grows.
-  * !!! ONLY PX-VALUES ARE ALLOWED HERE. 
-  */
-@sapUiUx3ShellSideBarBaseWidth:       40px;
-/** 
-  * This parameter is used in the Shell control to calculate the size of the margin when showing
-  * an overflow button in the right pane. As of 1.18.0 this value contains the _maximum_ height
-  * of the overflow button, if the text inside the button is smaller, the button shrinks with it.
-  * !!! ONLY PX-VALUES ARE ALLOWED HERE.
-  */
-@sapUiUx3ShellPaneOverflowButtonHeight: 120px;
-
-@sapUiUx3ExactLstExpandOffset: 0 0;
-@sapUiUx3ExactLstRootExpandOffset: 0 3;
-@sapUiUx3ExactLstCollapseWidth: 24px;
-@sapUiUx3ExactLstHeaderHeight: 25px;
-@sapUiUx3ExactLstContentTop: @sapUiUx3ExactLstHeaderHeight;
-
-/* NotificationBar */
-@sapUiNotificationBarBG: fade(@sapUiMediumText, 92%);
-@sapUiNotificationBarBG_IE: @sapUiMediumText;
-@sapUiNotifierHoverColor: @sapUiHighlight;
-@sapUiNotifierSeparator: @sapUiMediumLine;
-@sapUiNotificationText: contrast(@sapUiNotificationBarBG, @sapUiText, @sapUiTextInverted);
-@sapUiNotificationTimestamp: contrast(@sapUiNotificationBarBG, lighten(@sapUiText,33), darken(@sapUiTextInverted,33));
-@sapUiNotificationBarCalloutBorder: fade(@sapUiMediumText, 0%);
-@sapUiNotificationBarCalloutBorder_IE: @sapUiNotificationBarBG_IE;
-@sapUiNotificationBarCalloutArr: @sapUiNotificationBarBG;
-@sapUiNotificationBarHeight: ~"40px";
-@sapUiNotificationBarHeightMinimized: ~"0px";
-/* The maximized height will be calculated corresponding to the window's height.*/
-@sapUiNotificationBarHeightMaximized: ~"40%";
-@sapUiNotifierWidth: ~"40px";
-@sapUiNotifierSeparatorWidth: ~"2px";
-
-/* ToolPopup */
-@sapUiUx3ToolPopupInverted: ~"true"; /* Telling the ToolPopup if it's inverted per default */
-@sapUiUx3ToolPopupArrowWidth: 13px;
-@sapUiUx3ToolPopupArrowHeight: 20px;
-@sapUiUx3ToolPopupArrowRightMarginCorrection: -2px;
-@sapUiUx3ToolPopupArrowRightMarginCorrectionInverted: -7px;
-@sapUiUx3TPPaddingBottom: 50px;
-
-
-// @sapUiButtonBorderColor: @sapUiMediumBorder; // needed beacuse different in GR and UX
-// @sapUiButtonBackground: @sapUiButtonStandardBG; // to be renamed????
-// @sapUiButtonDisabledBorderColor: @sapUiMediumBorder; // needed because different in GR, HCB and UX
-@sapUiButtonDisabledBackground: @sapUiExtraLightBG; // needed, different in every theme
-// @sapUiButtonHoverBorderColor: @sapUiMediumBorder; // needed beacuse different in GR and UX
-@sapUiButtonHoverBackground: @sapUiMediumBG; // needed beacuse different in GR, Platinum and UX
-@sapUiButtonActiveBorderColor: @sapUiMediumBorder; // needed beacuse different in GR and UX
-@sapUiButtonActiveBackground: @sapUiDarkBG; // needed beacuse different in GR, Platinum and UX
-@sapUiButtonEmphasizedBorderColor: @sapUiButtonBorderColor;
-@sapUiButtonEmphasizedBackground: @sapUiButtonEmphasizedBG;
-@sapUiButtonEmphasizedDisabledBorderColor: @sapUiButtonEmphasizedBorderColor;
-@sapUiButtonEmphasizedDisabledBackground: @sapUiButtonEmphasizedBackground;
-@sapUiButtonEmphasizedHoverBorderColor: @sapUiButtonHoverBorderColor;
-@sapUiButtonEmphasizedHoverBackground: @sapUiButtonHoverBackground;
-@sapUiButtonEmphasizedActiveBorderColor: @sapUiButtonActiveBorderColor;
-@sapUiButtonEmphasizedActiveBackground: @sapUiButtonActiveBackground;
-@sapUiButtonAcceptBorderColor: @sapUiButtonBorderColor;
-@sapUiButtonAcceptBackground: @sapUiButtonPositiveBG;
-@sapUiButtonAcceptDisabledBorderColor: @sapUiButtonAcceptBorderColor;
-@sapUiButtonAcceptDisabledBackground: @sapUiButtonAcceptBackground;
-@sapUiButtonAcceptHoverBorderColor: @sapUiButtonHoverBorderColor;
-@sapUiButtonAcceptHoverBackground: @sapUiButtonHoverBackground;
-@sapUiButtonAcceptActiveBorderColor: @sapUiButtonActiveBorderColor;
-@sapUiButtonAcceptActiveBackground: @sapUiButtonActiveBackground;
-@sapUiButtonRejectBorderColor: @sapUiButtonBorderColor;
-@sapUiButtonRejectBackground: @sapUiButtonNegativeBG;
-@sapUiButtonRejectDisabledBorderColor: @sapUiButtonRejectBorderColor;
-@sapUiButtonRejectDisabledBackground: @sapUiButtonRejectBackground;
-@sapUiButtonRejectHoverBorderColor: @sapUiButtonHoverBorderColor;
-@sapUiButtonRejectHoverBackground: @sapUiButtonHoverBackground;
-@sapUiButtonRejectActiveBorderColor: @sapUiButtonActiveBorderColor;
-@sapUiButtonRejectActiveBackground: @sapUiButtonActiveBackground;
-@sapUiButtonLiteBackground: rgba(0,0,0,0); /* transparent; */
-@sapUiToggleButtonPressedDisabledBackground: #D8D8E8;
-@sapUiToggleButtonPressedBackground: @sapUiHighlight;
-
-// semantic colors
-@sapUiPositiveBG: @sapUiPositiveText; // no positive background defined by UX, but using text color as background may be confusing
-
-// default shadow for popups 
-@sapUiShadowTint: #000;
-@sapUiShadow: 5px 5px 10px fade(@sapUiShadowTint,50%);
+/* START "ActionListItem.less" */
 /* ============================================= */
 /* CSS for control sap.m/ActionListItem.control  */
 /* ============================================= */
@@ -384,6 +26,7 @@
 	-moz-box-flex: 1;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -397,6 +40,7 @@
 	-moz-box-flex: 1;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -416,6 +60,9 @@
 .sapMALI .sapMLIBSelectD {
 	display: none;
 }
+/* END "ActionListItem.less" */
+
+/* START "ActionSheet.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/ActionSheet.control */
@@ -433,6 +80,10 @@
 	display: block;
 }
 
+/* END "ActionSheet.less" */
+
+/* START "App.less" */
+
 /* ============================================= */
 /* CSS for control sap.m/App.control */
 /* ============================================= */
@@ -441,6 +92,9 @@
 	width: 100%;
 	height: 100%;
 }
+/* END "App.less" */
+
+/* START "Bar.less" */
 /* ============================================ */
 /* CSS for control sap.m/Bar.control			*/
 /* ============================================ */
@@ -508,6 +162,7 @@
 
 .sapMBarPH {
 	display: inline-block;
+	height: 3rem;
 }
 
 .sapMBarMiddle {
@@ -521,10 +176,17 @@
 .sapMBar .sapMLabel {
 	display: inline;
 }
+/* END "Bar.less" */
+
+/* START "BarBase.less" */
 /* ============================================= */
 /* CSS for controlsap.m/BarBase.control */
 /* ============================================= */
 
+
+/* END "BarBase.less" */
+
+/* START "BusyDialog.less" */
 
 /* ============================================= */
 /* CSS for controlsap.m/BusyScreen.control */
@@ -546,6 +208,10 @@
 	text-align: center !important;
 }
 
+/* END "BusyDialog.less" */
+
+/* START "BusyIndicator.less" */
+
 /* ============================================= */
 /* CSS for controlsap.m/BusyIndicator.control    */
 /* ============================================= */
@@ -561,6 +227,7 @@
 }
 
 .sapMBsyIndAnimation(@name) {
+	-moz-animation:    @name 2s linear 0s infinite normal none;
 	-webkit-animation: @name 2s linear 0 infinite normal none;
 	animation:         @name 2s linear 0 infinite normal none;
 }
@@ -582,6 +249,11 @@ html[dir='rtl'] .sapMBsyIndIcon {
 	.sapMBsyIndAnimation(sapMBsyIndRotate);
 }
 
+@-moz-keyframes sapMBsyIndRotate {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+
 @-webkit-keyframes sapMBsyIndRotate {
 	from { -webkit-transform:rotate(0deg) translateZ(0); }
 	to { -webkit-transform:rotate(360deg) translateZ(0); }
@@ -590,6 +262,11 @@ html[dir='rtl'] .sapMBsyIndIcon {
 @keyframes sapMBsyIndRotate {
 	from { transform:rotate(0deg) translateZ(0); }
 	to { transform:rotate(360deg) translateZ(0); }
+}
+
+@-moz-keyframes sapMBsyIndRotateRTL {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(-360deg); }
 }
 
 @-webkit-keyframes sapMBsyIndRotateRTL {
@@ -602,17 +279,9 @@ html[dir='rtl'] .sapMBsyIndIcon {
 	to { transform:rotate(-360deg) translateZ(0); }
 }
 
-.sapMSpinner {
-	vertical-align: middle;
-	display: inline-block;
-	position: relative;
-}
+/* END "BusyIndicator.less" */
 
-.sapMSpin {
-	position: relative;
-	height: 100%;
-	width: 100%;
-}
+/* START "Button.less" */
 /* ============================================= */
 /* CSS for control sap.m/Button.control          */
 /* ============================================= */
@@ -697,6 +366,10 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
 	pointer-events: none;
 	cursor: default;
 }
+
+/* END "Button.less" */
+
+/* START "Carousel.less" */
 /* ============================================= */
 /* CSS for control sap.m/Carousel.control */
 /* ============================================= */
@@ -732,7 +405,7 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
 	height: 100%;
 	position: relative;
 	white-space: nowrap;
-	text-align: left;
+	text-align: begin;
 	/*  Removes  inline-block  gaps  due  to  whitespace  */
 	font-size: 0;
 	/*  Configure  animations  */
@@ -750,6 +423,15 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
 	-ms-transition-duration: 0.5s;
 	transition-duration: 0.5s;
 }
+
+/* special handling for IE, as it does not support text-align: end */ 
+html[data-sap-ui-browser^="ie"] .sapMCrslInner { 
+ 	text-align: left;
+} 
+
+html[dir=rtl][data-sap-ui-browser^="ie"] .sapMCrslInner { 
+	text-align: right; 
+} 
 
 .sapMCrslItemTable {
 	display: table;
@@ -797,6 +479,10 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
 	width: 100%;
 } 
 
+/* END "Carousel.less" */
+
+/* START "CheckBox.less" */
+
 /* ============================================= */
 /* CSS for control sap.m/CheckBox.control */
 /* ============================================= */
@@ -818,6 +504,10 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
 .sapMCbBg.sapMCbMark > input{
 	font-size: inherit;
 }
+
+/* END "CheckBox.less" */
+
+/* START "ColumnListItem.less" */
 .sapMListTblRow.sapMListTblRowTop > td {
 	vertical-align: top;
 }
@@ -829,9 +519,15 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
 .sapMListTblRow.sapMListTblRowBottom > td {
 	vertical-align: bottom;
 }
+/* END "ColumnListItem.less" */
+
+/* START "ComboBox.less" */
 /* ============================================= */
 /* CSS for control sap.m/ComboBox.control        */
 /* ============================================= */
+/* END "ComboBox.less" */
+
+/* START "ComboBoxBase.less" */
 /* ============================================= */
 /* CSS for control sap.m/ComboBoxBase.control    */
 /* ============================================= */
@@ -842,15 +538,19 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
 	outline: none;
 }
 
+.sapMComboBoxBaseReadonly .sapMComboBoxBaseArrow {
+	display: none;
+}
+
+/* END "ComboBoxBase.less" */
+
+/* START "CustomListItem.less" */
+
 /* ============================================= */
 /* CSS for controlsap.m/CustomListItem.control */
 /* ============================================= */
 
 .sapMCLI{
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -862,7 +562,11 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
 	-moz-box-flex: 1;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 }
+/* END "CustomListItem.less" */
+
+/* START "CustomTile.less" */
 /* ============================================= */
 /* CSS for control sap.m/CustomTile.control */
 /* ============================================= */
@@ -893,6 +597,9 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
 	height: 11em;
 	margin: 0em;
 }
+/* END "CustomTile.less" */
+
+/* START "DatePicker.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/DatePicker.control */
@@ -928,6 +635,16 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
 	}
 }
 
+/* Condensed size */
+.sapUiSizeCondensed	.sapMDP > .sapUiIcon,
+.sapUiSizeCondensed	.sapMDP.sapMInputIE9 > .sapUiIcon{
+	top: 0;
+}
+
+/* END "DatePicker.less" */
+
+/* START "DateRangeSelection.less" */
+
 /* ============================================= */
 /* CSS for control sap.m/DateRangeSelection.control */
 /* ============================================= */
@@ -936,6 +653,9 @@ html[data-sap-ui-browser*='ie'] .sapMBtnContentWithIcon {
   color: @sapUiTextColor;
   border: 1px solid blue;
 }
+/* END "DateRangeSelection.less" */
+
+/* START "DateTimeInput.less" */
 /* ============================================= */
 /* CSS for control sap.m/DateTimeInput.control	 */
 /* ============================================= */
@@ -954,6 +674,9 @@ html[dir=rtl] .sapMDTICustomTime .dwc,
 html[dir=rtl] .sapMDTICustomDateTime .dwc:last-child {
 	direction: ltr;
 }
+/* END "DateTimeInput.less" */
+
+/* START "Dialog.less" */
 /* ============================================= */
 /* CSS for control sap.m/Dialog.control          */
 /* ============================================= */
@@ -999,6 +722,7 @@ html[dir=rtl] .sapMDTICustomDateTime .dwc:last-child {
 .sapMDialogScroll {
 	display: inline-block; /*this is for horizontal scrolling enablement*/
 	min-height: 100%;
+	width: 100%;
 	vertical-align: middle;
 }
 
@@ -1184,6 +908,10 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog-CTX .sapMDialogActions > .sapMDialo
 	-moz-transition: opacity 0.2s linear;
 	transition: opacity 0.2s linear;
 }
+
+/* END "Dialog.less" */
+
+/* START "DisplayListItem.less" */
 /* ============================================= */
 /* CSS for controlsap.m/DisplayListItem.control  */
 /* ============================================= */
@@ -1200,6 +928,7 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog-CTX .sapMDialogActions > .sapMDialo
 	-moz-box-flex: 1;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1216,6 +945,7 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog-CTX .sapMDialogActions > .sapMDialo
 	-moz-box-flex: 1;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1231,14 +961,23 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog-CTX .sapMDialogActions > .sapMDialo
 	-moz-box-flex: 1;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
+/* END "DisplayListItem.less" */
+
+/* START "FacetFilter.less" */
+
 /* ============================================= */
 /* CSS for control sap.m/FacetFilter.control */
 /* ============================================= */
+
+/* END "FacetFilter.less" */
+
+/* START "FacetFilterItem.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/FacetFilterItem.control */
@@ -1259,7 +998,6 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog-CTX .sapMDialogActions > .sapMDialo
 	Fix alignment of the list item counter.
 */
 .sapMFFLI > .sapMLIBContent {
-	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-webkit-box-flex: 1;
@@ -1272,9 +1010,31 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog-CTX .sapMDialogActions > .sapMDialo
 	align-items: center;
 }
 
+.sapMFFLITitleWrap {
+       word-wrap: break-word;
+       overflow: hidden;
+       text-overflow: ellipsis;
+       -webkit-box-flex: 1;
+       -moz-box-flex: 1;
+       -ms-flex: auto;
+       flex: auto;
+       -webkit-box-align: center;
+       -moz-box-align: center;
+       -ms-flex-align: center;
+       align-items: center;
+}
+
+/* END "FacetFilterItem.less" */
+
+/* START "FacetFilterList.less" */
+
 /* ============================================= */
 /* CSS for control sap.m/FacetFilterList.control */
 /* ============================================= */
+
+/* END "FacetFilterList.less" */
+
+/* START "FeedInput.less" */
 
 /* ======================================= */
 /* CSS for control sap.m/FeedInput.control */
@@ -1286,17 +1046,20 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog-CTX .sapMDialogActions > .sapMDialo
 }
 
 .sapMFeedInImage{
-	width: 3.75rem;
+	width: 4rem;
 	line-height: 4rem;
 	font-size: 3rem;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+/* END "FeedInput.less" */
 
-/* ============================================= */
-/* CSS for control sap.m/FeedListItem.control */
-/* ============================================= */
+/* START "FeedListItem.less" */
+
+/* ================================================= */
+/* CSS for control sap.m/FeedListItem.control (base) */
+/* ================================================= */
 
 .sapMFeedListItem{
 	display: block;
@@ -1313,8 +1076,7 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog-CTX .sapMDialogActions > .sapMDialo
 }
 
 /*
-	Makes sure that floating image does not is not displayed in next
-	list item.
+	Makes sure that floating image is not displayed in next	list item.
 */
 .sapMFeedListItem:after {
 	content: " ";
@@ -1328,9 +1090,9 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog-CTX .sapMDialogActions > .sapMDialo
 .sapMFeedListItem .sapMFeedListItemTextText a, 
 .sapMFeedListItem .sapMFeedListItemTextText span, 
 .sapMFeedListItem .sapMFeedListItemTextName a{
-	line-height: 1.4;
-	font-family: @sapUiFontFamily;  
+	font-family: @sapUiFontFamily;
 	font-weight: bold;
+	line-height: 1.4;
 }
 
 /*
@@ -1338,45 +1100,45 @@ html[data-sap-ui-browser^="ie9"] .sapMDialog-CTX .sapMDialogActions > .sapMDialo
  do not show a border when run in IE.
  */
 .sapMFeedListItemFigure a img {
-	border:0rem;
+	border: 0rem;
 }
 
 .sapMFeedListItemText{
 	vertical-align: top;
-	min-width: 15rem;
 	margin: 0rem;
 }
 
 .sapMFeedListItemText .sapMLnk {
-	display: inline;
+	vertical-align: top;
 }
 
 .sap-tablet .sapMFeedListItemHasFigure, .sap-desktop .sapMFeedListItemHasFigure{
-	margin-left: 4.75rem;
+	margin-left: 3.75rem;
 }
 
 .sapMFeedListItemTextText{
 	margin: 0rem;
 	line-height: 1.4;
 	font-family: @sapUiFontFamily;
-	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
 .sapMFeedListItemFigure{
 	float: left;
-	height: 4rem;
-	width: 4rem;
-	overflow: hidden;
+	height: 3rem;
+	width: 3rem;
+	overflow: visible;
 	margin: 0rem;
 }
 
 .sapMFeedListItemImage{
 	width: 3rem;
-	line-height: 4rem;
+	height: 3rem;	
+	line-height: 3rem;
 	font-size: 3rem;
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
+	margin-left: 0rem;
+	margin-right: 0rem;
+	overflow: hidden;
 }
 
 .sapMFeedListItemTimestamp {
@@ -1420,14 +1182,13 @@ html[dir=rtl].sap-phone .sapMFeedListItemTextName{
 	font-family: @sapUiFontFamily;  
 }
 
-.sapMFeedListItemTitleDiv {
+.sapMFeedListItemTitleDiv.sapMLIB {
 	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
+	display: block;
 	-webkit-box-orient: horizontal;
 	-webkit-box-align: center;
-	-ms-flex-direction: row;
-	-ms-flex-align: center;
+/*	-ms-flex-direction: row; */
+/*	-ms-flex-align: center; */
 	flex-direction: row;
 	align-items: center;
 }
@@ -1441,9 +1202,13 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 }
 
 .sapMFeedListItemTitleDiv .sapMLIBContent {
-	width: 100%;
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+/*	-ms-flex: auto; */
+	flex: auto;
 	overflow: hidden;
 }
+
 
 /* phone adoption */
 .sap-phone .sapMFeedListItemHeader {
@@ -1457,9 +1222,8 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 }
 
 .sap-phone .sapMFeedListItemImage {
-	width: 2.5rem;
-	margin-left: 0.25rem;
-	margin-right: 0.25rem;
+	width: 3rem;
+	heigth: 3rem;
 	line-height: 3rem;
 	font-size: 2.5rem;
 }
@@ -1503,9 +1267,25 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+/* END "FeedListItem.less" */
+
+/* START "FileUpload.less" */
 
 /* ============================================= */
-/* CSS for control sap.m/FlexBox.control */
+/* CSS for control sap.m/UploadCollection.control */
+/* ============================================= */
+
+
+.sapMUploadCollection {
+/*	color: @sapUiTextColor;
+	border: 1px solid blue; */
+}
+/* END "FileUpload.less" */
+
+/* START "FlexBox.less" */
+
+/* ============================================= */
+/* CSS for control sap.m/FlexBox.control         */
 /* ============================================= */
 
 .sapMFlexItem {
@@ -1513,6 +1293,9 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 	-ms-flex-preferred-size: auto;
 	-ms-flex-negative: 1;
 }
+/* END "FlexBox.less" */
+
+/* START "GroupHeaderListItem.less" */
 /* ============================================= */
 /* CSS for controlsap.m/GroupHeaderListItem		 */
 /* ============================================= */
@@ -1539,9 +1322,15 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 	overflow: hidden;
 	width: 100%		/* for iOS  */
 }
+/* END "GroupHeaderListItem.less" */
+
+/* START "GrowingList.less" */
 /* ============================================= */
 /* CSS for control sap.m/GrowingList.control */
 /* ============================================= */
+/* END "GrowingList.less" */
+
+/* START "IconTabBar.less" */
 /* ============================================ */
 /* CSS for control sap.m/IconTabBar.control			*/
 /* ============================================ */
@@ -1565,6 +1354,7 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 }
 
 .sapMITBFilterIcon,
+.sapMITBTextOnly .sapMITBFilter,
 .sapMITBTextOnly .sapMITBText,
 .sapMITBAll {
 	cursor: pointer;
@@ -1573,6 +1363,52 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 .sapMITBTextUpperCase .sapMITBText {
 	text-transform: uppercase;
 }
+
+.sapMITBStretch {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.sapMITBStretch > .sapMITBContainerContent {
+	-webkit-flex-grow: 1;
+	-ms-flex: 1 1;
+	flex-grow: 1;
+}
+
+.sapMITBStretch > .sapMITBContainerContent > .sapMITBContent {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+}
+
+.sapMITBNoContentPadding > .sapMITBContainerContent {
+	border: 0;
+}
+
+.sapMITBNoContentPadding > .sapMITBContainerContent > .sapMITBContent {
+	padding: 0;
+}
+
+.sapMITBBackgroundDesignTransparent > .sapMITBContainerContent > .sapMITBContent {
+	background-color: transparent;
+}
+
+/* fix rendering issue in BlackBerry - CSN: 0120061532 0001463943 2014 */
+.sap-bb .sapMITBContainerContent {
+	overflow : hidden;
+}
+/* END "IconTabBar.less" */
+
+/* START "Image.less" */
 .sapMImg{
 	border: none;
 	
@@ -1592,36 +1428,16 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 .sapMImg:focus{
 	outline: none;
 }
+
+/* END "Image.less" */
+
+/* START "Input.less" */
 /* ********** */
 /* BASE Theme */
 /* ********** */
 /* ============================================= */
 /* CSS for control sap.m/Input.control           */
 /* ============================================= */
-
-.sapMInputMessage {
-	padding: 5px;
-	background-color: @sapUiWhite;
-	border: 1px solid black;
-	display: inline-block;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.sapMInputMessage > span {
-	width: 100%;
-}
-
-.sapMInputMessage.sapMInputMessageError {
-	background-color: @sapUiErrorBG;
-	border-color: @sapUiErrorBorder;
-}
-
-.sapMInputMessage.sapMInputMessageWarning {
-	background-color: @sapUiWarningBG;
-	border-color: @sapUiWarningBorder;
-}
 
 .sapMInputSuggestionPopup > .sapMPopoverArr {
 	display: none;
@@ -1630,9 +1446,45 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 .sapMDialog.sapMInputSuggestionPopup .sapMDialogScrollCont {
 	padding: 0;
 }
+
+.sapMInputDescription {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.sapMInputDescription > span {
+	padding-left: 0.5rem;
+	font-family: @sapUiFontFamily;
+	font-style: normal;
+	font-weight: normal;
+}
+
+.sapMInputSuggestionTableHidden {
+	visibility: hidden;
+}
+
+
+/* valueHelpOnly overwrites text cursor for input */
+.sapMInputVHO,
+.sapMInput.sapMInputVHO > input {
+	cursor: pointer;
+}
+
+/* if ValueHalp and Description, place icon left to description */
+.sapMInputDescription.sapMInputVH > span{
+	position: relative;
+	display: inline-Block;
+	height: 100%;
+}
+/* END "Input.less" */
+
+/* START "InputBase.less" */
 /* ============================================= */
 /* CSS for control sap.m/InputBase.control       */
 /* ============================================= */
+
+@sapMInputBaseMsgBG: @sapUiWhite;
 
 .sapMInputBase,
 .sapMInputBaseInner,
@@ -1667,6 +1519,11 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 	margin: 0;
 }
 
+/* remove user agent pseudo-element clear button (IE specifix) */
+.sapMInputBaseInner::-ms-clear {
+	display: none;
+}
+
 .sapMInputBaseInner {
 	-webkit-appearance: none;
 	border-radius: 0;
@@ -1684,6 +1541,22 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 .sapMInputBaseInner::-webkit-input-placeholder {
 	text-overflow: ellipsis;
 }
+
+.sapMInputBaseMessage {
+	padding: 0.3125rem;
+	background: @sapMInputBaseMsgBG;
+	display: inline-block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.sapMInputBaseMessageText {
+	width: 100%;
+}
+/* END "InputBase.less" */
+
+/* START "InputListItem.less" */
 /* ============================================= */
 /* CSS for control sap.m/InputListItem.control   */
 /* ============================================= */
@@ -1700,6 +1573,7 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 	-moz-box-flex: 1;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1723,6 +1597,7 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 	-moz-box-flex: 1;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 }
 
 .sapMILIDiv {
@@ -1730,12 +1605,17 @@ html[data-sap-ui-browser="ie9"] .sapMFeedListItemTitleDiv {
 	-moz-box-flex: 9;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 	text-align: right;
 }
 
 html[dir=rtl] .sapMILIDiv {
 	text-align: left;
 }
+
+/* END "InputListItem.less" */
+
+/* START "Label.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/Label.control */
@@ -1748,9 +1628,6 @@ html[dir=rtl] .sapMILIDiv {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
-	-webkit-user-select: text;
-	-ms-user-select: text;
-	user-select: text;
 	cursor: text;
 }
 
@@ -1783,6 +1660,9 @@ html[dir=rtl] .sapMILIDiv {
 .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont > .sapUiFormResGridLbl:not(.sapUiRespGridSpanL12) > .sapMLabel {
 	float: right;
 }
+/* END "Label.less" */
+
+/* START "Link.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/Link.control */
@@ -1821,9 +1701,17 @@ html[dir=rtl] .sapMILIDiv {
 .sapMLnkMaxWidth {
 	max-width: 100%;
 }
+
+/* END "Link.less" */
+
+/* START "List.less" */
 /* ============================================= */
 /* CSS for controlsap.m/List.control */
 /* ============================================= */
+
+/* END "List.less" */
+
+/* START "ListBase.less" */
 /* ============================================= */
 /* CSS for control sap.m/ListBase.control 		 */
 /* ============================================= */
@@ -1862,11 +1750,9 @@ html[dir=rtl] .sapMILIDiv {
 	opacity: 0;
 	pointer-events: auto;
 	display: -webkit-box;
-	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
-	-moz-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
 }
@@ -1917,24 +1803,24 @@ html[dir=rtl] .sapMILIDiv {
 }
 
 .sapMListNoData {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 	list-style-type: none;
 	display: -webkit-box;
-	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
-	-moz-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
 	-webkit-box-pack: center;
-	-moz-box-pack: center;
-	-ms-justify-content: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	height: 2.75em;
+}
+
+.sapMListNoDataText{
+	-ms-flex-negative: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .sapMListShowSeparatorsAll{
@@ -1970,6 +1856,10 @@ html[dir=rtl] .sapMILIDiv {
 	float: none;
 	visibility: visible;
 }
+
+/* END "ListBase.less" */
+
+/* START "ListItemBase.less" */
 /* ============================================= */
 /* CSS for control sap.m/ListItemBase.control    */
 /* ============================================= */
@@ -1984,10 +1874,6 @@ html[dir=rtl] .sapMILIDiv {
 }
 
 .sapMLIB {
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -1996,6 +1882,13 @@ html[dir=rtl] .sapMILIDiv {
 	-moz-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+}
+
+.sapMLIBTypeNavigation{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .sapMLIB:focus,
@@ -2027,12 +1920,17 @@ html[dir=rtl] .sapMILIDiv {
 .sapMLIBSelectSL,
 .sapMLIBSelectM,
 .sapMLIBSelectD,
-.sapMLIBCounter {
+.sapMLIBCounter,
+.sapMLIBContent ~ .sapMLIBCursor {
 	-webkit-box-flex: 0;
 	-moz-box-flex: 0;
 	-ms-flex: none;
 	flex: none;
 }
+
+/* END "ListItemBase.less" */
+
+/* START "MessageToast.less" */
 /* =========================================== */
 /* CSS for control sap.m/MessageToast.control  */
 /* =========================================== */
@@ -2052,68 +1950,55 @@ html[dir=rtl] .sapMILIDiv {
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
+/* END "MessageToast.less" */
+
+/* START "MultiComboBox.less" */
 /* ============================================= */
 /* CSS for control sap.m/MultiComboBox.control   */
 /* ============================================= */
+
+/* END "MultiComboBox.less" */
+
+/* START "MultiInput.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/MultiInput.control */
 /* ============================================= */
 
-
-.sapUiSizeCompact .sapMMultiInputBorder{
-	padding-left: 0.1875rem;
-	height: 1.5rem;
-}
-
-.sapMMultiInputBorder{	
+.sapMMultiInputBorder {
+	box-sizing: border-box;
 	position: relative;
 	white-space: nowrap;
-	padding-left: 12px;
+}
+
+.sapMMultiInputInputContainer {
+	box-sizing: border-box;
+}
+
+// on the desktop we hide the overflow
+.sap-desktop .sapMMultiInputBorder{	
 	overflow: hidden;
 }
 
 .sapMMultiInput .sapMInputValHelp {
-	position: absolute;
- 	top: 0rem;
- 	right: 0rem;
+	display: inline-block;
+	position: static;
 }
 
 // we need this selector to avoid being overwritten by the input.css
 .sapUiSizeCompact .sapMMultiInput .sapMInputValHelp {
-	position: absolute;
- 	top: 0rem;
- 	right: 0rem;
-}
-
-.sapMMultiInputScrollContainer{
-	margin-right: 2.375rem;
-	overflow: hidden;
-}
-
-.sapUiSizeCompact .sapMMultiInputScrollContainer{
-       margin-right: 2.0rem;      
+	display: inline-block;
+	position: static;
 }
 
 .sapMMultiInputTextInput :not(.sapMMultiInputNotEditable){	
 	border-radius: 0;	
 }
 
-.sapUiSizeCompact .sapMMultiInputInputContainer > input, .sapUiSizeCompact .sapMMultiInputShadowDiv{	
-	padding-left: 0.3rem;
-}
-
-.sapMMultiInputInputContainer > input, .sapMMultiInputShadowDiv{
-	border: 0px transparent;
-	padding: 0px;	
-	min-width: 2rem;
-	background: transparent;
-	height: 2.4rem;
-}
-
-.sapMMultiInputInputContainer{	
-	display: inline;	
-	overflow: hidden;			
+.sapMMultiInputInputContainer {
+	position: absolute;
+	top: 0rem;
+	right: 0rem;
 }
 
 .sapMMultiInputNotEditable .sapMMultiInputInputContainer{	
@@ -2124,9 +2009,12 @@ html[dir=rtl] .sapMILIDiv {
 	display: inline;
 	visibility: collapse;
 	position: absolute;
-	top: 0px;
-	left: 0px;	
+	top: 0rem;
+	left: 0rem;	
 }
+/* END "MultiInput.less" */
+
+/* START "NavContainer.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/NavContainer.control */
@@ -2428,15 +2316,21 @@ html[dir=rtl] .sapMILIDiv {
 	transform-origin: 0% 50%;
 }
 
+/* END "NavContainer.less" */
+
+/* START "ObjectAttribute.less" */
+
 /* ============================================= */
 /* CSS for control sap.m/ObjectAttribute.control */
 /* ============================================= */
 
-.sapMObjectAttributeDiv .sapMText{
+.sapMObjectAttributeDiv .sapMText,
+.sapMObjectAttributeDiv .sapMObjectAttributeTitle,
+.sapMObjectAttributeDiv .sapMObjectAttributeText {
 	font-size: .875rem;
 }
 
-.sapMObjectAttributeActive .sapMText{
+.sapMObjectAttributeActive .sapMText {
 	color: @sapUiLink;
 	cursor: pointer;
 }
@@ -2446,6 +2340,9 @@ html[dir=rtl] .sapMILIDiv {
 .sapMObjectAttributeActive .sapMText:hover {
 	text-decoration: underline;
 }
+/* END "ObjectAttribute.less" */
+
+/* START "ObjectHeader.less" */
 /* ============================================= */
 /* CSS for control sap.m/ObjectHeaderItem.control */
 /* ============================================= */
@@ -2591,7 +2488,6 @@ html[dir=rtl] .sapMILIDiv {
 	display: inline-block;
 	position: absolute;
 	right: 0;
-	top: 0.25rem;
 }
 
 .sapMOHTitle+.sapMOHTitleArrow {
@@ -2599,7 +2495,7 @@ html[dir=rtl] .sapMILIDiv {
 }
 
 .sapMOHTitleArrow > .sapUiIcon:before{
-	padding: 1rem;
+	padding: 0.8125rem;
 }
 
 .sapMOHNumberDiv {
@@ -2749,7 +2645,12 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 }
 
 /* no icon */
+.sapMOHR.sapMOHNoMarkers .sapMOHTitle {
+	white-space: nowrap;
+}
+
 .sapMOHR .sapMOHTitle {
+	width: ~"-webkit-calc(64% - 1rem)";
 	width: ~"calc(64% - 1rem)";
 	padding-right: 1rem;
 }
@@ -2771,11 +2672,13 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 
 .sapMOHR > .sapMOHTitleIcon > .sapMOHTitle {
 	margin-left: 3.5rem;
+	width: ~"-webkit-calc(64% - 5rem)";
 	width: ~"calc(64% - 5rem)";
 }
 
 .sapMOHR > .sapMOHTitleIcon > .sapMOHTitleAndArrow {
 	margin-left: 3.5rem;
+	width: ~"-webkit-calc(64% - 4rem)";
 	width: ~"calc(64% - 4rem)";
 }
 
@@ -2783,15 +2686,14 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 .sapMOHR .sapMOHTitleArrow {
 	width: 3rem;
 	display: inline-block;
-	padding: 0.25rem 0;
 	vertical-align: top;
 	position: inherit;
-	top: 0;
 }
 
 /* override: the inner div will also get sapMOHTitle */
 .sapMOHR .sapMOHTitleFollowArrow {
 	margin-right: 0;
+	width: ~"-webkit-calc(100% - 3rem)";
 	width: ~"calc(100% - 3rem)";
 	padding-right: 0;
 	white-space: nowrap;
@@ -2833,28 +2735,31 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 
 /* 30% on desktop */
 .sapUiMedia-Std-Desktop .sapMOHR > .sapMOHTitleDiv {
-	/* width: ~"calc(33% - 1rem)"; */
 	width: 34%;
 }
 
 /* 50% on tablet */
 .sapUiMedia-Std-Tablet .sapMOHR > .sapMOHTitleDiv {
-	/* width: ~"calc(50% - 1rem)"; */
 	width: 50%;
 }
 
 /* full screen on phone */
-.sapUiMedia-Std-Phone .sapMOHR > .sapMOHTitleDiv {
+
+.sapUiMedia-Std-Phone .sapMOHR.sapMOH > .sapMOHTitleDiv {
+	width: ~"-webkit-calc(100% - 3rem)";
 	width: ~"calc(100% - 3rem)";
+	padding-right: 0;
 }
 
 .sapUiMedia-Std-Phone .sapMOHR.sapMOHNoMarkers > .sapMOHTitleDiv {
 	width: 100%;
+	padding-right: 1rem;
 }
 
 /* special case no tabs: 50% also on desktop */
 .sapUiMedia-Std-Desktop .sapMOHR > .sapMOHTitleDivNoTabs,
 .sapUiMedia-Std-Desktop .sapMOHR.sapMOHTabsMoreThanSeven.sapMOHStatesTwoOrLess > .sapMOHTitleDiv {
+	width: ~"-webkit-calc(50% - 3rem)";
 	width: ~"calc(50% - 3rem)";
 }
 
@@ -2870,6 +2775,7 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 
 /* special case no states: 50% also on desktop */
 .sapUiMedia-Std-Desktop .sapMOHR .sapMOHTitleDivNoStates {
+	width: ~"-webkit-calc(50% - 3rem)";
 	width: ~"calc(50% - 3rem)";
 }
 
@@ -2877,20 +2783,33 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 	width: 50%;
 }
 
-/* special case no states: 50% - 2rem on tablet */
+/* special case no states: 50% on tablet */
 .sapUiMedia-Std-Tablet .sapMOHR .sapMOHTitleDivNoStates {
-	/* width: ~"calc(50% - 3rem)"; */
 	width: 50%;
 }
 
 /* special case no tabs and no states: 100% also on desktop */
+.sapUiMedia-Std-Desktop .sapMOHR.sapMOHNoMarkers .sapMOHTitleDivNoTabs.sapMOHTitleDivNoStates {
+	width: 100%;
+	padding-right: 1rem;
+}
+
 .sapUiMedia-Std-Desktop .sapMOHR .sapMOHTitleDivNoTabs.sapMOHTitleDivNoStates {
+	width: ~"-webkit-calc(100% - 3rem)";
 	width: ~"calc(100% - 3rem)";
+	padding-right: 0;
 }
 
 /* special case no tabs and no states: 100% also on tablet */
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOHNoMarkers .sapMOHTitleDivNoTabs.sapMOHTitleDivNoStates {
+	width: 100%;
+	padding-right: 1rem;
+}
+
 .sapUiMedia-Std-Tablet .sapMOHR .sapMOHTitleDivNoTabs.sapMOHTitleDivNoStates {
+	width: ~"-webkit-calc(100% - 3rem)";
 	width: ~"calc(100% - 3rem)";
+	padding-right: 0;
 }
 
 /* 3) states block */
@@ -2906,6 +2825,7 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 
 /* 40% on desktop */
 .sapUiMedia-Std-Desktop .sapMOHR .sapMOHStates {
+	width: ~"-webkit-calc(33% - 3rem)";
 	width: ~"calc(33% - 3rem)";
 }
 
@@ -2914,6 +2834,7 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 }
 
 .sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHTabsMoreThanSeven.sapMOHStatesTwoOrLess .sapMOHStates {
+	width: ~"-webkit-calc(50% - 3rem)";
 	width: ~"calc(50% - 3rem)";
 }
 
@@ -2922,11 +2843,13 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 }
 
 .sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHTabsMoreThanSeven.sapMOHStatesThreeOrFour .sapMOHStates {
+	width: ~"-webkit-calc(66% - 3rem)";
 	width: ~"calc(66% - 3rem)";
 }
 
 /* 50% on tablet */
 .sapUiMedia-Std-Tablet .sapMOHR .sapMOHStates {
+	width: ~"-webkit-calc(50% - 3rem)";
 	width: ~"calc(50% - 3rem)";
 }
 
@@ -2943,6 +2866,7 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 
 /* special case no tabs: 50% also on desktop */
 .sapUiMedia-Std-Desktop .sapMOHR .sapMOHStatesNoTabs {
+	width: ~"-webkit-calc(50% - 3rem)";
 	width: ~"calc(50% - 3rem)";
 }
 
@@ -2987,10 +2911,12 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHStatusFixedWidth {
 
 /* special case no states: 50% also on tablet */
 .sapUiMedia-Std-Tablet .sapMOHR .sapMOHTabsNoStates {
+	width: ~"-webkit-calc(50% - 3rem)";
 	width: ~"calc(50% - 3rem)";
 }
 
 .sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHTabsMoreThanSeven > .sapMOHTabs.sapMOHTabsNoStates {
+	width: ~"-webkit-calc(50% - 3rem)";
 	width: ~"calc(50% - 3rem)";
 }
 
@@ -3024,11 +2950,6 @@ margin-top: 0.5rem;
 	margin-bottom: 0;
 }
 
-.sap-phone .sapMOHR.sapMOH .sapMITBArrowScroll,
-.sap-tablet .sapMOHR.sapMOH .sapMITBArrowScroll {
-	top: 0;
-}
-
 /* new design for first section (title, icon, intro, number)*/
 .sapMOHR.sapMOH {
 	margin: 0;
@@ -3041,6 +2962,7 @@ margin-top: 0.5rem;
 
 .sapMOHR.sapMOH.sapMOHStatesFiveOrMore >.sapMOHTitleDiv,
 .sapUiMedia-Std-Tablet .sapMOHR.sapMOH.sapMOHStatesThreeOrFour >.sapMOHTitleDiv {
+	width: ~"-webkit-calc(100% - 3rem)";
 	width:  ~"calc(100% - 3rem)";
 }
 
@@ -3056,6 +2978,7 @@ margin-top: 0.5rem;
 .sapMOHR.sapMOH > .sapMOHTitleDiv {
 	margin: 0;
 	padding: 0 1rem;
+	white-space: nowrap;
 }
 
 /* no number, stretch title */
@@ -3170,6 +3093,7 @@ margin-top: 0.5rem;
 }
 
 .sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHStatesThreeOrFour > .sapMOHStates {
+	width: ~"-webkit-calc(66% - 3rem)";
 	width: ~"calc(66% - 3rem)";
 }
 
@@ -3243,16 +3167,16 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHR.sapMOH > .sapMOHStates > .sapMOH
 	margin: 0;
 }
 
-.sapMOHR.sapMOH.sapMOHStatesThreeOrFour > .sapMOHTabs.sapmMOHTabsITB,
-.sapMOHR.sapMOH.sapMOHStatesFiveOrMore > .sapMOHTabs.sapmMOHTabsITB,
+.sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHStatesThreeOrFour > .sapMOHTabs.sapmMOHTabsITB,
+.sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHStatesFiveOrMore > .sapMOHTabs.sapmMOHTabsITB,
 .sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHTabsMoreThanSeven > .sapMOHTabs.sapmMOHTabsITB:not(.sapMOHTabsNoStates) {
 	padding-top: 0;
 	margin: 0 -2rem 0 -2rem;
 }
 
-.sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHStatesFiveOrMore >.sapMOHTabs .sapMITBHead,
-.sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHStatesThreeOrFour >.sapMOHTabs .sapMITBHead,
-.sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHTabsMoreThanSeven > .sapMOHTabs:not(.sapMOHTabsNoStates) .sapMITBHead {
+.sapUiMedia-Std-Desktop:not(.sap-tablet) .sapMOHR.sapMOH.sapMOHStatesFiveOrMore >.sapMOHTabs .sapMITBHead,
+.sapUiMedia-Std-Desktop:not(.sap-tablet) .sapMOHR.sapMOH.sapMOHStatesThreeOrFour >.sapMOHTabs .sapMITBHead,
+.sapUiMedia-Std-Desktop:not(.sap-tablet) .sapMOHR.sapMOH.sapMOHTabsMoreThanSeven > .sapMOHTabs:not(.sapMOHTabsNoStates) .sapMITBHead {
 	padding-top: 1rem;
 }
 
@@ -3272,6 +3196,10 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHR.sapMOH > .sapMOHStates > .sapMOH
 	padding-left: 0;
 	padding-right: 0;
 	margin: 0 -1rem 0 -1rem;
+}
+
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOH > .sapMOHTabs.sapmMOHTabsITB.sapMOHTabsNoStates {
+	margin: 0;
 }
 
 .sapUiMedia-Std-Phone .sapMOHR.sapMOH > .sapMOHTabs {
@@ -3294,6 +3222,165 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHR.sapMOH > .sapMOHStates > .sapMOH
 	padding-top: 1rem;
 }
 
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOH.sapMOHStatesThreeOrFour > .sapMOHTabs.sapmMOHTabsITB,
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOH.sapMOHStatesFiveOrMore > .sapMOHTabs.sapmMOHTabsITB {
+	padding-top: 1rem;
+}
+
+.sapUiMedia-Std-Tablet.sap-tablet .sapMOHR.sapMOH > .sapMOHTabs.sapmMOHTabsITB,
+.sapUiMedia-Std-Phone.sap-phone .sapMOHR.sapMOH > .sapMOHTabs.sapmMOHTabsITB {
+	padding-top: 0;
+}
+
+.sapUiMedia-Std-Phone:not(.sap-phone) .sapMOHR.sapMOH > .sapMOHTabs.sapmMOHTabsITB > .sapMITBNotScrollable.sapMITH > .sapMITBHead {
+	margin: 0 1rem;
+}
+
+/* special cases for browsers that do not support calc (android < 4.4) */
+/* we use a workaround with border-box sizing and negative margins instead to achieve the same layout as with CSS calculations */
+.sapUiMedia-Std-Phone .sapMOHR.sapMOHNoCalc:not(.sapMOHNoMarkers) > .sapMOHTitleDiv {
+	width: 100%;
+	padding-right: 3rem;
+	margin-right: -3rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* tablet: states next to title, with markers */
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOHNoCalc .sapMOHStates {
+	width: 50%;
+	padding-right: 3rem;
+	margin-right: -3rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+/* all: sizing for title block with icon */
+.sapMOHR.sapMOH.sapMOHNoCalc > .sapMOHTitleDiv.sapMOHTitleIcon > .sapMOHTitleAndArrow,
+.sapMOHR.sapMOH.sapMOHNoCalc > .sapMOHTitleDiv.sapMOHTitleIcon > .sapMOHTitle {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* all: title next to arrow */
+.sapMOHR.sapMOHNoCalc > .sapMOHTitleIcon > .sapMOHTitleAndArrow {
+	padding-right: 3rem;
+	margin-right: -3rem;
+}
+
+/* tablet: title next to something, with markers */
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOHNoCalc:not(.sapMOHNoMarkers) .sapMOHTitleDivNoStates  {
+	width: 50%;
+	padding-right: 3rem;
+	margin-right: -3rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* tablet: title next to tabs padding, with markers */
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOHNoCalc:not(.sapMOHNoMarkers).sapMOHWithITB .sapMOHTitleDivNoStates  {
+	padding-right: 1rem;
+	margin-right: 0rem;
+}
+
+/* tablet: title 100%, with markers + desktop: five or more states with markers */
+.sapMOHR.sapMOH.sapMOHStatesFiveOrMore.sapMOHNoCalc:not(.sapMOHNoMarkers) > .sapMOHTitleDiv, 
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOH.sapMOHStatesThreeOrFour.sapMOHNoCalc:not(.sapMOHNoMarkers) > .sapMOHTitleDiv{
+	width: 100%;
+	padding-right: 3rem;
+	margin-right: -3rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* desktop: tabs next to title, markers */
+.sapUiMedia-Std-Desktop .sapMOHR.sapMOH.sapMOHTabsMoreThanSeven.sapMOHNoCalc > .sapMOHTabs.sapMOHTabsNoStates {
+	width: 50%;
+	padding-right: 3rem;
+	margin-right: -3rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* title 100%, with markers */
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOHNoCalc:not(.sapMOHNoMarkers) .sapMOHTitleDivNoTabs.sapMOHTitleDivNoStates {
+	width: 100%;
+	padding-right: 3rem;
+	margin-right: -3rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* tablet: tabs next to title, no markers*/
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOHNoCalc .sapMOHTabsNoStates {
+	width: 50%;
+}
+
+/* tablet: tabs next to title, markers*/
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOHNoCalc:not(.sapMOHNoMarkers) .sapMOHTabs.sapMOHTabsNoStates {
+	width: 50%;
+	padding-right: 3rem;
+	margin-right: -3rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* all: title, no markers */
+.sapMOHR.sapMOHNoCalc .sapMOHTitle {
+	width: 64%;
+	padding-right: 1rem;
+	margin-right: -1rem;
+}
+
+
+/* tablet: states next to title, with markers */
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOHNoCalc:not(.sapMOHNoMarkers) .sapMOHStates {
+	width: 50%;
+	padding-right: 3rem;
+	margin-right: -3rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* tablet: title next to tabs, with markers */
+.sapUiMedia-Std-Tablet .sapMOHR.sapMOHNoCalc:not(.sapMOHNoMarkers).sapMOHWithITB .sapMOHTitleDivNoStates {
+	width: 50%;
+	padding-right: 1rem;
+	margin-right: 0rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* title and arrow */
+.sapMOHR.sapMOHNoCalc .sapMOHTitleFollowArrow {
+	width: 100%;
+	padding-right: 3rem;
+	margin-right: -3rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+/* all: title and default size */
+.sapMOHR.sapMOHNoCalc > .sapMOHTitleIcon > .sapMOHTitleAndArrow {
+	width: 64%;
+}
+/* END "ObjectHeader.less" */
+
+/* START "ObjectIdentifier.less" */
+
 /* ============================================= */
 /* CSS for control sap.m/ObjectIdentifier.control */
 /* ============================================= */
@@ -3301,7 +3388,7 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHR.sapMOH > .sapMOHStates > .sapMOH
 .sapMObjectIdentifier{	
 }
 
-.sapMObjectIdentifierTopRow{	
+.sapMObjectIdentifierTopRow{
 }
 
 .sapMObjectIdentifierIcons{
@@ -3317,19 +3404,53 @@ html[dir=rtl][data-sap-ui-browser^=ie] .sapMOHR.sapMOH > .sapMOHStates > .sapMOH
     padding-left: 1rem;
 }
 
-.sapMObjectIdentifierTitle{
+.sapMObjectIdentifierTitle .sapMLnk,
+.sapMObjectIdentifierTitle .sapMText {
+	overflow: visible;
+	font-weight: bold;
+	font-size: 1rem;
 	display: inline;
-	white-space: wordwrap;
-	overflow: hidden;
+	word-wrap: break-word;
+	white-space: normal;
+}
+
+.sapMObjectIdentifierTitle .sapMText {
 	color: @sapUiDarkText;
-	font-weight: bold;	
 }
 
 .sapMObjectIdentifierText{
-	margin-top: 0.5rem;
 	color: @sapUiLightText;
-	font-size: .875em;
+	font-size: 0.875rem;
+	padding-top: 0;
 }
+
+.sapMObjectIdentifierTextBellow{
+	margin-top: 0.5rem;
+}
+
+/* ObjectIdentifier inside a table */
+.sapMListTbl .sapMObjectIdentifierTitle .sapMLnk,
+.sapMListTbl .sapMObjectIdentifierTitle .sapMText {
+	overflow: visible;
+	font-weight: bold;
+	font-size: 0.875rem;
+	display: inline;
+	word-wrap: break-word;
+	white-space: normal;
+	padding-top: 0;
+}
+
+.sapMListTbl .sapMObjectIdentifierTitle .sapMText {
+	color: @sapUiDarkText;
+}
+
+.sapMListTbl .sapMObjectIdentifierText .sapMText {
+	line-height: 1.4;
+	padding-top: 0;
+}
+/* END "ObjectIdentifier.less" */
+
+/* START "ObjectListItem.less" */
 
 /* ============================================= */
 /* CSS base theme for control sap.m/ObjectListItem.control */
@@ -3374,10 +3495,9 @@ html[data-sap-ui-browser="ie9"] .sapMText.sapMObjLTitle {
 
 /*Object header title must break words, otherwise it may be to wide if used within
   a layout control with fixed width. */
-.sapMOHTitle > .sapMText {
+.sapMOHTitle:not(.sapMOHRTitleNoWordBreak) > .sapMText {
 	/* to break all words even browser does not know the width */
-	word-break: break-word;  /* Non standard for old webkits */
-	word-break: break-all;
+	word-break: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	-ms-hyphens: auto;
@@ -3487,7 +3607,7 @@ html[dir=rtl] .sapMObjLStatusDiv {
 .sapMObjLItem .sapMLIBContent {
 	-webkit-box-flex: 1;
 	-ms-flex: 1;
-	flex: 1;
+	flex: 1 1 auto;
 }
 
 .sapMObjLListModeDiv {
@@ -3502,9 +3622,15 @@ html[dir=rtl] .sapMObjLStatusDiv {
 	align-items: center;
 }
 
-html[data-sap-ui-browser="ie10"] .sapMObjLItem .sapMLIBContent {
+html[data-sap-ui-browser="ie10"] .sapMObjLItem .sapMLIBContent,
+html[data-sap-ui-browser="ie11"] .sapMObjLItem .sapMLIBContent
+{
 	width: 100%;
 }
+
+/* END "ObjectListItem.less" */
+
+/* START "ObjectNumber.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/ObjectNumber.control */
@@ -3527,10 +3653,9 @@ html[data-sap-ui-browser="ie10"] .sapMObjLItem .sapMLIBContent {
 	font-size: .75rem;
 }
 
-html[dir=rtl] .sapMObjectNumberUnit{
-	padding-left: 0;
-	padding-right: .25rem;
-}
+/* END "ObjectNumber.less" */
+
+/* START "ObjectStatus.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/ObjectStatus.control */
@@ -3559,6 +3684,128 @@ html[dir=rtl] .sapMObjectNumberUnit{
 	padding-right: .25rem;
 }
 
+
+/* END "ObjectStatus.less" */
+
+/* START "P13nColumnsPanel.less" */
+
+/* END "P13nColumnsPanel.less" */
+
+/* START "P13nConditionPanel.less" */
+.sapMConditionPanel .displayNone {
+	display: none;
+}
+
+.sapMConditionPanel .conditionRootGrid > div + div .sapUiRespGridMedia-Std-Tablet {
+	margin-top: 1rem;
+}
+
+.sapMConditionPanel .conditionRootGrid > div + div .sapUiRespGridMedia-Std-Phone {
+	margin-top: 1rem;
+}
+
+.sapMConditionPanel .conditionAddBtnFloatRight {
+	float: right;
+}
+
+.sapUiSizeCompact .sapMConditionPanel .conditionLabel {
+	margin-top: 0.5rem;
+}
+
+.sapMConditionPanel .conditionLabel {
+	margin-top: 1rem;
+}
+
+.sapMConditionPanel > div {
+
+}
+
+.sapMConditionPanelContent {
+
+}
+
+.sapMConditionPanel .sapMCb {
+	display: block; 
+}
+/* END "P13nConditionPanel.less" */
+
+/* START "P13nDialog.less" */
+
+/* ============================================= */
+/* CSS for control sap.m/P13nDialog.control */
+/* ============================================= */
+
+.sapMP13nDialog{
+  color: @sapUiTextColor;
+  border: 1px solid blue;
+}
+
+.sapMP13nDialog .sapMITBHead{
+	margin : 0rem;
+}
+/* END "P13nDialog.less" */
+
+/* START "P13nFilterPanel.less" */
+
+.sapMFilterPanel .compPadding {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-bottom: 1rem;
+}
+
+.sapMFilterPanel .sapMPanelContent {
+	padding : 0px;
+	border-bottom-width: 0px;	
+}
+
+.sapMFilterPanel .sapUiRespGrid.sapUiRespGridVSpace1>div {
+    margin-bottom: 0px; 
+    margin-left: 0px;
+}
+
+.sapMFilterPanel .sapMPanelWrappingDiv {
+ 	border-bottom: 0px;
+}
+
+.sapMFilterPanel .panelTopMargin {
+	margin-top : 1rem;
+}
+
+
+/* END "P13nFilterPanel.less" */
+
+/* START "P13nPanel.less" */
+
+/* ============================================= */
+/* CSS for control sap.m/P13nPanel.control */
+/* ============================================= */
+
+.sapMP13nPanel{
+  color: @sapUiTextColor;
+  border: 1px solid blue;
+}
+/* END "P13nPanel.less" */
+
+/* START "P13nSortPanel.less" */
+
+.sapMSortPanel {
+	width: 100%;
+}
+
+.sapMSortPanelContent {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.sapMGroupPanelContent {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+
+/* END "P13nSortPanel.less" */
+
+/* START "Page.less" */
 /* ============================================= */
 /* CSS for control sap.m/Page.control            */
 /* ============================================= */
@@ -3650,12 +3897,18 @@ html[data-sap-ui-os^="iOS7"][data-sap-ui-browser^="msf"]:not(.sap-tablet){
 	/* header has to be on top of the Scroll container */
 	z-index : 1;
 }
+
+/* END "Page.less" */
+
+/* START "Panel.less" */
 /* ============================================= */
 /* CSS for control sap.m/Panel.control           */
 /* ============================================= */
+.sapMPanel {
+	overflow: hidden;
+}
+
 .sapMPanelHdr {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-text-size-adjust: none;
 	/* To improve readability Mobile Safari automatically increases the size of small text so let's disable this */
@@ -3663,6 +3916,11 @@ html[data-sap-ui-os^="iOS7"][data-sap-ui-browser^="msf"]:not(.sap-tablet){
 	overflow: hidden;
 	text-overflow: ellipsis;
 	text-transform: none;
+}
+
+.sapMPanelContent {
+	box-sizing: border-box;
+	overflow: auto;
 }
 
 .sapMPanelExpandablePart {
@@ -3687,7 +3945,7 @@ html[data-sap-ui-os^="iOS7"][data-sap-ui-browser^="msf"]:not(.sap-tablet){
 	transform: translateY(-50%) rotate(90deg);
 	/* 400ms is standard jQuery duration */
 	-webkit-transition: all 0.4s ease-out;
-	transition: all 0.4s ease-out;	
+	transition: all 0.4s ease-out;
 }
 
 html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL).sapMPanelExpandableIcon {
@@ -3696,17 +3954,21 @@ html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL).sapMPanel
 	transform: translateY(-50%) scale(-1, 1);
 }
 
+/* rotate(90deg) will be mirrored to rotate(-90deg) for RTL */
 html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL).sapMPanelExpandableIconExpanded {
-	-webkit-transform: translateY(-50%) rotate(-90deg) scale(-1, 1);
-	-ms-transform: translateY(-50%) rotate(-90deg) scale(-1, 1);
-	transform: translateY(-50%) rotate(-90deg) scale(-1, 1);
-	
+	-webkit-transform: translateY(-50%) rotate(90deg) scale(-1, 1);
+	-ms-transform: translateY(-50%) rotate(90deg) scale(-1, 1);
+	transform: translateY(-50%) rotate(90deg) scale(-1, 1);
 }
 
 .sapMPanelWrappingDiv,
 .sapMPanelWrappingDivTb {
 	position: relative;
 }
+
+/* END "Panel.less" */
+
+/* START "Popover.less" */
 /* ============================================= */
 /* CSS for controlsap.m/Popover.control */
 /* ============================================= */
@@ -3840,6 +4102,10 @@ html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL).sapMPanel
 	position: absolute;
 }
 
+/* END "Popover.less" */
+
+/* START "ProgressIndicator.less" */
+
 /* ============================================= */
 /* CSS for control sap.m/ProgressIndicator.control */
 /* ============================================= */
@@ -3891,18 +4157,31 @@ html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL).sapMPanel
 .sapMPIAnimate .sapMPIText {
 	display: none;
 }
+/* END "ProgressIndicator.less" */
+
+/* START "PullToRefresh.less" */
 /* ============================================= */
 /* CSS for control sap.m/PullToRefresh.control */
 /* ============================================= */
 
+
+/* END "PullToRefresh.less" */
+
+/* START "RadioButton.less" */
 /* ============================================= */
-/* CSS for controlsap.m/RadioButton.control */
+/* CSS for control sap.m/RadioButton.control     */
 /* ============================================= */
 
 .sapMRb {
-	display: inline-block;
+	float: left;
+	clear: left;
 	outline: none;
-	white-space: nowrap;
+	text-overflow: ellipsis;
+	position: relative;
+}
+
+.sapMILI-CTX .sapMRb {
+	float: right;
 }
 
 .sapMRbB {
@@ -3932,6 +4211,90 @@ html[dir=rtl] .sapUiIconMirrorInRTL:not(.sapUiIconSuppressMirrorInRTL).sapMPanel
 .sapMRbB:focus {
 	outline: none;
 }
+/* END "RadioButton.less" */
+
+/* START "RadioButtonGroup.less" */
+
+/* ======================================================= */
+/* CSS for control sap.ui.commons/RadioButtonGroup.control */
+/* ======================================================= */
+
+.sapMRbG:not(.sapMRbGTab){
+	display: inline-block;
+}
+
+.sapMRbGTab{
+	display: box;
+	display: -moz-box;
+	display: -webkit-box;
+}
+
+html[data-sap-ui-browser^="ie"] .sapMRbGTab{
+	display: table;
+	table-layout: fixed;
+}
+
+.sapMRbGCol{
+	vertical-align: top;
+	min-width: 10px;
+	margin-right: 0;
+	padding: 1px;
+	overflow: hidden; /* needed in Safari */
+}
+
+.sapMRbGTabFlex > .sapMRbGCol{
+	-moz-box-flex: 1;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+}
+
+html[data-sap-ui-browser^="ie"] .sapMRbGCol{
+	display: table-cell;
+	padding-right: 15px;
+}
+
+.sapMRbGDummy{
+	-moz-box-flex: 1000;
+	-webkit-box-flex: 1000;
+	box-flex: 1000;
+	min-width: 1px;
+}
+
+html[data-sap-ui-browser^="ie"] .sapMRbGDummy{
+	display: table-cell;
+	width: 1px;
+}
+
+.sapMRbG > .sapMRb,
+.sapMRbGCol > .sapMRb{
+	float: left;
+	clear: left;
+	text-overflow: ellipsis;
+}
+
+.sapMRbG.sapMRbG1Row > .sapMRb{
+	float: none;
+	clear: none;
+	margin-right: 15px;
+}
+
+.sapMRbGCol > .sapMRb{
+	width: 100%;
+	outline-offset: -1px;
+}
+
+.sapMRbG .sapMRbB {
+	position: absolute;
+	left: 0;
+}
+
+.sapMRbG .sapMRbBLabel {
+	padding-left: 2.875rem;
+	display: inline-block;
+}
+/* END "RadioButtonGroup.less" */
+
+/* START "RatingIndicator.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/RatingIndicator.control */
@@ -3998,6 +4361,9 @@ html[data-sap-ui-browser*='ie'] .sapMRISelector {
 /*.sapMRI:focus {
 	outline-width: 0;
 }*/
+/* END "RatingIndicator.less" */
+
+/* START "ScrollContainer.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/ScrollContainer.control */
@@ -4015,6 +4381,9 @@ html[data-sap-ui-browser*='ie'] .sapMRISelector {
 .sapMScrollContV .sapMScrollContScroll {
 	display: block; /* when there is only vertical scrolling, the whole available width should be consumed */
 }
+/* END "ScrollContainer.less" */
+
+/* START "SearchField.less" */
 /* ============================================= */
 /* CSS for control     sap.m/SearchField.control */
 /* Styling is in general reused from sap.m.Input */
@@ -4064,6 +4433,9 @@ input.sapMSFI[type="search"]:focus {
 	font-size: 0.88em;
 	display: none;
 }
+/* END "SearchField.less" */
+
+/* START "SegmentedButton.less" */
 
 /* ============================================= */
 /* CSS for controlsap.m/SegmentedButton.control */
@@ -4096,6 +4468,15 @@ input.sapMSFI[type="search"]:focus {
 	outline: none;
 }
 
+.sapMSegBBtn .sapMBtnIconLeft {
+	position: relative;
+}
+
+/* style for icon and text usage */
+.sapMSegBBtn.sapMSegBBtnMixed {
+	padding-right: 0.5rem;
+}
+
 .sapMSegB img{
 	margin: 0;
 	vertical-align: top;
@@ -4111,6 +4492,9 @@ input.sapMSFI[type="search"]:focus {
 	cursor:           default;
 	opacity:          0.5;
 }
+/* END "SegmentedButton.less" */
+
+/* START "Select.less" */
 /* ====================================================== */
 /* CSS for control sap.m/Select.control                   */
 /* ====================================================== */
@@ -4145,7 +4529,6 @@ input.sapMSFI[type="search"]:focus {
 
 li.sapMSltItemDisabled,
 .sapMSltDisabled {
-	opacity: 0.5;
 	pointer-events: none;
 }
 
@@ -4214,6 +4597,9 @@ li.sapMSltItemDisabled,
 	width: auto;
 	opacity: 0;
 }
+/* END "Select.less" */
+
+/* START "SelectDialog.less" */
 /* ============================================= */
 /* CSS for control sap.m/SelectDialog.control    */
 /* ============================================= */
@@ -4238,6 +4624,54 @@ li.sapMSltItemDisabled,
 .sapMSelectDialog.sapMDialog .sapMDialogScroll {
 	width: 100% !important;
 }
+/* END "SelectDialog.less" */
+
+/* START "SelectList.less" */
+/* ============================================= */
+/* CSS for control sap.m/SelectList.control      */
+/* ============================================= */
+
+/* ------------------------------ */
+/* SelectList commons styles      */
+/* ------------------------------ */
+
+/* disabled */
+
+.sapMSelectListDisabled,
+.sapMSelectListItemDisabled {
+	pointer-events: none;
+}
+
+/* ------------------------------ */
+/* SelectList                     */
+/* ------------------------------ */
+
+.sapMSelectList {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	list-style-type: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* ------------------------------ */
+/* SelectList Item                */
+/* ------------------------------ */
+
+.sapMSelectListItem {
+	outline: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+/* END "SelectList.less" */
+
+/* START "Shell.less" */
 
 /* ============================================= */
 /* CSS for control sap.m/Shell.control */
@@ -4482,6 +4916,10 @@ li.sapMSltItemDisabled,
 		max-height: 160px;
 	}
 }
+
+/* END "Shell.less" */
+
+/* START "Slider.less" */
 /* ======================================= */
 /* CSS for control sap.m/Slider.control    */
 /* ======================================= */
@@ -4531,6 +4969,13 @@ li.sapMSltItemDisabled,
 .sapMSliderInput {
 	display: none;
 }
+/* END "Slider.less" */
+
+/* START "SplitApp.less" */
+
+/* END "SplitApp.less" */
+
+/* START "SplitContainer.less" */
 /* ============================================= */
 /* CSS for control sap.m/SplitContainer.control */
 /* ============================================= */
@@ -4758,6 +5203,9 @@ html[data-sap-ui-browser^="ie9"] .sapMSplitContainerHideMode > .sapMSplitContain
 .sapMSplitContainer > .sapMSplitContainerDetail .sapMSplitContainerHiddenChild {
 	display: none;
 }
+/* END "SplitContainer.less" */
+
+/* START "StandardListItem.less" */
 /* ============================================= */
 /* CSS for controlsap.m/StandardListItem.control */
 /* ============================================= */
@@ -4774,6 +5222,7 @@ html[data-sap-ui-browser^="ie9"] .sapMSplitContainerHideMode > .sapMSplitContain
 	-moz-box-flex: 1;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -4798,6 +5247,7 @@ html[data-sap-ui-browser^="ie9"] .sapMSplitContainerHideMode > .sapMSplitContain
 	-moz-box-flex: 9;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 }
 
 .sapMSLITitleDiv,
@@ -4838,6 +5288,7 @@ html[data-sap-ui-browser^="ie9"] .sapMSplitContainerHideMode > .sapMSplitContain
 	-moz-box-flex: 1;
 	-ms-flex: auto;
 	flex: auto;
+	-ms-flex-negative: 1; /* IE10 does not shrink by auto */
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -4847,6 +5298,9 @@ html[data-sap-ui-browser^="ie9"] .sapMSplitContainerHideMode > .sapMSplitContain
 	-ms-flex-align: center;
 	align-items: center;
 }
+/* END "StandardListItem.less" */
+
+/* START "StandardTile.less" */
 /* ============================================= */
 /* CSS base theme for control sap.m/StandardTile.control */
 /* ============================================= */
@@ -4996,15 +5450,9 @@ html[dir=rtl] .sapMStdTileInfo{
 .sap-phone .sapMStdTileNumS {
 	font-size:  1rem;	
 }
+/* END "StandardTile.less" */
 
-/* ============================================= */
-/* CSS for control sap.m/StandardTileType.control */
-/* ============================================= */
-
-.sapMStandardTileType{
-  color: @sapUiTextColor;
-  border: 1px solid blue;
-}
+/* START "Support.less" */
 /* ============================================= */
 /* CSS for control sap.m/Support.control    */
 /* ============================================= */
@@ -5020,6 +5468,65 @@ html[dir=rtl] .sapMStdTileInfo{
 .sapMSupport .sapUiSupportTechInfoBorder {
 	border: 1px solid #E2E2E2;
 }
+
+
+.sapMSupport .sapUiSupportTxtFld,
+.sapMSupport .sapUiSupportBtn {
+	border: 1px solid #BFBFBF;
+	font-size: 14px;
+	height: 22px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-left:10px;
+}
+
+.sapMSupport .sapUiSupportTxtArea {
+	width 		: 100%;
+	height		: 50px;
+	margin-top	: 5px;
+	resize		: none;
+	box-sizing	: border-box;
+}
+
+.sapMSupport .sapUiSupportPnlLbl {
+	display 	: block;
+}
+
+.sapMSupport .sapUiSupportDiv {
+	margin-top	: 5px;
+}
+
+.sapMSupport .sapUiSupportTxtFld {
+	background-color: #FFFFFF;
+	padding: 1px;
+}
+
+.sapMSupport .sapUiSupportTxtFld:focus {
+	border-color: #007DC0;
+}
+
+.sapMSupport .sapUiSupportBtn {
+	background-color: #E2E2E2;
+	border-color: #A3A3A3;
+	padding-bottom: 3px;
+	cursor: pointer;
+}
+
+.sapMSupport .sapUiSupportBtn:focus,
+.sapMSupport .sapUiSupportBtn.sapUiSupportRunningTrace {
+	color: #FFFFFF;
+	border-color: #00689E;
+	background-color: #007DC0;
+}
+
+.sapMSupport .sapUiSupportBtn.sapUiSupportRunningTrace {
+	cursor: default;
+}
+
+/* END "Support.less" */
+
+/* START "Switch.less" */
 /* ===================================== */
 /* CSS for control sap.m/Switch.control  */
 /* ===================================== */
@@ -5041,6 +5548,11 @@ html[dir=rtl] .sapMStdTileInfo{
 .sapMSwtCont {
 	display: inline-block;
 	vertical-align: top;
+	outline: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .sapMSwtCont:not(.sapMSwtContDisabled) {
@@ -5123,6 +5635,9 @@ html[dir=rtl] .sapMStdTileInfo{
 	font-family: 'SAP-icons';
 	speak: none;
 }
+/* END "Switch.less" */
+
+/* START "Table.less" */
 /* ============================================= */
 /* CSS for control sap.m/Table.control 		     */
 /* ============================================= */
@@ -5149,11 +5664,6 @@ html[dir=rtl] .sapMStdTileInfo{
 .sapMListTbl td:focus,
 .sapMListTbl > tr:focus {
 	outline: none;
-}
-
-.sapMListTblCell {
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .sapMListTblCellNoData {
@@ -5210,6 +5720,7 @@ tr.sapMListTblHeaderNone > th {
 .sapMListTblSubCntHdr,
 .sapMListTblSubCntVal {
 	display: inline-block;
+	vertical-align: middle;
 }
 
 .sapMListTblSubCntValBlock{
@@ -5271,6 +5782,36 @@ tr.sapMListTblHeaderNone > th {
 		display: none;
 	}
 }
+
+/* END "Table.less" */
+
+/* START "TablePersoDialog.less" */
+/* ============================================== */
+/* CSS for control sap.m/TablePersoDialog.control */
+/* ============================================== */
+
+html[data-sap-ui-browser="ie9"] .sapMPersoDialog .sapMPersoDialogFixedBar .sapMPersoDialogSelectAllCb {
+	// in IE9 the list items have 1rem padding so this align the checkbox
+	margin-left: 1rem;
+}
+
+.sapMPersoDialogFixedBar {
+	position: relative;
+
+	.sapMPersoDialogSelectAllCb > .sapMCbLabel {
+		font-size: 1.125rem;
+	}
+
+	.sapMPersoDialogResetBtn {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+/* END "TablePersoDialog.less" */
+
+/* START "TableSelectDialog.less" */
 /* ============================================= */
 /* CSS for control sap.m/SelectDialog.control    */
 /* ============================================= */
@@ -5291,14 +5832,15 @@ tr.sapMListTblHeaderNone > th {
 .sapMTableSelectDialogTableHide {
 	display: none;
 }
+
+/* END "TableSelectDialog.less" */
+
+/* START "Text.less" */
 .sapMText {
 	display: inline-block;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	-webkit-user-select: text;
-	-ms-user-select: text;
-	user-select: text;
 	white-space: pre-line;
 	word-wrap: break-word; /* works only if browser knows the width */
 	cursor: text;
@@ -5324,10 +5866,6 @@ tr.sapMListTblHeaderNone > th {
 	/* to break all words even browser does not know the width */
 	word-break: break-all;
 	word-break: break-word;  /* Non standard for old webkits */
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
 }
 
 .sapMTextMaxWidth {
@@ -5338,6 +5876,9 @@ tr.sapMListTblHeaderNone > th {
 .sapMLIBCursor + .sapMListTblSubRow .sapMText{
 	cursor: pointer;
 }
+/* END "Text.less" */
+
+/* START "TextArea.less" */
 /* ====================================== */
 /* CSS for control sap.m/Textarea.control */
 /* uses sapMInputBase styles 			  */
@@ -5357,6 +5898,9 @@ tr.sapMListTblHeaderNone > th {
 	height: 100%;
 	width: 100%;
 }
+/* END "TextArea.less" */
+
+/* START "Tile.less" */
 /* ====================================== */
 /* CSS for control sap.m/Tile control     */
 /* ====================================== */
@@ -5423,6 +5967,9 @@ html[data-sap-ui-browser*='ie'] .sapMTile {
 .sapMNavItemFlipping .sapMTile{
 	opacity:0.01;
 }
+/* END "Tile.less" */
+
+/* START "TileContainer.less" */
 /* ====================================================== */
 /* CSS for control sap.m/TileContainer.control            */
 /* ====================================================== */
@@ -5667,7 +6214,9 @@ html[data-sap-ui-browser^="ff"] .sapMTC.sapMTCEditable .sapMTile .sapMTCRemove {
 	content:"\e1c7";
 }
 
-.sapMTC .sapMTCEdgeRight {
+/* use dir-specific rules to prevent mirroring in dir=rtl mode */
+.sapMTC .sapMTCEdgeRight,
+html[dir=rtl] .sapMTC .sapMTCEdgeLeft {
 	position:absolute;
 	top:0;
 	right:0;
@@ -5684,7 +6233,9 @@ html[data-sap-ui-browser^="ff"] .sapMTC.sapMTCEditable .sapMTile .sapMTCRemove {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 }
 
-.sapMTC .sapMTCEdgeLeft {
+/* use dir-specific rules to prevent mirroring in dir=rtl mode */
+.sapMTC .sapMTCEdgeLeft,
+html[dir=rtl] .sapMTC .sapMTCEdgeRight {
 	position:absolute;
 	top:0;
 	left:0;
@@ -5705,25 +6256,21 @@ html[data-sap-ui-browser^="ff"] .sapMTC.sapMTCEditable .sapMTile .sapMTCRemove {
 .sap-phone .sapMTC .sapMTCEdgeRight {
 	width: 20px;
 }
+/* END "TileContainer.less" */
+
+/* START "ToggleButton.less" */
+
+/* END "ToggleButton.less" */
+
+/* START "Token.less" */
 /* ============================================= */
 /* CSS for control sap.m/Token.control */
 /* ============================================= */
 
-.sapUiSizeCompact .sapMToken{
-	padding: 0.1rem 0.375rem 0.1rem 0.375rem;
-	line-height: 1.5rem;
-}
-
 .sapMToken{
 	display: inline;	
 	overflow: hidden;	
-	padding: 0.25rem 0.375rem 0.25rem 0.375rem;
-	background: @sapUiLightBG;
-	color: @sapUiDarkText;		
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	line-height: 2.375rem;
 }
 
 .sapMTokenText{
@@ -5731,46 +6278,68 @@ html[data-sap-ui-browser^="ff"] .sapMTC.sapMTCEditable .sapMTile .sapMTCRemove {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-}
 
-.sapMToken:hover{	
-	background: darken(@sapUiLightBG, 5);		
-}
-
-.sapMTokenSelected, .sapMToken:focus{
-	color: @sapUiTextInverted;
-	background: @sapUiHighlight;	
-}
-
-.sapMTokenSelected:hover{	
-	background: darken(@sapUiHighlight, 5);	
+	// at least for Microsoft Surface Tablet we experienced problems when not setting these properties - touches on the Token seemed to be propageted to the Span inside the Token-Div and thereby (part of) the text contained in the Span would appear selected
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;	
 }
 
 .sapMTokenIcon{
-	display: inline;
-	padding-top: 3px;
-	padding-left: 0.25rem;
+	display: inline;	
 }
+
+.sapMToken .sapUiIcon{
+	display: inline-block;
+	min-width: 1.4375rem;		
+}
+/* END "Token.less" */
+
+/* START "Tokenizer.less" */
 /* ============================================= */
 /* CSS for control sap.m/Tokenizer.control */
 /* ============================================= */
 
-.sapMTokenizer{  
-	display: inline;
+.sapMTokenizer{ 
+	display: inline-block;
 	white-space: nowrap;
+	overflow: hidden;
 }
 
-.sapUiSizeCompact .sapMTokenizer{
-	bottom: 0.55rem;
+.sapMTokenizer .sapMToken{
+	margin-top: 0.375rem;
+	margin-bottom: 0.375rem;
+	margin-right: 0.375rem;
+	line-height: initial;
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 1.625rem;
+
+	// need this for truncation
+	display: inline-block;
 }
 
-.sapMTokenizer .sapMToken{	
-	margin-right: 0.25rem;
+.sapUiSizeCompact .sapMTokenizer .sapMToken{
+	height: 1.25rem;	
+	margin-top: 0.125rem;
+	margin-bottom: 0.125rem;
+	margin-right: 0.125rem;
 }
 
 .sapMTokenizer:focus{
 	outline: none;
 }
+
+.sapMTokenizerScrollContainer{
+	display: inline-block;    
+}
+
+/* END "Tokenizer.less" */
+
+/* START "Toolbar.less" */
 .sapMTB {
 	white-space: nowrap;
 	overflow: hidden;
@@ -5823,9 +6392,14 @@ html[data-sap-ui-browser^="ff"] .sapMTC.sapMTCEditable .sapMTile .sapMTCRemove {
 	display: -webkit-box;
 }
 
-.sapMTBOldFlex.sapMTBOverflow > .sapMTBShrinkItem:not(.sapMFlexBox) {
-	/* shrinking hack for the old flex spec */
+.sapMTBOldFlex > .sapMTBShrinkItem:not(.sapMFlexBox) {
+	/* old flex spec does not honour percentual width for non-block level elements */
+	/* @TODO: can we set the display of unknown item */ 
 	display: block;
+}
+
+.sapMTBOldFlex.sapMTBOverflow > .sapMTBShrinkItem {
+	/* shrinking hack for the old flex spec */
 	-webkit-box-flex: 1;
 }
 
@@ -5837,9 +6411,8 @@ html[data-sap-ui-browser^="ff"] .sapMTC.sapMTCEditable .sapMTile .sapMTCRemove {
 }
 
 /* NonFlex */
-/* vertical centering trick, without flexbox, for the elements that we don't know the dimensions of the element to be centered */
-/* we set up a "ghost" element inside the parent that is 100% height, then we vertical-align: middle both that and the element to be centered */
-/* TODO: This can break the after pseudo element theming so we should add a wrapper and implement the trick for the wrapper */
+/* vertical centering trick, without flexbox */
+/* @TODO: This can break the after pseudo element theming */
 .sapMTBNoFlex::after {
 	content: "";
 	height: 100%;
@@ -5848,10 +6421,20 @@ html[data-sap-ui-browser^="ff"] .sapMTC.sapMTCEditable .sapMTile .sapMTCRemove {
 }
 .sapMTB.sapMTBNoFlex > * {
 	vertical-align: middle; 
-	display: inline-block;
+	display: inline-block; /* @TODO: can we set the display of unknown item? */ 
 	margin-bottom: 0;
 	margin-top: 0;
+	float: none; /* float has no effect on a flexible item */
 }
+/* END "Toolbar.less" */
+
+/* START "ToolbarSeparator.less" */
+/* ============================================== */
+/* CSS for control sap.m/ToolbarSeparator.control */
+/* ============================================== */
+/* END "ToolbarSeparator.less" */
+
+/* START "ToolbarSpacer.less" */
 .sapMTBSpacer {
 	/* should never have padding/margin/border */
 	margin: 0 !important;
@@ -5869,6 +6452,633 @@ html[data-sap-ui-browser^="ff"] .sapMTC.sapMTCEditable .sapMTile .sapMTCRemove {
 	-ms-flex: auto;
 	flex: auto;
 }
+/* END "ToolbarSpacer.less" */
+
+/* START "UploadCollection.less" */
+/* ===================================================================================== */
+/* CSS for control sap.m/UploadCollection.control                                        */
+/*                                                                                       */
+/* Base Theme                                                                            */
+/* ===================================================================================== */
+
+
+/* ************************************************************************************* */
+/* Cozy Form Factor                                                                      */
+/* ************************************************************************************* */
+/* Align Upload Button in Toolbar */
+.sapMUC .sapMIBar > .sapMBarChild:last-child {
+	margin-right: 		0rem;
+}
+
+/* List Header */
+.sapMTB.sapMUCListHeader {
+	width:				100%;
+	height:				3rem;
+	padding-left:		1rem;
+	padding-right:		1rem;
+//	background-color:	fade(@sapUiLightestBG,0%);
+	border-bottom-width: 0.0625rem;
+	border-bottom-style: solid;
+//	border-bottom-color: @sapUiMediumBorder;
+	font-family:		@sapUiFontFamily;
+//	font-size:			@sapMFontHeader4Size;
+//	font-weight:		@sapUiFontHeaderWeight;
+//	color: 				@sapUiHeaderText;
+	white-space:		nowrap;
+	overflow:			hidden;
+	text-overflow:		ellipsis;
+//	text-shadow:		0.0625rem 0rem @sapUiLightShadowTint;
+	vertical-align:		middle;
+}
+
+
+.sapMUC .sapMLIB.sapMUCListSingleItem,
+.sapMUC .sapMLIB.sapMUCListFirstItem,
+.sapMUC .sapMLIB.sapMUCListLastItem,
+.sapMUC .sapMLIB.sapMUCListItem {
+	height: 				5rem;
+	padding-top:			1rem;
+	padding-bottom: 		0.9375rem;	// border-bottom: 0.0625
+	border-bottom-width: 	0.0625rem;
+	border-bottom-style: 	solid;
+//	border-bottom-color: 	transparent; // this is the central switch for having inner separators or not
+//	border-bottom-color: 	@sapUiMediumBorder;
+}
+
+.sapMLIB.sapMUCItem.sapMUCListFirstItem,
+.sapMLIB.sapMUCItem.sapMUCListLastItem,
+.sapMLIB.sapMUCItem.sapMUCListSingleItem,
+.sapMLIB.sapMUCItem.sapMUCListItem {
+	padding-left:		0.9rem;	/* 0.1rem gets the image/icon so that the left side of the keyboard frame is displayed */
+}
+
+/* Item Icon */
+.sapMUCItemIcon {
+	font-family:		SAP-icons;
+	font-size:			2.5rem;
+//	color: 				@sapUiElement;
+}
+
+.sapMImg.sapMUCItemImage{
+	height:				3rem;
+}
+
+/* Text: Filename */
+.sapMUC .sapMUCFileName.sapMLnk {
+	margin-top:			0.125rem;
+	margin-left:		0.1rem;
+
+	font-family:		@sapUiFontFamily;
+//	font-size:			@sapMFontLargeSize;
+	font-weight:		normal;
+	white-space:		nowrap;
+	overflow:			hidden;
+	text-overflow:		ellipsis;
+	vertical-align:		top;
+}
+
+.sapMUC .sapMUCItem .sapMUCFileName.sapMLnk:focus {
+	outline-offset:		0.0625rem;
+}
+
+/* Text: Description (/Progress) */
+.sapMUCDescriptionHL .sapMLabel{
+	height:				1rem;
+	margin-top:			0.625rem;
+	margin-bottom:		0.125rem;
+	margin-left:		0.1rem;
+
+	font-family: 		@sapUiFontFamily;
+//	font-size:			@sapMFontMediumSize;
+	font-weight:		normal;
+//	color:				@sapUiLightText;
+	vertical-align:		bottom;
+}
+
+.sapMUC .sapUiVlt {
+	margin:				1rem 0rem 1rem 0rem;
+	overflow:			hidden;
+}
+
+/* Button Horizontal Layout  */
+.sapMUCBtnHL {
+	right:				0rem;
+	margin:				1rem 1rem 1rem 0rem;
+	-webkit-box-flex:	none;			/* OLD - iOS 6-, Safari 3.1-6 */
+	-webkit-flex:		none;		 	/* Chrome */
+	-moz-flex:			none;
+	-ms-flex:			none;			/* IE 10 */
+	flex:				none;		 	/* NEW, Firefox 20+	*/
+}
+
+/* Buttons */
+.sapMBtn.sapMUCEditBtn,
+.sapMBtn.sapMUCDeleteBtn,
+.sapMBtn.sapMUCCancelBtn,
+.sapMBtn.sapMUCOkBtn {
+	margin-left:		0.125rem;
+}
+
+.sapMUCText {
+	height:				3rem;
+	-webkit-box-flex:	10;			/* OLD - iOS 6-, Safari 3.1-6 */
+	-webkit-flex:		10;			/* Chrome */
+	-moz-flex:			10;
+	-ms-flex:			10;			/* IE 10 */
+	flex:	 			10 10 auto;			/* NEW, Firefox 20+	*/
+}
+
+.sapMUCItemIcon,
+.sapMUCItemImage {
+	height:				3rem;
+	width:				3rem;
+	padding-left:		0rem;
+	margin-right:		0.65rem;
+	margin-left:		0.1rem;
+	margin-top:			1rem;
+	margin-bottom:		1rem;
+	-webkit-box-flex:	none;		 	/* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 		none;         	/* OLD - Firefox 19- */
+	-webkit-flex:		none;			/* Chrome */
+	-moz-flex:			none;
+	-ms-flex:			none;			/* IE 10 */
+	flex:				none;			/* NEW, Firefox 20+ */
+}
+
+.sapMUCEditHL {
+	position:			absolute;
+	width:				20%;
+}
+
+/* Busy Indicator */
+.sapMBusyIndicator.sapMUCloadingIcon {
+	padding-top:		1.25rem;
+	padding-bottom:		1.25rem;
+	padding-right:		1rem;
+	padding-left:		0rem;
+}
+
+.sapMBusyIndicator.sapMUCloadingIcon .sapMBusySvg {
+	height:				2.5rem;
+	width:				2.5rem;
+}
+
+/* In iOS/mac the line content is shown at the bottom of the line.
+the following lines remove the responsible top margin/padding  */
+html[data-sap-ui-os^="mac"][data-sap-ui-browser^="sf"],
+html[data-sap-ui-os^="iOS"] {
+.sapMUCItemIcon,
+.sapMUCItemImage {
+		margin-top:		0rem;
+	}
+
+	.sapMUCBtnHL {
+		margin-top:		0rem;
+	}
+
+	.sapMBusyIndicator.sapMUCloadingIcon {
+		padding-top:	0rem;
+	}
+
+	.sapMUC .sapUiVlt {
+		margin-top:		0rem;
+	}
+}
+
+/* ************************************************************************************* */
+/* Borderless Design (Cozy Form Factor)                                                  */
+/* ************************************************************************************* */
+/* In iOS/mac the line content is shown at the bottom of the line.
+the following lines remove the responsible top margin/padding  */
+html[data-sap-ui-os^="mac"][data-sap-ui-browser^="sf"] .sapMUC .sapMListShowSeparatorsNone,
+html[data-sap-ui-os^="iOS"] .sapMUC .sapMListShowSeparatorsNone {
+
+	/* ---------------------------------------*/
+	/* General List Item  (Cozy Form Factor)  */
+	/* ---------------------------------------*/
+	.sapMLIB.sapMUCListItem {
+		>.sapMLIBContent.sapMLIBContentMargin {
+			margin-top:			0rem;	//no idea why this is needed to align
+		}
+
+		.sapMUCItemIcon,
+		.sapMUCItemImage {
+			margin-top:			0rem;
+		}
+
+		.sapMUCText {
+			margin-top: 		0rem;
+		}
+
+		.sapMUCBtnHL {
+			margin-top:			0rem;
+		}
+	}
+
+	/* --------------------------------------*/
+	/* Single List Item  (Cozy Form Factor)  */
+	/* --------------------------------------*/
+	.sapMLIB.sapMUCListSingleItem {
+		.sapMUCItemIcon,
+		.sapMUCItemImage {
+			margin-top:			0rem;
+		}
+
+		.sapMUCText {
+			margin-top:			0rem;
+		}
+
+		.sapMUCBtnHL {
+			margin-top:			0rem;
+		}
+	}
+
+	/* -------------------------------------*/
+	/* First List Item  (Cozy Form Factor)  */
+	/* -------------------------------------*/
+	.sapMLIB.sapMUCListFirstItem {
+		.sapMUCItemIcon,
+		.sapMUCItemImage {
+			margin-top:			0.5rem;
+		}
+
+		.sapMUCText {
+			margin-top:			0.5rem;
+		}
+
+		.sapMUCBtnHL {
+			margin-top:			0.5rem;
+		}
+	}
+
+	/* ------------------------------------*/
+	/* Last List Item  (Cozy Form Factor)  */
+	/* ------------------------------------*/
+	.sapMLIB.sapMUCListLastItem {
+		>.sapMLIBContent.sapMLIBContentMargin {
+			margin-top:			0rem;	//no idea why this is needed to align
+		}
+
+		.sapMUCItemIcon,
+		.sapMUCItemImage {
+			margin-top:			0rem;
+		}
+
+		.sapMUCText {
+			margin-top:			0rem;
+		}
+
+		.sapMUCBtnHL {
+			margin-top:			0rem;
+		}
+	}
+}
+
+.sapMUC .sapMListShowSeparatorsNone {
+	.sapMLIB.sapMUCListSingleItem,
+	.sapMLIB.sapMUCListFirstItem,
+	.sapMLIB.sapMUCListLastItem,
+	.sapMLIB.sapMUCListItem {
+		border-bottom-color: 	transparent; // this is the central switch for having inner separators or not
+		padding-top:		0.5rem;
+		padding-bottom:		0.4375rem;	// border-bottom: 0.0625
+	}
+
+	.sapMUCFileName.sapMLnk {
+		margin-top:			0.125rem;  //compact 0.25rem
+	}
+
+	.sapMBusyIndicator.sapMUCloadingIcon {
+		padding-top:		0.75rem;
+		padding-bottom:		0.75rem;
+	}
+
+
+	/* ---------------------------------------*/
+	/* General List Item  (Cozy Form Factor)  */
+	/* ---------------------------------------*/
+	.sapMLIB.sapMUCListItem {
+		height:					4rem;
+
+		.sapMUCItemIcon,
+		.sapMUCItemImage {
+			margin-top:			0.5rem;
+			margin-bottom:		0.5rem;
+		}
+
+		.sapMUCText {
+			margin:				0.5rem 0rem 0.5rem 0rem;
+		}
+
+		.sapMUCBtnHL {
+			margin:			0.5rem 1rem 0.5rem 0rem;
+		}
+
+		.sapMUCEditMode .sapMUCBtnHL {
+			margin:			0.5rem 1rem 0.5rem 0rem;
+		}
+
+	}
+
+	/* --------------------------------------*/
+	/* Single List Item  (Cozy Form Factor)  */
+	/* --------------------------------------*/
+	.sapMLIB.sapMUCListSingleItem {
+		height:					5rem;
+		padding-top:			1rem;
+		padding-bottom: 		0.9375rem;	// border-bottom: 0.0625;
+
+		.sapMUCItemIcon,
+		.sapMUCItemImage {
+			padding-top:		0rem;
+			padding-bottom:		0rem;
+		}
+
+		.sapMUCBtnHL {
+			margin:			1rem 1rem 1rem 0rem;
+		}
+
+		.sapMUCEditMode .sapMUCBtnHL {
+			margin:			1rem 1rem 1rem 0rem;
+		}
+
+		.sapMBusyIndicator.sapMUCloadingIcon {
+			margin-top:			0.5rem;
+			margin-bottom:		0.5rem;
+		}
+	}
+
+	/* -------------------------------------*/
+	/* First List Item  (Cozy Form Factor)  */
+	/* -------------------------------------*/
+	.sapMLIB.sapMUCListFirstItem {
+		height:				4.5rem;
+
+		>.sapMLIBContent.sapMLIBContentMargin {
+			margin-top:			-0.5rem;	//	no idea why this is needed to align
+		}
+
+		.sapMUCBtnHL {
+			margin:				1rem 1rem 0.5rem 0rem;
+		}
+
+		.sapMUCItemIcon,
+		.sapMUCItemImage {
+			margin-top:			1rem;
+			margin-bottom:		0.5rem
+		}
+
+		.sapMUCText {
+			margin:				1rem 0rem 0.5rem 0rem;
+		}
+
+		.sapMBusyIndicator.sapMUCloadingIcon {
+			margin-top:			0.5rem;
+		}
+	}
+
+	/* ------------------------------------*/
+	/* Last List Item  (Cozy Form Factor)  */
+	/* ------------------------------------*/
+	.sapMLIB.sapMUCListLastItem {
+		height:				4.5rem;
+
+		>.sapMLIBContent.sapMLIBContentMargin {
+			margin-top:			0.5rem;	//	no idea why this is needed to align
+		}
+
+		.sapMUCItemHL {
+			height:				4.5rem;
+		}
+
+		.sapMUCItemIcon,
+		.sapMUCItemImage {
+			margin-top:			0.5rem;
+			margin-bottom:		1rem;
+		}
+
+		.sapMUCText {
+			margin: 			0.5rem 0rem 1rem 0rem;
+		}
+
+		.sapMUCBtnHL {
+			margin	:			0.5rem 1rem 1rem 0rem;
+		}
+	}
+}
+
+
+
+/* ************************************************************************************* */
+/* Compact Form Factor                                                                   */
+/* ************************************************************************************* */
+/* In iOS/mac the content of the line is shown at the bottom of the line.
+the following lines remove the responsible top margin */
+html[data-sap-ui-os^="mac"][data-sap-ui-browser^="sf"].sapUiSizeCompact .sapMUC,
+html[data-sap-ui-os^="iOS"].sapUiSizeCompact .sapMUC {
+	.sapMUCBtnHL {
+		margin-top:		1rem;
+	}
+
+	.sapMListShowSeparatorsNone {
+		/* ------------------------------------------*/
+		/* General List Item  (Compact Form Factor)  */
+		/* ------------------------------------------*/
+		.sapMLIB.sapMUCListItem .sapMUCBtnHL {
+			margin-top:			1rem;
+		}
+		/* -----------------------------------------*/
+		/* Single List Item  (Compact Form Factor)  */
+		/* -----------------------------------------*/
+		.sapMLIB.sapMUCListSingleItem .sapMUCBtnHL {
+			margin-top:			1rem;
+		}
+		/* ----------------------------------------*/
+		/* First List Item  (Compact Form Factor)  */
+		/* ----------------------------------------*/
+		.sapMLIB.sapMUCListFirstItem sapMUCBtnHL {
+			margin-top:			1.5rem;
+		}
+		/* ---------------------------------------*/
+		/* Last List Item  (Compact Form Factor)  */
+		/* ---------------------------------------*/
+		.sapMLIB.sapMUCListLastItem .sapMUCBtnHL {
+			margin-top:			1rem;
+		}
+	}
+}
+
+.sapUiSizeCompact .sapMUC {
+	.sapMUC .sapMUCFileName.sapMLnk {
+	margin-top:			0.125rem;
+//	font-size:			@sapMFontMediumSize;
+	}
+
+	.sapMUCDescriptionHL .sapMLabel{
+		margin-top:			0.5rem;
+		margin-bottom:		0.25rem;
+	}
+
+	/* Button Horizontal Layout  */
+	.sapMUCBtnHL {
+		margin:				2rem 1rem 1rem 0rem;
+	}
+
+	.sapMUCEditHL {
+		height:				3rem;
+	}
+
+	.sapMUCEditBox {
+		height:				3rem;
+		padding-top:		0.6875rem;
+		padding-bottom:		0.6875rem;
+	}
+
+	.sapMUCEditMode .sapMUCBtnHL {
+		margin	:			1.5rem 1rem 1.5rem 0rem;
+	}
+
+	/* ********************************************************************************* */
+	/* Borderless Design (Compact Form Factor)                                           */
+	/* ********************************************************************************* */
+	.sapMListShowSeparatorsNone {
+
+		.sapMUCFileName.sapMLnk {
+			margin-top:			0.25rem;
+//			font-size:			@sapMFontLargeSize;
+		}
+
+		.sapMBusyIndicator.sapMUCloadingIcon {
+			padding-top:		0.75rem;
+			padding-bottom:		0.75rem;
+		}
+
+		.sapMUCBtnHL {
+			margin:			1.5rem 1rem 0.5rem 0rem;
+		}
+
+
+		/* ------------------------------------------*/
+		/* General List Item  (Compact Form Factor)  */
+		/* ------------------------------------------*/
+		.sapMLIB.sapMUCListItem {
+			padding-top:		0.5rem;
+			padding-bottom:		0.4375rem;	// border-bottom: 0.0625
+
+			.sapMUCBtnHL {
+				margin:			1.5rem 1rem 0.5rem 0rem;
+			}
+
+			.sapMUCEditMode .sapMUCBtnHL {
+				margin:			1rem 1rem 1rem 0rem;
+			}
+		}
+
+		/* -----------------------------------------*/
+		/* Single List Item  (Compact Form Factor)  */
+		/* -----------------------------------------*/
+		.sapMLIB.sapMUCListSingleItem {
+			padding-top:		1rem;
+			padding-bottom: 	0.9375rem;	// border-bottom: 0.0625;
+
+			.sapMUCBtnHL {
+				margin:			2rem 1rem 1rem 0rem;
+			}
+
+			.sapMUCEditMode .sapMUCBtnHL {
+				margin:			1.5rem 1rem 1.5rem 0rem;
+			}
+		}
+
+		/* ----------------------------------------*/
+		/* First List Item  (Compact Form Factor)  */
+		/* ----------------------------------------*/
+		.sapMLIB.sapMUCListFirstItem {
+			padding-bottom:		0.4375rem;	// border-bottom: 0.0625
+
+			.sapMUCBtnHL {
+				margin:			2rem 1rem 0.5rem 0rem;
+			}
+
+			.sapMUCEditMode .sapMUCBtnHL {
+				margin:			1.5rem 1rem 1rem 0rem;
+			}
+
+		}
+
+		/* ---------------------------------------*/
+		/* Last List Item  (Compact Form Factor)  */
+		/* ---------------------------------------*/
+		.sapMLIB.sapMUCListLastItem {
+			padding-top:		0.5rem;
+
+			.sapMUCBtnHL {
+				margin:			1.5rem 1rem 1rem 0rem;
+			}
+
+			.sapMUCEditMode .sapMUCBtnHL {
+				margin:			1rem 1rem 1.5rem 0rem;
+			}
+		}
+	}
+}
+
+/* ************************************************************************************* */
+/* local fixes: should be done by used simple controls                                   */
+/* ************************************************************************************* */
+.sapMTB.sapMUCListHeader .sapMBtnPaddingLeft {
+	padding-left:		0rem;
+}
+
+.sapMUC .sapUiIcon:focus {
+	outline-style: dotted;
+	outline-width: 1px; /*suddenly there comes 3 px outline-width from the Icon control which is not in sync with other outlines of our control */
+}
+
+/* *************************************************************************************** */
+/* fix for buttons lying over the text at resizing */
+/* *************************************************************************************** */
+
+.sapMUCItem  {
+	white-space:	nowrap;
+	overflow:		hidden;
+}
+
+.sapMUCListFirstItem > .sapMLIBContent,
+.sapMUCListLastItem > .sapMLIBContent,
+.sapMUCListSingleItem > .sapMLIBContent,
+.sapMUCListItem > .sapMLIBContent {
+	display:		-webkit-box; 		/* OLD - iOS 6-, Safari 3.1-6 */
+	display:		-ms-flexbox; 		/* IE10 */
+	display:		-webkit-flex; 		/* NEW - Chrome */
+	display: 		-moz-flex;			/*NEW		*/
+	display: 		-ms-flex;			/*NEW 		*/
+	display:		flex; 				/*FF 20+ 	*/
+	overflow:		hidden;				/*necessary for text truncation in FF */
+}
+
+.sapMUCDescriptionHL.sapUiHLayout {
+	display:		-webkit-box; 		/* OLD - iOS 6-, Safari 3.1-6 */
+	display:		-ms-flexbox; 		/* IE10 */
+	display:		-webkit-flex; 		/* NEW - Chrome */
+	display: 		-moz-flex;			/*NEW		*/
+	display: 		-ms-flex;			/*NEW 		*/
+	display:		flex; 				/*FF 20+ */
+}
+
+.sapMUCDescriptionHL > .sapUiHLayoutChildWrapper {
+	width: 100%;
+	overflow: hidden;
+}
+
+/* fallback for IE9 as it doesn't support flex; text truncation doesn't take place but at least the buttons are displayed correctly in full screen mode */
+.sapMUCBtnNoFlex {
+	position: absolute;
+}
+
+/* END "UploadCollection.less" */
+
+/* START "ViewSettingsDialog.less" */
 /* =============================================== */
 /* CSS for control sap.m/ViewSettingsDialog.control */
 /* =============================================== */
@@ -5880,3 +7090,5 @@ html[data-sap-ui-browser^="ff"] .sapMTC.sapMTCEditable .sapMTile .sapMTCRemove {
 .sapMVSD.sapMDialog .sapMDialogScrollCont{
 	padding: 0;
 }
+/* END "ViewSettingsDialog.less" */
+

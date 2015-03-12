@@ -559,7 +559,7 @@ sap.ui.define("sap/ui/unified/CurrencyRenderer",['jquery.sap.global'],
 	/**
 	 * Currency renderer.
 	 *
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 * @namespace
 	 */
 	var CurrencyRenderer = {
@@ -723,7 +723,7 @@ sap.ui.define("sap/ui/unified/MenuRenderer",['jquery.sap.global'],
 	 * Menu renderer.
 	 * @author SAP - TD Core UI&AM UI Infra
 	 *
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 * @namespace
 	 */
 	var MenuRenderer = {
@@ -1153,14 +1153,14 @@ sap.ui.define("sap/ui/unified/library",['jquery.sap.global',
 	 * @namespace
 	 * @name sap.ui.unified
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 * @public
 	 */
 	
 	// delegate further initialization of this library to the Core
 	sap.ui.getCore().initLibrary({
 		name : "sap.ui.unified",
-		version: "1.26.4",
+		version: "1.26.8",
 		dependencies : ["sap.ui.core"],
 		types: [
 			"sap.ui.unified.CalendarDayType",
@@ -1422,7 +1422,7 @@ sap.ui.define("sap/ui/unified/Calendar",['jquery.sap.global', 'sap/ui/core/Contr
 	 * Basic Calendar.
 	 * This calendar ist used for DatePickers
 	 * @extends sap.ui.core.Control
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -3040,7 +3040,7 @@ sap.ui.define("sap/ui/unified/CalendarLegend",['jquery.sap.global', 'sap/ui/core
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -3107,7 +3107,7 @@ sap.ui.define("sap/ui/unified/CalendarLegendItem",['jquery.sap.global', 'sap/ui/
 	 * @class
 	 * Item to be displayed in a CalendarLegend.
 	 * @extends sap.ui.core.Element
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -3167,7 +3167,7 @@ sap.ui.define("sap/ui/unified/ContentSwitcher",['jquery.sap.global', 'sap/ui/cor
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -3359,7 +3359,7 @@ sap.ui.define("sap/ui/unified/Currency",['jquery.sap.global', 'sap/ui/core/Contr
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -3511,7 +3511,7 @@ sap.ui.define("sap/ui/unified/DateRange",['jquery.sap.global', 'sap/ui/core/Elem
 	 * @class
 	 * Date range for use in DatePicker
 	 * @extends sap.ui.core.Element
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -3604,7 +3604,7 @@ sap.ui.define("sap/ui/unified/DateTypeRange",['jquery.sap.global', './DateRange'
 	 * @class
 	 * Date range with calendar day type information. Used to visualize special days in the Calendar.
 	 * @extends sap.ui.unified.DateRange
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -3665,7 +3665,7 @@ sap.ui.define("sap/ui/unified/FileUploader",['jquery.sap.global', 'sap/ui/core/C
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -4201,12 +4201,11 @@ sap.ui.define("sap/ui/unified/FileUploader",['jquery.sap.global', 'sap/ui/core/C
 		// !!!sap.ui.Device.browser.internet_explorer check: only for non IE browsers since there we need
 		// the button in front of the fileuploader
 		if (this.getWidth()) {
-			if (this.getButtonOnly()) {
+			if (this.getButtonOnly() && this.oBrowse.getDomRef()) {
 				this.oBrowse.getDomRef().style.width = this.getWidth();
-			} else {
-				// Recalculate the textfield width...
-				this._resizeDomElements();
 			}
+			// Recalculate the textfield width...
+			this._resizeDomElements();
 		}
 	};
 
@@ -4458,6 +4457,13 @@ sap.ui.define("sap/ui/unified/FileUploader",['jquery.sap.global', 'sap/ui/core/C
 						};
 
 						var sFilename = oFiles[0].name;
+
+						if (sap.ui.Device.browser.internet_explorer) {
+							var sContentType = oFiles[0].type;
+							oXhr.xhr.setRequestHeader("Content-Type", sContentType);
+							oXhr.requestHeaders.push({name: "Content-Type", value: sContentType});
+						}
+
 						var oRequestHeaders = oXhr.requestHeaders;
 
 						var fnProgressListener = function(oProgressEvent) {
@@ -4955,7 +4961,7 @@ sap.ui.define("sap/ui/unified/FileUploaderParameter",['jquery.sap.global', 'sap/
 	 * @extends sap.ui.core.Element
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -5016,7 +5022,7 @@ sap.ui.define("sap/ui/unified/MenuItemBase",['jquery.sap.global', 'sap/ui/core/E
 	 * @extends sap.ui.core.Element
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -5165,7 +5171,7 @@ sap.ui.define("sap/ui/unified/MenuTextFieldItem",['jquery.sap.global', 'sap/ui/c
 	 * @extends sap.ui.unified.MenuItemBase
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -5517,7 +5523,7 @@ sap.ui.define("sap/ui/unified/ShellHeadItem",['jquery.sap.global', 'sap/ui/core/
 	 * @extends sap.ui.core.Element
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -5684,7 +5690,7 @@ sap.ui.define("sap/ui/unified/ShellHeadUserItem",['jquery.sap.global', 'sap/ui/c
 	 * @extends sap.ui.core.Element
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -6044,7 +6050,7 @@ sap.ui.define("sap/ui/unified/SplitContainer",['jquery.sap.global', 'sap/ui/core
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -6400,7 +6406,7 @@ sap.ui.define("sap/ui/unified/Menu",['jquery.sap.global', 'sap/ui/core/Control',
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -6550,11 +6556,9 @@ sap.ui.define("sap/ui/unified/Menu",['jquery.sap.global', 'sap/ui/core/Control',
 	 */
 	Menu.prototype.onAfterRendering = function() {
 		var aItems = this.getItems();
-		var item = -1;
-		
+
 		for (var i = 0; i < aItems.length; i++) {
 			if (aItems[i].onAfterRendering && aItems[i].getDomRef()) {
-				item = i;
 				aItems[i].onAfterRendering();
 			}
 		}
@@ -6563,14 +6567,13 @@ sap.ui.define("sap/ui/unified/Menu",['jquery.sap.global', 'sap/ui/core/Control',
 			this.oHoveredItem.hover(true, this);
 		}
 		
-		var iMaxVisibleItems = this.getMaxVisibleItems();
-		var iMaxHeight = document.documentElement.clientHeight - 10;
-		if (iMaxVisibleItems > 0 && item >= 0) {
-			iMaxHeight = Math.min(iMaxHeight, aItems[item].$().outerHeight(true) * iMaxVisibleItems);
-		}
-		
-		if (this.$().outerHeight(true) > iMaxHeight) {
-			this.$().css("max-height", iMaxHeight + "px").toggleClass("sapUiMnuScroll", true);
+		checkAndLimitHeight(this);
+	};
+	
+	Menu.prototype.onThemeChanged = function(){
+		if (this.getDomRef() && this.getPopup().getOpenState() === sap.ui.core.OpenState.OPEN) {
+			checkAndLimitHeight(this);
+			this.getPopup()._applyPosition(this.getPopup()._oLastPosition);
 		}
 	};
 	
@@ -7272,6 +7275,29 @@ sap.ui.define("sap/ui/unified/Menu",['jquery.sap.global', 'sap/ui/core/Control',
 	}
 	
 	
+	function checkAndLimitHeight(oMenu) {
+		var iMaxVisibleItems = oMenu.getMaxVisibleItems(),
+			iMaxHeight = document.documentElement.clientHeight - 10,
+			$Menu = oMenu.$();
+		
+		if (iMaxVisibleItems > 0) {
+			var aItems = oMenu.getItems();
+			for (var i = 0; i < aItems.length; i++) {
+				if (aItems[i].getDomRef()) {
+					iMaxHeight = Math.min(iMaxHeight, aItems[i].$().outerHeight(true) * iMaxVisibleItems);
+					break;
+				}
+			}
+		}
+		
+		if ($Menu.outerHeight(true) > iMaxHeight) {
+			$Menu.css("max-height", iMaxHeight + "px").toggleClass("sapUiMnuScroll", true);
+		} else {
+			$Menu.css("max-height", "").toggleClass("sapUiMnuScroll", false);
+		}
+	}
+	
+	
 	//IE 8 repainting bug when hovering over MenuItems with IconFont
 	var fnIe8RepaintBug = function() {};
 	if (sap.ui.Device.browser.internet_explorer && sap.ui.Device.browser.version < 9) {
@@ -7556,7 +7582,7 @@ sap.ui.define("sap/ui/unified/MenuItem",['jquery.sap.global', 'sap/ui/core/IconP
 	 * @extends sap.ui.unified.MenuItemBase
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -7702,7 +7728,7 @@ sap.ui.define("sap/ui/unified/ShellLayout",['jquery.sap.global', 'sap/ui/Device'
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -8291,7 +8317,7 @@ sap.ui.define("sap/ui/unified/Shell",['jquery.sap.global', './ShellHeader', './S
 	 * @extends sap.ui.unified.ShellLayout
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
@@ -8542,7 +8568,7 @@ sap.ui.define("sap/ui/unified/ShellOverlay",['jquery.sap.global', 'sap/ui/Device
 	 * @extends sap.ui.core.Control
 	 *
 	 * @author SAP SE
-	 * @version 1.26.4
+	 * @version 1.26.8
 	 *
 	 * @constructor
 	 * @public
