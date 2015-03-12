@@ -133,6 +133,11 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 	
 	*/
 	},
+	 
+	onDialogCloseButton: function (oEvent) {
+		var sType = oEvent.getSource().data("dialogType");
+		this[sType].close();
+    },
 	
 	onStdDialogPress: function (oEvent) {
 	    this.openDialog('Std');
@@ -161,8 +166,13 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 	      );
 	      this.getView().addDependent(this[sType]);
 	    }
-
-	    this[sType].bindElement("/ProductCollection/0");
+	    /*
+	    sap.ui.getCore().getModel().read("/Address(1)", null , {}, false, function(response){
+			globalMaster.getView().byId("tPostalCode").setText("asd");
+			var felirat = response.TPostalCode;
+		});*/
+	    //itt kell majd bebindolni a megfelelő Address-t
+	    this[sType].bindElement("/Address(1)");
 	    // toggle compact style
 	    jQuery.sap.syncStyleClass("sapUiSizeCompact", this.getView(), this[sType]);
 	    this[sType].open();
@@ -170,7 +180,7 @@ sap.ui.controller("sap.ui.netlife.G4S.view.bevetMasterLe", {
 
     handleRowPressed: function (oEvent) {
       var context = oEvent.getSource().getBindingContext();
-      alert(context.sPath);
+      //alert(context.sPath);
       this.openDialog('Std');
     },
 
